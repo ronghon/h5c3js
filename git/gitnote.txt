@@ -76,3 +76,7 @@ git pull 遠端空間的名稱 遠端空間的分支-->從GitHub雲端專案下�
 開發者協作的基本流程
 code devol1 git pull-->coding-->end-->git add.->git commit-->git push-->code devol2 git pull-->coding...
 
+向軍大叔=========================================================================================
+版本控制
+  - 集中式(SVN)vs分散式(Git)
+  
