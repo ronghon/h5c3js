@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    console.time("test");
+    for (var i = 2; i <= 100; i++) {
+      var flag = true;
+      // for (var j = 2; j < i; j++) {
+      for (var j = 2; j <= Math.sqrt(i); j++) {  //
+        if (i % j == 0) {  //判斷i是否被j整除,如果進入判斷則證明i一定不是質數,則將false賦予給false
+          //  console.log("--->"+j); 
+          flag = false;
+          //一旦進入判斷,則證明i不可能是質數了,後續的循環值再執行已無意義,此時可以用break來終止循環
+          break;
+        }
+      }
+      if (flag == true) {
+        console.log(i);
+      }
+    }
+    console.timeEnd("test");
+  </script>
+</head>
+
+<body>
+
+
+</body>
+
+</html>

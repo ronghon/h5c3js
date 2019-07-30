@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="">
+		<!-- placeholder:提示文本,提示占位 -->
+		<!-- autofocus: 自動獲取焦點-->
+		<!-- autocomplete 自動完成 on打開、off關閉 兩前提:
+		1.必須成功提交過,才會有紀錄暫存
+		2.當前添加autocomplete的元素必須有name屬性-->
+		<!-- reguired 必填才能提交-->
+		<!-- pattern 驗證是否符合,可用正則表逹式驗證 -->
+	用戶名: <input type="text"  required name="userName" placeholder="請輸入用戶名" autofocus autocomplete="on">
+	電話號碼: <input type="tel" required pattern=""><br>
+	<!-- multiple:可提交多個檔案 -->
+	文件: <input type="file" multiple >
+	<!-- 提交 -->
+		<input type="submit">
+	</form>
+
+
+
+
+</body>
+</html>

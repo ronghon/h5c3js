@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    while(true){
+      var score = prompt("請輸入小明期末成績:")
+         if (score>=0 && score<=100){
+        break;
+         }
+         alert("請輸入有效成績0-100分!!")
+    }
+
+
+		//先判斷用戶輸入資料是否合法,isNaN()判斷輸入值為非數值時
+    if (score > 100 || score < 0 || isNaN(score)) {
+      alert("對不起!請你輸入0-100數字")
+    }
+    else {
+      if (score == 100) {
+        alert("給你一輛寶馬")
+      }
+      else if (score >= 80) {
+        alert("給你支iphone")
+      }
+      else if (score >= 60)
+        alert("只能給你筆記本了")
+      else {
+        alert("送你西北風~~")
+      }
+    }
+
+
+
+  </script>
+</body>
+
+</html>

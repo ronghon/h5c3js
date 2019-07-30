@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		//創建一個構造函數,專門用來創建自定義對象
+
+		function Person(name, sex, height) {
+			this.name = name;//this指向新建的對象per,同時給per添加name屬性
+			this.sex = sex;
+			this.height = height;
+			this.sayhello = function () {
+				alert(this.height);
+			}
+		}
+		var per = new Person("王大同", "男", 187);//創建一個新的構造函數per對象,藉由實參同時賦予形參屬性值
+		var per1 = new Person("張三", "女", 168);//創建一個新的構造函數per1對象,藉由實參同時賦予形參屬性值
+		var per2 = new Person("李四", "男", 170);//創建一個新的構造函數per2對象,藉由實參同時賦予形參屬性值
+		/* console.log(per.name);
+		console.log(per1.sex);
+		console.log(per2.height);
+		per.sayhello();
+		per1.sayhello();
+		per2.sayhello(); */
+
+		function Dog(name, age) {
+			this.name = name;//this指向新建的對象dog,同時給dog添加了name屬性
+			this.age = age;
+			this.sayHello = function () {
+				alert("汪汪~~");
+			}
+		}
+		var dog = new Dog("旺財", 3);
+		// console.log(dog.name);
+		// dog.sayHello();
+
+		// console.log(per instanceof Person);//true 檢查per是否是Person類的實例
+		// console.log(dog instanceof Dog);
+		// console.log(dog instanceof Person);  //false 檢查dog是否是Person類的實例
+
+	</script>
+</head>
+
+<body>
+</body>
+
+</html>

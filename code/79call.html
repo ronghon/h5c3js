@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		/* function fun() {
+			alert(this.name);
+		}
+		
+		var obj = {
+			name: "王一",
+			sayName: function () {
+				alert(this.name);
+			}
+		};
+		
+		var obj2 = {
+			name: "何大"
+		} */
+		//以下三種均為函數調用方法,使函數執行
+		// fun();//我是fun函數
+		// fun.call();//我是fun函數
+		// fun.apply(); //我是fun函數…
+		
+		//將函數執行改為調用this-->  alert(this)
+		 // fun(); //[object window]-->函數形式調用時,this永遠是window
+		// fun.call(obj); //[object object]
+		// fun.apply(obj2); //[object object]
+		
+		//this加入name屬性後,即可獲取obj對象的屬性值"王一"
+		// fun.call(obj); //王一-->以obj對象作為call()方法的實參調用函數時會傳回obj對象的name屬性
+		// fun.apply(obj2); //何大-->以obj2對象作為call()	方法的實參調用函數時會傳回obj對象的name屬性
+
+
+		// obj對象中加入sayName方法後
+		// obj.sayName();//object對象
+		// obj.sayName.call(obj);//王一
+		// obj.sayName.apply(obj2);//何大
+
+		function fun(a, b) {
+			console.log("a = " + a);
+			console.log("b = " + b);
+		}
+		var obj = {
+			name: "王一",
+			sayName: function () {
+				alert(this.name);
+			}
+		};
+		var obj2 = {
+			name: "何大"
+		}
+		// fun.call(obj); //a=undefined b=undefined
+		fun.call(obj,2,3);	//call()方法可以將實參在對象之後依次傳遞
+		fun.apply(obj, [2, 3]); //apply()方法需要將實參封裝到一個數組中統一傳遞 */
+	</script>
+</head>
+
+<body>
+</body>
+
+</html>

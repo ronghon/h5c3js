@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>學生檔案輸入</title>
+		<link rel="stylesheet" href="./css/form.css">
+	</head>
+	<body>
+		<form action="">
+			<fieldset>
+				<legend>學生檔案</legend>
+			  <label for="userName">姓名 :</label>
+					<input type="text" name="userName" id="userName" placeholder="請輸入您的姓名">
+				<label for="userPhone">手機號碼 :</label>
+					<input type="tel" name="phone"  id="userPhone" pattern="^1\d{9}$">
+				<label for="email">電子郵件</label>
+					<input type="email" name="email" id="email0" required>
+				<label for="collage">所屬學院 :</label>
+					<input type="text" name="collage" id="collage" list="coList" placeholder="請選擇">
+					<datalist id="coList">
+						<option value="建築科"></option>
+						<option value="電機科"></option>
+						<option value="餐旅科"></option>
+						<option value="資訊科"></option>
+					</datalist>
+				<label for="">入學成績 :</label>
+					<input type="number" nmax="100" min="0" value="0" id="score">
+				<label for="">基礎水平 :</label>
+					<meter id="level" max="100" min="0" low="59" high="90"></meter>
+				<label for="inTime">入學日期 :</label>
+					<input type="date" id="inTime">
+				<label for="outTime">畢業日期 :</label>
+					<input type="date" id="outTime">
+				<input type="submit">				
+			</fieldset>
+			
+		</form>
+	<script>
+		document.getElementById("score").oninput=function(){
+			document.getElementById("level").value=this.value;
+		}					
+		</script>
+		</body>
+</html>

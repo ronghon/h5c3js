@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Document</title>
+		<script>
+			//使用構造函數創建一個函數
+			var fun = new Function("alert('你好');"); 
+			// console.log(typeof fun);
+			fun();                //調用fun函數
+			//使用聲明函數來創建一個函數對象
+			function fun1() {
+				console.log("hello!")
+				alert("我好!")
+			}
+			fun1();
+
+			//使用匿名函數(函數表逹式)來創建一個函數
+			var fun2 = function() {
+				console.log("world")
+				alert("大家好!")
+			};
+			fun2();
+			// fun["name"] = "王大一";
+			// console.log(fun["name"]);
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+	<script type="text/javascript">
+		var reg =new RegExp("w","i");//定義一個正則表逹式用來檢查一個字符串中是否含有"a"(區分大小寫)
+		var str="a";
+		var result=reg.test(str);
+		// console.log(result);
+		// console.log(reg.test("asdff"));
+		// 86正則表逹式字面量方式創建
+		var reg=/a/i; //使用字面表創建正則表逹式
+		console.log(typeof reg);
+		console.log(reg.test("abc"));
+		
+		// 創建一個正則表逹式,檢查一個字符串中是否含有a或b
+		
+		var reg=/ab/;
+		
+		
+	</script>
+</head>
+
+<body>
+  
+
+</body>
+
+</html>

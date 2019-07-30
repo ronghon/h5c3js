@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		var obj = {
+			name: "孫悟空",
+			age: 18,
+			gender: "男",
+			address: "花果山"
+		};
+
+		//枚舉對象中的屬性
+		//使用for...in 語句
+		/* 語法: for(var 變量 in 對象){
+			}
+		for...in語句  對象中有幾個屬性,循環體就會執行幾次,每次執行時,會將對象中的一個屬性的名字賦值給變量
+		 		 */
+		for (var n in obj) {
+			// console.log("hello");
+			console.log(n); //獲取obj的屬性名
+			//	console.log(obj.n);//n是變量,obj中無n這個變量,所以undefined
+			console.log(obj[n]); //獲取obj的屬性值
+			//console.log(obj["n"]);//n是變量,obj中無n這個變量,所以undefined
+
+		}
+	</script>
+</head>
+
+<body>
+</body>
+
+</html>

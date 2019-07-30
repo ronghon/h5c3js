@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			/* 使用虛擬元素垂直置中 */
+			.container{
+				width: 300px;
+				height: 300px;
+				background-color: #aaa;
+				
+			}
+			.container::before{
+				content: "";
+				display: inline-block;
+				height: 100%;
+				vertical-align: middle;
+			}
+			/* 記得要子元素加width,且不得大於父元素 */
+			.box{
+				width:290px;
+				display: inline-block;
+				vertical-align: middle;
+			}
+		</style>
+		
+	</head>
+	<body>
+		
+		<div class="container">
+			<div class="box">
+				Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto doloremque optio a labore asperiores accusamus voluptatum illum assumenda. Unde hic rem reprehenderit ex fuga deserunt consequuntur qui facilis asperiores porro. 
+			</div>
+		</div>
+		
+	</body>
+</html>

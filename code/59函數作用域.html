@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			
+			
+			
+			/*var a=10;//全局變量
+			function fun(){
+				
+				var b=20;//函數變量
+				console.log("a="+a);//在函數作用域中會先找函數中有無定義a變量,若無則往外找可以訪問到全局變量
+			}
+			fun();
+			console.log("b="+b);//在全局作用域中無法訪問到局部變量,會先在全局作用域中找是否有b變量,若無則再往外找,仍無則報錯,不會往內找*/
+			/*var a=33;
+			function fun2(){
+				console.log(a);//函數作用域中變量聲明提前,所以a為undefined
+				var a=10; 
+				console.log(a);//函數本身無a,則往外找,所以=33
+				a=10;//未加var 的a會變成全局變量,如同window.a一樣,所以全局變量的a會賦值10
+				fun3();//函數聲明提前
+				
+				function fun3() {
+					console.log("我是fun3函數")	
+				}
+				
+			}
+			fun2();
+			console.log(a);
+			*/
+			/*var b=23;
+			function fun4(b){
+				alert(b);//有形參的未賦值,定義形參就相當於聲明(var)一個變量但未賦值
+			}
+			fun4();//undefined
+			*/
+			
+			
+			var d = 123;
+			function fun5(d){
+				alert(d);
+				d = 456;
+			}
+			fun5(123);
+			alert(d);
+			
+			
+		</script>
+		
+		
+		
+	</head>
+	<body>
+	</body>
+</html>

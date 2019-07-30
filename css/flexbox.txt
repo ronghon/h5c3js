@@ -1,0 +1,102 @@
+flexbox彈性布局(基本要領:align部份是指交錯軸的屬性,項目永遠排列在主軸的正方向上)
+	1.基礎點:
+		-什麼是容器?項目?主軸?交錯軸?
+		-項目永遠排列在主軸的正方向上
+		-flex分新舊兩個版本
+			-webkit-box
+			-webkit-flex / flex
+	2.注意點:
+		-新版本flex較舊版本box強化很多,但移動端開發者仍必須要關注舊版本box,因為很多移動端設備內核低只支持舊版本box
+		-舊版本box通過2個屬性4個屬性值控制主軸的位置和方向
+		 新版本flex過過1個屬性4個屬性值控制主軸的位置和方冋
+	3.舊版本-webkit-box
+		-容器 
+		  a.容器的布局方向: -webkit-box-orient:horizontal/vertical
+				(控制主軸是那一根)
+				 horizontal: x軸
+			 	 vertical  : y軸
+			b.容器的排列方向: -webkit-box-direction:normal/reverse
+				(控制主軸方向)
+				normal:從左至右(正方向)
+				reverse:從右至左(反方向)
+			c.富裕空間管理-只決定富裕空間位置,不會給項目區分分配空間
+				主軸:-webkit-box-pack
+						主軸是x軸
+								start:在右邊
+								  end:在左邊
+							 center:在兩邊
+						  justify:在項目之間
+						主軸是y軸
+								start:在下面
+								  end:在上面
+							 center:在兩邊
+							justify:在項目之間
+				交錯軸:-webkit-box-align
+					交錯軸是x軸
+							start:在右邊
+							  end:在左邊
+						 center:在兩邊
+					交錯軸是y軸
+							start:
+							  end:
+						 center:在兩邊
+	4.新版本flex
+			-容器
+				容器的布局方向
+				容器的排列方向:flex-direction
+						(控制主軸是那一根,控制主軸的方向)
+						row:        	 由左至右的x軸
+						row-reverse:	 由右至左的x軸
+						column				 由上至下的y軸
+						column-reverse:由下至上的y軸
+		富裕空間管理-只決定富裕空間位置,不會給項目區分分配空間
+				主軸:justify-content
+						flex-start:在主軸的正方向
+							flex-end:在主軸的反方向
+							  center:在兩邊
+				 space-between:在項目之間
+				  space-around:在項目兩邊
+
+				交錯軸:align-items
+					  flex-start:在交錯軸的正方向
+					  	flex-end:在交錯軸的反方向
+							  center:在兩邊
+				 			baseline:基線對齊
+							 stretch:等高布局(延申擴張,項目未設置高度)
+				
+彈性空間管理:將主軸上的富裕空間按比例分配到項目的寛度上
+
+一、(父)容器屬性:
+    1.display:flex; inline-flex;
+    2.flex-direction:決定主軸那一條與子元素排列方向(預設:row) row:x軸為主軸		column:y軸為主軸
+      - row列,由左至右數,start在左|row-reverse順序反轉且靠右,由右至左數,start在右
+      - column欄,由上至下數,start在上|column-reverse順序反轉且靠下,由下往上數,start在下
+    3.flex-wrap:子元素換行方式(預設:nowrap)用來控制交錯軸與方向
+      nowrap不換行|wrap換行|wrap-reverse
+      ***flex-flow: row nowrap;  是上面兩個屬性的縮寫方式
+    4.justify-content(主軸對齊):用來設置子元素在主軸上的對齊方式,會隨著flex-direction改變start位置
+    	flex-start|flex-end|center置中|space-between兩端對齊|space-around平均分配對齊
+		5.align-items(交錯軸對齊):用來設置子元素在交錯軸上的對齊方式-會隨著flex-direction改變start位置,僅針對單行子元素
+    	flex-start|flex-end|center置中|stretch預設值,子元素設置高度時無作用,子元素未設置高度時則依父元素內容自動撐開高度
+    		|baseline以子元素之文本內容(文字或圖片)作為基準對齊
+    6.align-content:針對多行子元素設定,與flex-wrap配合使用,當多行多列時,富裕空間管理.會把所有行、列看成一個整體
+      flex-start|flex-end|center置中|space-between兩端對齊|space-around平均分配對齊|stretch將flex項目撐開至容器的高度
+  二、(子)元素屬性:
+    1.flex:下列三個屬性的簡寫(預設grow|shrink|basis三個屬性 0 1 auto)(auto:1 1 auto)(none: 0 0 auto)功能:用來設置當前伸縮
+		       子元素佔據剩餘空間的比例值,如在子元素設置flex:1及flex:4,代表以1:4代例來分配空間,設置為1,表示每個子元素均分剩餘空間
+      a.flex-grow(擴展比,預設值為 0):前提:當子元素的flex-basis長度小於它自己在父元素分配到的長度，按照數字做相對應的比例值來分
+				配剩餘空間,功能:可用來擴展子元素的寛度，設置當前元素應該佔據剩空間的比例值
+				 	比例值計算:當前空間的flex-grow/所有兄弟元素的flex-grow總和
+				 	剩餘空間=(容器大小-所有相鄰項目flex-basis的總和)
+				 	可擴展空間=(剩餘空間/所有相鄰項目flex-grow總和)
+				 	每項擴展大小=(伸縮基準值flex-basis + (可擴展空間 * flex-grow值))
+      b.flex-shrink(收縮比,預設值為1),前提:flex-wrap:nowrap;當子元素的flex-basis長度大於它自己在父元素分配到的長度，按照數字
+			  做相對應的壓縮比例分配,設為0的話不會進行彈性變化(均設為0時會有溢出問題)，不可為負值,功能:通過設置的值來計算子元素的收縮空間。
+				比例值計算:當前空間的flex-shrink/所有兄弟元素的flex-shrink總和
+      C.flex-basis 基本比,項目的基本大小，作為父元素的大小比較基準，預設值為0時，會以直接採用flex-grow屬性，如果設為auto，就表
+			  示子元素以自己的基本大小為單位。
+    2.order(預設0)用來決定項目位置越大越後面由左至右0,1,2,3,4,5,.....
+    3.align-self(預設auto會依父元素的align-item值設置,如無父元素則設置為stretch)是針對個別項目設定
+      auto|flex-start|flex-end|center|stretch|baseline
+
+  應用：RWD網頁|rwd image

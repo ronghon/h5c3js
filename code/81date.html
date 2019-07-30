@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			var d = new Date();//使用構造函數創建一個Date對象,表示當前封裝代碼的時間
+			// console.log(d)
+			
+			//創建一個指定時間的對象,需在構造函數中傳遞一個表示時間的字符串作為參數,日期格式:月/日/年 時:分:秒
+			var d2=new Date("07/20/2019 22:00:10");
+			// console.log(d2);
+			
+			//getDate()方法:獲取當前日期對象是幾日
+			var date=d2.getDate();
+			// console.log(date);//22
+			
+			//getDay()獲取當前日期對象是星期幾(會返回0-6,0表示週日)
+			
+			var day=d2.getDay();
+			// console.log(day);//7/20-->星期六  6
+			
+			//getMonth()獲取當前日期對象的月份,會返回0-11值,0表1月,1表2月...所以要記得加1
+			
+			var month=d2.getMonth()+1;//記得加1
+			// console.log(month);
+			
+			//getFullyear()獲取當前日期對象的年份
+			var year=d2.getFullYear();
+			// console.log(year);//2019
+			
+			//getTime()獲取當前日期對象的時間戳,時間戳指的是從格林威治標準時間的1970年1月0時00秒
+			//到當前日期所花費的毫秒數(1秒=1000毫秒),在計算機底層保存時間時都是使用時間戳
+			var time=d2.getTime();
+			// console.log(time);
+			
+			//獲取當前的時間戳,可利用時間戳來測試代碼執行的性能
+			time=Date.now();
+			// console.log(time);
+			
+			var	start=Date.now();
+			for(var i=0;i<100;i++){
+				console.log(i);
+			}
+			
+			var end=Date.now();
+			
+	console.log(end-start);	//檢查 for 循環獲取1-100執行時間	
+	
+			
+			
+			
+		</script>
+
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    var sum = 0;//定義總和變量之初始值
+    var count = 0;//定義一個計數器變量之初始值
+    for (var i = 1; i <= 100; i++) {
+      // console.log(i);先獲取1-100之數
+      if (i % 7 == 0) {
+        // console.log(i);//再獲取7的偣數
+        sum = sum + i;//定義一個變量與和7的倍數之和
+        count++;//計數器自增
+      }
+    }
+    console.log(sum);//七的倍數和
+    console.log(count);//七的倍數個數
+
+  </script>
+</head>
+
+<body>
+
+
+</body>
+
+</html>

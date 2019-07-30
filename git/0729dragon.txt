@@ -1,0 +1,74 @@
+git優勢:分散式管理
+  1.大部份操作在本地端完成,不需要連結網路
+  2.完整性保證
+  3.儘可能添加數據而不是刪除或修改數據
+  4.分支操作非常快捷流暢
+  5.與linux命令全面兼容
+
+架構:
+  工作區-->暫存區-->本地庫-->github代碼托管中心:負責維護遠端庫
+  code(add)->commit(提交)->push(團隊權限)  
+                     pull<-
+本地庫與遠端庫操作形式
+  1.團隊內部協作
+  2.跨團隊協作
+
+本地庫初始化
+terminal終端機常用指令
+mkdir name  創建name目錄夾
+pwd 顯示目前所在目錄
+ll 或ls 查詢目錄 -al含隠藏目錄及檔案
+touch 檔案名  建立一個空白檔案,如已存在時則僅會變修改時間,原內容不會變更
+mv 原檔名 新檔名 
+rm 檔名  or rm *.*刪除有檔案
+cp 原檔名  另一檔案名 copy原檔名到另一檔名
+
+git init 初始化倉庫
+git add  檔案名稱  將檔案增加至暫存區
+git rm --cached 檔案名稱  將檔案移回工作區track-->untracked
+git rm 檔名 刪除暫存區檔案名
+git mv 舊檔名 新檔名  為檔案重新命名
+git config user.name ronghon
+git config user.email ronghon1969@gmail
+git config --list 檢視目前環境設定狀況或者用下列兩個指令檢查設定檔
+  cat .git/config 用來查看存儲config的user--項目級別
+  cat ~/.gitconfig 用來查看存儲gitconfig中的user--系統用戶級別,通常設置此項即可,特殊用途才會用到項目級別設置
+git status 用來查詢現在這個目錄的「狀態」
+git log 查看紀錄
+git ls-files 查詢本地倉庫有多少檔案尚未上傳
+=================================================================================================
+M-->modify
+D-->delete
+A-->add
+U-->Untracked-->add-->暫存區-->commit-->本地庫-->push-->遠端庫-->pull下載本地庫
+
+
+高見龍
+-新增修改刪除檔案均可使用
+  git add . 只會對當下目錄及子目錄執行才會有效果
+  git add --all 不管在專案的那一層目錄執行都有效果
+-git 分散式版本控制軟體--
+  只在乎檔案內容,不在乎目錄或檔案名稱-->git其實只是個內容追蹤軟體
+-分支只是一個指向某個commit的指標,所謂的分支,其實就只是一個40個字元的檔案而已
+-HEAD只是指向某個分支的指標
+
+彭彭教學youtube108.07.29基礎==================================================================
+git init  初始化git repository git倉庫
+git status 觀察Repository檔案追蹤狀況
+git add 檔名或 git add . (或--all) -->將檔案加入追踨(index)清單中
+git commit -m "版本更新訊息"  建立一組版本更新
+git branch  查看分支(Branch)
+git log 查看紀錄
+
+GitHub雲端專案管理
+git remote -v 查詢遠端的Repository,如為空白代表尚未作任何連結
+git remote add  遠端空間的名稱 網址-->加入遠端的Repository,將本地端與遠端的空間作一連結
+git push 遠端空間的名稱 遠端空間的分支-->上傳到GitHub雲端專案空間
+
+下載GitHub雲端專案到本機
+git clone 遠端空間的網址 本機資料夾名稱 -->第一次下載GitHub雲端專案
+git pull 遠端空間的名稱 遠端空間的分支-->從GitHub雲端專案下載合併更新
+
+開發者協作的基本流程
+code devol1 git pull-->coding-->end-->git add.->git commit-->git push-->code devol2 git pull-->coding...
+

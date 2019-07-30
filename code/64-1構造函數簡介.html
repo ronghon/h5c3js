@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+
+    //創建一個構造函數
+    function Person(name, sex, pro) {
+      // alert(this);//this就是新的對象obj
+      this.name = name;//向obj添加hello屬性
+      this.sex = sex;
+      this.pro = pro;
+    }
+    var obj = new Person("aa", 12, "dd");//調用函數時立刻創建一個新的對象obj,不用return返回值
+    // console.log(obj);//Person{}函數
+    // console.log(obj.name);//name屬性值hello
+    // console.log(obj instanceof Person); //true 使用instanceof檢查obj是否是Person類的實例
+    console.log(obj instanceof Object);//true 使用instanceof檢查obj是否是Object類的實例
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

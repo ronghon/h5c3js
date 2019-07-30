@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>arguments</title>
+		<script type="text/javascript">
+			function fun() {
+				// console.log(arguments);//arguments
+				// console.log(arguments instanceof Array);//檢查arguments是否是數組-->false
+				// console.log(Array.isArray(arguments));//檢查arguments是否是數組-->false
+				// console.log(arguments.length); //獲取實參長度(個數)
+				// console.log(arguments[1]); //獲取第一個實參的值
+				// console.log(arguments.callee); //獲取第一個實參的值
+				console.log(arguments.callee==fun); //檢查arguments.callee是否等於fun函數-->true
+				
+			}
+			fun("hello", true, 2, 3, 4);
+		</script>
+
+	</head>
+
+	<body>
+	</body>
+
+</html>

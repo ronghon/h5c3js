@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			//創建一個對象
+			var obj = new Object();
+			//向對象添加屬性
+			obj.name = "孫悟空";
+			obj.age = 18;
+			obj.sex="男";
+
+			//對象的屬性值可以是任何的數據類型.包括函數
+			obj.sayName = function() {
+				console.log(obj.name);
+			};
+
+			function fun() {
+				console.log(obj.sex);
+			};
+			// console.log(obj.sayName);
+			//調用sayName函數-->調obj的sayName方法
+			// obj.sayName();
+			//調函數
+			// fun();
+
+			//上述兩種執行方式没有本質上的差別,答案一樣
+
+			//函數也可以成為對象的屬性
+
+			//創建一個對象字面量
+			 var obj2 = {
+				name: "豬八戒",
+				age: 18,
+				sayName : function() {
+					console.log(obj2.name);
+				}
+			};
+			obj2.sayName();
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

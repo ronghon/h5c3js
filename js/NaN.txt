@@ -1,0 +1,5 @@
+任何數值．字串 % 0 ==>NaN
+字串 / 0 ==>NaN
+NaN / NaN =>NaN
+infinity %　數值　=>NaN
+infinity % infinity =>NaN

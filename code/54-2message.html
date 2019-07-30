@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script>
+		function message(o) {
+			console.log("我是" + o.name + ",今年我" + o.age + "歲了," + "我是一個" + o.gender + "人,家住在" + o.address);
+		}
+		// function message(name, age, gender, address) { 
+		//console.log("我是" + name + ",今年我" + age + "歲了," + "我是一個" + gender + "人,家住在" + address); 
+		//message("豬八戒",20,"男","花果山"); 
+		//創建一個對象 
+		//實參可以是任意的數據類型,也可以是一個對象,當參數過多時,可將參數封裝到一個對象中,再通過對象傳遞 
+		var obj = { //創建obj對象,有nane,age,gender,address四個屬性 
+			name: "豬八戒",
+			gender: "男",
+			address: "高老庄",
+			age: 18
+		}
+		message(obj); //把obj對象作為實參傳遞給形參o,訧如同obj.name,obj.age,obj.gender,obj.address四個屬性 
+	</script>
+</head>
+
+<body>
+</body>
+
+</html>

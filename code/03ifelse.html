@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #div1 {
+      width: 100px;
+      height: 200px;
+      border: 1px solid #ccc;
+      background: #eee;
+      display: none;
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <input type="button" value="顯示隠藏" onclick="ShowHidden()">
+  <div id="div1">
+  </div>
+  
+  
+  <script>
+    function ShowHidden() {
+      var Show1 = document.getElementById('div1')//定義變數Show1
+
+      if (Show1.style.display == 'block')//判斷左邊值是否等於block
+      {
+        Show1.style.display = 'none';//如果是block的話，就執行隠藏none
+      }
+      else {
+        Show1.style.display = 'block';//如果不是block的話，就執行顯示block
+      }
+    }
+  </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		//使用對象字面量創建一個對象,並添加3個屬性及1個方法
+		var obj = {
+			name: "孫悟空",
+			age: 18,
+			gender: "男",
+			sayName: function () {
+				alert(this.name);
+			}
+		};
+		// obj.sayName();//孫悟空
+
+
+		/*
+		使用工廠方法創建大批量的對象			
+		*/
+		function createPerson(mk1, mk2, mk3) {    //create()
+			// 1.創建一個新的對象
+			var obj = new Object();
+			//2.向對象中添加屬性
+			obj.name = mk1;
+			obj.age = mk2;
+			obj.gender = mk3;
+			obj.sayName = function () {
+				alert(this.gender);
+			};
+			// 3.將新的對象返回
+			return obj;
+		}
+
+		var obj2 = createPerson("王大同", 18, "男"); //obj2是一個新的對象
+		var obj3 = createPerson("李小美", 20, "女"); //obj3是一個新的對象
+		var obj4 = createPerson("張三", 50, "男"); //obj4是一個新的對象
+
+		/* console.log(obj2.name);
+		console.log(obj3.name);
+		console.log(obj4.name); */
+		// obj3.sayName();
+
+
+		function createDog(name, age) {
+			var obj = new Object();
+			obj.name = name;
+			obj.age = age;
+			obj.sayHello = function () {
+				alert("汪汪~~");
+			}
+
+			return obj;
+		};
+		var dog = createDog("旺財", 3);
+		dog.sayHello();
+
+console.log("11");
+	</script>
+
+</head>
+
+<body>
+</body>
+
+</html>

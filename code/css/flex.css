@@ -1,0 +1,63 @@
+body {
+  margin: 0px;
+}
+
+/* 容器nav */
+nav {
+  display: flex;
+}
+
+/* 項目logo 没有彈性,固定尺寸 */
+nav>.logo {
+  flex: none;
+  width: 100px;
+  background: red;
+}
+
+/* flex:auto會將容器自動佔滿整個空間且會隨空間大小自動調整 */
+nav>.menu {
+  flex: auto;
+  background: blue;
+}
+
+/* 項目user 没有彈性,固定尺寸 */
+nav>.user {
+  flex: none;
+  width: 100px;
+  background: green;
+}
+
+main {
+  display: flex;
+  display-direction: column;
+  /* 設定水平對齊使用justify-content,預設值靠左對齊 */
+  /* justify-content: flex-start;   */
+  /* 靠右對齊 */
+  /* justify-content: flex-end;   */
+  /* 置中對齊 */
+
+  justify-content: center;
+  /*設定容器中項目之垂直對齊使用align-items,預設值stretch延展 */
+  align-items: stretch;
+  /* 垂直對齊靠中 */
+  /* align-items: center; */
+  /* 垂直對齊靠上 */
+  /* align-items: flex-start; */
+  /* 垂直對齊靠下 */
+  /* align-items: flex-end; */
+
+
+  background: #ccc;
+}
+
+main>.item {
+  /* 代表項目的處理方式:固定尺寸,無彈性*/
+  flex: none;
+  width: 300px;
+  margin: 10px;
+  background: #fcc;
+}
+
+.logo {
+  background: #eee;
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.box1{
+				border: 1px solid red;
+			}
+			.box2{
+				width: 200px;
+				height: 200px;
+				background: blue;
+				 float:left; 
+			}
+			.clear{
+				clear:both;  //用來清除box2浮動對它所產生的影響,同時解決父元素因子元素浮動而造成父元素高度塌陷的問題
+			}
+			
+		</style>
+		
+		
+	</head>
+	<body>
+		<div class="box1">
+			<div class="box2"></div>
+			<div class="clear"></div>
+		</div>
+	</body>
+</html>

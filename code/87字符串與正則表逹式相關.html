@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    var str = "1a2b3c4d5e6f7";
+                       var result = str.split(/[A-z]/); //傳遞一個正則表逹式作為參數,則可根據正則表逹式拆分字符串
+    // console.log(result);
+    str = "hello hello aec afc";
+    result = str.search(/a[bef]c/);
+    // console.log(result);
+    str = "1a2b3c4d5e6f7";
+    // result = str.match(/[a-z]/ig);
+    // console.log(result);
+    // console.log(typeof result);//object
+    // console.log(Array.isArray(result)); //檢查result是否是一個數組-->true
+    // console.log(result[1]); //b
+
+    /* result = str.replace("a","@_ @");//只替換第一個
+    console.log(result); */
+    // result = str.replace(/[a-z]/ig, "@_ @"); //只替換第一個
+    // console.log(result); //使用正則表逹式替換所有字母
+
+    result = str.replace(/[a-z]/ig, ""); //使用""替換字母
+    console.log(result); //1234567
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

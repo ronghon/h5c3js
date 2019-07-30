@@ -1,0 +1,163 @@
+======fr簡介=====(資料來源:程式學徒專欄)
+	1.fr(fraction):代表對剩餘空間進行等分,它會先將己固定的數減去,再用剩餘的可用空間依設定比例均分。
+	2.使用fr和百分比最大差異:百分比用的是整个屏幕的宽度,而fr用的是剩餘的寛度,較能保證不會超出屏幕寛度。
+
+grid:網格系統有點像table或畫布--解決垂直置中、靈活度高
+	外部容器:(container)
+		1.display:grid/inline-grid;
+		2.grid-template-rows:(列)定義列數及列高		grid-template-coloumns:(欄)定義欄數及欄寛
+			a.屬性:
+		 	  軌道大小(track-size):可指定固定寛、高、百分比、份數或auto,也可使用簡寫方式repeat(次數,格線1 格線2 格線3...格線n)
+			  網格線名稱(line-name):[line1] 300px [line2] 10% [line3] auto [line4] 1fr [line5];
+				(grid-line可取多個名字代表)-->方便更清楚定義網格區域grid-areas
+			b.欄寛和列高設置方式:
+				1.固定大小 ex:200px
+				2.使用百分比:10%-->容器如有設固定寛高則為固定寛高*10%,列高如未設,則為文本內容高度(與auto同)
+				3.使用fr:聲明剩餘空間分配比例
+				4.設置auto時預設為0,如有fr單位自動分配剩餘空間時,auto會依文本內容自適應寛高,如無fr,則auto功能會與fr類似	
+				5.使用repeat(n,size)ex:repeat(3,1fr) repeat(4,300px) repeat(3,1fr 2fr) repeat(3,300px auto)...;
+				6.使用minmax(最小值,最大值);
+				7.使用span 3表示跨3欄
+				8.使用網格線1/4 1表start line  4表end line或指定開始/結束網格線名
+			c.rows應注意擴展性,如未設置列高時會以auto依文本內容自適應分配列高(隠式)
+		3.grid-template-areas:表示整體空間的配置,定義區域在template上的位置,與grid-area空間名稱搭配使用	注意:空間不能分離且是唯一的
+			"header header header"
+			"nav nav nav"
+			"side content content"
+			"footer footer footer"
+			。表示空網格單元格
+			none - 沒有定義網格區域
+			
+		簡寫grid-template: none| <grid-template-rows> / <grid-template-columns>;
+		簡寫grid:<grid-template-rows> / [auto-flow && dense?] <grid-auto-columns>?
+		     [auto-flow && dense?]<grid-auto-rows>?/ <grid-template-columns> 
+			
+		4.grid-area定義空間的名稱  
+		
+		5.grid-auto-columns, grid-auto-rows:指定任何自動生成的網格軌道（也稱為隱式網格軌道）的大小。
+		  當網格項目多於網格中的單元格或網格項目放置在顯式網格之外時，將創建隱式軌道。	
+			
+		6.grid-auto-flow: row(default) | column | row dense | column dense 密集只會更改項目的可視順序，並可能導致它們出現亂序，這對可訪問性不利。
+			如果您沒有明確放置在網格上的網格項，則自動放置算法會自動放置項目。此屬性控制自動放置算法的工作方式。
+			
+		7.grid-column-gap, grid-row-gap 格線的間隔包含垂直及水平(上下,左右),不包含外邊緣
+			簡寫:grid-gap:<grid-row-gap> <grid-column-gap>  grid將被省略 chrome68+ opera54+以上支援
+			
+		8.justify-items:start | end | center | stretch;  水平對齊
+		9.align-items: start | end | center | stretch;   垂直對齊
+	          簡寫place-items: <align-items> / <justify-items>  edge不支援
+		
+	 10.justify-content: start | end | center | stretch | space-around | space-between | space-evenly;水平對齊
+	 11.align-content: start | end | center | stretch | space-around | space-between | space-evenly;垂直對齊
+			簡寫place-content: <align-content> / <justify-content>
+		
+	內部容器(item)
+		1.grid-column-start: <number> | <name> | span <number> | span <name> | auto
+			grid-column-end: <number> | <name> | span <number> | span <name> | auto
+			grid-row-start: <number> | <name> | span <number> | span <name> | auto
+			grid-row-end: <number> | <name> | span <number> | span <name> | auto
+		2.grid-column, grid-row簡寫方式 使用斜線 (/) 隔開屬性 ex:grid-row: 1/-1;第1條到最後1條線 
+		3.grid-area:<name>|<row-start> / <column-start> / <row-end> / <column-end>:為網格項目指定名稱，以便grid-template-areas屬性創建模板時引用該項目名稱
+		4.justify-self: start | end | center | stretch(default);個別項目水平對齊
+		5.align-self: start | end | center | stretch(default);個別項目垂直對齊
+			簡寫place-self: auto |<align-self> / <justify-self>
+			
+==慕課網108.7.21===
+**第一章**
+	1.布局發展過程 table-->float(解決水平對齊)-->position(定位)-->inline-->無法解決高度height垂直對齊
+   　　-->flexbox(一維)-->grid(二維)
+	2.grid布局優勢:
+		a.具固定或彈性的軌道尺寸
+		b.可針對項目執行定位
+		c.可創建額外的軌道來保存內容
+		d.對齊控制
+		e.控制重疊內容(Z-index)
+	3.flexbox與grid能配合使用,在flexbox基礎上增加一個維度,是升級非取代。
+	4.瀏覽器兼容問題caniuse查詢IE11以上
+	5.掌握grid網格布局的功能特點
+**第二章重要術語**
+	Grid Container網格容器,它是所有網格項目的父元素display: grid;
+	Grid Item網格項目,它是網格容器的子元素
+	Grid Line網格線,組成網格項的分界線,與網格項無直接的關聯,在網頁中找不到這些線
+    Grid Track網格軌道,兩個相鄰的網格線之間為網格軌道,特點:一定會頂到容器邉緣,
+    Grid Cell網格單元,兩個相鄰的列網格線和兩個相鄰的行網格線組成的是網格單元,與網格項完全不同的概念
+    Grid Area網格區域,四個網格線包圍的總空間
+  	單位fr:剩餘空間分配數,用於在一系列長度值中分配剩餘空間,如多個己指定了多個部份,則剩下的空間根據各自的數字按比例分配
+  	*單位gr:網格數,目前尚未獲得w3c採納公開使用,未來是否應用待觀察
+**第三章容器屬性**
+ 	1.display:grid | inline-grid  當元素設置了網格布局,column float clear vertical-align屬性將無效
+ 		-grid生成塊級網格  -inline-grid生成行內網格
+ 	2.grid-template:(簡寫模式) none | grid-template-rows / grid-template-columns  none初始值 
+		 a.grid-template-rows
+		 b.grid-template-coloumns
+		 c.grid-template-areas:通過引用grid-area屬性指定的網格區域名稱來定網格模板,注意:相同名稱必須相鄰,不可跳格設定
+		    none -->没有定義網格區域      "."-->一個空網格單元
+		   "grid-template-name name name... "
+		   "grid-template-name name name... "
+		   "grid-template-name name name... "
+
+ 	3.gap:間距,指定網格線的大小,行/列之間的間距寛度,網格軌道的間距,不包括與邊框之間的間距
+ 		(簡寫grid-gap)兩值-->row column, 單值-->列與欄均設相同值
+ 		a.grid-column-gap
+ 		b.grid-row-gap
+ 	
+	4.items:各別項目的對齊
+	  a.justify-items:(水平對齊)網格項目對齊網格線的方式,沿著column對齊網格內的內容
+	    start對區域內容靠左 | end靠右 |center | stretch(預設)
+	  b.align-items(垂直對齊)沿著row對齊網格內的內容
+	  	start對區域內容靠上 | end靠下 |center | stretch(預設)
+	  c.place-items:(簡寫)垂直  水平  start start 表示垂直方向靠上,水平方向靠左 , center表示垂直與水平方向均居中
+	    start | end |center | stretch(預設)
+	5.content:整體內容的對齊,相對於整體網格容器而言
+	  a.justify-content:與flexbox類似(水平對齊)
+	  	增加space-evenly:每個grid-item間設置均等寛度的空白間隙,包括與外邊框之間
+	  b.align-content(垂直對齊)
+	  c.place-content(簡寫)垂直  水平  start start 表示整體垂直靠上,水平靠左 , center表示垂直與水平方向均居中
+	6.grid-auto(隠式網格):用來指定自動生成的網格軌道(隐式網格軌道)大小
+		**隠式網格軌道在顯式的定位超出指定網格範圍的行或列時被創建
+		grid-auto-columns
+		grid-auto-rows
+		grid-auto-flow:控制自動布局算法的工作方式
+		  row | column |row dense |column dense
+		  row:告訴自動布局算法依次填充每列,根據需要添加新行
+		  column:告訴自動布局算法依次填充每欄,根據需要添加新欄
+		  dense:告訴自動布局算法,如後面出現較小的網格項目時,則嘗試在網格中填充空洞,使用時注意容易造成錯位
+	7.grid簡寫形式
+	 grid:none|grid-template-rows/grid-template-columns|grid-auto-flow[grid-auto-rows/grid-suto-columns];
+	  none:將所有子元素屬性設置初始值(恢復block.inline)
+**第四章css函數**
+	1.repeat(a,b)重復:只能使用在顯式網格中的grid-templat-columns和rows中,其他隠式網格的grid-auto-columns和rows不可使用
+	  a可以是下列值
+	    <number>:整數,確切的重覆次數
+	    <auto-fill>:以網格項為準自動填滿
+	    <auto-fit>:以網格容器為準自動填滿 
+	    <min-content>:表示網格軌道長度自適應內容最小的那個單位格
+	    <max-content>:表示網格軌道長度自適應內容最大的那個單位格
+	    <auto>
+	  b表示重復的內容,可以單值或多值ex:1fr,300px,auto或1fr 2fr
+	2.fit-content()
+	3.minmax()
+		<length>:非負值長度
+		<%>:相對於欄軌道中網格容器的內聯大小的非負百分比,及列軌道中網格容器的塊長寛
+		<flex>:單位為fr的非負維度,指定軌道彈性布局的係數值
+**第五章網格項屬性質**
+	1.start/end:透過網格線來規範網格項區域範圍
+		grid-column-start:<number>|name(網格線名)|span <number>|span <name>|auto
+		grid-column-end:同上  (span跨越)
+		grid-row-start:同上
+		grid-row-end:同上
+		-如未設置end時,默認網格項只會跨越一個軌道
+		-網格項可相互重疊,可使用z-index控制堆疊順序,數值越大,越上層可見
+		-簡寫形式	grid-column, grid-row簡寫方式 使用斜線 (/) 隔開屬性 ex:grid-row: 1/-1;第1條到最後1條線 
+			grid-column:1/4; 1/span 3;
+			grid-row:2/3; 2/span 1;
+	2.grid-area網格區域
+		a.<name>為網格項命名,以便grid-template-areas創建模板時進行引用
+		b.<row-start>/<column-start>/<row-end>/<column-end>注意順序,可以是數字或網格線名,
+		      是grid-column和grid-row的簡寫
+	3.self:個別網格項的對齊方式
+		a.justify-self(水平對齊)
+		  start | end | center | stretch(default);個別項目水平對齊
+		b.align-self(垂直對齊)
+		  start | end | center | stretch(default);個別項目水平對齊  
+	

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.box1{
+				border: 1px solid red;
+			}
+			.box2{
+				width: 200px;
+				height: 200px;
+				background: blue;
+				 float:left; 
+			}
+			.clearfix:after{
+				/* 添加一個空白的內容 */
+				content: "";
+				/* 轉換為塊級元素 */
+				display: block;
+				/* 清除兩側浮動 */
+				clear: both;
+			}
+			
+			/* IE6不支持after偽類,所以在IE6中還需使用hasLayout來處理 */
+			.clearfix{
+				zoom:1;
+			}
+			
+			
+		</style>
+		
+		
+	</head>
+	<body>
+		<div class="box1 clearfix">
+			<div class="box2"></div>
+		</div>
+	</body>
+</html>

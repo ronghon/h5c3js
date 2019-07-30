@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    /* function Person(name, age, sex) {
+      this.name = name;
+      this.age = age;
+      this.sex = sex; */
+
+      /*在構造函數中為每個對象添加fun方法,構造函數每執行乙次就會創建一個新的fun方法
+        也就是所有實例的fun方法是唯一且獨立的,但這些方法其實都是一模一樣的,因此需將它轉化為所有對象共享的方法
+        將函數定義在全局作用域中,並將函數名賦予給fun  
+       */
+      this.fun = met; //將函數定義在全局作用域中, 並將函數名賦予給fun
+    
+    function met() {  //將函數定義在全局作用域中,並將函數名賦予給fun
+      alert("hello!!大家好,我是:" + this.name + ",我今年" + this.age + "歲了");
+    }
+    var per1 = new Person("張三", 20, "女");
+    var per2 = new Person("李四", 30, "男");
+    var per3 = new Person("王五", 40, "男");
+    // per1.fun();
+    // per2.fun();
+    // 比較兩個實例的fun方法是否是唯一且獨立的
+    // console.log(per1.fun == per2.fun); //false
+    console.log(per1.fun == per2.fun); //true  將函數定義在全局作用域中,並將函數名賦予給fun後比較兩個實例結果為true
+
+
+  </script>
+
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+</head>
+
+<body>
+  <input type="button" id="btn" value="顯示/隠藏" /><br />
+  <img id="dog" src="../img/dog.jfif" alt="">
+  <script>
+    var oBtn = document.getElementById('btn');
+    var oImg = document.getElementById('dog');
+    var isShow = true;
+    oBtn.onclick = function () {
+      // 切換狀態
+      if (isShow) {
+        isShow = false;
+      } else {
+        isShow = true;
+      }
+      //根據狀態調整頁面顯示/隠藏
+      if (isShow) {
+        oImg.style.display = 'block';
+      } else {
+        oImg.style.display = 'none';
+      }
+      // 簡寫方式
+      //       isShow = !isShow;
+      //       oImg.style.display =isShow ? 'block' : 'none';
+    }
+  </script>
+</body>
+
+</html>

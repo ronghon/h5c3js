@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1 {
+            width: 200px;
+            height: 100px;
+            border: 2px solid red;
+            background: #ccc;
+            display: none;
+        }
+    
+    </style>
+</head>
+<body>
+    <input type="checkbox" onmouseover="onMouse()" onmouseout="outMouse()">
+    <div id="div1">
+        為了您的安全...
+    </div>
+    
+
+<script>
+function onMouse()
+{
+    var onM=document.getElementById('div1');
+    onM.style.display='block';
+}
+
+function  outMouse()
+{
+    var onM=document.getElementById('div1');//document 小寫d才對
+    onM.style.display='none';  
+       
+}
+</script>
+
+</body>
+</html>

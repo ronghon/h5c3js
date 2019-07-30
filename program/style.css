@@ -1,0 +1,67 @@
+#container {
+  /* height: 1000px; */
+  color: white;
+  display: grid;
+  grid-template-columns: 200px 400px 1fr 2fr auto;
+  grid-template-rows: repeat(2, 200px);
+}
+
+#item1 {
+  background: #1e1e8a;
+}
+
+#item2 {
+  background: green;
+}
+
+#item3 {
+  background: gray;
+}
+
+#item4 {
+  background: red;
+}
+
+#item5 {
+  background: yellow;
+}
+
+#item6 {
+  background: purple;
+}
+
+#item7 {
+  background: black;
+}
+
+#item8 {
+  background: pink;
+}
+
+#item9 {
+  background: orange;
+}
+
+#item10 {
+  background: #1bb190;
+}
+
+#item11 {
+  background: #b12222;
+}
+
+#item12 {
+  background: #ce44bb;
+}
+
+#item13 {
+  background: #2955a7;
+}
+
+#item14 {
+  background: #6ac753;
+}
+
+#item15 {
+  background: #beaa85;
+}

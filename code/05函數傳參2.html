@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #div1 {
+			width: 200px;
+      height: 200px;
+      background: grey;
+			
+			}
+  </style>
+
+</head>
+
+<body>
+	<input type="button" value="變寬" onclick="setStyle('width','400px')">
+  <input type="button" value="變高" onclick="setStyle('height','400px')">
+  <input type="button" value="變綠" onclick="setStyle('background','green')">
+
+  <div id="div1">
+  </div>
+  <script>
+    function setStyle(stylename, getvalue) {
+      oDiv = document.getElementById('div1');
+      oDiv.style[stylename] = getvalue; //第二種操作屬性的方法用[],相當於'.'
+    }
+    /*function toWidth()
+        {
+          oDiv=document.getElementById('div1');
+          oDiv.style.width="400px";
+        }
+
+        function toHeight()
+        {
+          oDiv=document.getElementById('div1');
+          oDiv.style.height="400px";
+        }
+
+        function toGreen()
+        {
+          oDiv=document.getElementById('div1');
+          oDiv.style.background='green';
+        }*/
+  </script>
+
+</body>
+
+</html>

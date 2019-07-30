@@ -1,0 +1,29 @@
+body{
+  margin: 0px;
+}
+
+main{
+  display: flex;
+  /* 換行 */
+  flex-wrap: wrap;
+  justify-content: center;
+    background: #ccc;
+}
+
+main>.item{
+  /* 代表項目的處理方式:固定尺寸,無彈性*/
+  flex: none;
+  width: 290px;
+  margin: 10px;
+  background: #fcc;
+}
+@media (max-width:1200px){
+  main>.item{
+    width:45%;
+  }
+}
+@media (max-width:500px){
+  main>.item{
+    width:90%;
+  }
+}

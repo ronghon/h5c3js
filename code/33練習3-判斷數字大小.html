@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    var num1 = +prompt("請輸入第一個數字:");//"+"轉換prompt()函數類型為Number
+    var num2 = +prompt("請輸入第二個數字:");
+    var num3 = +prompt("請輸入第三個數字:");
+
+    // alert(typeof num1)//prompt()函數的返回值是string類型
+    if (num1 < num2 && num1 < num3) {
+      //num1是最小值＂
+      if (num2 < num3) {
+        //num3是最大值
+        alert(num1 +"," +num2 +","+num3);
+      }
+      else {
+        //num2是最大值
+        alert(num1 +"," +num3 +","+num2);
+      }
+    }
+    else if (num2 < num1 && num2 < num3) {
+      //num2是最小值
+      if (num1 < num3) {
+        //num3是最大值
+        alert(num2 +"," +num1 +","+num3);
+      }
+      else {
+        //num1是最大值
+        alert(num2 +"," +num3 +" ,"+num1);
+      }
+    }
+    else {
+      //num3是最小值
+      if (num1 < num2) {
+        //num1是最大值
+        alert(num3 + "," +num1 + "," +num2);
+      }
+      else {
+        //num2是最大值
+        alert(num3 + "," +num2 + "," +num1);
+      }
+    }
+
+
+  </script>
+</body>
+
+</html>

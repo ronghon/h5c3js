@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>判斷質數之和</title>
+  <script>
+    var num = prompt("請輸入一個大於1的整數:")
+    if (num <= 1) {
+      alert("該值不合法!");
+    }
+    else {
+      var flag = true;//默認flag的初始值為true(即默認flag預設值為質數)
+
+      for (var i = 2; i < num; i++) {
+        // console.log(i);//獲取2-num的值
+        if (num % i == 0) {//如果num能被i整除,則num一定非質數
+          // alert(num + "不是質數");
+          flag = false;//當num為非質數時,賦予flag值為false
+        }
+
+      }
+
+      if (flag == true) {  //判斷flag值如為true的話則代表num為質數
+        alert(num + "是質數!!");
+      }
+      else {
+        alert(num + "不是質數!!");
+      }
+
+
+    }
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
