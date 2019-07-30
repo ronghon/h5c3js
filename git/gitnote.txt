@@ -13,7 +13,6 @@ git優勢:分散式管理
   1.團隊內部協作
   2.跨團隊協作
 
-本地庫初始化
 terminal終端機常用指令
 mkdir name  創建name目錄夾
 pwd 顯示目前所在目錄
@@ -23,19 +22,24 @@ mv 原檔名 新檔名
 rm 檔名  or rm *.*刪除有檔案
 cp 原檔名  另一檔案名 copy原檔名到另一檔名
 
+
+本地庫初始化
+git --version 查看版本
 git init 初始化倉庫
 git add  檔案名稱  將檔案增加至暫存區
-git rm --cached 檔案名稱  將檔案移回工作區track-->untracked
-git rm 檔名 刪除暫存區檔案名
-git mv 舊檔名 新檔名  為檔案重新命名
-git config user.name ronghon
+git config user.name ronghon  可加入--global參數代表系統用戶級(全局)
 git config user.email ronghon1969@gmail
 git config --list 檢視目前環境設定狀況或者用下列兩個指令檢查設定檔
   cat .git/config 用來查看存儲config的user--項目級別
   cat ~/.gitconfig 用來查看存儲gitconfig中的user--系統用戶級別,通常設置此項即可,特殊用途才會用到項目級別設置
+  cat .git/COMMIT_EDITMSG 查看上一次commit資訊
+git rm 檔名 刪除暫存區檔案名
+git mv 舊檔名 新檔名  為檔案重新命名
+git rm --cached 檔案名稱  將檔案移回工作區track-->untracked
 git status 用來查詢現在這個目錄的「狀態」
 git log 查看紀錄
 git ls-files 查詢本地倉庫有多少檔案尚未上傳
+
 =================================================================================================
 M-->modify
 D-->delete
