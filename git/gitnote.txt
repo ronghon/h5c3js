@@ -1,14 +1,15 @@
+版本控制git尚硅谷=====================================================================================
 git優勢:分散式管理
   1.大部份操作在本地端完成,不需要連結網路
-  2.完整性保證
-  3.儘可能添加數據而不是刪除或修改數據
-  4.分支操作非常快捷流暢
+  2.完整性保證-->hash演算法
+  3.儘可能添加內容而不是刪除或修改內容
+  4.分支操作非常快捷流暢-->快照處理
   5.與linux命令全面兼容
 
 架構:
-  工作區-->暫存區-->本地庫-->github代碼托管中心:負責維護遠端庫
-  code(add)->commit(提交)->push(團隊權限)  
-                     pull<-
+  工作區 add--> 暫存區 commit--> 本地庫 push--> github代碼托管中心:負責維護遠端庫
+                                      pull<-- 第一次clone<--
+
 本地庫與遠端庫操作形式
   1.團隊內部協作
   2.跨團隊協作
@@ -21,24 +22,46 @@ touch 檔案名  建立一個空白檔案,如已存在時則僅會變修改時�
 mv 原檔名 新檔名 
 rm 檔名  or rm *.*刪除有檔案
 cp 原檔名  另一檔案名 copy原檔名到另一檔名
+cat 檔名-->查看檔案內容
+clear 畫面清除
+
+-本地庫初始化
+  git --version 查看版本
+  git init 初始化倉庫,內含.git目錄,不要刪除,否則git無法正常運作。
+- 系統用戶級別:加入 --global  指登入作業系統的用戶,設置的user name和email與遠端庫的帳號密碼無關,僅作為區分文件作者
+- 項目級別:僅在當前本地庫(目錄夾)有效-->就近原則,優先使用項目級別的user name和email。
+  git config user.name ronghon  可加入--global參數代表系統用戶級(全局),
+  git config user.email ronghon1969@gmail
+  git config --list 檢視目前環境設定狀況或者用下列兩個指令檢查設定檔
+    cat .git/config 用來查看存儲config的user--項目級別
+    cat ~/.gitconfig 用來查看存儲gitconfig中的user--系統用戶級別,通常設置此項即可,特殊用途才會用到項目級別設置
+    cat .git/COMMIT_EDITMSG 查看上一次commit資訊
+  git status 查詢工作區、暫存區異動狀態
+  git add  檔案名稱  將工作區檔案增加至暫存區
+  git rm --cached 檔案名稱  將檔案從暫存區移回工作區track-->untracked
+  git commit -m "message"-->未加-m參數會進入vim編輯器i o a :qw ,將暫存區的檔案存放到本地庫
+
+  git log 查看完整紀錄
+    git log --pretty=oneline
+    git log --oneline(簡潔版)
+    git reflog:HEAD@{}移動HEAD從當前版本到目標要多少步
+    HEAD只是指向某個分支的指標
+  歷史紀錄查詢與返回
+    -使用索引值  git reset --hard 索引值 ,可返回到任意版本,使用時請先確認版本(建議使用此法)
+    -使用HEAD^  git reset --hard HEAD^ 後退到前一版本,使用N個^即往前回退N的版本
+    -使用HEAD~N git reset --hard HEAD~3 往後退三個版本
+  reset 重置HEAD
+    --soft:僅在本地庫移動HEAD指針
+    --mixed:在本地庫移動HEAD指針,且重置暫存區
+    --hard: 在本地庫移動HEAD指針,且重置暫存區及工作區
 
 
-本地庫初始化
-git --version 查看版本
-git init 初始化倉庫
-git add  檔案名稱  將檔案增加至暫存區
-git config user.name ronghon  可加入--global參數代表系統用戶級(全局)
-git config user.email ronghon1969@gmail
-git config --list 檢視目前環境設定狀況或者用下列兩個指令檢查設定檔
-  cat .git/config 用來查看存儲config的user--項目級別
-  cat ~/.gitconfig 用來查看存儲gitconfig中的user--系統用戶級別,通常設置此項即可,特殊用途才會用到項目級別設置
-  cat .git/COMMIT_EDITMSG 查看上一次commit資訊
-git rm 檔名 刪除暫存區檔案名
-git mv 舊檔名 新檔名  為檔案重新命名
-git rm --cached 檔案名稱  將檔案移回工作區track-->untracked
-git status 用來查詢現在這個目錄的「狀態」
-git log 查看紀錄
-git ls-files 查詢本地倉庫有多少檔案尚未上傳
+
+
+
+  git rm 檔名 刪除暫存區檔案名
+  git mv 舊檔名 新檔名  為檔案重新命名
+  git ls-files 查詢本地倉庫有多少檔案尚未上傳
 
 =================================================================================================
 M-->modify
