@@ -14,7 +14,7 @@ git優勢:分散式管理
   1.團隊內部協作
   2.跨團隊協作
 
-terminal終端機常用指令
+terminal終端機常用指令(linux命名)
 mkdir name  創建name目錄夾
 pwd 顯示目前所在目錄
 ll 或ls 查詢目錄 -al含隠藏目錄及檔案
@@ -23,7 +23,16 @@ mv 原檔名 新檔名
 rm 檔名  or rm *.*刪除有檔案
 cp 原檔名  另一檔案名 copy原檔名到另一檔名
 cat 檔名-->查看檔案內容
-clear 畫面清除
+clear 畫面清除 ctrl+L
+
+將常用字設定為簡寫
+git config --global alias.st status 將status簡寫為st
+git config --global alias.ck checkout
+git config --global alias.rst reset HEAD
+上述這些設定會存儲在~/gitconfig中
+git book有中文版  https://git-scm.com/book/zh-tw/v2
+
+
 
 -本地庫初始化
   git --version 查看版本
@@ -119,4 +128,7 @@ code devol1 git pull-->coding-->end-->git add.->git commit-->git push-->code dev
 向軍大叔=========================================================================================
 版本控制
   - 集中式(SVN)vs分散式(Git)
+
+git 應用開發詳解==================================================================================
+  
   
