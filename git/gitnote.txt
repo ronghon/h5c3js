@@ -130,5 +130,15 @@ code devol1 git pull-->coding-->end-->git add.->git commit-->git push-->code dev
   - 集中式(SVN)vs分散式(Git)
 
 git 應用開發詳解==================================================================================
-  
-  
+  特性:
+  -直接紀錄快照,而非差異比較
+  -幾乎所有操作都在本地操作
+  -隨時保持資料完整性
+  -大多數操作僅添加數據
+  -文件的三種狀態
+    -已修改(modified):在工作目錄中修改了git文件-->untracked
+    -已暫存(staged):對已修改的文件執行git暫存操作(git add),將文件存入暫存區
+    -已提交(committed):將已暫存文件執行git提交操件(git commit),將文件存入本地庫
+  git help
+  git log 
+  git diff
