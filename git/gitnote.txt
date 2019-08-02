@@ -11,7 +11,7 @@ git優勢:分散式管理
                                       pull<-- 第一次clone<--
 
 本地庫與遠端庫操作形式
-  1.團隊內部協作
+  1.團隊內部協作  
   2.跨團隊協作
 
 terminal終端機常用指令(linux命名)
@@ -24,6 +24,8 @@ rm 檔名  or rm *.*刪除有檔案
 cp 原檔名  另一檔案名 copy原檔名到另一檔名
 cat 檔名-->查看檔案內容
 clear 畫面清除 ctrl+L
+which  命令-->查詢命令在那一個目錄下
+cd - 回到上次命令目錄
 
 將常用字設定為簡寫
 git config --global alias.st status 將status簡寫為st
@@ -36,7 +38,7 @@ git book有中文版  https://git-scm.com/book/zh-tw/v2
 
 -本地庫初始化
   git --version 查看版本
-  git init 初始化倉庫,內含.git目錄,不要刪除,否則git無法正常運作。
+  git init 初始化倉庫,內含.git目錄,不要刪除,否則git無法正常運作,使該目錄夾作為本地庫受git追踨管制。
 - 系統用戶級別:加入 --global  指登入作業系統的用戶,設置的user name和email與遠端庫的帳號密碼無關,僅作為區分文件作者
 - 項目級別:僅在當前本地庫(目錄夾)有效-->就近原則,優先使用項目級別的user name和email。
   git config user.name ronghon  可加入--global參數代表系統用戶級(全局),
@@ -47,8 +49,8 @@ git book有中文版  https://git-scm.com/book/zh-tw/v2
     cat .git/COMMIT_EDITMSG 查看上一次commit資訊
   git status 查詢工作區、暫存區異動狀態
   git add  檔案名稱  將工作區檔案增加至暫存區
-  git rm --cached 檔案名稱  將檔案從暫存區移回工作區track-->untracked
-  git commit -m "message"-->未加-m參數會進入vim編輯器i o a :qw ,將暫存區的檔案存放到本地庫
+  git rm --cached 檔案名稱  將檔案從暫存區移回工作區(track-->untracked)
+  git commit -m "message"-->未加-m參數會進入vim編輯器i o a :qw ,將暫存區的檔案提交到本地庫
 
   git log 查看完整紀錄
     git log --pretty=oneline
@@ -81,9 +83,6 @@ git book有中文版  https://git-scm.com/book/zh-tw/v2
       第二步:執行merge命令 git merge [新內容的分支]
     解決衝突:
       衝突表現
-
-
-
 
   git rm 檔名 刪除暫存區檔案名
   git mv 舊檔名 新檔名  為檔案重新命名
@@ -139,6 +138,47 @@ git 應用開發詳解==========================================================
     -已修改(modified):在工作目錄中修改了git文件-->untracked
     -已暫存(staged):對已修改的文件執行git暫存操作(git add),將文件存入暫存區
     -已提交(committed):將已暫存文件執行git提交操件(git commit),將文件存入本地庫
-  git help
-  git log 
-  git diff
+    git help
+    git log 
+    git diff
+  
+  第四講git 重要命令操作
+    -git提交的id(commit id)是一個摘要值,這個值實際上是一個sha1計算出來的hash
+    -user.name和user.email,有三個地方可設置
+      1. /etc/gitconfig(幾乎不會使用)-->git config --system
+      2. ~/.gitconfig(很常用)--> git config --global  
+      3. 針對特定項目,在.git/config文件中-->git config --local 優先使用
+    -git checkout -- 檔名 捨棄文件變更,小心使用,因尚未提交到本地庫,如捨棄變更將回到尚未變更前狀態,則所
+      有變更會重來。
+    -git reset HEAD 檔名-->會使檔案從暫存區又回到工作區(unstage)
+  
+  第五講git添加、刪除、修改與日誌
+  git rm 檔名
+    1.刪除了一個文件
+    2.將刪除的文件納入到暫存區(stage,index)
+    若要恢復被刪除的文件,需進行下列兩個動作:
+      1.git reset HEAD 檔名-->將待刪除的文件從暫存區恢復到工作區
+      2.git checkout -- 檔名-->將工作區中的修改捨棄掉
+  rm 檔名:在terminal下刪除檔案
+    將檔名刪除掉,此時,被刪除的文件並未納入暫存區中
+
+  git mv 與 mv :其作用與git rm及rm作用相同  
+    git mv 原檔名 新檔名
+
+  第六講.gitignore與分支
+  - .gitignore:將要忽略文件不需git track的檔案,加到.gitignore檔案中,該檔案雖存在當前目錄中,但被ignore
+    支援正則表逹式模式  
+  - 分支管理
+    -master主分支
+    -git branch 查詢分支狀況 有*代表目前分支位置
+    -git branch 新分支名-->創建新的分支
+    -git checkout 新分支名-->切換至新分支,可使用 - 切換回原分支,在新分支所創建或修改的文件與master下的
+     文件不同,會新增新的文件
+
+  第七講分支重要操作
+    -git branch -d 分支名-->刪除分支,不可刪除當前所處分支,分支內容如有新增或修改內容時,則會要求先合併,
+     如要強制刪除時使用下列命令
+    -git branch -D 分支名
+    -git checkout -b 新分支名-->創建新分支名同時切換到新分支下工作
+    -git merge 要合併的分支名-->在master主分支上合併新分支的新增或修改的檔案
+    -
