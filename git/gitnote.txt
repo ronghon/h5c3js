@@ -135,6 +135,33 @@ udemy git入門=================================================================
    git stash apply恢復修改
    git stash applly stash@{0}有多個時可指定恢復那一個,{0}用git stash list查詢之
 
+  git diff差異比較
+    git diff:比較兩個數據源之間的差異,可以是文件、提交、分支或所有改變的差異比較
+    git diff
+    git diff HEAD <file>
+    git diff <commit_id> <commit_id>
+    git diff <branch_name><branch_name>
+  git blame 對倉庫中文件發現每一行的最後修改者信息
+   git blame <file>
+  撤銷修改
+    在工作區階段-
+      1.對於新添加的文件-->git clean -if 檔名-->刪除新添加的檔案  -id -->刪除目錄及檔案
+      2.修改存在的文件、刪除文件-->git checkout --檔名
+    暫存區(已git add)-git reset
+      1.撤銷退回工作區(可再修改)-->git reset HEAD
+      2.捨棄修改(修改部份直接捨棄不要)-->git reset --hard HEAD-->慎用,否則心血都没了
+    已提交本地庫-git revert HEAD,會將HEAD指針向前新增一筆紀錄,但資料會回復到未修改前狀態 
+    -git revert HEAD vs git reset --hard HEAD兩者差異
+        git revert HEAD 是將HEAD指針向前新增一筆紀錄並將當前資料回復到未修改前狀態,較安全有紀錄
+        git reset --hard HEAD~1是直接捨棄本次修改回復到未修改前狀態,會將已提交的紀錄刪除HEAD指針回到前一筆紀錄
+    -git rm僅適用於檔案狀態於暫存區及已提交本地庫狀態
+     檔案在本地庫狀態時使用git rm 檔名-->從本地庫退回到暫存區並新增一筆刪除紀錄,此時只需將該筆刪除紀錄commit即可。
+     檔案在暫存區狀態時使用git rm -f 檔名-->強制直接從暫存區捨棄掉(檔案刪除)
+     檔案在暫存區狀態時使用git rm --cached 檔名-->從暫存區退回到工作區(狀態改變,可再修改
+     
+
+
+
 
 git 應用開發詳解==================================================================================
   特性:
@@ -186,7 +213,7 @@ git 應用開發詳解==========================================================
   第七講分支重要操作
     -git branch -d 分支名-->刪除分支,不可刪除當前所處分支,分支內容如有新增或修改內容時,則會要求先合併,
      如要強制刪除時使用下列命令
-    -git branch -D 分支名
+      -git branch -D 分支名  慎用:強制刪除分支-->應先merge 合併
     -git checkout -b 新分支名-->創建新分支名同時切換到新分支下工作
     -git merge 要合併的分支名-->在master主分支上合併新分支的新增或修改的檔案
     -
