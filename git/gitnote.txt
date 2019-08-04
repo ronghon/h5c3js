@@ -56,6 +56,7 @@ git book有中文版  https://git-scm.com/book/zh-tw/v2
   git log 查看完整紀錄
     git log --pretty=oneline
     git log --oneline(簡潔版)
+  git reflog查看操作日誌
     git reflog:HEAD@{}移動HEAD從當前版本到目標要多少步
     HEAD只是指向某個分支的指標
   歷史紀錄查詢與返回
@@ -115,7 +116,9 @@ git log 查看紀錄
 
 GitHub雲端專案管理
 git remote -v 查詢遠端的Repository,如為空白代表尚未作任何連結
-git remote add  遠端空間的名稱 網址-->加入遠端的Repository,將本地端與遠端的空間作一連結
+git remote add  關聯名稱  遠程庫網址-->加入遠端的Repository,將本地端與遠端的空間作一連結
+git remote rm 關聯名稱-->刪除與遠程庫關聯名稱
+git remote rename 舊名 新名-->關聯名稱重新命名
 git push 遠端空間的名稱 遠端空間的分支-->上傳到GitHub雲端專案空間
 
 下載GitHub雲端專案到本機
@@ -135,12 +138,12 @@ udemy git入門=================================================================
    git stash apply恢復修改
    git stash applly stash@{0}有多個時可指定恢復那一個,{0}用git stash list查詢之
 
-  git diff差異比較
-    git diff:比較兩個數據源之間的差異,可以是文件、提交、分支或所有改變的差異比較
-    git diff
-    git diff HEAD <file>
-    git diff <commit_id> <commit_id>
-    git diff <branch_name><branch_name>
+  git diff差異比較:兩個數據源之間的差異,可以是文件、提交、分支或所有改變的差異比較
+    git diff-->比較暫存區與工作區之檔案內容差異,前/暫存區,後/工作區
+    git diff HEAD -->比較最新提交本地庫與工作區之間的內容差異
+    git diff --cached-->比較最新提交本地庫與暫存區之間的內容差異 
+    git diff <commit_id> <commit_id>-->比較兩個提交之間的內容差異
+    git diff <branch_name><branch_name>-->比較兩個分支檔案及內容之間的差異
   git blame 對倉庫中文件發現每一行的最後修改者信息
    git blame <file>
   撤銷修改
@@ -158,8 +161,12 @@ udemy git入門=================================================================
      檔案在本地庫狀態時使用git rm 檔名-->從本地庫退回到暫存區並新增一筆刪除紀錄,此時只需將該筆刪除紀錄commit即可。
      檔案在暫存區狀態時使用git rm -f 檔名-->強制直接從暫存區捨棄掉(檔案刪除)
      檔案在暫存區狀態時使用git rm --cached 檔名-->從暫存區退回到工作區(狀態改變,可再修改
-     
 
+  第六章遠程庫管理   
+
+    git remote add <name> 遠程庫網址-->創建本地端與遠程庫關聯,以利與遠程庫同步化
+    git push <name> <分支名>-->將本地庫推送到遠程庫中
+    git clone 遠程庫網址 目錄夾-->第一次從遠程庫下載檔案
 
 
 
@@ -206,14 +213,53 @@ git 應用開發詳解==========================================================
   - 分支管理
     -master主分支
     -git branch 查詢分支狀況 有*代表目前分支位置
-    -git branch 新分支名-->創建新的分支
+      git branch -v 查詢最近一條commit的內容
+    -git branch 新分支名-->創建新的分支,並將master內的檔案copy一份到新的分支中,
     -git checkout 新分支名-->切換至新分支,可使用 - 切換回原分支,在新分支所創建或修改的文件與master下的
      文件不同,會新增新的文件
-
+    -git checkout -b 新分支名-->創建新分支名同時切換到新分支下工作
+    *git checkout -b 分支名 關聯名稱/分支名-->從遠程庫的分支創建本地庫新的分支
   第七講分支重要操作
-    -git branch -d 分支名-->刪除分支,不可刪除當前所處分支,分支內容如有新增或修改內容時,則會要求先合併,
+    -git branch -d 待刪除分支名-->刪除分支,不可刪除當前所處分支,分支內容如有新增或修改內容時,則會要求先合併,
      如要強制刪除時使用下列命令
       -git branch -D 分支名  慎用:強制刪除分支-->應先merge 合併
-    -git checkout -b 新分支名-->創建新分支名同時切換到新分支下工作
-    -git merge 要合併的分支名-->在master主分支上合併新分支的新增或修改的檔案
-    -
+    -git merge 要合併的分支名-->在master主分支上將另一分支之新增或修改的內容合併到master上(無合併衝突下使用fast-forward)
+    合併衝突時,會要求手動合併,然後再git add ..  (add表示解決衝突後新增一筆修改的commit) 
+    -git push --delete 關聯名稱 分支名-->刪除遠程庫分支
+
+  第八講分支進階與版本回退
+    HEAD指向的是當前分支-->.git/HEAD檔案內列出HEAD當前位置
+    master指向的是提交
+    -fast-forward(ff),如果可能,合併分支時git會使用fast-forward(快進)模式
+      -在這模式下,刪除分支時會丟掉分支信息
+      -合併時,如加上--no-ff參數時,會禁用fast-forward,這樣會多出一條commit id(會紀錄本次merge commit)
+        git merge --no-ff 分支名
+    -查看log時可加上--graph表示使用圖形化查看分支狀況
+    版本回退--
+    
+第九講checkout進階與stash
+  -git checkout -- 檔名-->作用是捨棄工作區中最後一次內容變更回復到未變更前狀態(內容改變)
+  -git reset HEAD 檔名-->作用是將檔案add到暫存區的狀態回復到工作區(狀態改變)
+  -git commit -am "message"-->結合git add和git commit兩個步驟的簡寫方式,於檔案內容修改後直接從工作區提交到本地庫
+  -git branch -m 舊名 新名-->修改分支名稱
+  -git stash 臨時保存
+  -git stash list列出臨時保存的檔案
+  -git stash pop-->將臨時保存的檔案取出並刪除臨時保存的紀錄
+  -git stash apply-->將臨時保存的檔案取出但未刪除紀錄-->手動刪除紀錄git stash drop stash@{0}
+  -git stash apply stash@{1}-->指定取出臨時保存的檔案
+
+第十講標籤tag與diff
+  標籤區分為兩種--標籤是不存在於特定分支,在任何分支查看時均可獲得當前版本號
+    -輕量級-->git tag 版本號
+    -帶有附註標籤-->git tag -a 版本號 -m '版本註釋' 
+    -查看目前標籤-->git tag 也可以加上 -l '條件'
+    -刪除標籤-->git tag -d 版本號
+  git blame 檔案名-->查看檔案修改過程及修改者是誰,何時修改等資料
+  diff差異性比較
+第十一講遠程庫與gitHub
+  push 推送
+  pull 提取,同時會執行合併merge
+  pull = fetch + merge
+  gitlab-->區域網路內部類似github之版本控制中心
+  git remote show 顯示遠程庫的別名,代表遠程庫地址
+  git remote show origin 顯示遠程庫詳細資訊
