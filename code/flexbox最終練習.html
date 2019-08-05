@@ -22,7 +22,7 @@
     div>ul {
       list-style: none;
       width: 100%;
-      /* 將父容器設置flex盒子後, */
+      /* 將父容器設置flex盒子後,子元素默認為伸縮項 */
       display: flex;
     }
 
@@ -32,7 +32,7 @@
       line-height: 36px;
       text-align: center;
       border-right: 1px solid #eee;
-      /* 為子元素設置等寛大小並彈性自適應 */
+      /* 為子元素設置等寛大小並彈性自適應 ,無論li子元素有幾個均會自動適應寛度*/
       flex: 1;
     }
   </style>
