@@ -263,3 +263,10 @@ git 應用開發詳解==========================================================
   gitlab-->區域網路內部類似github之版本控制中心
   git remote show 顯示遠程庫的別名,代表遠程庫地址
   git remote show origin 顯示遠程庫詳細資訊
+
+
+ssh-keygen -t rsa -b 4096 -C "email"  /*創建email的私鑰
+eval $(ssh-agent -s)  /*start the ssh-agent in the background
+ssh-add ~/.ssh/id_rsa  /*將ssh key加入到ssh-agent
+code ~/.ssh/id_rsa.pub /*進入公鑰檔,copy到新增的ssh檔
+ssh git@github.com
