@@ -269,7 +269,7 @@ ssh-keygen -t rsa -b 4096 -C "email"  /*創建email的私鑰
 eval $(ssh-agent -s)  /*start the ssh-agent in the background
 ssh-add ~/.ssh/id_rsa  /*將ssh key加入到ssh-agent
 code ~/.ssh/id_rsa.pub /*進入公鑰檔,copy到新增的ssh檔
-ssh git@github.com
+ssh git@github.com /*確認公鑰已成功加入
 
 添加SSH鏈接github
 git remote srt-url origin 遠端網址(SSH)
