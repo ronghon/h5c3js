@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<script>
+		var a=123;
+		var b=a;
+		a++;
+		
+/*		console.log("a="+a);//124
+		console.log("b="+b);*///123
+		
+		var obj=new Object();
+		
+		obj.name="jane";
+		
+		//將obj對象賦值給obj2變量,obj與obj2的內存引用地址指向同一對象
+		var obj2=obj;
+		
+		//常修改obj的name屬性,obj2的name屬性也一起改變
+		obj.name="tom";
+		
+		/*console.log(obj.name);
+		console.log(obj2.name);*/
+		
+		//將obj2設置為null,使得obj2與對象之間斷掉了,但不影響obj對象
+		obj2=null;
+		
+		/*console.log(obj);
+		console.log(obj2);*/
+		
+		var c=10;
+		var d=10;
+//		console.log(c==d);//true
+		
+		var obj3=new Object();
+		var obj4=new Object();
+		
+		obj3.name="沙和尚";
+		obj4.name="沙和尚";
+		
+		/*console.log(obj3);
+		console.log(obj4);*/
+		
+		console.log(obj3==obj4);//false-->obj3與obj4兩個對象,雖name屬性值為相同,但因內存地址不同,所以obj3與obj4不相等
+	</script>
+	</head>
+	<body>
+	</body>
+</html>
