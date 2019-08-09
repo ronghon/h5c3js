@@ -272,4 +272,4 @@ code ~/.ssh/id_rsa.pub /*進入公鑰檔,copy到新增的ssh檔
 ssh git@github.com /*確認公鑰已成功加入
 
 添加SSH鏈接github
-git remote srt-url origin 遠端網址(SSH)
+git remote srt-url origin 遠端網址SSH
