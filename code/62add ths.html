@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script type="text/javascript">
+		//創建一個變量
+		var name="全局";
+		
+		
+		//創建一個fun函數
+		function fun(){
+			console.log(this.name);
+		}
+		
+		//創建兩個對象
+		var obj={
+			name:"王大同",
+			sayName:fun
+		};
+		var obj2={
+			name:"李白",
+			sayName:fun
+		}
+		fun();
+		obj.sayName();
+		obj2.sayName();
+	</script>
+	<body>
+	</body>
+</html>

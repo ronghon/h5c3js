@@ -6,48 +6,52 @@
 	<title></title>
 	<script type="text/javascript">
 
-		/* function fun(){
-//				console.log("a = "+a+", b = "+b);
-			console.log(this.name);//window
-		}
-		
-//			fun();//相當於window.fun() window對象的方法調用
-		
-		var obj={
-			name:"孫悟空",
-			sayName:fun  //以函數作為對象的屬性值
-		};
-		
-		var obj2={
-			name:"沙和尚",
-			sayName:fun  //以函數作為屬性值
-		};
-		
-		var name="全局的name屬性"
-//			fun();  //window
-		obj2.sayName(); //obj  object
-		obj.sayName(); */
-
-
-
-		var name = "全局";
 		function fun() {
-			console.log(this.name);//利用this特性,當obj調用時指向obj對象,當obj2調用時指向obj2對象,可以較靈活運用
+		//	console.log("a = "+a+", b = "+b);
+			console.log(this.name)               //window
 		}
+
+
+		// fun();//相當於window.fun() window對象的方法調用
 
 		var obj = {
 			name: "孫悟空",
-			sayName: fun
+			sayName: fun  //以函數作為對象的屬性值
 		};
-
+		
 		var obj2 = {
 			name: "沙和尚",
-			sayName: fun
+			sayName: fun  //以函數作為屬性值
 		};
-		fun();//利用this特性,以函數形式調用時,this指向window
-		obj.sayName();//以obj對象的方法調用函數時,this指向obj對象
 
-		obj2.sayName();//以obj對象的方法調用函數時,this指向obj2對象
+		 fun();        //1.以函數的形式調用時,this永遠都是window
+		// obj.sayName();//2.以obj對象的方法調用函數時,this指向obj對象
+
+
+//		var name = "全局的name屬性"
+		obj2.sayName(); //
+		obj.sayName();
+//		fun();
+
+
+
+		// var name = "";
+		// function fun() {
+		// 	console.log(this.name);//利用this特性,當obj調用時指向obj對象,當obj2調用時指向obj2對象,可以較靈活運用
+		// }
+
+		// var obj = {
+		// 	name: "孫悟空",
+		// 	sayName: fun
+		// };
+
+		// var obj2 = {
+		// 	name: "沙和尚",
+		// 	sayName: fun
+		// };
+		// fun();//利用this特性,以函數形式調用時,this指向window
+
+		// obj2.sayName();//以obj對象的方法調用函數時,this指向obj2對象
 
 
 //			console.log(fun==obj.sayName)  //上述兩種方式結果相同,調用函數==>調用obj對象的方法
