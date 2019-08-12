@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+	</head>
+
+	<body>
+		<script>
+			//將1~10放入到一個數組中
+			/*var arr=[];
+			for(var i=0;i<10;i++){
+				arr[i]=i+1;
+			}
+			console.log(arr);*/
+
+			//篩選大於10的元素存放至新數組
+			//方法1
+			/*var arr = [2, 6, 1, 4, 77, 5, 94, 74];
+			var newArr = [];
+			var k = 0;
+			for(var i = 0; i < arr.length; i++) {
+				if(arr[i] > 10) {
+					newArr[k] = arr[i];
+					k++;
+				}
+			}
+			console.log(newArr);*/
+
+			//方法2
+			var arr = [2, 6, 1, 4, 77, 5, 94, 74];
+			var newArr = [];
+			//var k = 0;
+			for(var i = 0; i < arr.length; i++) {
+				if(arr[i] > 10) {
+					newArr[newArr.length] = arr[i];//利用newArr.length初始值=0特性
+					//k++;
+				}
+			}
+			console.log(newArr);
+
+			// 比較數組中的最大值?
+			/* var arr = [2, 6, 1, 4, 77, 5, 94, 74]
+			var max = arr[0];//先將第1個元素賦值給一個變量
+			for (var i = 1; i < arr.length; i++) {  //遍歷數組
+				if (arr[i] > max) {  //比較兩個元素大小,並將較大值重新賦值組變量,依序比較之後即可得到最大值
+					max = arr[i];
+				}
+			}
+			console.log(max); */
+
+			// 比較數組中的最小值?
+			/* var arr = [23, 6, 33, 4, 77, 5, 94, 74]
+			var min = arr[0];
+			for (var i = 1; i < arr.length; i++) {
+				if (arr[i] < min) {
+					min = arr[i];
+				}
+			}
+			console.log(min); */
+
+			// 比較兩個數的最大值
+			/* function getMax(num1, num2) {
+			                return num1 > num2 ? num1 : num2;
+			            }
+			            var result = getMax(250, 100);
+			            alert(result); */
+
+			// 比較兩個數的最小值
+			/* function getMin(num1, num2) {
+			        return num1 < num2 ? num1 : num2;
+			    }
+			    var result = getMin(125, 100);
+			    alert(result); */
+
+			// 利用函數求數組中的最大值?
+			function getArrMax() {
+
+			}
+		</script>
+	</body>
+
+</html>
