@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			var str = 'abcdeoefdoesaodod';
+			var index = str.indexOf('o');//1.先找到第一個'o'並將索引值賦值給index
+			var num = 0;
+			while(index !== -1) {   //2.當索引值不等於-1(找不到時返回值為-1)繼續執行語句
+				console.log(index);   //3.先將第一個index輸出,之後再找到'o'時繼續輸出索引值
+				num++;//紀錄找到'o'的個數
+				index = str.indexOf('o', index + 1);  //4.設置從上次找到'o'的索引值下一位開始查找,並將找到'o'的索引值賦值給index
+			}
+			console.log('找到o的個數 = '+num);
+		</script>
+	</head>
+
+	<body>
+	</body>
+
+</html>

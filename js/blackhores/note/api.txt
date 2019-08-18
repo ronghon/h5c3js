@@ -1,0 +1,9 @@
+02WEB APIs==
+- js組成:ECMA script基本語法、BOM、DOM
+- Web APIs是JS的應用,是W3C組織的標準,是JS獨有部份
+03API和Web APIs==
+  -API應用程序編程接口,是給程序員提供的一種工具,以便能更輕鬆實現想要完成的功能
+  -Web API是瀏覽器提供的一套操作瀏覽器功能和頁面元素的API(BOM和DOM),主要針對
+   瀏覽器做交互效果
+
+  
