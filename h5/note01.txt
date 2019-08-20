@@ -1,0 +1,194 @@
+04新增標籤語義化==
+	1.div 對搜索引擎無意義,因此新增具有語義的標籤,如
+		- header 頭部
+		- nav 導航
+		- article 內容文章
+		- section 區塊
+		- aside 側邊欄
+		- footer 底部
+	2.這些語義化標籤主要針對搜索引擎的,可在頁面中重覆使用,在IE9中,這些元素會被視為行級元素,所以需轉換為塊級元素
+05H5新增多媒體標籤==
+	1.<audio>音頻
+		支持三種格式: MP3 Wav Ogg Vorbis,注意事項:因為不同瀏覽器支持不同格式,因此需同時準備多種格式,並利用<source src="url">
+		<audio src="文件地址" 
+		屬性值:
+		 -autoplay 自動撥放-->google禁用此項屬性
+		 -controls 顯示控件
+		 -loop 重新開始播放(循環)
+		 -src url地址
+06視頻==
+	2.<video>視頻
+		支持三種格式:Mp4 Ogg WebM
+		屬性值大致與audio相同
+		-autoplay 自動撥放-->google禁用此項屬性,解決方案,添加muted屬性,但音頻不可以
+07input表單==
+	type="email"->需包含@及@後面要有內容
+	type="url"
+	type="date"->日期
+	type="number"->限制輸入數字
+	type="tel"->限制輸入手機號碼
+	type="search"-->搜索椢
+	type="color"->顏色選擇表單
+08input表單屬性==
+	-required 必填,內容不能為空
+	-placeholder提示文本(佔位符)
+	-autofocus自動獲取鼠標焦點
+	-autocomolete自動提示曾經提交的內容=on-->注意:使用時需同時加上name屬性並曾經成功提交內容  =off 關閉該功能
+	-multiple 可多選文件提交
+
+10css3導讀==
+11、12屬性選擇器(上)==
+	1.button{
+		cursor: pointer;//鼠標移入鼠標變成小手
+	  }
+	2.disabled 禁用狀態
+	3.選擇符:
+	  - E[att屬性]-->選擇含有att屬性的E元素  範圍最大
+		- E[att屬性="val"]-->選擇具有att屬性且屬性值等於val的E元素 全等
+		- E[att屬性^="val"]-->匹配具有att屬性且值以val開頭的E元素 ^=開頭含有
+		- E[att屬性$="val"]-->匹配具有att屬性且值以val結尾的E元素 $=結尾含有 
+		- E[att屬性*="val"]-->匹配具有att屬性且值中含有val的E元素 *=任意位置含有
+	4.類選擇器 屬性選擇器 偽類選擇器 權重為10  標籤選擇器權重為1
+
+13、14結構偽類選擇器(上)==
+	E:first-child-->第一個子元素
+	E:last-child-->最後一個子元素
+	E:nth-child(n)-->第n個子元素
+	
+	n可以是數字、關鍵字(ex:even(偶數)、odd(奇數))或公式
+	如果n是公式,從0開始計算,但第0個元素或超出了元素的個數時會被忽略
+	2n 偶數=even
+	2n+1 奇數=odd
+	5n 5的倍數
+	n+5 從第5個開始到最後
+	-n+5前5個(包含第5個)
+	***nth-child 使用時只指向是第n子元素,並不會管是何種類型的元素
+15結構偽類選擇器(下)==
+  E:first-of-type-->指定類型E的第一個
+	E:last-of-type-->指定類型E的最後一個
+	E:nth-of-type(n)-->指定類型E的第n個
+	選擇指定類型的元素ex:如有多個p、多個span混合為子元素時,則可使用此一方式指定那一個類型的第n個子元素 
+17、18偽元素選擇器==
+	1. ::before-->在元素內部的前面插入內容
+	2. ::after -->在元素內部的後面插入內容
+	3.屬性:	content是必須有的
+	4.before和after會創建一個元素,但屬於行內元素,如需設置寛高則需轉換為塊級元素
+	5.因為在DOM中看不見創建的元素,因此稱之為偽元素
+	6.偽元素和標籤選擇器一樣,權重為1。
+192D轉換==
+	1.transform(轉換):可實現元素的位移、旋轉、縮放等效果
+	- 移動(translate)
+	- 旋轉(rotate)
+	- 縮放(scale)
+	2.2D二維座標
+	3.2D移動可改變元素在頁面中的位置,類似定位
+	  語法: transform:teanslate(x,y)或分開寫 transform:translateX(n);  transform:translateY(n);
+		x就是x軸上移動位置x, y就是y軸上移動位置y,沿者x軸和y軸移動元素
+	4.translate最大優點:不會影其他元素的位置
+	5.translate中的百分比單位是相對於自身元素的translate(50%,50%)
+	6.對行內元素没有效果
+		
+	移動盒子的位置:
+		1.定位
+		2.透過盒子的外邊距
+		3.2D轉換移動
+20讓盒子水平垂直居中==
+	translate的參數如果是百分比時:
+	1.參數是%時,移動的距離是以盒子自身的寛度或高度來作對比的
+	2.如要使子元素在父容器水平和垂直居中時,可設置translate(-50%,-50%),使盒子往上走自己盒子高度的一半,
+	  往左走盒子寛度的一半
+21 2D轉換之旋轉rotate==
+	2D旋轉是讓元素在2維平面內順時針或逆時針旋轉
+	語法:transform:rotate(度數);
+	1.度數的單位是deg,如rotate(45deg)
+	2.正值表示順時針,負值為逆時針
+	3.默認以元素的中心點為旋轉的中心點
+	過渡效果:口訣-->過渡寫到本身上,誰做動畫給誰加
+	transition:all 秒數
+22三角形圖標或方向指標==
+		參閱trigover.html
+23設置轉換的中心點
+	語法:transform-origin: x y;
+	注意:
+	1.參數x與y之間以空格隔開
+	2.x與y默認的中心點是元素的中心點(50% 50%)
+	3.可以給x y設置px或方位名詞(top bottom left right center)
+25縮放scale==
+	可放大縮小,語法規範
+	  transform:scale(x,y)
+	1.參數x y數字不加單位,代表倍數,也可單獨修改寛高,等比縮放時可簡寫只寫一個數字,縮小時數字小於1。
+	2.使用scale的優勢,不會影響其他盒子-->往四週進行縮放,默認以元素中心點向四周縮放
+	3.可配合transfor-origin設置縮放的中心點
+28 2D綜合寫法==
+	1.可使用多個屬性進行轉換,中間以空格隔開
+	2.設置順序會影響轉換的效果要特別注意
+	3.當同時位移和其他屬性時,記得將位移放到最前面
+	分頁轉換縮放.html 
+30動畫==
+	1.動畫(animation)是透過設置多個節點來精確控制一個或一組動畫,常用來實現複雜的動畫效果,相較於過渡效果,動畫可實
+	  現更多變化、更多控制、連續自動播放等效果
+	2.製作步驟:
+	  (1)定義動畫
+		(2)調用動畫
+	3.定義動畫:
+		@keyframes 動畫名稱{
+			0%{
+				css樣式屬性;
+				}
+			100%{
+				屬性;
+				}
+		  }
+		-->0%是動畫的開始,100%是動畫的完成,動畫序列
+	4.調用動畫:animation-name: 動畫名稱;
+	5.持續時間:animation-duration: 持續時間;
+31動畫序列==
+	1.動畫是使元素從一種樣式逐漸變化為另一種樣式的效果,可改變任意多的樣式和任意多的次數
+	2.請用百分比來規定變化發生的時間,或用關鍵詞from到to,等同於0%到100%
+	3.百分比需為整數
+	4.百分比就是總的時間來劃分
+32動畫常用屬性==
+	1.@keyframes:規定動畫
+	2.animation:所有動畫屬性的簡寫形式,除animation-play-state屬性
+	3.animation-name:規定動畫名稱(必須)
+	4.animation-duration:規定動畫完成一個週期所花費的秒或毫秒,默認為0(必須)
+	5.animation-timing-function:規定動畫的速度曲線,默認為ease
+	6.animation-delay:規定動畫何時開始,默認為0(延遲播放)
+	7.animation-iteration-count:規定動畫播放的次數,默認為1,無限使用infinite(重複播放與否)
+	8.animation-direction:規定動畫是否在下一個週期逆向播放,默認為normal,逆播放altermate(是否反方向播放,跑馬燈)
+	9.animation-play-state:規定動畫提否正在運行或暫停,默認為running 暫停為paused,經常與鼠標經過配合使用
+	10.animation-fill-mode:規定動畫結束狀態,保持forwards回到起backwards,默認為backwards
+33動畫簡寫==
+	animation: 動畫名稱 持續時間 運動曲線 何時開始 播放次數 是否反方向 動畫起始或結束狀態;
+	前面兩個屬性是必須的(名稱和時間)
+36運動(速度)曲線==
+	animation-timing-function屬性值:
+	1.linear:從頭到尾均速
+	2.ease:默認值,先低速,後加速,結束前變慢
+	3.ease-in:低速開始
+	4.ease-out:低速結束
+	5.ease-in-out:低速開始和結束
+	6.steps():指定時間間隔數量(步長)
+	一個元素可添加多個動畫,之間以逗號分隔
+383D轉換==
+	三維座標系--就是立體空間,由三個軸共同組成的
+	x軸:水平向右 右邊是正值,左邊是負值
+	y軸:垂直向下 下面是正值,上面是負值
+	z軸:垂直屏幕 往外是正值,往內是負值
+39 3D轉換==
+  1.3D位移translate3d(x,y,z)
+	2.3D旋轉rotate3d(x,y.z)
+	3.透視perpective
+	4.3D呈現transfrom-style
+	=========================
+	3D移動translate3d:增加z軸方向
+	1.translateZ(100px)-->沿著Z軸移動(後面的單位一般使用px),正值向外移動,負值向內移動
+	2.3D移動簡寫方式:translate3d(x,y,z)
+	3.x y z 三個值不能省略,如果没有就寫0
+40透視==
+	
+	
+	
+	
+	
+		
