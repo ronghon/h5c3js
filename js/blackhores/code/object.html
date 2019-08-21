@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 使用構造函數創建一個新的對象
+
+    // 構造函數: Star是泛指某一大類,稱之為類
+    /* function Star(uname, uage, usex) { //構造函數名首字母大寫
+      this.name = uname;               //函數的屬性 
+      this.age = uage;
+      this.sex = usex;
+      this.sing = function (song) {  //函數的方法
+        console.log(song);
+      }
+    }
+    
+    // 調用構造函數同時傳遞實參並賦值給形參
+    // 創建一個新的對象:是指向某一大類中的具體特定人事物
+    var res = new Star('王大同', 20, '男');//創建
+    // console.log(typeof res);  //object
+    var res1 = new Star('丁一', 35, '女');
+    var res2 = new Star('李白', 65, '男');
+    res.sing('床前明月光');
+    // console.log(res2.name);
+    // 透過new關鍵字創建對象的過程稱之為對象實例化,這個對象是某一大類的實例 */
+
+    // 遍歷對象
+    /*var obj = {
+      name: '王大',
+      age: 30,
+      sex: '女'
+      fn: function () {
+
+      }
+    }*/
+    /* console.log(obj.name);
+    console.log(obj.age);
+    console.log(obj.sex); */
+
+    // 使用for...in語句
+//  for (var k in obj) {
+      // console.log(k); //k是變量,輸出時,可獲取屬性名
+//    console.log(obj[k]);//獲取屬性值
+
+//  };
+//判斷是否為數組
+	var arr=[];
+	console.log(arr instanceof Array);
+	var obj={};
+	console.log(obj instanceof Object);
+	Array.isArray(arr);
+
+
+  </script>
+
+
+</body>
+
+</html>

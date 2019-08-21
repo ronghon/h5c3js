@@ -1,0 +1,71 @@
+02WEB APIs==
+  -js組成:ECMA script基本語法、BOM、DOM
+  -Web APIs是JS的應用,是W3C組織的標準,是JS獨有部份
+03API和Web APIs==
+  -API應用程序編程接口,是給程序員提供的一種工具,以便能更輕鬆實現想要完成的功能
+  -Web API是瀏覽器提供的一套操作瀏覽器功能和頁面元素的API(BOM和DOM),主要針對
+   瀏覽器做交互效果
+05DOM簡介==
+  -文檔對象模型(DOM)是W3C組織推薦的處理可擴展標記語言的標準編程接口,通過DOM接口可以改變網頁內容、結構和樣式
+  -DOM樹Tree
+    文檔:整個頁面就是一個文檔(document)
+    元素:頁面中所有標籤都是元素(element)
+    節點:網頁中所有內容都是節點(node),包含標籤、屬性、文本、注釋等。
+    DOM將以上內容均視為對象
+06獲取元素方法==
+  1.根據ID獲取:使用getElementById()方法獲取帶有ID的元素對象
+  2.根據標籤名獲取
+  3.通過H5新增的方法獲取
+  4.特殊元素獲取
+  因為文檔頁面由上往下加載,所以將script寫在標body標籤中
+  使用getElementById('id')返回的是一個元素對象,
+  使用console.dir()可以返回元素對象及查看裏面的屬性和方法
+07使用標籤名獲取元素==
+ 1.使用getElementsByTagName('div');
+  (1)返回的是元素對象的集合,以偽數組形式存儲(arguments)
+  (2)可通過遍歷方式獲取元素對象所有值
+  (3)得到的元素對象是動態的
+  (4)如果頁面中只有一個元素,返回的還是偽數組形式
+  (5)如果頁面中没有這個元素,返回的空的偽數組形式
+ 2.也可以獲取某個元素(父元素)內部所有指定標籤名的子元素
+    element.getElementsByTagName('標籤名');<--父元素必須是單個對象(必須指明是那
+    一個元素對象),獲取時不包括父元素本身
+    var ol =document.getElementsByTagName('ol');//[ol]
+    console.log(ol[0].getElementsByTagName('li')) 或者使用
+    var ol = document.getElementById('isol');
+    console.log(ol.getElementsByTagName('li'));
+08H5新增獲取元素方式==
+  1.透過class名來獲取元素
+    document.getElementByClassName('類名')<--根據類名獲取元素返回元素對象集合
+  2.透過選擇器來獲取元素,只能獲取第一個元素對象
+    document.querySelector('選擇器')-->根據指定選擇器返回第一個元素對象,切記:裏
+    面的選擇器需加符號如.box #nav
+  3.返回指定選擇器的所有元素對象集合,可獲取全部選擇器的元素對象集合
+    document.querySelectorAll('選擇器');
+09獲取特殊元素(body.html)==
+	1.獲取body元素
+	  documnent.body  //返回body元素對象
+	2.獲取html元素
+	  document.documentElement //返回html元素對象
+10事件三要素==
+	事件簡單說就是用戶與電腦交互的行為,觸發--響應機制,由下列三部份組成
+	1.事件源:事件被觸發的對象(誰被觸發),如按鈕
+	2.事件類型:如何觸發,什麼事件,如鼠標點擊(onclick).鼠標經過.或鍵盤按下(做了什麼觸發事件)
+	3.事件處理程序:通過一個函數賦值的方式來完成(做什麼事情),(輸出部份)如彈出一個對話框
+11執行事件的步驟==
+	1.獲取事件源
+	2.綁定事件
+	3.添加事件處理程序(採取函數賦值形式)
+12操作元素==
+  1.改變元素內容
+		(1)element.innerText:從起始位置到終止位置的內容,但它去除html標籤,同時空格和換行也會去掉
+		(2)element.innerHTML:起始位置到終止位置的全部內容,包括html標籤,同時保留空格和換行
+13innerText和innerHTML區別==
+		1.innerText不識別html標籤,非標準 去除空格和換行
+		2.innerHTML可識別html標籤 W3C標準 保留空格和換行
+		這兩個屬性是可讀寫的,可獲取元素裏面的內容
+14常用元素的屬性操作==
+	
+		
+		
+	  

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      border: 1px solid pink;
+      margin: 100px auto;
+      /*設置頁面上盒子之前的內容先隠起來 */
+      overflow: hidden;
+    }
+
+    div::before {
+      /* overflow: hidden; */
+      content: "黑馬";
+      width: 100%;
+      height: 100%;
+      display: block;
+      background-color: green;
+      transform: rotate(180deg);
+      transform-origin: left bottom;
+      transition: all .4s;
+    }
+
+    /* 鼠標經過div 里面的before復原 */
+    div:hover::before {
+      transform: rotate(0deg);
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+</body>
+
+</html>

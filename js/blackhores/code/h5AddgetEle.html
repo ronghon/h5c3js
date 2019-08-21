@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="box">首頁1</div>
+  <div class="box">首貢2</div>
+  <nav id="nav"></nav>
+  <ul>
+    <li>產品1</li>
+    <li>產品2</li>
+    <li>產品3</li>
+  </ul>
+  <script>
+    // 1.透過類名classname獲取元素
+    var boxs = document.getElementsByClassName('box');
+    console.log(boxs);
+    // 2.獲取指定選擇器的第一個元素對象
+    var firstBox = document.querySelector('.box');
+    console.log(firstBox);
+    // 3.獲取指定選擇器的全部元素對象
+    var allBox = document.querySelectorAll('.box');
+    console.log(allBox);
+    var nav = document.querySelectorAll('#nav');
+    console.log(nav);
+    var lis = document.querySelectorAll('li');
+    console.log(lis);
+
+
+
+  </script>
+</body>
+
+</html>

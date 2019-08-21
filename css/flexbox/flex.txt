@@ -1,0 +1,69 @@
+02flex布局原理==
+	1.flex Flexible Box彈性布局,為盒狀模型提供最大的靈活性,任何一個容器都可以指定為flex布局
+	2.注意事項:當父容器設置為flex以後,子元素的float clear vertical-align屬性將失效
+	3.flex布局原理:通過為父容器設置flex屬性,來控制子元素(項目)的位置和排列方式
+03父容器常見屬性==
+	1.flex-direction:設置主軸方向
+	2.justify-content:設置主軸上的子元素排列方式
+	3.flex-wrap:設置子元素是否換行
+	4.align-content:設置側軸上的子元素的排列方式(多行時使用)
+	5.align-items:設置側軸上的子元素的排列方式(單行時使用)
+	6.flex-flow:複合屬性,為flex-direction和flex-wrap的簡寫方式
+	
+	- flex-direction設置主軸的方向
+		1.默認主軸方向是x軸方向,水平向右
+		  默認側軸方向是y軸方向,垂直向下
+		2.注意:主軸和側軸是會變化的,就看flex-direction設置誰為主軸,另一垂直方向就是側軸,而子元素是沿著主軸正方向來排列的
+		3.屬性值:
+			- row :默認值從左到右
+			- row-reverse:從右到左
+			- column:從上到下
+			- column-reverse:從下到上
+04justify-content==
+	1.justify-content設置主軸上子元素的對齊排列方式
+	2.使用這個屬性前一定要先確定好主軸是那一條
+	3.屬性值:
+	 - flex-start:默認值,從start開始,沿著主軸方向排列
+	 - flex-end:從end開始排列,沿著主軸方向排列
+	 - center:在主軸居中對齊(如主軸是x軸則水平居中)
+	 - space-around:平均分配剩餘空間
+	 - space-between:先兩邊貼邊再平分剩餘空間
+05flex-wrap==
+	1.flex-wrap設置子元素是否換行
+	2.默認情況(flex-wrap:nowrap)不換行下,子元素是排列在軸線上,當空間不足時,會平均壓縮子元素的寛度來自適應寛度
+	3.屬性值:
+		- nowrap:默認值,不換行
+		- wrap:換行
+06align-items==
+	1.align-items:設置側軸上的子元素的排列方式(單行時使用)
+	2.屬性值:
+		- flex-start:從start開始,沿著側軸方向排列
+		- flex-end:從end開始排列,沿著側軸方向排列
+		- center:沿著側軸方向居中對齊
+		- stretch:默認值,子元素未設置寛高時,預設為拉伸填滿效果
+07align-content==
+	1.align-content:設置側軸上的子元素的排列方式(多行時使用)	
+	2.配合flex-wrap:wrap換行,多行時使用,單行下無效果應使用align-items
+	3.屬性值:
+		- flex-start:從start開始,沿著側軸方向排列
+		- flex-end:從end開始排列,沿著側軸方向排列
+		- center:沿著側軸方向居中對齊
+		- space-around:子元素在側軸平均分配剩餘空間
+		- space-between:子元素在側軸先兩邊貼邊再平分剩餘空間
+		- stretch:設置子元素高度平分父容器高度
+08flex-flow==
+	flex-flow是flex-direction和flex-wrap兩個屬性的簡寫
+09子元素常見屬性==
+	- flex:設置子元素佔的份數,可使用百分比
+	- align-self:控制個別子元素在側軸上的排列方式
+	- order:定義子元素的排序順序(前後順序)
+	
+	- flex:定義子元素分配剩餘空間,用flex來表示佔多少份數
+		1.預設值是0
+		2.是分配剩餘空間
+10align-self和order==
+	- align-self:控制個別子元素在側軸上的排列方式
+		1.默認值為auto:表示繼承父容器的align-items屬性,如無父容器設置,預設為stretch
+		2.配合nth-child(n)使用
+	- order:默認值0,可設置負數,-1比0小所以在前面,注意:和z-index不同
+		
