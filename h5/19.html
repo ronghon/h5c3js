@@ -9,19 +9,20 @@
 			width: 200px;
 			height: 200px;
 		}
-		div:first-child {
+		#pin {
 			background-color: pink;
+			/* pin盒子位移時不影響另一盒子pur的位置 */
 			transform: translate(50px, 50px);
 		}
-		div:last-child {
+		#pur {
 			background-color: purple;
 		}
 	</style>
 </head>
 
 <body>
-	<div>1</div>
-	<div>2</div>
+	<div id="pin">1</div>
+	<div id="pur">2</div>
 
 </body>
 
