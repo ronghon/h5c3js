@@ -16,7 +16,7 @@ form method=get or post
 
 css選擇器：
   1.通用選擇器(Universal selector)：以*{}，指所有元素均適用
-  2.元素選擇器(Type selectors)：直接重新定義元素樣式，ex：p、div、body{}...
+  2.元素(標籤)選擇器(Type selectors)：直接重新定義元素(標籤)樣式，ex：p、div、body{}...
   3.id選擇器(ID selectors)：以#名稱開頭,具唯一性 #x{}。
   4.類別選擇器(Class selectors)：以.開頭,可重用及可同時設定多個class(中間用空格隔開) ex: .x{}
   5.屬性選擇器(Attribute selectors): 元素[屬性名] {} ex: div[title]{}
@@ -25,15 +25,33 @@ css選擇器：
   8.後代( )選擇器(Descendant combinator)：含父子孫..後代關係,中間以空格區隔 x y {} .class(父) 元素(子) {} 嵌套時使用之
   9.子元素(>)選擇器(Child combinator)：父元素與子元素間以>區隔(限定父子關係,不含孫輩...) ex: x > y{} 有兼容性問題ie6以下no
   10.相鄰兄弟(+)選擇器：相鄰兄弟元素以 + 號區隔 ex: div + p{}  若以~區隔時則選中相鄰兄弟們(之後所有兄弟元素)
-  11.偽元素選擇器(Pseudo-elements): 用來表示元素中的特殊位置ex:first-letter first-line ::after(在元素後加上內容,一般會配合使用 content 屬性) 
-    ::before (在元素前加上內容,一般會配合使用 content 屬性)
-  12.偽類選擇器(Pseudo-classes): :link尚未訪問過鏈結 :visited已訪問過鏈結 :hover滑鼠移入時呈現 
-    :focus獲取鍵盤輸入焦點 :active 表示超鏈接被滑鼠點擊的狀態(hover和active也可以為其他元素設置)
-  13.偽子元素選擇器:first-child指所有元素第一個子元素 :last-child(最後一個子元素) :nth-child(第n個)子元素
-    :first-of-type指當前元素之第一個子元素  :nth-child(odd)奇數個子元素   nth-child(even)偶數個子元素
-    :last-of-type
-    :nth-of-type
-  14.否定偽類:可為選中的元素剔除某些元素 :not(選擇器)
+  11.偽元素選擇器(Pseudo-elements): 用來表示元素中的特殊位置ex:first-letter first-line 
+     ::after(元素後加上內容,一般會配合使用 content 屬性) 
+     ::before (在元素前加上內容,一般會配合使用 content 屬性)
+  12.偽類選擇器(Pseudo-classes)
+    (1)鏈接偽類選擇器(主要針對a):注意順序問題:LV HA 
+       :link尚未訪問點擊過的鏈結 
+       :visited已訪問點擊過後的狀態 
+       :hover滑鼠移入時呈現 
+       :active表示超鏈接被滑鼠點擊時顯示的狀態(hover和active也可以為其他元素設置)
+       :focus獲取鍵盤輸入焦點
+    (2)結構偽類選擇器:(C3新增)
+       :first-child 第一個子元素
+       :last-child 最後一個子元素
+       :nth-child(n) 第n個子元素
+       :nth-last-child(n)從後往前數第n個子元素
+       :nth-child(odd)奇數個子元素   2n+1奇數
+       :nth-child(even)偶數個子元素  2n偶數
+       :first-of-type指定類型第一個子元素
+       :last-of-type指定類型最後一個子元素
+       :nth-of-type(n)指定類型第n個子元素
+    (3)目標偽類選擇器:
+       :target
+   14.否定偽類:可為選中的元素剔除某些元素 :not(選擇器)
+透明==
+  rgb(r,g,b,a) a是0~1值,設置透明度,0.1高透明,0.9低透明
+陰影== shadow
+  1.文字陰影:text-shadow: 水平距離,垂直距離,模糊距離,陰影顏色及透明度-->水平和垂直距離必要值,後面兩個可省略
 
 樣式繼承:
   1.祖先元素的樣式會被後代元素繼承
