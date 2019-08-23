@@ -1,0 +1,43 @@
+- input br img base ...均為單標籤
+- css 網頁的美容師,結構樣式分離
+- cascading style sheet css層疊樣式表
+- 選擇器 {屬性名1:屬性值1;屬性名2:屬性值2...; }
+- 文字
+    -font-size: 大小;
+    -font-family: 字體 "microsoft yahei","微軟雅黑","arial","宋體",...;
+    -font-weight: 字體粗細; normal(400) bold(700) bolder(900) lighter--><strong>
+    -font-style: 字體風格; normal italic(斜體)--><em>
+    -簡寫形式 font: font-style font-weight font-size font-family 注意順序,字體大小和字體必需,否則失效
+- 選擇器
+    -.標籤:元素{},指定單一標籤(元素)
+    -.類:class="類名"  .類名{},可多次重用,多類名之間以空格區格,前後順序不會影響
+    -.id: id="id名"  #id名{} 具唯一性,同一id名不可重用
+    -.通用: *{} * 所有選擇器,通常用於初始化
+    -.偽類:為某些選器添加特殊效果,主要針對<a>標籤 注意順序:  LV包包 HA好
+        :link{} 尚未點擊過的鏈接
+        :visited{}已點擊過的鏈接
+        :hover{}鼠標移入到鏈接上時-->常用
+        :active{}鼠標點擊選定,鼠標當未鬆開顯示狀態
+    -.結構偽類:
+        :first-child{}指定選取第一個子元素
+        :last-child{}指定選取最後一個子元素
+        :nth-child(n)指定選取第n個子元素
+        :nth-child(even)偶數,也可使用2n   :nth-child(odd)奇數個,也可使用2n+1,  3n選取3的倍數個
+        :nth-last-child(n)從後面往前數第n個子元素
+    -.目標偽類:用於選取當前活動的目標元素 誰被選中誰就執行樣式  :target{}
+- 網頁中的左上角為(0,0),X軸向右為正值.向左為負值
+                     Y軸向下為正值,向上為負值
+- background-position: 100px center;水平100px 垂直居中
+                       center 100px;水平居中 垂直100px 
+- background-attachment: 
+    scroll(默認)-->隨滾動條滾動
+    fixed-->背景固定
+- 簡寫形式 background: 顏色 圖片 是否平舖 是否滾動 位置
+- 背景透明:(css3)
+  background: rgb(0,0,0,0.5);
+- 背景縮放:
+  background-size: 寛度 高度;-->注意等比例縮放問題,也可以百分比
+  cover:圖片等比例縮放,充滿整個背景區域,如有溢出部份隐藏(保證充滿整個背景)
+  contain:圖片等比例縮放,但不充滿整個背景區域(保證圖片完整性)
+- 多背景圖片,圖片之間以逗號隔開url(img.jpg),url(img1.jpg),如有設置背景顏色定義在最後一組上
+

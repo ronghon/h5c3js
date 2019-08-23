@@ -1,0 +1,23 @@
+- type="radio" 單選框 使用name屬性合成同一個選題 使用value傳送輸入值
+- type="checkbox" 多選框  默認選擇:checked="checked"
+- select 下拉選單 option 選項
+- shell       內核
+  IE         trident 
+  firefox    Gecko    
+  chrome     Webkit/blink
+  safari     Webkit 
+  opera      presto
+- css 層疊樣式表
+  文字
+  font-size:大小  
+  font-family:字體arial 
+  font-weight:加粗bold 
+  font-style:斜體italic
+  color:顏色
+  text-align:水平對齊
+  line-height與height 設置相同,可設置文字在盒子中垂直居中,但要注意是否有border,則減去border大小
+  text-indent:首行縮進
+    1em=1*font-size
+  text-decoration:下劃線(underline),none 去除下劃線
+  cursor:pointer手型指標
+- 凡是帶有inline的元素,都有文字特性
