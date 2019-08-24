@@ -8,7 +8,7 @@
     -font-weight: 字體粗細; normal(400) bold(700) bolder(900) lighter--><strong>
     -font-style: 字體風格; normal italic(斜體)--><em>
     -簡寫形式 font: font-style font-weight font-size font-family 注意順序,字體大小和字體必需,否則失效
-- 選擇器
+- 選擇器:使用時最多不要超過3級
     -.標籤:元素{},指定單一標籤(元素)
     -.類:class="類名"  .類名{},可多次重用,多類名之間以空格區格,前後順序不會影響
     -.id: id="id名"  #id名{} 具唯一性,同一id名不可重用
@@ -25,19 +25,125 @@
         :nth-child(even)偶數,也可使用2n   :nth-child(odd)奇數個,也可使用2n+1,  3n選取3的倍數個
         :nth-last-child(n)從後面往前數第n個子元素
     -.目標偽類:用於選取當前活動的目標元素 誰被選中誰就執行樣式  :target{}
-- 網頁中的左上角為(0,0),X軸向右為正值.向左為負值
-                     Y軸向下為正值,向上為負值
-- background-position: 100px center;水平100px 垂直居中
-                       center 100px;水平居中 垂直100px 
-- background-attachment: 
+    -.複合選擇器:兩個或多個選擇器時使用,指定目標更精準明確,權重相對提高
+      1.交集:兩個選擇器中間無空格(並且,即...又...)
+      2.并(聯)集:選擇器中間以,逗號隔開(a,b,c..可集體聲明,a和b和c)
+      3.後代:包含父子、孫輩、曾孫輩,兩選擇器之間以空格隔開
+      4.子元素:限於父子闗係,兩選擇器之間以 > 隔開
+      5.屬性:當某些標籤帶有特殊屬性的選擇器稱之為屬性選擇器 
+        (1)E[attr] {} ex: div[title]{}選取屬性名為attr
+        (2)E[attr=val]{}選取屬性值為val,不用加分號
+        (3)E[attr^=val]{}選取開頭為val元素
+        (4)E[attr$=val]{}選取結尾為val元素
+        (5)E[attr*=val]{}選取任意位置包含有val元素
+      6.偽元素:用來選取元素中的特殊位置
+        ::first-letter 只選取第一個字 
+        ::first-line 只選取第一行
+        ::selection 當鼠標選取文字時,可改變的樣式
+        ::after(元素後加上內容,content="內容"-->必要):在盒子內部的後面插入內容 
+        ::before (在元素前加上內容,content="內容"-->必要):在盒子內部的前面插入內容 
+- 顏色color:
+    -顏色值 ex red blue green...
+    -16進制 #ffeecc #fec #eee...
+    -rgb(r,g,b),也可以百分比rgb(50%,50%,0)...
+- 行高line height:設置與height相同時可設為文字垂直居中
+- text-align文字水平位置:left right center
+- text-indent首行縮進 1em=1倍的font-size
+- letter-spacing字間距
+- word-spacing單詞間距(適用英文,中文不適用)
+- 顏色透明(css3)color:rgba(r,g,b a)a值0~1,值越小越透明 ex:color: rgba(0,0,0,0.3);
+- 文字陰影text-shadow
+  1.文字陰影:text-shadow: 水平位置 垂直位置 模糊距離 陰影顏色及透明度-->水平和垂直距離必要值,後面兩個可省略
+  2.text-shadow: 1px 1px 1px #000, -1px -1px 1px #fff;凸起文字
+  3.text-shadow: -1px -1px 1px #000, 1px 1px 1px #fff;凹下文孛
+- css引用方式
+  1.內部樣式:在<head>內,加入<style>標籤,將屬性寫在其中
+  2.行內(間)樣式:直接在標籤名後面以style加入樣式,權重較高
+  3.外部樣式:在<head>內以<link>連結外部.css樣式表檔案,最佳方式,實現結構樣式分離  
+- 塊級元素(div p h1~h6 ul ol li header nav footer...)display:block
+  1.可設置寛高,未設置時默認寛度為auto(為父元素的100%),當指定內邊距時不會影響可見框的大小,且會自動修改文本寛度
+  2.默認高度被文本內容撐開
+  3.獨佔一行,由上到下排列
+  4.可容納行內元素及其他塊級元素,但需注意下列嵌套問題
+    -標籤嵌套問題:
+    1.超鏈接不能嵌套超鏈接
+    2.p標籤不能嵌套p標籤,文字類塊級標籤中不能放其他塊級元素
+    3.標題h1-h6也不能互相嵌套
+- 行內(內聯)元素(span a i em strong..)display:inline;
+  1.不會獨佔一行,不能設置寛高,且寛高依文本自身大小設置由左至右排列
+  2.可設置邉框及水平方向內邊距(padding),但垂直方向內邊距不影響頁面佈局
+  3.可設置水平方向外邊距(margin),不支持垂直方向外邉距
+  4.行內元素能容納文本和其他行內元素,不可嵌套塊級元素
+- 行內塊元素(img input td)display:inline-block;
+  1.不會獨佔一行,但可設置寛高,默認寛度為本身內容的寛度
+  2.高度、行高、內邊距都可控制
+- background-color背景顏色
+- background-img: url(路徑)
+- background-repeat: no-repeat圖片不平舖 repeatX X軸方向平舖, repeatY Y軸方向平舖
+- background-position: 
+    -默認值左上角top left = (0,0),如果方位名詞只寫一個,另一個默認為center
+    -網頁中的左上角為(0,0),X軸向右為正值.向左為負值 Y軸向下為正值,向上為負值
+    -混合使用模式-常用
+      100px center;水平100px 垂直居中
+      center 100px;水平居中 垂直100px 
+- background-attachment: 背景附著
     scroll(默認)-->隨滾動條滾動
     fixed-->背景固定
-- 簡寫形式 background: 顏色 圖片 是否平舖 是否滾動 位置
+- 簡寫形式 background: 顏色 圖片 是否平舖 是否滾動 位置  -->順序不強制要求,也可以只寫其中幾個
 - 背景透明:(css3)
-  background: rgb(0,0,0,0.5);
+  background: rgba(0,0,0,0.5);
 - 背景縮放:
-  background-size: 寛度 高度;-->注意等比例縮放問題,也可以百分比
-  cover:圖片等比例縮放,充滿整個背景區域,如有溢出部份隐藏(保證充滿整個背景)
-  contain:圖片等比例縮放,但不充滿整個背景區域(保證圖片完整性)
+  background-size: 寛度 高度;-->注意等比例縮放問題,一般只設置一個值,也可以使用百分比
+    cover:圖片等比例縮放,充滿整個背景區域,如有溢出部份隐藏(保證充滿整個背景)-->常用
+    contain:圖片等比例縮放,但不充滿整個背景區域(保證圖片完整性)
 - 多背景圖片,圖片之間以逗號隔開url(img.jpg),url(img1.jpg),如有設置背景顏色定義在最後一組上
+- 文本裝飾text-decoration
+    none:取消下劃線
+    underline:下劃線
+- css三大特性:層疊性、繼承性、優先級
+  1.樣式衝突遵循原則:就近原則後面蓋前面,優先級高者優先使用
+  2.繼承性:子承父業(限於text- font- line- color...)但並非所有樣式都會繼承,查詢css樣式表
+  3.優先級:(權重問題)(選擇器選擇的範圍越小越精確,優先級越高)
+    (1)!important > 行內樣式 1000 > id選擇器 100 > 類、屬性、和偽類選擇器 10 > 元素和偽元素選擇器 1 > 通用選擇器* 0 > 繼承的樣式(權重是0)
+    (2)權重可疊加:當選擇器中包含多種選擇器時,需將多種選擇器的權重相加後再作比較
+    (3)權重疊加計算時没有進級問題  1,0,0,0(行內)  0,1,0,0(id)  0,0,1,0(類、屬性、和偽類)  0,0,0,1(元素和偽元素) 0,0,0,0 (通用和繼承) 
+    (4)如果選擇器優先級相同時,則使用後面的樣式
+    (5)并(聯)集的優先級是單獨計算
+    (6)!inportant 優先級最高,慎用!!
+    (7)a下的四個偽類選擇器順序:link --> :visited --> :hover --> :active  (LOVE HATE) 
+- 盒模型:包括四個部份-->content、padding、border、margin
+    1.content
+      (1)預設值:content-box--(向外擴展)
+		 content實際寬高=width+左右padding值+左右border值
+         如果一個盒子没有設置寛、高或繼承父元素的寛、高時,則padding不會影響本身盒子的大小
+	  (2)border-box--(向內壓縮)設置變更盒模型的大小計算方式--> box-sizing: border;
+         content實際寬高=width(巳包含border,padding)
+	  前綴:firefox-->-moz- safari-->-webkit-
+
+    2.padding內邊距:指內容到邊框之間的距離,有四個方向可設置,設置順序:上右下左
+       一個值:四邊設置相同值,兩個值:上下  左右  三個值 上 左右 下
+    3.border邊框
+       - border-width | border-style | border-color
+       - border-radius邊框圓角
+        一個值表示四個角均為相同,設置為50%時會變成圓形
+        二個值表示左上角與右上角,右上角與左下角
+        三個值表示左上角,右上角與右下角,右下角
+    4.margin外邊距:指盒子與瀏覽器邊框之間的距離,有四個方向可設置,設置順序:上右下左
+        一個值:四邊設置相同值,兩個值:上下  左右  三個值 上 左右 下
+        設置 margin: 0 auto;讓塊級帶有寛度的盒子在瀏覽器水平居中對齊
+- 文字水平居中和盒子水平居中
+    text-align文字水平居中
+    margin: 0 auto;盒子水平居中
+- 插入圖片和背景圖片
+    插入圖片更改圖片大小,使用width和height,更改圖片在盒子中的位置,使用margin或padding 
+    背景圖片更改圖片大小,使用background-size: 寛 高,更改背景圖片位置使用background-position或簡寫形式background
+    一般情況下,背景圖片適合做一些小圖標、固定背景圖不動使用,而產品展示之類的就使用插入圖片
+- 清除默認內外邊距,使用  *{margin:0;padding:0}
+- 行內元素只有左右外邊距(margin-left),没有上下外邊距(margin-top、bottom),一般儘量不要給行內元素指定上下的內外邊距
+- 外邊距合併問題,兩個塊級盒子均設置外邊距時,則以最大的外邊距為準,如有需要,只需設置一個值即可,不用重覆設定
+- 兩個嵌套的盒子外邊距合併(塌陷)問題
+    1.為父元素設置1px的邊框
+    2.為父元素設置padding:1px;
+    3.為父元素設置overflow:hidden
+
 
