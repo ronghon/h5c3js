@@ -46,9 +46,14 @@
     -顏色值 ex red blue green...
     -16進制 #ffeecc #fec #eee...
     -rgb(r,g,b),也可以百分比rgb(50%,50%,0)...
-- 行高line height:設置與height相同時可設為文字垂直居中
+- line height行高:
+    1.單行文本時設置與height相同時可使文字垂直居中對齊
+    2.設置100%時line-height=font-size
+    3.設置1=font-size,1.5=1.5*font-size
+    4.如使用font簡寫形式時,可於指定font-size後面加一/指定行高,如不指定時會使用默認值,
+      line-height要放在font下面,否則line-height會失效
 - text-align文字水平位置:left right center
-- text-indent首行縮進 1em=1倍的font-size
+- text-indent首行縮進 1em=1倍的font-size,設置負值可用來隠藏不想顯示在頁面上的重要文字(給搜索引擎用)
 - letter-spacing字間距
 - word-spacing單詞間距(適用英文,中文不適用)
 - 顏色透明(css3)color:rgba(r,g,b a)a值0~1,值越小越透明 ex:color: rgba(0,0,0,0.3);
