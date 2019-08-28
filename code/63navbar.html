@@ -1,50 +1,62 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title></title>
-		<style>
-		*{
-			margin: 0;
-			padding: 0;
-		}	
-			
-		.nav{
-			background: #6495ED;
-			width: 1000px;
-			list-style: none;
-			overflow: hidden;
-			margin: 50px auto;
-		}
-		.nav li{
-			float: left;
-			width: 25%;
-			
-		}
-		.nav a{
-			display: block;
-			text-decoration: none;
-			color: white;
-			width: 100%;
-			padding: 10px 0;
-			text-align: center;
-			font-weight: bold;
-		}
-		.nav a:hover{
-			background: #c00;
-		}
-			
-		</style>
-	</head>
-	<body>
-		<ul class="nav">
-			<li><a href="#">首頁</a></li>
-			<li><a href="#">新聞</a></li>
-			<li><a href="#">聯系</a></li>
-			<li><a href="#">關于</a></li>
-			
-		</ul>
-		
-		
-	</body>
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        /*清除瀏覽器默認樣式*/
+        
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav {
+            background-color: #6495ed;
+            /* 在IE6中,如果為元素指定寛度,則默認開啟hasLayout */
+            width: 1000px;
+            /* 去除li前面的符號 */
+            list-style: none;
+            /* 解決高度塌陷問題 */
+            overflow: hidden;
+            margin: 50px auto;
+        }
+        
+        .nav li {
+            /* 設置li水平排列,但會導致父元素高度塌陷問題 */
+            float: left;
+            width: 25%;
+        }
+        /* 設置整個範圍超連接都可點擊 */
+        
+        .nav a {
+            /* a為行內元素轉換為塊元素 */
+            display: block;
+            /* 去除下劃線 */
+            text-decoration: none;
+            color: white;
+            /* 父元素為li,每個項目佔100% */
+            width: 100%;
+            padding: 10px 0;
+            text-align: center;
+            font-weight: bold;
+        }
+        /* 設置滑鼠移入改變顏色 */
+        
+        .nav a:hover {
+            background: #c00;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="nav">
+        <li><a href="#">首頁</a></li>
+        <li><a href="#">新聞</a></li>
+        <li><a href="#">聯系</a></li>
+        <li><a href="#">關于</a></li>
+    </ul>
+</body>
+
 </html>
