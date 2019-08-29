@@ -1,18 +1,18 @@
 ======fr簡介=====(資料來源:程式學徒專欄)
-	1.fr(fraction):代表對剩餘空間進行等分,它會先將己固定的數減去,再用剩餘的可用空間依設定比例均分。
+	1.fr(fraction):代表對剩餘空間進行等分,它會先將已固定的數減去,再用剩餘的可用空間依設定比例均分。
 	2.使用fr和百分比最大差異:百分比用的是整个屏幕的宽度,而fr用的是剩餘的寛度,較能保證不會超出屏幕寛度。
 
 grid:網格系統有點像table或畫布--解決垂直置中、靈活度高
 	外部容器:(container)
 		1.display:grid/inline-grid;
-		2.grid-template-rows:(列)定義列數及列高		grid-template-coloumns:(欄)定義欄數及欄寛
+		2.grid-template-rows:(行)定義行數及行高		grid-template-coloumns:(列)定義列數及列寛
 			a.屬性:
 		 	  軌道大小(track-size):可指定固定寛、高、百分比、份數或auto,也可使用簡寫方式repeat(次數,格線1 格線2 格線3...格線n)
 			  網格線名稱(line-name):[line1] 300px [line2] 10% [line3] auto [line4] 1fr [line5];
 				(grid-line可取多個名字代表)-->方便更清楚定義網格區域grid-areas
 			b.欄寛和列高設置方式:
 				1.固定大小 ex:200px
-				2.使用百分比:10%-->容器如有設固定寛高則為固定寛高*10%,列高如未設,則為文本內容高度(與auto同)
+				2.使用百分比:10%-->容器如有設固定寛高則為固定寛高*10%,列高如未設,則為文本內容寛高(與auto同)
 				3.使用fr:聲明剩餘空間分配比例
 				4.設置auto時預設為0,如有fr單位自動分配剩餘空間時,auto會依文本內容自適應寛高,如無fr,則auto功能會與fr類似	
 				5.使用repeat(n,size)ex:repeat(3,1fr) repeat(4,300px) repeat(3,1fr 2fr) repeat(3,300px auto)...;
@@ -72,20 +72,20 @@ grid:網格系統有點像table或畫布--解決垂直置中、靈活度高
 		c.可創建額外的軌道來保存內容
 		d.對齊控制
 		e.控制重疊內容(Z-index)
-	3.flexbox與grid能配合使用,在flexbox基礎上增加一個維度,是升級非取代。
-	4.瀏覽器兼容問題caniuse查詢IE11以上
+	3.flexbox與grid能配合使用,在flexbox基礎上增加一個維度,是升級非取代,grid是二維布局,根據設計需求將內容區塊放置到網頁的任何地方。
+	4.瀏覽器兼容問題可至caniuse網站查詢IE11以上
 	5.掌握grid網格布局的功能特點
 **第二章重要術語**
-	Grid Container網格容器,它是所有網格項目的父元素display: grid;
-	Grid Item網格項目,它是網格容器的子元素
+	Grid Container網格容器,它是所有網格項目的父元素display: grid;適用於塊級、行內或行內塊元素,只要父元素設置了display:grid,就已進入了網格布局模式
+	Grid Item網格項目,它是網格容器的子元素。
 	Grid Line網格線,組成網格項的分界線,與網格項無直接的關聯,在網頁中找不到這些線
-    Grid Track網格軌道,兩個相鄰的網格線之間為網格軌道,特點:一定會頂到容器邉緣,
-    Grid Cell網格單元,兩個相鄰的列網格線和兩個相鄰的行網格線組成的是網格單元,與網格項完全不同的概念
-    Grid Area網格區域,四個網格線包圍的總空間
-  	單位fr:剩餘空間分配數,用於在一系列長度值中分配剩餘空間,如多個己指定了多個部份,則剩下的空間根據各自的數字按比例分配
-  	*單位gr:網格數,目前尚未獲得w3c採納公開使用,未來是否應用待觀察
-**第三章容器屬性**
- 	1.display:grid | inline-grid  當元素設置了網格布局,column float clear vertical-align屬性將無效
+  Grid Track網格軌道,兩個相鄰的網格線之間為網格軌道,特點:一定會頂到容器邉緣,
+  Grid Cell網格單元,兩個相鄰的列網格線和兩個相鄰的行網格線組成的是網格單元,與網格項完全不同的概念
+  Grid Area網格區域,四個網格線包圍的總空間,一个网格区域(Grid Area)可以由任意数量的网格单元格(Grid Cell)组成
+  單位fr:剩餘空間分配數。用於在一系列長度值中分配剩餘空間,如多個已指定了多個部份,則剩下的空間根據各自的數字按比例分配
+  *單位gr:網格數,目前尚未獲得w3c採納公開使用,未來是否應用待觀察
+**第三章容器屬性-七大類
+ 	1.display:grid | inline-grid  -->當元素設置了網格布局,column float clear vertical-align屬性將無效
  		-grid生成塊級網格  -inline-grid生成行內網格
  	2.grid-template:(簡寫模式) none | grid-template-rows / grid-template-columns  none初始值 
 		 a.grid-template-rows

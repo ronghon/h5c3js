@@ -91,7 +91,6 @@ css選擇器：(不要大於3級)
   2.text-shadow: 1px 1px 1px #000, -1px -1px 1px #fff;凸起文字
   3.text-shadow: -1px -1px 1px #000, 1px 1px 1px #fff;凹下文孛
 
-
 33.樣式繼承:
   1.祖先元素的樣式會被後代元素繼承
   2.並非所有樣式均會被後代元素繼承,ex:背景、邊框、定位相關樣式都不會被繼承
@@ -156,6 +155,7 @@ box-sizing:
       3.設置元素的display:inline-block：可解決問題，但會導致寛度流失,不推薦使用此方法
       4.將元素的overflow設置為hidden是副作用最小的開啟BFC方法(推薦使用此方式)(解決方法1)
       (IE6及以下的瀏覽器不支持BFC,所以此種方式不兼容IE6,IE6有另一隠含屬性叫hasLayout,開啟方式使用zoom:1即可解決)
+
 64.清除浮動:clear清除浮動對當前元素產生影響,清除浮動後,當前元素回到原來文檔流的位置
 		none:不清除浮動,預設值
 		left:清除左浮動對當前元素產生影響
@@ -179,6 +179,17 @@ box-sizing:
     .clearfix{
       zoom:1;
     }
+
+84.同時解決父元素高度塌陷及垂直相鄰的父子元素外邊距重疊問題(最後版)
+   1.父元素未設置高度默認由子元素內容撐開,但當子元設置浮動時,會導致父元素高度塌陷問題
+   2.父元素與子元素相鄰的垂直外邊距會發生重疊現象,子元素的外邊距會傳給父元素
+   .clearfix:before,  //解決相鄰垂直外邊距重疊問題
+   clearfix:after{  //解決父元素高度塌陷問題
+     content: "";
+     display: table;
+     clear: both;
+   }
+
 65.浮動元素重疊問題:
 		1.浮動元素不會覆蓋文字內容,產生文繞圖情況
 		2.浮動元素不會覆蓋圖片內容(因為圖片本身也屬於文本,可將圖片視為一個特殊的文字)
@@ -248,7 +259,57 @@ box-sizing:
       scroll:預設值,背景圖片會隨著滾動
       fixed:背景圖片固定,不會隨滾動條滾動且定位永遠相對於瀏覽器窗口固定在視窗頂部,一般都設置給body,而不設置給其他元素
   3.簡寫:background:没有設置順序和數量的要求,未設置者使用默認值
-      
+      backgorund: #eee url(img/01.png) no-repeat fixed;
+
+77.雪碧圖(sprite)利用
+  可解決圖片多次加載,出現短暫閃爍問題,將圖片整合在一張圖片中一起加載,再利用background-position來切換圖片要顯示位置,此方法稱為圖片整合技術,圖片稱之為雪碧圖
+  優點:
+  1.瀏覽器只需發送一次請求可同加載多張圖片,提高訪問效率,提高用戶體驗
+  2.圖片總大小變小,提高請求速度,增加用戶體驗
+
+85-87.form表單 
+  action:指向一個服務器的地址,當提交表單時會提交到action對應的地址
+  input 如需將表單項提交到服務器中,要為表單項指定一個name屬性(查詢字符串),value=""顯示在前端文字
+  input type="屬性值" ,藉由指定不同type形式,獲取不同的結果 
+      type屬性值:
+        text:文本框
+        password:密碼
+        radio:單選-->使用name進行分組,需加value值
+        checkbox:多選   使用checked默認選取項
+        tel:電話
+        email
+        submit:提交
+        reset:重置-->內容恢復為默認值
+        button:按鈕
+    <button type="submit">提交</button> -->較靈活,可使用圖片
+    <button type="reset">重置</button>
+    <button type="button">按鈕</button>
+  selection下拉列表 name
+    option選項  使用value取值 使用selected作為默認選項  multiple可多選
+    optgroup 選項分組  使用label指定分組名稱
+  textarea多行文本域,可設置寛高
+  label 專門用來選中表單中的提示文字,可指定for屬性,作為指定表單項的id值
+  fieldset 表單分組
+
+css-Hack:兼容性問題處理
+  部份特殊的代碼只需在特殊的瀏覽器中執行,而在其他瀏覽器中不需要執行,此時可使用css Hack來解決問題
+  條件Hack只對IE瀏覽器有效,其他的瀏覽器都會將它識別為注釋,且IE10及以上的瀏覽器不支持這種方式
+  <!--[if IE 6]>
+   <p>當前瀏覽器是IE6!</p>
+  <![endif]-->
+  IE9以下顯示
+  <!--[if lt IE 9]> lt小於  gt大於  lte小於等於  gte大於等於  !除了...之外
+   <p>當前瀏覽器是IE6!</p>
+  <![endif]-->
+
+  在樣式前添加下劃線,則該樣式只有在IE6及以下瀏覽器才可識別
+    _background-color: yellow;
+  添加*的樣式,只有IE7及以下的瀏覽器才可識別
+    *backgorund-color: yellow;
+  css Hack 不到萬不得已,儘量不要使用
+
+
+
 
 
 
