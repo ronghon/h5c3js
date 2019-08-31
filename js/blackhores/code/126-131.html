@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //126.arguments使用:arguments內存儲所有實參傳遞過來的值,只有函數才有arguments,且每個函數均內建arguments
+        /* function fun() {
+          console.log(arguments);
+          console.log(arguments.length);//獲取長度:3
+          console.log(arguments[1]);//使用數組形獲取index=1的值:5
+          //可以按照數組的方式遍歷arguments
+          for (var i = 0; i < arguments.length; i++) {
+            console.log(arguments[i]);
+          }
+        }
+        fun(1, 20, 5, 60); */
+
+        // 127.利用函數求任意個數的最大值(參數個數不確定時,可使用arguments)
+        /* function getMax() {
+            var max = arguments[0];
+            for (var i = 1; i < arguments.length; i++) {
+                if (arguments[i] > max) {
+                    max = arguments[i];
+                }
+            }
+            return max;
+        }
+        var res = getMax(322, 434, 6, 99);
+        var res1 = getMax(12, 334, 38, 15, 223, 158, 99);
+        console.log(res);
+        console.log(res1); */
+
+        //128.利用函數翻轉任意數組
+        /* function reverse(arr) {
+            var newArr = []; //創建一個空的新數組
+            for (var i = arr.length - 1; i >= 0; i--) {  //遍歷舊數組,並從最後一個值開由後往前遍歷
+                newArr[newArr.length] = arr[i];  //將每個遍歷的元素賦值給新數組,且新數組的索引值從0開始
+            }
+            return newArr;
+        }
+        var res = reverse([30, 25, 100, 88, 45]);
+        console.log(res);
+        var res1 = reverse(['Red', 'tom', 'Blue', 'Black', 'pink']);
+        console.log(res1); */
+
+        //129.利用函數封裝方式,冒泡排序
+        // 1.步驟1:外層循環處理趟數,5個元素兩兩比較時共需比較4趟
+        // 2.內層循環處理每趟交換的次數,第1趙交換4次,第2趙交換3次,第3趟交换2次,第4趟交換1次
+        // 3.兩比較,前>後時,交換前後位置
+        /* function sort(arr) {
+            for (var i = 0; i < arr.length - 1; i++) {
+                for (var j = 0; j < arr.length - i - 1; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        var tmp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = tmp;
+                    }
+                }
+            }
+            return arr;
+        }
+        var res = sort([3, 21, 202, 103, 88]);
+        console.log(res); */
+
+        // 利用函數進行冒泡排序,由小到大
+        /* function sort(arr) {
+          for (var i = 0; i < arr.length - 1; i++) {  //1.外層循環負責交換趟數,n個元素共需交換n-1趟,n-1=arr.length-1
+            for (var j = 0; j < arr.length - i - 1; j++) {  //2.內層循環負責每趟交換次數,第1趟交換n-1次,第2趟交換n-2次,第3趟交換n-3次
+              if (arr[j] > arr[j + 1]) {//3.假如前值>後宜時,兩個數值位置交換(藉由一個臨時變量來完成交換)
+                var tmp = arr[j];//
+                arr[j] = arr[j + 1];
+                arr[j + 1] = tmp;
+              }
+            }
+          }
+          return arr;
+        }
+        var res = sort([13, 666, 10, 77]);
+        console.log(res);
+        var res1 = sort([100, 1, 0, 6, 40, 77]);
+        console.log(res1); */
+
+        //130.利用函數判斷是否是閏年?
+
+        /* var year = parseInt(prompt('請輸入年份'));
+
+        function isRunYear(year) {
+            var flag = '平年';
+            if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+                flag = '閏年';
+            }
+            return flag;
+        }
+        var res = isRunYear(year);
+        alert(res); */
+
+        // 131.函數相互調用
+        /* function getYear() {
+            var year = prompt('請輸入年份:');
+            if (isRunYear(year)) { //調用另一個函數isRunYear判斷為true或false
+                alert('您輸入的年份是閏年'); //返回值為true時
+            } else {
+                alert('您輸入的年份是平年'); //返回值為false時
+            }
+        }
+        getYear();
+
+        function isRunYear(year) {
+            var flag = false;
+            if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+                flag = true;
+            }
+            return flag;
+        } */
+    </script>
+</body>
+
+</html>

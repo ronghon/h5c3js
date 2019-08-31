@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 102比較數組中的最大值?
+        /* var arr = [2, 6, 1, 4, 77, 5, 94, 74];
+        var max = arr[0]; //先將第1個元素賦值給一個變量
+        for (var i = 1; i < arr.length; i++) {
+            //遍歷數組
+            if (arr[i] > max) {
+                //比較兩個元素大小,並將較大值重新賦值組變量,依序比較之後即可得到最大值
+                max = arr[i];
+            }
+        }
+        console.log(max); */
+
+        // 比較數組中的最小值?
+        /* var arr = [23, 6, 33, 4, 77, 5, 94, 74]
+        var min = arr[0];
+        for (var i = 1; i < arr.length; i++) {
+            if (arr[i] < min) {
+                min = arr[i];
+            }
+        }
+        console.log(min); */
+
+        //105將1~10放入到一個數組中
+        /*var arr=[];
+        for(var i=0;i<10;i++){
+            arr[i]=i+1;
+        }
+        console.log(arr);*/
+
+        //106篩選大於10的元素存放至新數組
+        //方法1
+        /*var arr = [2, 6, 1, 4, 77, 5, 94, 74];
+        var newArr = [];
+        var k = 0;
+        for(var i = 0; i < arr.length; i++) {
+            if(arr[i] > 10) {
+                newArr[k] = arr[i];    //新的數組索引值需從0開始所以設置一個變量從0開始,並於另外新增元素時變量自增1
+                k++;
+            }
+        }
+        console.log(newArr);*/
+
+        //107方法2
+        /* var arr = [2, 6, 1, 4, 77, 5, 94, 74];
+        var newArr = [];
+        //var k = 0;
+        for(var i = 0; i < arr.length; i++) {
+            if(arr[i] > 10) {
+                newArr[newArr.length] = arr[i];    //利用newArr.length初始值=0特性
+                //k++;
+            }
+        }
+        console.log(newArr); */
+
+        // 方法3:使用push方法向數組末尾添加元素
+        /* var arr = [2, 6, 1, 4, 77, 5, 94, 74];
+        var newArr = [];
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] > 10) {
+                newArr.push(arr[i]); //向數組末尾添加元素[77,94,74]
+                // newArr.unshift(arr[i]);//向數組開頭位置添加元素[74,94,77]
+                // newArr.sort(newArr[i]);//將新數組由小到大排序
+            }
+        }
+        console.log(newArr); */
+
+        // 比較兩個數的最大值
+        /* function getMax(num1, num2) {
+            return num1 > num2 ? num1 : num2;
+        }
+        var result = getMax(250, 100);
+        alert(result);
+
+        // 比較兩個數的最小值
+        function getMin(num1, num2) {
+            return num1 < num2 ? num1 : num2;
+        }
+        var result = getMin(125, 100);
+        alert(result); */
+
+        // 108刪除數組中的特定元素ex:0,產生新數組
+        /* var arr = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+        var newArr = [];
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] != 0) {
+                newArr[newArr.length] = arr[i];
+            }
+        }
+        console.log(newArr); */
+
+        //109翻轉數組順序
+        /* var arr = ['red', 'blue', 'green', 'black', 'dark', 'white'];
+        var newArr = [];
+        for (var i = arr.length - 1; i >= 0; i--) { //2.藉由i--往前遍歷特性再取倒數第二個元素放到新數組第二個元素
+            //3.由後往前遍歷一直到數組第1個(索引值=0),所以i>=0			
+            newArr[newArr.length] = arr[i]; //1.取出原數最後一個元素放到新數組第一元素
+        }
+        console.log(newArr); */
+
+        // 110交換兩個變量-->透過一個臨時變量
+        /* var a = 10;
+        var b = 20;
+        var temp;
+        temp = a;
+        a = b;
+        b = temp;
+        console.log(a, b); */
+
+        // 111-112冒泡排序-一次比較兩個元素,如果順序錯誤就交換
+        /* var arr = [5, 2, 4, 10, 17, 19];
+        for (var i = 0; i <= arr.length - 1; i++) { //外層循環處理趟數-->length-1
+            for (var j = 0; j <= arr.length - i - 1; j++) { //內層循環,每趟交換次數
+                if (arr[j] > arr[j + 1]) { //比較前後兩個數的大小,如前一個值大於後一個值,則執行交換兩個值的位置,
+                    var tmp = arr[j]; //利用一個臨時變量來交換前後位置,先將比較後較大值賦值給臨時變量
+                    arr[j] = arr[j + 1]; //再將後一個元素的值賦值給前一個元素的值,
+                    arr[j + 1] = tmp; //最後再把較大的值賦值給後一個元素
+                }
+            }
+        }
+        console.log(arr); */
+
+        //116 利用函數計算1~100之間累加和
+        /* var sum = 0;
+
+        function getSum(num1, num2) {
+            for (var i = num1; i <= num2; i++) {
+                sum += i;
+            }
+            return sum;
+        }
+        var res = getSum(1, 100);
+        console.log(res); */
+    </script>
+</body>
+
+</html>
