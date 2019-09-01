@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        class Star {
+            //將類中的公共屬性放到constructor中
+            constructor(uname, uage) {
+                    this.name = uname; //this指向的新創建的對象實例
+                    this.age = uage;
+                }
+                //在類中掭加方法
+            sing(song) {
+                console.log(song)
+            }
+        }
+        var ldh = new Star('劉德華', 36);
+        var zxy = new Star('張學友', 40);
+        console.log(ldh.name); //劉德華
+        console.log(zxy.name); //張學友
+        //調用方法
+        ldh.sing('冰雨'); //冰雨
+        zxy.sing('李香蘭'); //李香蘭
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

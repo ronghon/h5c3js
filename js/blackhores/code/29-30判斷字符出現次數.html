@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script>
+			//29.判斷一字符串'abcsaabbdddssvvaoefakljdskjm'中出現次數最多的字符,並統計次數
+			// var o={				//創建一個對象,有一屬性age
+			// 	age:18
+			// }
+			// if(o['age']){   //判斷o對象是否有age屬性
+			// 	console.log('yes');
+			// }else{
+			// 	console.log('no');
+			// }
+			
+			var str='abcsaabbdddssvvaoefakljdskjm';
+			 var o={};
+			 for(var i=0;i<str.length;i++){
+				 var chars=str.charAt(i);//利用charAt()索引值來遍歷字符串每個字母賦值給chars
+				 	if (o[chars]){  //判斷o對象是否已有該字母屬性
+					 o[chars]++;   //若有該屬性則該屬性值加1
+				 }else{					//若無該屬性則令屬性值=1
+					 o[chars]=1;
+				 }
+			 }
+			 console.log(o);
+			 //2.遍歷對象
+			 var max=0;
+			 var ch='';
+			 for (var k in o){
+				 // k是獲取對象的屬性名
+				 // o[k]是獲取對象的屬性值
+				 if(o[k]>max){
+					 max=o[k];
+					 ch=k;
+				 }
+			 }
+			 // console.log(max);
+			 console.log('出現最多的字符是:'+ch+',共出現'+max+'次');
+		</script>
+	</body>
+
+</html>

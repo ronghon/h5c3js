@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //使用extends 子類可以繼承父類方法
+        /* class Father {
+            constructor() {
+            }
+            money() {
+                console.log(100);
+            }
+        }
+        class Son extends Father {  //使用extends繼承父類
+        }
+        var son = new Son();
+        son.money();//子類繼承父類的money方法 */
+
+        //使用super關鍵字可以調用父類的構造函數
+        class Father {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+            }
+            getsum() {
+                console.log(this.x + this.y);
+            }
+        }
+        class Son extends Father { //使用extends繼承父類
+            constructor(x, y) {
+                super(x, y); //使用super關鍵字調用了父類中的構造函數
+            }
+        }
+        var son = new Son(5, 10);
+        son.getsum();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

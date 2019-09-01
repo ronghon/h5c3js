@@ -1,25 +1,41 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-	<meta charset="UTF-8">
-	<title></title>
-	<script type="text/javascript">
-		function unique(arr) {
-			var newArr = [];
-			for (var i = 0; i < arr.length; i++) {	//遍歷數組方便與新數組作比較
-				if (newArr.indexOf(arr[i]) === -1) { //利用indexOf查找特性,如找不到時則返回-1,並將元素添加到新數組中
-					newArr.push(arr[i]);
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function arrDelDuble(arr) {
+				var newArr = [];
+				for (var i = 0; i < arr.length; i++) {
+					if (newArr.indexOf(arr[i]) === -1) {
+						newArr.push(arr[i]);
+					}
 				}
+				return newArr;
 			}
-			return newArr;
-		}
-		var demo = unique(['c', 'b', 'd', 'a', 'c', 'b', 'x', 'd']);
-		console.log(demo);
-	</script>
-</head>
+			var res = arrDelDuble([3, 6, 3, 2, 12, 3, 5, 2, 6, 1, 13, 12]);
+			console.log(res);
 
-<body>
-</body>
+
+
+
+
+			/* function unique(arr) {
+				var newArr = [];
+				for (var i = 0; i < arr.length; i++) {	//遍歷舊數組與新數組作比較
+					if (newArr.indexOf(arr[i]) === -1) { //假如新數組没有該元素則新增到新數組中,利用indexOf查找特性,如找不到時則返回-1,會將該元素添加到新數組中
+						newArr.push(arr[i]);
+					}
+				}
+				return newArr;
+			}
+			var demo = unique(['c', 'b', 'd', 'a', 'c', 'b', 'x', 'd']);
+			console.log(demo); */
+		</script>
+	</head>
+
+	<body>
+	</body>
 
 </html>
