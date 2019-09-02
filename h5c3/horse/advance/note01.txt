@@ -1,4 +1,4 @@
-04新增標籤語義化==
+04.新增標籤語義化==
 	1.div 對搜索引擎無意義,因此新增具有語義的標籤,如
 		- header 頭部
 		- nav 導航
@@ -7,7 +7,7 @@
 		- aside 側邊欄
 		- footer 底部
 	2.這些語義化標籤主要針對搜索引擎的,可在頁面中重覆使用,在IE9中,這些元素會被視為行級元素,所以需轉換為塊級元素
-05H5新增多媒體標籤==
+05.H5新增多媒體標籤==
 	1.<audio>音頻
 		支持三種格式: MP3 Wav Ogg Vorbis,注意事項:因為不同瀏覽器支持不同格式,因此需同時準備多種格式,並利用<source src="url">
 		<audio src="文件地址" 
@@ -16,26 +16,38 @@
 		 -controls 顯示控件
 		 -loop 重新開始播放(循環)
 		 -src url地址
-06視頻==
+06.視頻==
 	2.<video>視頻
 		支持三種格式:Mp4 Ogg WebM
 		屬性值大致與audio相同
 		-autoplay 自動撥放-->google禁用此項屬性,解決方案,添加muted屬性,但音頻不可以
-07input表單==
+07.input表單==
 	type="email"->需包含@及@後面要有內容
-	type="url"
-	type="date"->日期
-	type="number"->限制輸入數字
-	type="tel"->限制輸入手機號碼
-	type="search"-->搜索椢
+	type="url"->驗證只能輸入合法的網址,必須含http
+	type="date"->日期:年月日
+	type="time"->時間:時分秒
+	type="datetime"大多數瀏覽器不支持datetime,只有safari支援,可改用datetime-local
+	type="month"->月份
+	type="week"->星期
+	type="number"->限制只能輸入數字,包含小數,可使用min最小值 和max 最大值,value="60"預設值
+	type="tel"->它不是用來實現驗證,目的為可在移動端打開數字鍵盤,意味著限制用戶只能輸入數字
+	type="search"-->搜索,可提供更人性化的輸入體驗
+	type="range"->範圍,可設最大值 max 和最小值 min 預設值value  ex:調音量大小
 	type="color"->顏色選擇表單
-08input表單屬性==
-	-required 必填,內容不能為空
+08.input表單屬性==
+	-required 必填,內容不能為空  pattern="正則表達式驗證"
 	-placeholder提示文本(佔位符)
 	-autofocus自動獲取鼠標焦點
-	-autocomolete自動提示曾經提交的內容=on-->注意:使用時需同時加上name屬性並曾經成功提交內容  =off 關閉該功能
+	-autocomolete自動提示曾經提交的內容 on 打開該功能 -->注意:使用時需同時加上name屬性並曾經成功提交內容 off 關閉該功能
 	-multiple 可多選文件提交
-
+	-form:form="myForm"指定表單id,在將來指定form id="myForm"
+  form: 
+	  select 
+	    -option value:具體的值  label:提示信息,輔助值
+	  datalist
+	    -option value:具體的值  label:提示信息,輔助值-->firefox不支援value
+	與input建立關連時,使用list="datalist的id號"
+	如果input輸入框的type="url"時,value值必須添加http://
 10css3導讀==
 11、12屬性選擇器(上)==
 	1.button{

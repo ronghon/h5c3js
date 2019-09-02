@@ -1,0 +1,10 @@
+02.h5:IE8及以下不支持,解決方案
+04.解決IE8及以下不支持新增的語意化標籤方法:
+  1.手動創建標籤:默認的標籤類型均為行內元素,所以使用時需自行轉換為塊級元素
+    <script>
+    document.createElement("header");
+    </script>
+  2.利用引入外部文件:在<head>標籤中加入以下代碼
+  <!--[if lt IE 9]>
+  <script src="html5shiv.js"></script>
+  <![endif]-->
