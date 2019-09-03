@@ -81,7 +81,7 @@
   2.可設置水平方向內邊距(padding)及邊框,且設置垂直方向內邊距時不影響其他元素及頁面佈局
   3.可設置水平方向外邊距(margin-left及right),不支持垂直方向外邉距(margin-top及bottom)
   4.行內元素能容納文本和其他行內元素,不可嵌套塊級元素
-- 行內塊元素(img input td)display:inline-block;
+- 行內塊元素(img input textarea td )display:inline-block;
   1.不會獨佔一行,但可設置寛高,默認寛度為本身內容的寛度
   2.高度、行高、內邊距都可控制
 - background-color背景顏色
@@ -121,11 +121,11 @@
 - 盒模型:包括四個部份-->content、padding、border、margin
     1.content
       (1)預設值:box-sizing: content-box;(向外擴展)
-		 content實際寬高=width+左右padding值+左右border值
+         content實際寬高=width+左右padding值+左右border值
          如果一個盒子没有設置寛、高或繼承父元素的寛、高時,則padding不會影響本身盒子的大小
-	  (2)box-sizing: border-box;(向內壓縮)設置變更盒模型的大小計算方式
+      (2)box-sizing: border-box;(向內壓縮)設置變更盒模型的大小計算方式
          content實際寬高=width(巳包含border,padding)
-	  前綴:firefox-->-moz- safari-->-webkit-
+      前綴:firefox-->-moz- safari-->-webkit-
 
     2.padding內邊距:指內容到邊框之間的距離,有四個方向可設置,設置順序:上右下左
        一個值:四邊設置相同值,兩個值:上下  左右  三個值 上 左右 下
@@ -258,6 +258,15 @@
     overflow:hidden  -->溢出隠藏        auto -->超出自動顯示滾動條,不超出不顯示滾動條   visible-->全部顯示
 199.css高級技巧
    1.鼠標樣式cursor:  pointer小手  move移動   text文本  
-   2.outline:輪廓線  與border 邊框類似  input輸入框中有,一般用 outline:0或none 清除輪廓外邊線
+   2.outline:輪廓線  與border 邊框類似  input輸入框中有,一般用 outline: 0或none 清除輪廓外邊線
    3.resize:none;防止文本域拖拽 
-   4.vertical-align:middle;默認為基線對齊(baseline),垂直居中對齊,對塊級元素無效,只針對行內及行內塊元素,通常用來控制圖片/表單與文字的對齊
+   4.vertical-align:默認為基線對齊:baseline,文字垂直居中對齊:middle,對塊級元素無效,只針對行內及行內塊元素,通常用來控制圖片(img)/表單(textarea)與文字的對齊
+     text-align文字水平居中對齊
+     margin:0 auto;盒子居中對齊 
+   5.溢出的文字隠藏
+     white-space設置或檢索文本顯示方式,normal默認換行,nowrap不換行
+     text-flow:
+       1.前提-->需在white-space:nowrap不換行情況下
+       2.overflow:hidden 
+       3.clip:直接裁切
+         ellipsis: 超出部份以省略符代替...
