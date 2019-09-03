@@ -1,3 +1,5 @@
+从零开始玩转前端与移动开发（第二阶段CSS3）(pink老師)
+
 - input br img base ...均為單標籤
 - css 網頁的美容師,結構樣式分離
 - cascading style sheet css層疊樣式表
@@ -256,4 +258,6 @@
     overflow:hidden  -->溢出隠藏        auto -->超出自動顯示滾動條,不超出不顯示滾動條   visible-->全部顯示
 199.css高級技巧
    1.鼠標樣式cursor:  pointer小手  move移動   text文本  
-   2.outline:輪廓線  與border 邊框類似  input輸入框中有,一般用 outline:0 清除輪廓外邊線
+   2.outline:輪廓線  與border 邊框類似  input輸入框中有,一般用 outline:0或none 清除輪廓外邊線
+   3.resize:none;防止文本域拖拽 
+   4.vertical-align:middle;默認為基線對齊(baseline),垂直居中對齊,對塊級元素無效,只針對行內及行內塊元素,通常用來控制圖片/表單與文字的對齊
