@@ -287,23 +287,48 @@
         (2)前端人員上傳生成兼容性字體文件包 https"//icomoon.io  http://iconfont.cn
         (3)前端人員下載兼容字體文件包到本地
         (4)把字體文件包引入到html頁面中
-    8.滑動門
-    9.偽元素的本質:before和after偽元素本身不是真正的html頁面元素,但它們所有用法和表現行為與真正的頁面元素相同,可以像
-      頁面元素一樣添加css樣式,表面上看上去貌似是頁面中的某些元素一般,實際上是css樣式展現的行為,所以被稱之為偽元素
-      類選擇器和偽類選擇器作用是用來選取對象,而偽元素選擇器本質上是插入一個元素(標籤 盒子),它是一行內元素,內包含一個
-      content屬性(必須),可用來設置偽元素內容,偽元素是不佔位置的
+
+      3.selection.json可用來追加新圖標import icons
+    8.滑動門:通常應用於導航欄背景隨著文本內容大小伸縮,頁面可配合各種特殊形狀的背景而自由的拉伸動,以自適應元素內部的文本內容,主要是利用背
+            景位置移動(雪碧圖技術)和盒子padding撐開寛度(配合滑動門導航欄.html)
+      <li>
+          <a href="#">            //a負責設置背景左側,不用設置寛度而是利用padding撐開寛度
+           <span>導航欄內容</span>  //span負責設置背景右側,也不用設置寛度而是利用padding撐開寛度,其餘由文字內容撐開整個寛度
+          </a>                    //以a包含span是因為整個導航都可以點擊
+      </li>
+    9.偽元素的本質:before和after偽元素本身不是真正的html頁面元素,但它們所有用法和表現行為與真正的頁面元素相同,可以像頁面元素一
+      樣添加css樣式,表面上看上去貌似是頁面中的某些元素一般,實際上是css樣式展現的行為,所以被稱之為偽元素。
+      類選擇器和偽類選擇器作用是用來選取對象,而偽元素選擇器本質上是插入一個元素(標籤 盒子),它是一行內元素,內包含一個content屬性(必須)
+      ,可用來設置偽元素內容,偽元素是不佔位置的
       應用:製作鼠標經過為相片添加邊框,產生立體效果
-        div:hover::before{
+        div:hover::before{  當鼠標經過插入一個邊框 
           content: "";
           border: 5px solid rgba(255,255,255,.3);
         }
     10.過渡效果transition經常與hover配合使用
       -transition:過渡屬性(property) 花費時間(duration) 運動曲線(timing-function) 何時開始(delay)
         過渡屬性(property):屬性名稱
-        花費時間(duration):默認為0,單位是s秒(必須)
+        花費時間(duration):默認為0,單位是s秒(前兩個屬性為必須)
         運動曲線(timing-function):默認是ease(逐漸慢下來)  ease-in加速 ease-out減速 linear均速 ease-in-out先加速後減速
         何時開始(delay):默認為0
-      -transition是寫在作用的盒子中
+      -transition是寫在作用的盒子中-->誰作動畫給誰加過渡
       -所有屬性都變化時使用all,後面兩個屬性可省略
       -背景過渡 transition: background-color  1s;  或  all 1s;
       -盒子上移並加陰影效果
+    11.變形(transform)--2D:可用來執行元素的位移、旋轉、傾斜、動畫等效果
+      -translate(x,y)移動,x軸向右為正值,向左為負值,y軸向下為正值,向上為負值  
+        translateX() 沿x軸移動
+        translateY() 沿y軸移動
+        translate(50%):表示以自己寛度的一半
+        應用:讓盒子水平居中對齊
+          position: absolute;
+          left: 50%;
+          transform: translate(-50%);
+          垂直居中對齊再加上
+          top: 50%;
+          transform: translate(-50%,-50%);-->使用優點:不必再計算寛高
+      -scale(x,y)縮放,x表水平方向縮放,y表垂直方向縮放,預設值為1,當值=0.1--0.99表示縮小,大於1時表示放大幾倍,如需溢出隠藏,需加overflow:hidden;
+      -rotate(deg)旋轉,順時針為正值,逆時針為負值,deg為度數
+
+
+

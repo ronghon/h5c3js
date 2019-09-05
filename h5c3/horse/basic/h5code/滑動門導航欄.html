@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        a {
+            display: inline-block;
+            height: 33px;
+            /* 千萬不能給寛度  目標:實現推拉門自由縮放 */
+            background: url(images/nav.png) no-repeat;
+            padding-left: 15px;
+            color: #fff;
+            text-decoration: none;
+            line-height: 33px;
+            margin: 100px;
+        }
+        
+        a span {
+            display: inline-block;
+            height: 33px;
+            background: url(images/nav.png) no-repeat right;
+            /* span也不能給寛度 而是利用padding撐開, span是要設置右的圓角,所以背景位置右對齊 */
+            padding-right: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <li>
+        <a href="#">
+            <span>導航欄內容可自由拉伸</span>
+        </a>
+    </li>
+</body>
+
+</html>
