@@ -257,78 +257,97 @@
     visibility:hidden -->佔有位置 隠藏  visible-->對象顯示
     overflow:hidden  -->溢出隠藏        auto -->超出自動顯示滾動條,不超出不顯示滾動條   visible-->全部顯示
 199.css高級技巧
-   1.鼠標樣式cursor:  pointer小手  move移動   text文本  
-   2.outline:輪廓線  與border 邊框類似  input輸入框中有,一般用 outline: 0或none 清除輪廓外邊線
-   3.resize:none;防止文本域拖拽 
-   4.vertical-align:默認為基線對齊:baseline,文字垂直居中對齊:middle,對塊級元素無效,只針對行內及行內塊元素,通常用來控制圖片(img)/表單(textarea)與文字的對齊
-     text-align文字水平居中對齊
-     margin:0 auto;盒子居中對齊 
-   5.溢出的文字隠藏
-     white-space設置或檢索文本顯示方式,normal默認換行,nowrap不換行
-     text-flow:
-       1.前提-->需在white-space:nowrap不換行情況下
-       2.overflow:hidden 
-       3.clip:直接裁切
-         ellipsis: 超出部份以省略符代替...
-    6.雪碧圖(sprites)就是將部份零星的背景圖集中到一張大圖,然後利用背景圖的定位技術取出所需相應的圖片,功能:減少對服務發送請求的次數,提昇網頁執行效率
-      插入圖片與背景圖片的使用差別
-      1.插入圖片:利用margin padding  float position 來移動圖片 控制大小使用width或height-->較常更換的使用插入圖片
-      2.背景圖片:利用background 來控制 size(大小) position(位置) repeat(重覆平舖方式)-->使用時機:通常固定不變的可使用背景圖 
-      缺點:圖片縮放容易失真,不利於移動端響應式設計,增加總文件的大小,也增加了額外的http請求,降低網頁性能
-    7.字體圖標(svg格式)
-      1.優點:
-        (1)可改變透明度,旋轉度等
-        (2)本質是文字,可隨意改顏色、產生陰影、透明效果等
-        (3)本身體積小,但攜帶的信息並没有削減
-        (4)幾乎支持所有瀏覽器
-        (5)支持移動端設備
-      2.使用流程:
-        (1)UI人員設計字體圖標效果圖(SVG)-->使用AI或sketch(for Mac)
-        (2)前端人員上傳生成兼容性字體文件包 https"//icomoon.io  http://iconfont.cn
-        (3)前端人員下載兼容字體文件包到本地
-        (4)把字體文件包引入到html頁面中
+1.鼠標樣式cursor:  pointer小手  move移動   text文本  
+2.outline:輪廓線  與border 邊框類似  input輸入框中有,一般用 outline: 0或none 清除輪廓外邊線
+3.resize:none;防止文本域拖拽 
+4.vertical-align:默認為基線對齊:baseline,文字垂直居中對齊:middle,對塊級元素無效,只針對行內及行內塊元素,通常用來控制圖片(img)/表單(textarea)與文字的對齊
+  text-align文字水平居中對齊
+  margin:0 auto;盒子居中對齊 
+5.溢出的文字隠藏
+  white-space設置或檢索文本顯示方式,normal默認換行,nowrap不換行
+  text-flow:
+    1.前提-->需在white-space:nowrap不換行情況下
+    2.overflow:hidden 
+    3.clip:直接裁切
+      ellipsis: 超出部份以省略符代替...
+6.雪碧圖(sprites)就是將部份零星的背景圖集中到一張大圖,然後利用背景圖的定位技術取出所需相應的圖片,功能:減少對服務發送請求的次數,提昇網頁執行效率
+   插入圖片與背景圖片的使用差別
+   1.插入圖片:利用margin padding  float position 來移動圖片 控制大小使用width或height-->較常更換的使用插入圖片
+   2.背景圖片:利用background 來控制 size(大小) position(位置) repeat(重覆平舖方式)-->使用時機:通常固定不變的可使用背景圖 
+   缺點:圖片縮放容易失真,不利於移動端響應式設計,增加總文件的大小,也增加了額外的http請求,降低網頁性能
+7.字體圖標(svg格式)
+  1.優點:
+    (1)可改變透明度,旋轉度等
+    (2)本質是文字,可隨意改顏色、產生陰影、透明效果等
+    (3)本身體積小,但攜帶的信息並没有削減
+    (4)幾乎支持所有瀏覽器
+    (5)支持移動端設備
+  2.使用流程:
+    (1)UI人員設計字體圖標效果圖(SVG)-->使用AI或sketch(for Mac)
+    (2)前端人員上傳生成兼容性字體文件包 https"//icomoon.io  http://iconfont.cn
+    (3)前端人員下載兼容字體文件包到本地
+    (4)把字體文件包引入到html頁面中
 
-      3.selection.json可用來追加新圖標import icons
-    8.滑動門:通常應用於導航欄背景隨著文本內容大小伸縮,頁面可配合各種特殊形狀的背景而自由的拉伸動,以自適應元素內部的文本內容,主要是利用背
-            景位置移動(雪碧圖技術)和盒子padding撐開寛度(配合滑動門導航欄.html)
-      <li>
-          <a href="#">            //a負責設置背景左側,不用設置寛度而是利用padding撐開寛度
-           <span>導航欄內容</span>  //span負責設置背景右側,也不用設置寛度而是利用padding撐開寛度,其餘由文字內容撐開整個寛度
-          </a>                    //以a包含span是因為整個導航都可以點擊
-      </li>
-    9.偽元素的本質:before和after偽元素本身不是真正的html頁面元素,但它們所有用法和表現行為與真正的頁面元素相同,可以像頁面元素一
-      樣添加css樣式,表面上看上去貌似是頁面中的某些元素一般,實際上是css樣式展現的行為,所以被稱之為偽元素。
-      類選擇器和偽類選擇器作用是用來選取對象,而偽元素選擇器本質上是插入一個元素(標籤 盒子),它是一行內元素,內包含一個content屬性(必須)
-      ,可用來設置偽元素內容,偽元素是不佔位置的
-      應用:製作鼠標經過為相片添加邊框,產生立體效果
-        div:hover::before{  當鼠標經過插入一個邊框 
-          content: "";
-          border: 5px solid rgba(255,255,255,.3);
-        }
-    10.過渡效果transition經常與hover配合使用
-      -transition:過渡屬性(property) 花費時間(duration) 運動曲線(timing-function) 何時開始(delay)
-        過渡屬性(property):屬性名稱
-        花費時間(duration):默認為0,單位是s秒(前兩個屬性為必須)
-        運動曲線(timing-function):默認是ease(逐漸慢下來)  ease-in加速 ease-out減速 linear均速 ease-in-out先加速後減速
-        何時開始(delay):默認為0
-      -transition是寫在作用的盒子中-->誰作動畫給誰加過渡
-      -所有屬性都變化時使用all,後面兩個屬性可省略
-      -背景過渡 transition: background-color  1s;  或  all 1s;
-      -盒子上移並加陰影效果
-    11.變形(transform)--2D:可用來執行元素的位移、旋轉、傾斜、動畫等效果
-      -translate(x,y)移動,x軸向右為正值,向左為負值,y軸向下為正值,向上為負值  
-        translateX() 沿x軸移動
-        translateY() 沿y軸移動
-        translate(50%):表示以自己寛度的一半
-        應用:讓盒子水平居中對齊
-          position: absolute;
-          left: 50%;
-          transform: translate(-50%);
-          垂直居中對齊再加上
-          top: 50%;
-          transform: translate(-50%,-50%);-->使用優點:不必再計算寛高
-      -scale(x,y)縮放,x表水平方向縮放,y表垂直方向縮放,預設值為1,當值=0.1--0.99表示縮小,大於1時表示放大幾倍,如需溢出隠藏,需加overflow:hidden;
-      -rotate(deg)旋轉,順時針為正值,逆時針為負值,deg為度數
+8.滑動門:通常應用於導航欄背景隨著文本內容大小伸縮,頁面可配合各種特殊形狀的背景而自由的拉伸動,以自適應元素內部的文本內容,主要是利用背
+        景位置移動(雪碧圖技術)和盒子padding撐開寛度(配合滑動門導航欄.html)
+  <li>
+      <a href="#">            //a負責設置背景左側,不用設置寛度而是利用padding撐開寛度
+       <span>導航欄內容</span>  //span負責設置背景右側,也不用設置寛度而是利用padding撐開寛度,其餘由文字內容撐開整個寛度
+      </a>                    //以a包含span是因為整個導航都可以點擊
+  </li>
+9.偽元素的本質:before和after偽元素本身不是真正的html頁面元素,但它們所有用法和表現行為與真正的頁面元素相同,可以像頁面元素一
+  樣添加css樣式,表面上看上去貌似是頁面中的某些元素一般,實際上是css樣式展現的行為,所以被稱之為偽元素。
+  類選擇器和偽類選擇器作用是用來選取對象,而偽元素選擇器本質上是插入一個元素(標籤 盒子),它是一行內元素,內包含一個content屬性(必須)
+  ,可用來設置偽元素內容,偽元素是不佔位置的
+  應用:製作鼠標經過為相片添加邊框,產生立體效果
+    div:hover::before{  當鼠標經過插入一個邊框 
+      content: "";
+      border: 5px solid rgba(255,255,255,.3);
+    }
+10.過渡效果transition經常與hover配合使用
+  -transition:過渡屬性(property) 花費時間(duration) 運動曲線(timing-function) 何時開始(delay)
+    過渡屬性(property):屬性名稱
+    花費時間(duration):默認為0,單位是s秒(前兩個屬性為必須)
+    運動曲線(timing-function):默認是ease(逐漸慢下來)  ease-in加速 ease-out減速 linear均速 ease-in-out先加速後減速
+    何時開始(delay):默認為0
+  -transition是寫在作用的盒子中-->誰作動畫給誰加過渡
+  -所有屬性都變化時使用all,後面兩個屬性可省略
+  -背景過渡 transition: background-color  1s;  或  all 1s;
+  -盒子上移並加陰影效果
+11.變形(transform)--2D:可用來執行元素的位移、旋轉、傾斜、動畫等效果
+  -translate(x,y)移動,x軸向右為正值,向左為負值,y軸向下為正值,向上為負值  
+    translateX() 沿x軸移動 或translate(100px)
+    translateY() 沿y軸移動 或translate(0,100px)
+    translate(50%):表示以自己寛度的一半
+    應用:讓盒子定位水平居中對齊
+      position: absolute;
+      left: 50%;     margin-left:-寛度的一半;(之前用法)
+      transform: translate(-50%);
+      垂直居中對齊再加上
+      top: 50%;
+      transform: translate(-50%,-50%);-->使用優點:不必再計算寛高
+  -scale(x,y)縮放,x表水平方向縮放,y表垂直方向縮放,預設值為1,當值=0.1--0.99表示縮小,大於1時表示放大幾倍,如需溢出隠藏
+   ,需加overflow:hidden;可配合過渡及hover鼠標經過效果,注意:因為圖片縮放,所以過渡效果要加在圖片上,誰作動畫給誰加過渡。
+  -rotate(deg)旋轉,順時針為正值,逆時針為負值,deg為度數
+  -transform-origin調整元素轉換變形的原點
+   預設以中心點為旋轉中心點(center,center),如果以四個角為中心點可設置top bottom right left,如要精確位置,則可以像素來表示
+  -skew傾斜(deg,deg) 第一個是沿著x軸,第二個是沿著y軸傾斜
+  -3D變形--多了z軸
+   -左手法則:x軸大拇指向右為正,y軸大拇指向下為正,z軸大拇指向自己是正
+   -rotateX()沿著x軸旋轉類似單槓,左手法則大拇指指向正的方向(向右)餘四指指向的方向為正
+   -rotateY()沿著y軸旋轉類似鋼管舞,左手法則大拇指指向正的方向(向下)餘四指指向的方向為正
+   -rotateZ()沿著z軸旋轉,左手法則大拇指指向正的方向(向著自己)餘四指指向的方向為正
+   -透視perspective:透過透視可以實現視覺呈現立體感,只是一種展示形式,其原理:近大遠小 d:視距,指眼晴到螢幕的距離,一般設置
+    給父元素,作用於所有3D轉換的子元素
+   -translate移動
+      -translateX()
+      -translateY()
+      -translateZ() z是物體到螢幕之間距離,距離越大,越靠近眼睛,物體投射在螢幕越大,相對的距離越小,物體投射在螢幕越小,z是用
+       來控制近大遠小的具體情況
+      -translate3d(x,y,z) x,y可以是px或百分比,但z只能是px
+
+
+
 
 
 
