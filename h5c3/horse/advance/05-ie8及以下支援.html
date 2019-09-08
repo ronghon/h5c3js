@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <!--[if lt IE 9]>
+  <script src="html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+    <form action="">
+        用戶名: <input type="text" name="userName"><br>
+        <!-- 密碼輸入時會出現**號 -->
+        密碼: <input type="password"><br>
+        <!-- 需包含@符號及完整服務器名稱,否則無法提交 -->
+        郵箱: <input type="email"><br>
+        <!-- tel並不是用來驗證,而是在用戶端彈出數字輸入框限制用戶只能輸入數字 -->
+        電話: <input type="tel"><br>
+        <!-- 驗證只能輸入合法的網址含有http:// -->
+        網址: <input type="url"><br>
+        <!-- 只能輸入數字含小數點,不能輸入其他字符 
+        max:最大值 min:最小值 value:默認值-->
+        數量: <input type="number"><br>
+        <!-- search:可刪除誤輸入資料 -->
+        請輸入商品名稱: <input type="search"><br>
+        <!-- 可設置max:最大值和min:最小值 -->
+        範圍: <input type="range"><br>
+        <!-- 會出現選色器 -->
+        顏色: <input type="color"><br>
+        <!--日期時間相關 -->
+        <!-- 日期:年月日 -->
+        日期: <input type="date"><br>
+        <!-- 時間:時分秒 -->
+        時間: <input type="time"><br>
+        <!-- 大部份瀏覽器不支持datetime,只有safari支持改用datetime-local -->
+        日期時間: <input type="datetime"><br>
+        <!--  -->
+        日期時間: <input type="datetime-local"><br/>
+        <!--會出現日曆可供選擇  -->
+        月份: <input type="month"><br/>
+        <!-- 比month多出第幾週 -->
+        星期: <input type="week"><br/>
+
+
+
+        <input type="submit">
+    </form>
+</body>
+
+</html>

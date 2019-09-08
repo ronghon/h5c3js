@@ -8,3 +8,176 @@
   <!--[if lt IE 9]>
   <script src="html5shiv.js"></script>
   <![endif]-->
+06.h5表單新增屬性
+  <input type="text" name="usrName" placeholder="請輸入用戶名" autofocus autocomplete="on">
+  - placeholder:提示文本,提示佔位
+  - autofocus:自動獲取焦點
+  - autocomplete:自動提示完成 on 打開提示  off 關閉提示
+    1.必須成功提交過
+    2.必須添加name屬性
+  - required:必填,否則無法提交
+  - pattern:正則表達式驗證 ="^
+	  *:表示任意個  ?表示0個或1個  +表示1個或多個  \轉義
+  - multiple:可選擇多個文件或郵箱
+	- form="id name"指定表單id 在form表單元素內加入id="id name",功用:可以將未包含在form內的input 一起提交
+07.H5新增表單元素datalist-->firefox不支持
+	- selection 下拉列表
+	   option value=""  選項
+	- 不僅可以選擇,也可以輸入-->通過datalist創建選擇列表
+		需建立輸入框與datalist關聯性,透過list="datalist的id名稱"
+	 <input type="text" list="subject" 
+	 <datalist id="subject">
+	    創建選項值:value-->具體的值,label-->提示訊息 輔助值
+			<option value="前端開發" label="前景看漲"></option>
+			<option value="Java" label="使用人數多"></option>
+			<option value="Javascript" label="做特效"></option>
+	 </datalist>
+11.audio與video
+  embed:可以嵌入音頻和視頻,但仍需透過本機安裝的音頻和視頻播放器來播放,有兼容性問題
+	flash:1.先學習flash,增加使用成本	2.iphone ipad不支持flash
+	基於上述問題,H5新增了audio和video兩個元素用來播放音頻和視頻,使用方法如下:
+	- src:檔案路徑
+	- controls:音頻播放控制器面板
+	- autoplay:頁面加載後自動播放
+	- loop:循環撥放
+	video增加屬性
+	- poster指定視頻尚未完全下載完畢,或用戶没有點擊播放前顯示的封面,默認為當前視頻的第一幀畫面,可放置視頻說明文件等資料
+	- width 和 height,一般只設置其中一個,使其等比例自動縮放,
+	- 檔案格式與瀏覽器兼容性問題-->使用source可設置多個不同格式的檔案,以利兼容不同瀏覽器,如全都不支持,就顯示您的瀏覽器不支持該檔案格式
+13.h5獲取dom元素
+	- document.querySelector	 query查詢  Selector選擇器 querySelector(傳入選擇器名稱):只能獲取單個元素,如要獲取的元素不只一個,只
+	  會返回第一個元素,參數要求:如果是類選擇器,必須添加. ,如是id選擇器,則需添加#,否則會被當成標籤處理
+	- document.querySelectionAll獲取滿足條件的所有元素--數組形式
+14.操作元素類樣式
+	-classList:為當前元素的所有樣式的列表--數組形式
+	  - add:為元素添加指定名稱的樣式,一次只能添加一個樣式 .classList.add("red")
+		- remove:為元素移除指定名稱的樣式(不是移除class屬性),一次也只能移除一個 .classList.remove()
+		- toggle:切換元素的樣式,如果元素之前没有指定名稱的樣式,則添加,如果有則移除。
+		- contains:判斷是否包含指定名稱的樣式,有則返回true,没有則返回false
+		classList與className比較
+		- 獲取第一個樣式 .classList.item(0)
+15.自定義屬性
+		1.以date開頭,date-後面至少必須有一個字符,多個單詞使用-連接
+		2.名稱應該都用小寫,不要包含任何大寫字符,且名稱中不要有任何的特殊符號,不要使用純數字
+		如何獲取自定義屬性值:將data-後面的單詞使用駝峰命名法連接,如未使用合法駝峰命名法,可能無法獲取到值(使用dataset["data-後面的名稱"];
+16.網路監聽接口
+	-ononline網路連通時觸發事件
+	 window.asddEventListener("online",function(){
+		 alert("網路連通了")
+		 })
+	 window.asddEventListener("offline",function(){
+		 alert("網路斷開了")
+	   })
+17.全屏接口使用
+32.css3屬性選擇器:就是根據指定名稱的屬性的值來查找元素
+		- E[attr]  ex li[style] div[class]  style和class 均為屬性 元素+屬性同時滿足時
+	  - E[attr=value] 用來查找指定的attr屬性且屬性值為value的標籤  元素+屬性+屬性值=value同時滿足
+		- E[attr*=value]	用來查找指定的attr屬性且屬性值中包含有value的標籤
+		- E[attr^=value]	用來查找指定的attr屬性且屬性值以value開頭的標籤
+		- E[attr$=value]	用來查找指定的attr屬性且屬性值以value結尾的標籤
+33.偽類選擇器
+	1.超連結偽類:L.V.H.A.
+	2.結構偽類:以某元素相對於其父元素或兄弟元素的位置來獲取元素
+	- 兄弟偽類選擇器:
+	  + 獲取當前元素的相鄰的滿足條件的元素,條件:相鄰的且滿足條件  A+B
+		~ 獲取當前元素的滿足條件的兄弟元素,條件:只要滿足條件的兄弟元素均可 A~B
+	- 相對父元素之結構偽類(注意加type可限制類型,加last是從後面往前算,n是指0~子元素的長度)
+		E:first-child-->查找E元素的父級元素中的第一個子元素
+			需同時滿足兩個條件:
+			1.相對於當前指定元素的父元素
+			2.查找的類型必須是指定的類型
+		E:last-child-->查找E元素的父級元素中的最後一個子元素
+		E:first-of-type:比first-child更智能,限制查找類型,可避免因添加另一元素而造成無法查找到的結果
+		  1.相對於父元素
+			2.查找時只會查找指定類型的元素,可過濾其他類型的元素
+		E:last-of-type:查找指定類型的最後一個元素
+		E:nth-child(從1開始索引||關鍵字||表達式)
+		  1.even:第偶數個子元素
+			2.odd:第奇數個子元素
+			3.選取前面幾個子元素(n)n指0~子元素的長度,但當n<=0時,選取無效,nth-of-type(-n+5) nth-child(-n+5) 選取前面5個 
+			4.選取後面幾個子元素(n):nth-last-of-type(-n+5) nth-last-child(-n+5) 選取最後五個
+		E:nth-of-type-->限制類型中的第幾個子元素
+		  1.even:偶數個子元素
+			2.odd:奇數個子元素
+		E:empty{} 空值:没有任何內容,連空格都没有
+		E:target:結合錨點使用,可為錨點目標元素添加樣式,當目標元素被觸發為當前錨連結的目標時調用此偽類樣式
+35.邊框陰影
+	文本陰影:text-shadow: offsetX offsetY blur color
+	邊框陰影:box-shadow:h v blur spread color inset
+	h:水平方向偏移量  v:垂直方向偏移量  blur:模糊--可選  spread:陰影尺寸,擴展和收縮陰影的大小--可選 inset:內陰影--可選
+38-39.偽元素選擇器-->隠形的子元素,如一對翅膀左右各一 
+	- :before  :after(低版本不支持雙冒號::) 
+	  1.默認為行內元素,要設置寛高需轉換為塊級(使用display:block或float:**或position:)
+		2.必須添加content,無內容也要加content:""
+		3.它的功能完全與一個dom元素相同,但不會在dom樹中生成,所以無法通過js操作它
+40-41.顏色--紅橙黃緑青藍紫 rgb(r,g,b) 0~255 A:alpha透明度
+		HSLA:
+		H:色調或色相0~360
+		S:飽和度0%~100%
+		L:亮度0%~100% ,默認值是50%,<50%會變亮,大於50%會變暗
+		A:Alpha透明度0~1之間
+42.兩種顏色設置方式
+	- opacity:透明度 0~1 只能設置給父容器,如果設置父容器,那麼父容器中的所有子元素會繼承父元素的透明度也會透明,背景與文字內容都會透明
+	- rgba(r,g,b,a) a值為透明度0~1 0表完全透明,1表完全不透明-->特點:子元素不會繼承父元素的透明,所以不會影響子元素
+	- hsla(顏色,飽和度,亮度,透明度)-->顏、飽、亮、透
+43.文本陰影
+	text-shadow: offsetX offsetY blur color,可加多個
+	 x軸偏移量:正值向右,負值向左
+	 y軸偏移量:正值向下,負值向上
+	 blur:模糊半徑,指陰影的模糊程度,不能是負值,值越大,陰影越模糊,反之陰影越清晰
+	 color:也可設置透明度rgba()
+44.盒模型
+	box-sizing:用來指定盒模型的大小計算方式
+	  - content-box:實際寛度=width+border+padding-->向外擴展(默認值)
+		- border-box:實際寛度=width值 -->向內擠壓內容寛度 border和padding值內含在width值中
+45.邊框圓角border-radius 
+	 1.四個角設置順序:左上 右上 右下 左下 -->border-top-left-radius:5px;  border-bottom-left-radius:10px;
+	 2.設置四個角不同方向上的不同圓角值:border-radius: 100px 80px 60px 40px/20px 30px 40px 50px;	
+	 3.添加"/"是用來設置不不同方向的半徑值,水平X方向/垂直Y方向
+47.線性漸變:linear-gradient
+	漸變不是一個單一色,它產生的是圖像,需使用background
+	background
+	- linear-gradient線性漸變:指沿著某條直線朝一個方向產生漸變效果
+	  -第一參數:方向 to left 從右到左,相當於270deg
+		             to right 從左到右,相當於90deg 
+								 to top 從下到上,相當於90deg
+								 to bottom 從上到下,相當於180deg(默認值)
+								 to top left從右下到左上
+								 也可以是度數
+		-第二個參數:起點顏色
+		-第三個參數:終點顏色,可以加更多個顏色,表示多種顏色的漸變
+48.徑向漸變-:adial-gradient指從一個中心點開始沿著四周產生漸變效果
+	radial-gradient(形狀,座標,大小,顏色1,顏色2...)
+	 -形狀: ellipse表示自適應當前的形狀  circle表示產生正方形的漸變色
+	 -座標:默認在正中心,可賦值座標,也可賦值關鍵字(top、left、right...)
+	 	at (position)-->top left或at top(只提供一個值,另一值默認為center)
+	 -大小:漸變的大小,即漸變到那裏停止,有四個值
+	      closest-side最近邊  farthest-side最遠邊 closest-corner最近角 farthest-corner最遠角(默認)
+49.重覆漸變repeating-radial-gradient
+50.background背景
+	-background-color:背景顏色
+	-background-image:url()背景圖片
+	-background-repeat:
+	  no-repeat;-->不平舖
+		repeat-X-->x軸方向平舖
+		repeat-Y-->y軸方向平舖
+		round-->會將圖片進行縮放之後再平舖
+		space-->圖片不會縮放平舖,只是會在圖片之間產生相同間距
+	-background-attachment:
+	 fixed:背景圖的位置固定不變
+	 scroll:當滾動容器時,背景圖片也會一起滾動
+	 **local與scroll的區別:前提是滾動當前容器的內容
+	 local:背景圖片會跟隨內容一起滾動
+	 scroll:背景圖片不會跟隨內容一起滾動
+51.background-size:設置背景圖片的大小,屬性有
+	- width height 或寛度/auto (保持等比例自動縮放)
+	  建議設置寛高時,要先確定與容器的寛高比是否一致,否則會造成圖片失真變形
+	- 使用百分比時,是參照父容器可放置內容區域的百分比,而非圖片大小的百分比
+	- contain:按比例調整圖片大小,使圖片寛高自適應整個元素的背景區域,目標:使圖片全部包含在容器內
+		1.圖片大於容器:有可能造成容器的空白區域,將圖片縮小
+		2.圖片小於容器:有可能造成容器的空白區域,將圖片放大
+	- cover:與contain剛好相反,背景圖片會按比例縮放自適應背景區域,如背景區域不足以包含所有背景圖片,圖片內容會溢出
+	  ,目標:填滿整個容器的內容區域
+	  1.圖片大於容器:等比例縮小,會填滿整個背景區域,有可能會就造成某些區域不可見
+		2.圖片小於容器:等比例放大,填滿整個背景區域,圖片有可能造成某些區域溢出
+		
