@@ -18,16 +18,39 @@
         width:750px;
       }
     }
-  -bootstrap使用
-    四步曲:1.創建文件夾結構
-          2.創建html骨架結構
-          3.引入相關樣式文件
-          4.書寫內容
-  -container區分為兩種
-   -container:寛度固定,
-   -container-fluid:
-  -grid systems柵格系統
-   將頁面劃分為等寛的列,最多12列,bootstrap 提供一套響應式、移動設備優先的流式柵格系統,會隨著屏幕或視口(viewport)尺寸的增加,
-   系統自動分為最多12列
+ 
+07.bootstrap使用
+  四步曲:1.創建文件夾結構
+        2.創建html骨架結構
+        3.引入相關樣式文件
+        4.書寫內容
+08.container區分為兩種
+  -container:固定寛度,區分為四個尺寸大小寛度設置,響應式開發使用
+  -container-fluid:流式布局容器以百分百寛度設置,佔據全部視窗的容器,適合單獨做移動端開發
+
+09.grid systems柵格系統
+  將頁面劃分為等寛的列,最多12列,bootstrap提供一套響應式、移動設備優先的流式柵格系統,會隨著屏幕
+  或視口(viewport)尺寸的增加,系統自動分為最多12列
+10.柵格系統的參數
+  1.row必須放到container容器中
+  2.利用類前綴(col-xx-),xs:extra small超小 sm:small小 md:medium中等 lg:large大
+  3.共分為12列,如小於12列,則佔不滿整個container寛度,會有空白;大於12列,則會換行
+  4.每一列默認左右有15px的padding
+  5.可為不同設備設置不同的類名,以便劃分不同份數 ex: class="col-md-4 clo-sm-6"
+12.列嵌套
+  -仍需加一row,可以取消父元素的padding值且高度自動與父元素一樣高
+13.列偏移offset-->偏移的份數=12-盒子份數總和
+  佔8份並居中-->col-md-8-offset-2  (12-8)/2=2
+14.列排序-->利用push和pull來改變列的順序
+  左側使用push col-md-4 col-md-push-8
+  右側使用pull col-md-8 col-md-pull-4
+15.響應式工具--hidden 和 visible
+  為了加快對移動設備友好的頁面開發工作,利用媒體查詢功能,並使用這些工具類可以方便的針對不同設備展示或隠藏頁面內容
+  .hidden-xs  超小屏隠藏,其餘可見
+  .hidden-sm  小屏隠藏,其餘可見
+  .hidden-md  中屏隠藏,其餘可見
+  .hidden-lg  大屏隠藏,其餘可見
+  與之相反的是使用visible-xs  visible-sm visible-md visible-lg是顯示某一頁面內容
+
 
     
