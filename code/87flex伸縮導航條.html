@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        div {
+            width: 500px;
+            height: 500px;
+            border: 1px solid #ccc;
+            margin: 150px auto;
+        }
+        
+        div>ul {
+            list-style: none;
+            width: 100%;
+            /* 將父容器設置flex盒子後,子元素默認為伸縮項 */
+            display: flex;
+        }
+        
+        div>ul>li {
+            height: 36px;
+            background: #95f13e;
+            line-height: 36px;
+            text-align: center;
+            border-right: 1px solid #eee;
+            /* 為子元素設置等寛大小並彈性自適應 ,無論li子元素有幾個均會自動適應寛度*/
+            flex: 1;
+        }
+    </style>
+
+
+
+
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li>首頁</li>
+            <li>商品列表</li>
+            <li>特價商品</li>
+            <li>最新消息</li>
+            
+            <li>關於我們</li>
+        </ul>
+
+</body>
+
+</html>
