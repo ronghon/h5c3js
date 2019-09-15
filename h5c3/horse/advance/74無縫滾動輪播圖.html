@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    div {
+      width: 900px;
+      height: 225px;
+      margin: 10px auto;
+      background-color: #ccc;
+      /* 溢出部份暫時隠藏 */
+      overflow: hidden;
+    }
+
+    div>ul {
+      /* 將ul寛度加大兩倍 */
+      width: 200%;
+      list-style: none;
+      /* 調用動畫 */
+      animation: move 20s infinite linear;
+
+    }
+
+    div>ul>li {
+      width: 150px;
+      float: left;
+    }
+
+    div>ul>li>img {
+      width: 100%;
+    }
+
+    /* 鼠標移入動畫暫停 */
+    div:hover>ul {
+      cursor: pointer;
+      animation-play-state: paused;
+    }
+
+    /* 定義動畫效果 */
+    @keyframes move {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-600px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <ul>
+      <li><img src="images/1.jpg" alt=""></li>
+      <li><img src="images/2.jpg" alt=""></li>
+      <li><img src="images/3.jpg" alt=""></li>
+      <li><img src="images/4.jpg" alt=""></li>
+      <li><img src="images/1.jpg" alt=""></li>
+      <li><img src="images/2.jpg" alt=""></li>
+      <li><img src="images/3.jpg" alt=""></li>
+      <li><img src="images/4.jpg" alt=""></li>
+      <li><img src="images/1.jpg" alt=""></li>
+      <li><img src="images/2.jpg" alt=""></li>
+      <li><img src="images/3.jpg" alt=""></li>
+      <li><img src="images/4.jpg" alt=""></li>
+
+    </ul>
+  </div>
+
+</body>
+
+</html>

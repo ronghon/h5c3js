@@ -142,39 +142,44 @@
 	漸層不是使用一個單一色,它產生的是圖像,需使用background
 	background
 	- linear-gradient線性漸變:指沿著某條直線朝一個方向產生漸變效果
+	  語法:background: linear gradient(方向 開始顏色 位置,顏色2 位置,顏色3 位置...)
 	  -第一參數:方向 to left 從右到左,相當於270deg
 		             to right 從左到右,相當於90deg 
-								 to top 從下到上,相當於90deg
+								 to top 從下到上,相當於0deg
 								 to bottom 從上到下,相當於180deg(默認值)
 								 to top left從右下到左上
 								 也可以是度數
 		-第二個參數:起點顏色
 		-第三個參數:終點顏色,可以加更多個顏色,表示多種顏色的漸變
-48.徑向漸變-:adial-gradient指從一個中心點開始沿著四周產生漸變效果
+48.徑向漸變-:radial-gradient指從一個中心點開始沿著四周產生漸變效果
 	radial-gradient(形狀,座標,大小,顏色1,顏色2...)
 	 -形狀: ellipse表示自適應當前的形狀  circle表示產生正方形的漸變色
-	 -座標:默認在正中心,可賦值座標,也可賦值關鍵字(top、left、right...)
-	 	at (position)-->top left或at top(只提供一個值,另一值默認為center)
+	 -座標:漸變中心點默認在正中心,可賦值座標(參照元素的左上角),也可賦值關鍵字(top、left、right...)
+	 	at 50px 50px或者使用at top left或at top(只提供一個值,另一值默認為center)
 	 -大小:漸變的大小,即漸變到那裏停止,有四個值
-	      closest-side最近邊  farthest-side最遠邊 closest-corner最近角 farthest-corner最遠角(默認)
-49.重覆漸變repeating-radial-gradient
+	    closest-side最近邊  farthest-side最遠邊 closest-corner最近角 farthest-corner最遠角(默認)
+49.重覆漸變repeating-linear-gradient
+		background: repeat-linear-gradient(to top roght,#fff 0%,#fff 10%,#000 10%,#000 20%)
+   重覆漸變repeating-radial-gradient
+	  background: repeat-radial-gradient(to top roght,#fff 0%,#fff 10%,#000 10%,#000 20%)
 50.background背景
 	-background-color:背景顏色
 	-background-image:url()背景圖片
-	-background-repeat:
+	-background-repeat:設置背景平舖
 	  no-repeat;-->不平舖
 		repeat-X-->x軸方向平舖
 		repeat-Y-->y軸方向平舖
-		round-->會將圖片進行縮放之後再平舖
-		space-->圖片不會縮放平舖,只是會在圖片之間產生相同間距
-	-background-attachment:
+		round-->會將圖片進行縮放之後再平舖(h5新增)
+		space-->圖片不會縮放平舖,只是會在圖片之間產生相同間距(h5新增)
+	-background-attachment:設置在滾動容器的背景的行為
 	 fixed:背景圖的位置固定不變
 	 scroll:當滾動容器時,背景圖片也會一起滾動
 	 **local與scroll的區別:前提是滾動當前容器的內容
-	 local:背景圖片會跟隨內容一起滾動
+	 local:背景圖片會跟隨內容一起滾動(h5新增)
 	 scroll:背景圖片不會跟隨內容一起滾動
 51.background-size:設置背景圖片的大小,屬性有
-	- width height 或寛度/auto (保持等比例自動縮放)
+	-auto:原始圖片大小||nummber(數值)||百分比||cover(放大舖滿)||contain(縮小舖滿)
+	- width height或寛度/auto (保持等比例自動縮放)
 	  建議設置寛高時,要先確定與容器的寛高比是否一致,否則會造成圖片失真變形
 	- 使用百分比時,是參照父容器可放置內容區域的百分比,而非圖片大小的百分比
 	- contain:按比例調整圖片大小,使圖片寛高自適應整個元素的背景區域,目標:使圖片全部包含在容器內
@@ -184,4 +189,146 @@
 	  ,目標:填滿整個容器的內容區域
 	  1.圖片大於容器:等比例縮小,會填滿整個背景區域,有可能會就造成某些區域不可見
 		2.圖片小於容器:等比例放大,填滿整個背景區域,圖片有可能造成某些區域溢出
-		
+53.改善用戶點擊區域太小,擴張點擊區域,使用雪碧圖
+ background-origin設置背景坐標原點	
+	- border-box:從border的位置開始填充背景,會與border重叠
+	- paddding-box:從padding的位置開始填充背景,會與padding重叠
+	- conttent-box:從內容的位置開始填充背景
+ background-clip設置內容的裁切,設置的是裁切,控制的是顯示
+  - border-box:顯示border及以內的內容
+	- paddding-box:顯示paddding及以內的內容
+	- conttent-box:顯示conttent及以內的內容
+54.邊框圖片的原理:一一對應
+	添加邊框圖片
+	border-image-source:可以指定邊框圖片的路徑,默認只是填充到容器的四個角點
+	使它成為九宮格
+	border-image-slice:設置四個方向上的裁切距離,fill:做內容的內部填充
+	border-image-width:邊框圖片的寛度,如果没有設置這個屬性,寛度默認為元素的原始的邊框寛度
+	  注意事項:
+		1.邊框圖片的本質是背景,並不會影響元素內容的放置
+		2.內容只會被容器的border和padding影響
+		建議:一般會將值設置為原始的邊框的寛度
+	border-image-outset:擴展邊框,會使整個容器向外擴展,影響整個排列,即使設置box-sizing:border-box,
+	所以這個屬性較少使用
+	border-image-repeat:
+	- repeat:直接重覆平舖
+	- round:將內容縮放進行完整的重覆平舖
+	- stretch:默認值,拉伸
+	縮寫格式:
+	border-image: source  slice / width/outset repeat
+57.過渡transition將元素從一種樣式轉換到另一種樣式時為元素所添加的效果,過渡效果執行完畢後,默認會還原到原始狀態
+   語法:transition: css屬性名稱  花費時間(duration)  運動曲線(timing-function)  延遲時間(delay)
+	 使用注意事項:
+	 1.為多個樣式同時添加過渡效果,以逗號隔開。
+	 2.為所有樣式添加過渡效果時,使用all所有樣式-->所有樣式的過渡效果一樣,但執行效率降低,建議不要這樣寫。
+	 3.為過渡效果區分為指定的步數執行,使用steps(步數)
+	 4.添加過渡效困只能產生從某一個值到另一個具體的值的過渡效果
+	 5.使用時需加前綴:-moz  firefox  -webkit  chrome   -o opera IE 10以上支持
+	 6.運動曲線:
+	 		linear:均速
+	 		ease:預設值,先慢後快
+58.transition-timing-function:steps(步數)
+		手風琴菜單收縮擴張案例-->重要案例
+59.轉換:transform-->可使用在2D和3D轉換:移動、縮放、旋轉、斜切等操作
+	 1.移動:translate(x,y)
+		-可加兩個值分別代表x軸和y軸,如果只有一個值則代表x軸。
+		-移動是參照元素的左上角開始的,執行完畢後會恢復原始狀態。
+		-tranlateX()x軸上的移動位置,向右是正值,向左是負值。
+		-translateY()y軸上的移動位置,向下是正值,向上是負值。
+60.2.scale縮放
+		-scale(x,y)
+		1.兩個值代表x軸方向和y軸方向縮放,如果只有一個值,代表x軸和y軸都執行相同值的比例縮放
+		2.默認值為1,大於1表示放大,小於1表示縮小
+		3.也可使用scaleX()和scaleY()指定方向
+61.3.rotate(a)2D旋轉-->繞著z軸旋轉
+		a代表角度  90deg ,正值為順時針方向旋轉,負值為逆時針方向旋轉
+62.4.skew斜切傾斜
+		-skew(ax,ay)
+		1.單一值:如果角度為正,往當前軸的負方向斜切,角度為負,則往正方向斜切
+		2.兩個值:先x軸,再y軸
+		3.也可使用skewX()或skewY()
+63.改變轉換的軸心transform-origin:
+		1.可使用方向關鍵字top left或 top right ...,默認值center center
+		2.也可使用數字transform-origin(x,y)
+64.同時添加多個transform屬性值,中間以空格分開
+65.元素水平和垂直居中對齊-->使用定位+轉換移動:
+		1.定位使用百分比時,是參照父容器的寛高
+			position:absolute;
+			top:50%
+			left:50%
+    2.使用transform實現元素居中時,以百分比表示時是參照元素本身的寛高
+		  tranform: translate(-50%,-50%)
+66.3D轉換transform
+	1.translate3d(x,y,z):三維移動,三個值都要加,如無則加0,也可使用translateX(),translateY(),translateZ()
+	2.scale3d(x,y,z):3D縮放,也可使用scaleX(),scaleY(),scaleZ(),與2D使用規範相同
+	3.rotate3d(x,y,z,角度):3D旋轉
+		x代表x軸方向上的一個向量值
+		transform: rotate3d(1,0,0,30deg)-->沿著水平軸(x)向後旋轉30deg
+		transform: rotate3d(1,1,0,30deg)-->沿著x與y之間的軸向後旋轉30deg
+69.景深透視:perspective設置觀察者與屏幕之間的距離,近大遠小原則
+	設置透視的觀察位置:perspective-origin默認是元素的中心	(x,y)
+	transform-style:使被轉換的子元素保留其3D轉(需設置在父元素)
+	transform-style:preserve-3d子元素保留3D位置--立體方式
+	transform-style:flat子元素保留2D位置--平面方式
+
+70.3D立方體製作-->重要案例
+71.perspective設置觀察者與屏幕之間的距離,作用於元素的後代,遵循原則:近大遠小
+	perspective-origin設置透視原點:默認是元素的中心	可藉由設置(x,y)改變觀察的位置和角度
+
+73.動畫==多個關鍵幀的組合,與過渡效果只有兩個關鍵幀相比,較靈活多變化
+	過渡效果:從一個狀態(開始)到另一個狀態(結束),只有兩個關鍵幀
+	1.動畫(animation)是透過設置多個節點來精確控制一個或一組動畫,常用來實現複雜的動畫效果,相較於過渡效果,動畫可實
+	  現更多變化、更多控制、連續自動播放等效果
+	2.製作步驟:
+	  (1)定義動畫
+		(2)調用動畫
+	3.定義(創建)動畫:
+		百分比是指整個動畫耗時的百分比
+		@keyframes 動畫名稱{
+			0%{
+				css樣式屬性;
+				}
+			50%{
+				樣式屬性;
+			}	
+			100%{
+				屬性;
+				}
+		}
+		-->0%是動畫的開始,100%是動畫的完成,動畫序列
+	4.調用動畫:animation-name: 動畫名稱;
+	5.持續時間:animation-duration: 持續時間;
+31動畫序列==
+	1.動畫是使元素從一種樣式逐漸變化到另一種樣式的效果,可改變任意多種樣式和任意多次的次數
+	2.請用百分比來規定變化發生的時間,或用關鍵詞from到to,等同於0%到100%
+	3.百分比需為整數
+	4.百分比可以將全部時間劃分為n個區段分別設置不同的效果
+32動畫常用屬性==
+	1.@keyframes:定義(創建)動畫,後面添加動畫名稱,與animation-name:動畫名稱相同
+	2.animation:所有動畫屬性的簡寫形式,除animation-play-state屬性
+	3.animation-name:調用動畫名稱(必須)
+	4.animation-duration:規定動畫完成一個週期所花費的秒或毫秒,默認為0(必須)
+	5.animation-timing-function:規定動畫的速度曲線,默認為ease,均速:linear
+	6.animation-delay:設置動畫延遲播放時間,規定動畫何時開始,默認為0(延遲播放)
+	7.animation-iteration-count:規定動畫播放的次數,默認為1,無限使用infinite(重複播放與否)
+	8.animation-direction:設置交替動畫,規定動畫是否在下一個週期逆向播放,默認為normal,逆播放altermate(是否反方向播放,跑馬燈)
+	9.animation-play-state:設置動畫的播放狀態,規定動畫提否正在運行或暫停,默認為running播放,暫停為paused,經常與鼠標經過配合使用
+	10.animation-fill-mode:規定動畫結束時的狀態,默認會還原到原始狀態
+		(1)forwards:保留動畫結束時的狀態,在有延遲情況下,並不會立刻進行到動畫的初始狀態(重視結束狀態)  
+		(2)backwards:默認值,指預設會回到原來狀態,不會保留結束時的狀態,在添加動畫延遲的前提下,如果動畫有初始狀態,
+		             那麼會立刻進入初始狀態(重視開始狀態)
+		(3)both:既會保留動畫的結束狀態,在有延遲情況下,也會立刻進入到動畫的初始狀態
+33動畫簡寫==
+	animation: 動畫名稱 持續時間 運動曲線 何時開始 播放次數 是否反方向 動畫起始或結束狀態;
+	前面兩個屬性是必須的(動畫名稱和持續時間)
+36運動(速度)曲線==
+	animation-timing-function屬性值:
+	1.linear:從頭到尾均速
+	2.ease:默認值,先低速,後加速,結束前變慢
+	3.ease-in:低速開始
+	4.ease-out:低速結束
+	5.ease-in-out:低速開始和結束
+	6.steps():指定時間間隔數量(步長)
+	一個元素可添加多個動畫,之間以逗號分隔
+74.動畫-->無縫滾動輪播圖-->重要案例
+77.動畫-->時鐘製作--重要案例

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .menu {
+      width: 200px;
+      height: auto;
+      margin: 50px auto;
+    }
+
+    .item {
+      width: 100%;
+      height: auto;
+    }
+
+    .item>h3 {
+      height: 40px;
+      line-height: 40px;
+      background-color: darkkhaki;
+      color: orange;
+      border-bottom: 1px solid #ccc;
+      padding-left: 10px;
+    }
+
+    .item>.itembox {
+      width: 100%;
+      /* 因為過渡效果只能加給一個具體的值,使用display只是一個狀態,無法實現,所以
+      改用控制高度方式實現,並且預設將溢出部份先隠藏起來 */
+      height: 0px;
+      overflow: hidden;
+      /* 誰作過渡給誰加 */
+      transition: height .8s;
+    }
+
+    .item>.itembox>ul {
+      list-style: none;
+      background-color: aquamarine;
+      padding-left: 10px;
+    }
+
+    .item:hover>.itembox {
+      height: 97px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="menu">
+    <div class="item">
+      <h3>主選單1</h3>
+      <div class="itembox">
+        <ul>
+          <li>選單1</li>
+          <li>選單2</li>
+          <li>選單3</li>
+          <li>選單4</li>
+          <li>選單5</li>
+        </ul>
+      </div>
+    </div>
+    <div class="item">
+      <h3>主選單2</h3>
+      <div class="itembox">
+        <ul>
+          <li>選單1</li>
+          <li>選單2</li>
+          <li>選單3</li>
+          <li>選單4</li>
+          <li>選單5</li>
+        </ul>
+      </div>
+    </div>
+    <div class="item">
+      <h3>主選單3</h3>
+      <div class="itembox">
+        <ul>
+          <li>選單1</li>
+          <li>選單2</li>
+          <li>選單3</li>
+          <li>選單4</li>
+          <li>選單5</li>
+        </ul>
+      </div>
+    </div>
+    <div class="item">
+      <h3>主選單4</h3>
+      <div class="itembox">
+        <ul>
+          <li>選單1</li>
+          <li>選單2</li>
+          <li>選單3</li>
+          <li>選單4</li>
+          <li>選單5</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

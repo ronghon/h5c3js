@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      position: relative;
+      margin: 150px auto;
+      /* 使被轉換的子元素保留其3D轉換,需設置在父元素中 */
+      transform-style: preserve-3d;
+      /*讓子元素沿著x軸和y軸反方向旋轉30度俯視,方便觀察效果 */
+      transform: rotate3d(1, 1, 0, -30deg);
+      /* 添加透視景深效果  0-99均在盒子內部,大於100以後盒子外透視,近大遠小原則*/
+      perspective: 1000px;
+    }
+
+    .box>div {
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      opacity: .4;
+    }
+
+    .front {
+      background-color: red;
+      transform: translateZ(100px);
+    }
+
+    .back {
+      background-color: yellow;
+      transform: translateZ(-100px) rotateY(180deg);
+    }
+
+    .left {
+      background-color: green;
+      transform: translateX(-100px) rotateY(-90deg);
+    }
+
+    .right {
+      background-color: pink;
+      transform: translateX(100px) rotateY(90deg);
+    }
+
+    .top {
+      background-color: darkslateblue;
+      transform: translateY(-100px) rotateX(90deg);
+    }
+
+    .bottom {
+      background-color: yellowgreen;
+      transform: translateY(100px) rotateX(-90deg)
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="front">front</div>
+    <div class="back">back</div>
+    <div class="left">eft</div>
+    <div class="right">right</div>
+    <div class="top">top</div>
+    <div class="bottom">bottom</div>
+  </div>
+</body>
+
+</html>
