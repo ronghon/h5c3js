@@ -263,5 +263,26 @@
 	-o-:Opera
 	兼容老版本需加上述前綴
 	
+六角學院洧杰老師===
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
-		
+content="width=device-width-->將瀏覽器顯示寛度=裝置的寛度
+initial-scale=1.0-->初始縮放比為1倍
+minimum-scale-->最小可縮放比
+maximum-scale-->最大可縮放比
+user-scalable-->使用者是否可縮放
+meta:vp 即可生成語法
+
+@media(max-width:769){  //螢幕最大寛度768px下改變屬性
+	屬性{									//使用max取決於從大螢幕PC端開始作起(由大到小)
+		屬性值;							//使用min取決於從移動端設備開始作起(由小到大)	
+	}
+}
+
+- 移動端設計時禁用x軸來設計-->可使用max-width,可保有最大寛度,當螢幕縮小時也會自適應
+  寛度而不會出現x軸的滾動條,圖片寛度也可使用此一特性來調整,但不要同時設寛高
+
+- 使用百分比,父元素使用max-width設置寛度,子元素則使用百分比劃分比例,也可使用百分比來
+  控制顯示的欄數,如三欄時使用33.3333%,兩欄時使用50%,一欄時使用100%
+
+-
