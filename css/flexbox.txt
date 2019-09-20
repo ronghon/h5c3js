@@ -4,6 +4,7 @@ flexbox彈性布局(基本要領:align部份是指交錯軸的屬性,項目永�
 	2.當父元素設置為flex後,子元素設置的float、clear、vertical-align屬性將失效
 	3.採用flex布局的元素稱為flex容器(container),它的所有子元素自動為flex項目(item)
 	4.通過給父盒子設置flex屬性,來控制子盒子的位置和排列方式-->flex布局原理
+	
 	父容器屬性:
 		-display:flex;/*設置父容器為伸縮盒子*/
 		-min-width盒子最小寛度  max-width最大寛度-->通常給父盒子設置
@@ -25,32 +26,34 @@ flexbox彈性布局(基本要領:align部份是指交錯軸的屬性,項目永�
 		--當子元素寛度總和>父容器寛度時-->子元素會自動平均伸縮(預設不換行),如不自動伸縮則需設置flex-wrap:wrap換行
 
 		-flex-direction:用來決定主軸是那一條及設置子元素排列方向(遵循原則:子元素永遠排列在主軸的正方向上)
-				row(default從左到右)|row-reverse(從右到左)-->x軸為主軸,y軸為交錯軸
-				column(從上到下)|column-reverse(從下到上)-->y軸為主軸,x軸為交錯軸
-		-flex-wrap:wrap(換行)|nowrap(default不換行)|wrap-reverse(反轉,改由下到上並換行排列)
+			row(default從左到右)|row-reverse(從右到左)-->x軸為主軸,y軸為交錯軸
+			column(從上到下)|column-reverse(從下到上)-->y軸為主軸,x軸為交錯軸
+	  -flex-wrap:用來控制容器為單行(列)或多行(列)及側軸的方向(預設:nowrap)
+      nowrap:不換行,當父容器容間不足時使用flex-shrink壓縮比按比例執行壓縮
+			wrap:換行且正方向排列
+			wrap-reverse:換行且反方向排列
 			
-		-flex-flow:/*是flex-direction與flex-wrap兩個值的簡寫方式*/
+		-flex-flow:是flex-direction與flex-wrap兩個值的簡寫方式,同時控制主軸和側軸的是那一軸和方向
 
-
-	子元素:
+	子元素(項目):
 		-flex:/*是flex-grow flex-shrink flex-basis三個值的簡寫方式,預設值為 0 1 auto 
 			用來設置當前伸縮子元素佔據父容器剩餘空間的比例值。
 			/*表示子元素佔據父容器寛度的比例是1:4(20%:80%)*/
 				flex:1
 				flex:4
 		  
-			flex-grow-->剩餘空間分配原則(父寛>子寛總和)-->擴張比
+		-flex-grow-->剩餘空間分配原則(父寛>子寛總和)-->擴張比
 				(預設值為0,意即子元素不會佔據剩餘空間):用來擴展子元素的寛度,設置當前元素應該佔據剩餘空間的比例值
 				其中1個子元素設置為1時,將佔據剩餘空間;如2個子元素設置為1時,將由這2個子元素平均分配剩餘空間,如3個均設置為
 				1時,則剩餘空間由這3個子元素平均分配...以此類推
 			
-			flex-shrink-->無剩餘空間,且需伸縮時(父寛<子寛總和且不換行時)-->壓縮比
+		-flex-shrink-->無剩餘空間,且需伸縮時(父寛<子寛總和且不換行時)-->壓縮比
 				1.預設值為1,如設為0時會有溢出父容器問題,因為子寛總和大於父寛且不換行
 				2.設置1個子元素為2時,則空間不足值由該子素負擔50%,如2個設置為2時,則由這2個各負擔2/5伸縮量,未設置子元素負
 				  擔1/5的伸縮量
 			
-			flex-basis:默認值為auto
-			order:用來控制子元素的排列順序,默認值為0,數值越小排在前面,使用整數值來定義順序,也可以是負值
+		-flex-basis:默認值為auto
+		-order:用來控制子元素的排列順序,默認值為0,數值越小排在前面,使用整數值來定義順序,也可以是負值
 
 		-align-self:用來單獨設置個別元素的對齊方式
 	======尚硅谷======
@@ -95,6 +98,8 @@ flexbox彈性布局(基本要領:align部份是指交錯軸的屬性,項目永�
 							start:在下面
 							  end:在上面
 						 center:在兩邊
+			舊版本無法實現多列布局,當父容器空間不足無法容納子元素時,會導致溢出現象,因為舊版本無換行規範設置	
+
 	4.新版本flex
 			-容器
 				容器的布局方向
@@ -119,45 +124,61 @@ flexbox彈性布局(基本要領:align部份是指交錯軸的屬性,項目永�
 				 			baseline:基線對齊
 							 stretch:等高布局(延申擴張,項目未設置高度)
 				
-彈性空間管理:將主軸上的富裕空間按比例分配到項目的寛度(width)和高度(height上
+彈性空間管理:將主軸上的富裕空間按比例分配到項目的寛度(width)和高度(height)上
 		-webkit-box-flex
 		flex-grow-->定義擴張比例
 		flex-shrink-->定義壓縮比例
 		flex-wrap  -->是否換行(用來控制側軸方向) 
-		align-content-->控制多行或多列時排列方式
+		align-content-->控制多行或多列時,項目的排列方式(富裕空間管理,會將所有行、列視為一個整體)
+		align-items-->控制單行(列)排列方式
 
-		flex-flow-->flex-direction和flex-wrap兩者的簡寫形式,用來控制主軸和側軸的位置和方向
+	**flex-flow-->flex-direction和flex-wrap兩者的簡寫形式,同時控制主軸和側軸的是那一軸和方向
 
 一、(父)容器屬性:
     1.display:flex; inline-flex;
     2.flex-direction:決定主軸那一條與子元素排列方向(預設:row) row:x軸為主軸		column:y軸為主軸
       - row列,由左至右數,start在左|row-reverse順序反轉且靠右,由右至左數,start在右
       - column欄,由上至下數,start在上|column-reverse順序反轉且靠下,由下往上數,start在下
-    3.flex-wrap:子元素換行方式(預設:nowrap)用來控制交錯軸與方向
-      nowrap不換行|wrap換行|wrap-reverse
-      ***flex-flow: row nowrap;  是上面兩個屬性的縮寫方式
-    4.justify-content(主軸對齊):用來設置子元素在主軸上的對齊方式,會隨著flex-direction改變start位置
+    3.flex-wrap:子元素換行方式(預設:nowrap)用來控制容器為單行(列)或多行(列)及側軸的方向
+      nowrap不換行:默認值,當父容器容間不足時使用flex-shrink壓縮比按比例執行壓縮
+			wrap換行且正方向排列:
+			wrap-reverse換行且反方向排列:
+      **flex-flow: row nowrap;  是上面兩個屬性的縮寫方式
+    4.justify-content:用來設置子元素在主軸上的對齊方式,會隨著flex-direction改變start位置
     	flex-start|flex-end|center置中|space-between兩端對齊|space-around平均分配對齊
-		5.align-items(交錯軸對齊):用來設置子元素在交錯軸上的對齊方式-會隨著flex-direction改變start位置,僅針對單行子元素
+		5.align-items:用來設置子元素在交錯軸上的對齊方式-會隨著flex-direction改變start位置,僅針對單行子元素
     	flex-start|flex-end|center置中|stretch預設值,子元素設置高度時無作用,子元素未設置高度時則依父元素內容自動撐開高度
     		|baseline以子元素之文本內容(文字或圖片)作為基準對齊
-    6.align-content:針對多行子元素設定,與flex-wrap配合使用,當多行多列時,富裕空間管理.會把所有行、列看成一個整體
+    6.align-content:針對多行子元素設定,與flex-wrap配合使用,當多行多列時,富裕空間管理,會把所有行、列看成一個整體
       flex-start|flex-end|center置中|space-between兩端對齊|space-around平均分配對齊|stretch將flex項目撐開至容器的高度
   二、(子)元素屬性:
     1.flex:下列三個屬性的簡寫(預設grow|shrink|basis三個屬性 0 1 auto)(auto:1 1 auto)(none: 0 0 auto)功能:用來設置當前伸縮
 		       子元素佔據剩餘空間的比例值,如在子元素設置flex:1及flex:4,代表以1:4代例來分配空間,設置為1,表示每個子元素均分剩餘空間
       a.flex-grow(擴展比,預設值為 0):前提:當子元素的flex-basis長度小於它自己在父元素分配到的長度，按照數字做相對應的比例值來分
-				配剩餘空間,功能:可用來擴展子元素的寛度，設置當前元素應該佔據剩空間的比例值
+				配剩餘空間,功能:用來擴展子元素的寛度，設置當前元素應該佔據剩空間的比例值
 				 	比例值計算:當前空間的flex-grow/所有兄弟元素的flex-grow總和
-				 	剩餘空間=(容器大小-所有相鄰項目flex-basis的總和)
-				 	可擴展空間=(剩餘空間/所有相鄰項目flex-grow總和)
-				 	每項擴展大小=(伸縮基準值flex-basis + (可擴展空間 * flex-grow值))
-      b.flex-shrink(收縮比,預設值為1),前提:flex-wrap:nowrap;當子元素的flex-basis長度大於它自己在父元素分配到的長度，按照數字
-			  做相對應的壓縮比例分配,設為0的話不會進行彈性變化(均設為0時會有溢出問題)，不可為負值,功能:通過設置的值來計算子元素的收縮空間。
-				比例值計算:當前空間的flex-shrink/所有兄弟元素的flex-shrink總和
-      C.flex-basis 基本比,項目的基本大小，作為父元素的大小比較基準，預設值為0時，會以直接採用flex-grow屬性，如果設為auto，就表
+				 	剩餘空間=(容器大小-所有相鄰項目flex-basis的總和)		ex:500px-250px=250px
+				 	每份可擴展空間大小=(剩餘空間/所有相鄰項目flex-grow總和)  250/5=50px  250px  1:4  50:200
+				 	每項擴展大小=(伸縮基準值flex-basis + (可擴展空間 * flex-grow值))  100=50+50*1  400=200+50*4
+      b.flex-shrink(收縮比,預設值為1),功能:通過設置的值來計算子元素的收縮空間。
+				1.前提:flex-wrap:nowrap;當子元素的flex-basis長度大於它自己在父元素分配到的長度，按照數字做相對應的壓縮比例分配,
+				2.設為0的話不會進行彈性變化(均設為0時會有溢出問題),不可為負值
+				3.比例值計算:當前空間的flex-shrink/所有兄弟元素的flex-shrink總和
+					每項flex收縮大小=伸展基準值-(收縮比例/收縮比例總和*溢出的空間)
+					1.計算收縮因子與基準值相乘的總和
+					2.計算收縮因數
+					  收縮因數=(項目的收縮因子*項目基準值)/第一步計算總和
+					3.移除空間的計算
+					  移除空間=項目收縮因數*負溢出的空間
+      C.flex-basis:指定了flex元素在主轴方向上的初始大小,預設值為auto,會以width值決定寛度,如果width未設定,則以內容決定寛度;假如flex-direction改為column時,則改判斷height
 			  示子元素以自己的基本大小為單位。
-    2.order(預設0)用來決定項目位置越大越後面由左至右0,1,2,3,4,5,.....
+				1.当一个元素同时被设置了flex-basis(除值为auto外)和width(或者在 lex-direction: column情况下设置了height),flex-basis具有更高的优先级.
+
+		等分布局:
+			flex-grow:1;
+			flex-basis:0;
+
+    2.order(預設0)用來決定項目排列順序,order越大越後面,可以是負值
     3.align-self(預設auto會依父元素的align-item值設置,如無父元素則設置為stretch)是針對個別項目設定
       auto|flex-start|flex-end|center|stretch|baseline
 
