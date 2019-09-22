@@ -1,0 +1,116 @@
+千峰教育ghost老師1080921
+184.flex布局
+2009年W3C提出flex
+父容器==
+  -flex-direction:決定主軸是那一條(x軸或y軸)及項目排列方向的走向(重點:項目永遠排列在主軸的正方向上)
+    row || row-reverse || column || column-reverse
+  -flex-wrap:決定是否換行及項目在側軸的排列方向
+     1.屬性值: nowrap默認不換行 || wrap換行 || wrap-reverse換行且反向排列
+     2.當父容器寛(高)小於項目寛(高)總和時,預設會按flex-shrink比例進行向內收縮不換行在父容器內,但文本內容
+       大於整個父容器寛度時會溢出
+     3.當設置為換行顯示時,項目的排列方式會按align-content規定來排列
+  -flex-flow可同時設置主軸及側軸方向,是上述兩個屬性的簡寫形式,無順序問題
+  -justify-content:設置項目在主軸上的對齊及排列方式
+    flex-start || flex-end || center
+    space-between剩餘空間在項目之間 || space-around剩餘空間在項目周圍 || space-evenly剩餘空間平均分配
+  -align-items:設置項目在側軸上的對齊和排列方式
+    flex-start || flex-end || center || stretch默認值項目拉伸(前提未設置寛或高)
+  -align-content:限多行或多列時項目在側軸上的對齊和排列方式
+    flex-start || flex-end || center || stretch默認值項目拉伸(前提未設置寛或高)
+    space-between剩餘空間在項目之間 || space-around剩餘空間在項目周圍 || space-evenly剩餘空間平均分配
+186.子項目的屬性==
+  -order:預設0,設置子項目的排列順序,數值越小越往前排,越大越往後排
+  -flex-grow:預設0,也可以是小數,指剩餘空間分配的比例值(擴展比)
+  -flex-shrink:預設1,收縮比,當空間不足時且不換行時,會按設置比例向內壓縮(只有寛度會收縮,高度不會),當設置0時表示不收縮
+  -flex-basis:預設auto(即依設置的寛高值),定義剩餘空間分配前的子項目的基本大小,優先級比width高,但不會比height高
+  -flex:是上述三個值的簡寫形式,設置一個值時只代表flex-grow值,但如設置0時代表依內容大小
+    1.設置0時代表依內容大小
+    2.只有一個子項目設置非0時代表分配所有剩餘空間
+    3.兩個子項目以設置非0時, 則由設置的子項目依比例設置大小
+       總寛(高)度-未設置flex項目的寛(高)度=可分配的空間
+       設置flex的子項目寛(高)度=可分配的空間*比例值(含收縮和擴展)
+  -align-self:針對個別子項目設置在側軸上的對齊和排列方式(跳脫align-items和align-content控制)
+   flex-start || flex-end || center || stretch默認值項目拉伸(前提未設置寛或高)
+190.grid網格布局==二維布局
+父容器屬性==
+- 定義行、列數和網格區域
+  -grid-template-rows:定義網格的行數,單位可以是像素、百分比、auto及fr或repeat(3,fr)
+  -grid-template-columns:定義網格的列數
+  -grid-template-areas:劃分網格區域,配合子項grid-area定義a1 a2 a3使用
+    "a1 a1 a1"
+    "a2 a2 a3"     //使用時相同名稱需相鄰
+    "a2 a2 a3";  
+  簡寫grid-template:
+    "a1 a1 a1" 1fr
+    "a2 a2 a3" 1fr    
+    "a2 a2 a3" 1fr
+    /1fr 1fr 1fr;   
+
+- 定義網格間距大小
+  -grid-row-gap:定義行間距
+  -grid-column-gap:定義列間距
+  簡寫grid-gap:第一個行間距,第二個列間距
+
+- 定義子項水平或垂直對齊及排列方式-->針對子項在網格內的排列方式 
+  -justify-items:水平方向排列方式
+  -align-items:垂直方向排列方式
+  簡寫place-items:第一個值是align,第二個值是justify
+   屬性值: stretch 默認值 拉伸 || start不拉伸,寛高依內容大小 || end  || center
+
+- 定義網格元素水平或垂直分布方式-->針對所有網格元素進行排列
+  -justify-content:
+  -align-content:
+  簡寫place-content:第一個值是align,第二個值是justify
+   屬性值:
+   stretch 默認值 拉伸 || start不拉伸,寛高依內容大小 || end  || center
+   space-between剩餘空間在項目之間 || space-around剩餘空間在項目周圍 || space-evenly剩餘空間平均分配
+
+子項屬性==
+- 定義網格線起始和結束位置,可使用數值或line名稱
+  -grid-row-start:縱線起始位置,可以line名稱或數值
+  -grid-row-end:縱線結束位置,可以line名稱或數值,也可使用span屬性,如span 2代表跨越二格
+  簡寫:grid-row:起始位置/結束位置
+  -grid-column-start:橫線起始位置,可以line名稱或數值
+  -grid-column-end:橫線結束位置,可以line名稱或數值,也可使用span屬性,如span 2代表跨越二格
+  簡寫grid-column:起始位置/結束位置
+
+-定義網格所佔用的區域,可使用名稱和位置兩種方式
+  1.grid-area:定義網格名稱-->與grid-template-area配合使用
+  2.grid-area:水平起始位置 / 垂直起始位置 / 水平結束位置 / 垂直結束位置
+   grid-row和grid-column的簡寫形式 
+
+-定義個別網格對齊方式
+  -justify-self:個別網格水平對齊方式
+  -align-self:個別網格垂直對齊方式
+  簡寫:place-self
+198.移動端
+- viewport
+  就是瀏覽器顯示頁面內容的屏幕區域,區分為兩種visual viewport(可視視口)在上面和layout viewport(布局視口)在下面
+  layout viewport默認值980px,可透過document.documentgetElement.clientWidth來獲取
+  現代網頁需將layout viewport設置成與visual viewport相同大小,通過<meda>標籤進行設置,name屬性指定viewport值,
+  content屬性進行視口配置。
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  initial-scale設置頁面的初始縮放 1.0->1倍
+  minimum-scale設置頁面最小縮放
+  maximum-scale設置頁面最大縮放
+  user-scalable設置頁面能否進行縮放=yes or no
+
+- 移動端適配方案
+  1.百分比布局(流式布局):優酷、百度、天猫、騰訊
+    -布局原則:
+     文字流式(fluid)、控件彈件(flexible)、圖片等比縮放(scale)
+    -優點:大屏幕下可顯示更多內容
+    -缺點:寛屏下比例會有一些不協調
+  2.等比縮放布局(rem布局):網易、淘寶、愛奇藝
+    -em:相對單位,1em=當前元素或父元素的font-size值
+    -rem:相對單位,1rem=根元素的font-size值
+    -vw/vh:把屏幕區分為100份,1vw=屏幕寛的1%,1vh=屏幕高的1%
+
+    動態設置font-size:
+    1.通過JS
+    2.通過vW 
+      ex:iphone 6 375px ->100vw  3.75px ->1vw
+         iphone 6 plus 414px ->100vw  4.14px ->1vw
+         在不同屏幕下1vw的值會變動,可實現動態放大效果
+         可安裝rem to px
+    注意:要給body重置一下font-size:16px

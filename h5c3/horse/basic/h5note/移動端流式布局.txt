@@ -1,0 +1,57 @@
+1080922移動端流式布局-pink老師
+- viewport視口
+  1.就是瀏覽器顯示頁面內容的屏幕區域,區分為兩種visual viewport(可視視口)在上面和layout viewport(布局視口)在下面
+  2.視口區分為布局視口、視覺視口、理想視口
+  3.移動端布局的理想視口就是手機屏幕有多寛,布局視口就有多寛
+  4.理想視口需在移動端頁面中添加meta標籤
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  width=device-width設置寛度等於viewport所得到的設備寛度
+  initial-scale設置頁面的初始縮放 1.0->1倍
+  minimum-scale設置頁面最小縮放比
+  maximum-scale設置頁面最大縮放比
+  user-scalable設置頁面能否進行縮放=yes or no
+
+- 二倍圖
+  物理像素->解析度  iphone6 -> 750*1334
+  在pc端是1px->1物理像素,但在移動端就不盡相同,有1~3倍
+  ex:iphone6 開發尺寸 375*667 物理像素比為2 ,iphone6 plus 414*736  物理像素比為3
+  視網膜屏幕(Retina)就是將更多的物理像素點壓縮到一塊屏幕中,提高解析度
+
+- 多倍圖:
+  1.對於一張50*50的圖片,在手機Retina屏幕中顯示時,依物理像素比會放大倍數,這樣會造成圖片模糊現象
+  2.在標準的viewport設置時,會使用倍圖來提高圖片畫質,解決高解析度設備下圖片模糊問題
+  3.通常使用二倍圖,主要受iphone6/7/8影響,但現在仍存在3倍圖或4倍問題,視開發公司需求而定
+  4.使用圖片時需注意縮放問題
+
+- bakground-size:設置背景圖的尺寸
+  bakground-size:圖片寛度 圖片高度(可使用px 百分比->相對於父盒子而言) or  cover/contain;
+    cover:完全覆蓋,可能會有部背景區域無法正常顯示(會溢出且切除溢出部份)
+    contain:高度或寛度等比例拉伸,當高度或寛度已舖滿整個盒子時就不再拉伸,可能會有部份空白區域
+
+- 初始化css 
+  normalize.css
+
+-css3盒子模型
+  box-sizing:content-box;-->外擴,寛度從content開始計算,整體盒子寛高=content width(hrheight)+padding+border
+  box-sizing:border-box; -->內縮,寛度從border開始計算,整體盒子寛高=width
+  -webkit-box-sizing:border-box;
+  點擊時清除高亮(a鏈接)  -webkit-tap-highlight-color:transparent;完全透明
+  清除瀏覽器默認外框(ex:input)在ios上加上這個屬性才能給按鈕和輸入框自定義樣式
+  -webkit-appearance:none;
+  禁用長按頁面時彈出選單 img,a {-webkit-touch-callout:none;}
+
+- 單獨制作移動端頁面
+  1.流式布局(百分比布局)
+  2.flex彈性布局
+  3.less+rem+媒體查詢布局
+  4.混合布局
+
+- 響應式布局
+  1.媒體查詢
+  2.bootstrap
+
+- 流式布局(百分比布局)
+  1.通常將父盒子寛度設為100%,且藉由max-width及min-width來保護內容
+  2.
+
+
