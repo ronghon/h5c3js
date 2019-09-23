@@ -31,27 +31,30 @@
 - 初始化css 
   normalize.css
 
--css3盒子模型
+-css3盒子模型-->有兼容性問題IE6/7/8不支援
   box-sizing:content-box;-->外擴,寛度從content開始計算,整體盒子寛高=content width(hrheight)+padding+border
   box-sizing:border-box; -->內縮,寛度從border開始計算,整體盒子寛高=width
   -webkit-box-sizing:border-box;
-  點擊時清除高亮(a鏈接)  -webkit-tap-highlight-color:transparent;完全透明
-  清除瀏覽器默認外框(ex:input)在ios上加上這個屬性才能給按鈕和輸入框自定義樣式
+  點擊時清除背景出現高亮問題(ex:a鏈接)  -webkit-tap-highlight-color:transparent;完全透明
+  清除瀏覽器默認外框(ex:input)在ios上可加上這個屬性才能給按鈕和輸入框自定義樣式
   -webkit-appearance:none;
   禁用長按頁面時彈出選單 img,a {-webkit-touch-callout:none;}
 
-- 單獨制作移動端頁面
+- 單獨制作移動端頁面-->使用不同域名,通常前面加m(mobile),通過判斷設備再跳轉到移動端首頁
   1.流式布局(百分比布局)
   2.flex彈性布局
   3.less+rem+媒體查詢布局
   4.混合布局
 
-- 響應式布局
+- 響應式布局-->通過判屏幕尺寸再使用不同樣式
   1.媒體查詢
   2.bootstrap
 
 - 流式布局(百分比布局)
-  1.通常將父盒子寛度設為100%,且藉由max-width及min-width來保護內容
-  2.
-
-
+  1.通常將父盒子(可考慮加在body)寛度設為100%,且藉由max-width及min-width來保護內容
+  2.圖片默認會與文字作基線對齊,所以需使vertical-align:middle讓圖片與文字居中對齊(img為inline-block)
+  3.解決外邊距合併問題,在父盒子設置overflow:hidden;
+  4.使用雪碧圖注意事項:二倍精靈圖做法
+    -使PS先將精靈圖等比例縮放原來的一半
+    -根據大小測量座標
+    -background-size:精靈圖原來寛度的一半
