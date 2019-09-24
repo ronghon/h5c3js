@@ -84,7 +84,7 @@
   -align-self:個別網格垂直對齊方式
   簡寫:place-self
 198.移動端
-- viewport
+- viewport視口
   就是瀏覽器顯示頁面內容的屏幕區域,區分為兩種visual viewport(可視視口)在上面和layout viewport(布局視口)在下面
   layout viewport默認值980px,可透過document.documentgetElement.clientWidth來獲取
   現代網頁需將layout viewport設置成與visual viewport相同大小,通過<meda>標籤進行設置,name屬性指定viewport值,
@@ -98,7 +98,7 @@
 - 移動端適配方案
   1.百分比布局(流式布局):優酷、百度、天猫、騰訊
     -布局原則:
-     文字流式(fluid)、控件彈件(flexible)、圖片等比縮放(scale)
+     文字流式(fluid)、控件彈性(flexible)、圖片等比縮放(scale)
     -優點:大屏幕下可顯示更多內容
     -缺點:寛屏下比例會有一些不協調
   2.等比縮放布局(rem布局):網易、淘寶、愛奇藝

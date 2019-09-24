@@ -61,4 +61,43 @@
 
 - rem適配布局
   1.文字能否隨屏幕大小變化而變化?
-  2.流式布局和flex布局主要針對寛度布局
+  2.流式布局和flex布局主要針對寛度布局,高度如何設置?
+  3.如何讓屏幕發生變化時元素高度和寛度等比例縮放?
+  rem(root em)單位是一個相對單位,類似em(相對於父元素字體大小),與em不同的是rem相對於html(根)元素的字體大小
+  優點:可通過修改html設置的字體大小來改變與控制頁面中所有元素的大小
+
+- 媒體查詢(Media Query)是css3新語法,可以根據不同的屏幕尺寸改變不同的樣式
+  @media 媒體類型 and|not|only (media feature){
+    css屬性:屬性值
+  }
+  媒體類型:
+  1.all :所有設備
+  2.print:打印機和打印預覽
+  3.screen:電腦屏幕、平板、手機等
+  媒體特性:
+  1.width:輸出設備中頁面可見區域的寛度
+  2.min-width:輸出設備中頁面最小可見區域的寛度(大於等於)
+  3.max-width:輸出設備中頁面最大可見區域的寛度(小於等於)
+  習慣上由小到大設置,語法如下:
+  @media screen and (max-width:539px){
+    body{
+      background-color:blue;
+    }
+  }
+  @media screen and (min-width:540px){
+    body{
+      background-color:green;
+    }
+  }
+  @media screen and (min-width:970px){
+    body{
+      background-color:red;
+    }
+  }
+  透過媒體查詢和rem單位就可以實現不同設備寛度下頁面元素大小的動態變化
+  不同大小尺寸屏幕時引入不同的css樣式表-->響應式初型
+  <link rel="stylesheet" href="style320.css" media="screen and (min-width:320px)">
+  <link rel="stylesheet" href="style640.css" media="screen and (min-width:640px)">
+
+- less:是一門css預處理語言,它可擴展css的動態特性
+  css弊端:css非程序式語言,没有變量、函數、作用域等概念,不利維護、擴展與重用,也没有計算能力
