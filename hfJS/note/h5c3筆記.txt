@@ -103,14 +103,29 @@
     -缺點:寛屏下比例會有一些不協調
   2.等比縮放布局(rem布局):網易、淘寶、愛奇藝-->文字與元素大小會等比例縮放,間距不改變
     -em:相對單位,1em=當前元素或父元素的font-size值
-    -rem:相對單位,1rem=根元素的font-size值
+    -rem:相對單位,1rem=根元素html的font-size值
     -vw/vh:把屏幕區分為100份,1vw=屏幕寛的1%,1vh=屏幕高的1%
 
     動態設置font-size:
-    1.通過JS
-    2.通過vW 
+    1.通過JS:可利用工具px to rem 需先設置預設值=100px 快捷鍵alt+Z
+      <script>
+      var scale=document.documentgetElement.clientWidth/3.75;
+      document.documentgetElement.style.fontSize=scale+'px';
+      </script>
+    2.通過vW/vh 
       ex:iphone 6 375px ->100vw  3.75px ->1vw
          iphone 6 plus 414px ->100vw  4.14px ->1vw
          在不同屏幕下1vw的值會變動,可實現動態放大效果
-         可安裝rem to px
+         html{font-size:26.666667vw;}-->1rem=100px
+         再利用rem單位來設置
     注意:要給body重置一下font-size:16px
+207.響應式布局:透過@media query 針對不同的媒體類型
+    常見修改樣式:
+    display
+    float
+    width...
+    先寫正常的樣式,再針對不同屏幕改變不同樣式
+220.sass
+    sass與less均為預處理器,是一種專門的編程語言,為css增加一些編程的特性,如:變量、語句、函數、繼承等概念,將
+    css作為目標生成文件,然後開發者只要使用這種語言進行css編碼工作
+    easy sass
