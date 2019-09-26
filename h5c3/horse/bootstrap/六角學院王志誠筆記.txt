@@ -9,6 +9,52 @@
   6.預設色彩改為更鮮豔大方,且新增常使用的次要、黑白等色彩。
   7.按鈕色彩較鮮艷且增加outline版本按鈕
   8.將某些元件移除後統整為更易於使用且彈性更高的卡片元件
+  9.從Less到Sass
+06.將lang="en" 改成"zh-Hant-Tw"
+  -link css
+  -link jquery通常放在body之中,先載入網頁主體,再載入互動功能
+07.卡片式排版(card)
+  -container外層容器--將card放到container
+  -spacing:ex  mt-3-->margin-top:$spacer*1   pl-2-->padding-left:$spacer*0.5
+   -m:margin
+   -p:padding
+    方向:無方向設置代表四邊均設相同值
+     -t:top
+     -b:bottom
+     -l:left
+     -r:right
+     -x:同時設置左右兩邊屬性
+     -y:同時設置上下兩邊屬性
+    大小:0~5  ($spacer是sass的變量)
+     -0:margin或padding設為0
+     -1:將設置為$spacer*0.25
+     -2:將設置為$spacer*0.5
+     -3:將設置為$spacer*1
+     -4:將設置為$spacer*1.5
+     -5:將設置為$spacer*3
+  -lorempixel.com可任意產生假圖
+08.重置排版reboot
+  字體:
+  -mac OS iOS -->-apple-system
+  -windows-->英文字體 Segoe UI  中文字體 "Microsoft JhengHei"-->記得要加入微軟正黑體
+  盒子寛度box-sizing:border-box;
+09.文字排版
+  -標籤的語意
+   1.含語意的標籤 html下的h1~h6
+   2.不含語意但具有樣式的class  class="h1~h6"  or  class="display-1~4"更大標題
+  -class="list-unstyled" 清除list設置margin及list-style=none(僅限於直接子項)
+  -list-inline及list-inline-item可用來設置行內樣式並設置些許margin
+  -描述型清單:dl(最外框)  dt 前標題  dd描述說明  text-truncate可將多餘文字以...取代
+10.圖片:
+  -響應式圖片:class="img-fluid"-->設定 max-width：100％; 和 height：auto; 
+  -img-thumbnail-->讓圖片有1px邊框的顯示
+  -圖片對齊:
+    1.可使用float-right(靠右對齊)、float-left(靠左對齊)
+    2.居中對齊:
+       a.mx-auto-->margin 0 auto;  margin 左右兩邊 auto ;  d-block-->display:block; 
+       b.text-center--> 將圖片視為文本內容的一部份設置文字居中  text-align:center
+    3.清除浮動:clearfix
+  -figure圖片區與描述  figcaption圖片說明或標題
 
 
 
