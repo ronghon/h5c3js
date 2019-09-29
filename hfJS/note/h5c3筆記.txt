@@ -126,6 +126,63 @@
     width...
     先寫正常的樣式,再針對不同屏幕改變不同樣式
 220.sass
-    sass與less均為預處理器,是一種專門的編程語言,為css增加一些編程的特性,如:變量、語句、函數、繼承等概念,將
-    css作為目標生成文件,然後開發者只要使用這種語言進行css編碼工作
-    easy sass
+1.sass與less均為預處理器,是一種專門的編程語言,為css增加一些編程的特性,如:變量、語句、函數、繼承等概念,將
+  css作為目標生成文件,然後開發者只要使用這種語言進行css編碼工作
+2.可透過easy sass插件編譯
+3.副檔名為scss
+4.註釋-->單行 使用//  多行  /*   */
+5.定義變量使用$開頭
+6.插值:
+  $key : margin;
+	.box{
+		#{$key} : auto;-->    margin : auto;
+	}
+7.作用域:與JS類似採就近原則,有順序關係
+8.選擇器嵌套:直接嵌套即可
+9.偽類嵌套:需加上&,才可避免產生空格  &:hover{}
+10.屬性嵌套:  
+		font : {
+			size:10px;    -->font-size:10px;
+			weight:bold;  -->font-weight:bold;
+			family: arial;-->font-family:arial;
+		}
+11.運算:+ - * /
+	 1.單位不同時不能運算
+	 2.除法時可加上()
+12.函數:內建函數、自定義函數	
+  @function sum($a,$b){
+		@return $a + $b;
+	}
+13.混入:使用@mixin 名稱{ }
+			調用時使用@include 名稱;
+		  也可以傳參, @mixin 名稱($形參){
+			調用時使用@include 名稱(實參)
+    	}
+14.繼承:使用@extend 
+  .line{display:block; }
+	.box1{@extend .line;}		
+	.box2{@extend .line;}		
+	-->.line,.box1,.box2{display:block;}	
+  -->line加上%則line部份不會被生成-->.box1,.box2{display:block;}
+15.合併:使用map-values合併以逗號隔開
+        使用zip(map-values()...)合併且以空格隔開
+16.媒體查詢:
+17.條件判斷:
+  %count:5;
+  .box1{
+    @if($count>4){
+      width:100px+$count;
+    }
+    @else{
+      width:10px+$count;
+    }
+  }
+18.循環:
+  @for @i from 0 through 3{
+    box-#{$i}{
+      width:100px+$i;
+    }
+  }
+19.導入:@import '路徑'
+
+PostCss:可自動添加瀏覽器前綴、代碼合併、代碼壓縮等功能

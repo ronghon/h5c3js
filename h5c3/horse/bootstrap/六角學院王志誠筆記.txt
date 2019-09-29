@@ -55,6 +55,8 @@
        b.text-center--> 將圖片視為文本內容的一部份設置文字居中  text-align:center
     3.清除浮動:clearfix
   -figure圖片區與描述  figcaption圖片說明或標題
+11.表格
+
 
 
 

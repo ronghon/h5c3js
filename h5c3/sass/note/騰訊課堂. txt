@@ -1,8 +1,30 @@
+註釋:單行使用//  不會在生成的css文件中產生  多行使用/*   */ 會在生成的css文件中產生 
+
+
+1.為什麼要使用Sass編寫css——＞針對大型開發項目,變化較多者,可利用sass的特性(可使用變量、混用、繼承、邏輯判斷、簡易計算等功能),
+  提昇css開發效能及後續維護效能
+2.sass是基於ruby所開發的一種編程語言,所以需先安裝ruby,再安裝sass
+3.編譯scss為css文件
+  a.使用vscode 只需安裝easy sass或live sass compiler即可,開敨watch sass 即可同步更新到css檔案中
+  b.使用命令行輸入sass input.scss output.css
+  c.sass --watch input.scss output.css可同步更新css文件,ctrl+c終止watch
+  d.同步更新目錄夾內scss更新為css文件 sass --watch  來源目錄夾路徑:目標目錄夾路徑
+  e.可使用sass -help查看sass語法
+4.sass副檔名為.sass(舊版)及.scss(新版)
+
+
+sass:css預處理器,需經過編譯器成css才能在html中引入使用
+
 1.導入:
   使用@import導入外部scss,並將欲導入的模塊檔名前加下劃線'_'。
-2.變量:可命名為_variables.scss
-  使用$開頭
+2.變量:便於重用,對於反覆使用的css屬性值可定義為變量,通常命名為_variables.scss,使用$開頭聲明變量,再使用@import "variables"
+  聲明變量  語法 $變量名:屬性值;可使用空格或逗號分隔多個屬性值
+  引用變量  直接在選擇器內,以$變量即可代表聲明變量時的屬性值
+  1.變量可在css規則塊定義以外區域存在,當變量定義在css規則塊內,則該變量只能在此規則塊中使用
+  2.聲明變量時也可以引用其他變量
+  3.使用下劃線和中劃線連接時sass會指向同一個變量
 3.嵌套:
+
 4.混入:@mixin 函數名($屬性)-->類似function
       @include mixin 定義的內容(參數)
 5.繼承:以%開頭 先定義 %父級名稱 再使用@extend 父級名稱 作連結
