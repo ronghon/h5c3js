@@ -1,4 +1,68 @@
-html {
+/* 變量使用$聲明-->語法:$變量名:屬性值;引用時直接使用$變量名即可*/
+
+$color:#ccc;
+
+.box {
+  color: $color;
+  border: 1px solid $color;
+}
+
+/* 嵌套:後代選擇器 */
+.container2 {
+  width: 960px;
+  height: 800px;
+
+  .row {
+    color: $color;
+
+    .col-6 {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+}
+
+/* 屬性嵌套 */
+.container3 {
+  background: {
+    color: red;
+    image: url();
+    repeat: no-repeat;
+    position: top left;
+  }
+}
+
+.container1 {
+
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+  }
+}
+
+nav,
+aside {
+  a {
+    color: blue;
+  }
+}
+
+.header+p {
   font-size: 16px;
-  color: #ccc;
+}
+
+/*嵌套屬性*/
+nav {
+  font: {
+    size: 16px;
+    weight: bold;
+    family: arial;
+  }
+}
+
+nav {
+  border: 1px solid #ccc;
+  border-left: 0px;
+  border-right: 0px;
 }
