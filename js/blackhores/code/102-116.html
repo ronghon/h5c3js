@@ -75,6 +75,15 @@
             }
         }
         console.log(newArr); */
+        //108數組去重(將0去除)
+        var arr = [2, 0, 1, 77, 0, 52, 0, 25, 7];
+        var newArr = [];
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] != 0) { //當前元素arr[i]不等於0時,將該元素加到新的數組中
+                newArr[newArr.length] = arr[i];
+            }
+        }
+        console.log(newArr);
 
         // 比較兩個數的最大值
         /* function getMax(num1, num2) {
