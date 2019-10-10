@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>12.innerText</title>
+</head>
+
+<body>
+  <button>點擊顯示當前日期</button>
+  <div>123</div>
+  <p>123</p>
+  <script>
+    var oBtn = document.querySelector('button');
+    var oDiv = document.querySelector('div');
+    oBtn.onclick = function () {
+      // oDiv.innerText = '2019-10-08';//直接修改div中的文字內容為2019-10-08
+      oDiv.innerText = getDate(); //透過函數調用來修改當前日期
+    }
+
+    function getDate() {
+      var date = new Date();
+      var year = date.getFullYear();
+      var month = date.getMonth() + 1;
+      var dates = date.getDate();
+      var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+      var day = date.getDay();
+      return '今天是:' + year + '年' + month + '月' + dates + '日 ' + arr[day];
+    }
+
+    //也可以不用添加注冊事件頁面加載直接顯示當前日期
+    var oPe = document.querySelector('p');
+    oPe.innerText = getDate();
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>14切換圖片</title>
+</head>
+
+<body>
+	<button id="ldh">劉德華</button>
+	<button id="zxy">張學友</button>
+	<img src="../../images/ldh.jpg" alt="">
+	<script type="text/javascript">
+		// 1.獲取元素
+		var oLdh = document.getElementById('ldh');
+		var oZxy = document.getElementById('zxy');
+		var oImg = document.querySelector('img');
+		// 2.綁定事件
+		oZxy.onclick = function () {
+			oImg.src = "../../images/zxy.jpg";
+			oImg.title = "張學友";
+		}
+		oLdh.onclick = function () {
+			oImg.src = "../../images/ldh.jpg";
+			oImg.title = "劉德華";
+		}
+	</script>
+</body>
+
+</html>

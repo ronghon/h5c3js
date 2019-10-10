@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <img src="../../images/s.gif" alt="">
+  <div>上午好</div>
+  <script>
+    //1.獲取元素
+    var oImg = document.querySelector('img');
+    var oDiv = document.querySelector('div');
+    //2.綁定事件
+    var time = new Date();
+    var h = time.getHours();
+    if (h < 12) {
+      oImg.src = '../../images/s.gif';
+      oDiv.innerHTML = '大家上午好';
+    } else if (h < 18) {
+      oImg.src = '../../images/x.gif';
+      oDiv.innerHTML = '下午大家好';
+    } else {
+      oImg.src = '../../images/w.gif';
+      oDiv.innerHTML = '晩上好';
+    }
+  </script>
+</body>
+
+</html>

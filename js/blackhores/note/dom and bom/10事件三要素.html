@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>10事件三要素</title>
+</head>
+
+<body>
+  <button id="btn">唐伯虎</button>
+  <script>
+    var oBtn = document.getElementById('btn'); //1.獲取元素--事件源
+    oBtn.onclick = function () { //2.如何觸發--事件類型
+      alert('點秋香'); //3.作什麼事--事件處理程序
+    }
+  </script>
+
+</body>
+
+</html>
