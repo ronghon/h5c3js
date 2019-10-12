@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		// 174翻轉數組
+		var arr = [1, 2, 6, 44];
+		var result = arr.reverse();
+		console.log(result);
+
+		// var arr = ['王大', '李強', '李四', '王五', '丁一'];
+		// arr.reverse();
+		// console.log(arr);
+
+		// 數組排序(冒泡排序)
+		var arr = [33, 2, 55, 76, 422, 122, 2, 32];
+		arr.sort(function (a, b) {
+			// return a - b;//升序排列
+			// return b - a;//降序排列
+		})
+		console.log(arr);
+
+
+		var arr = [33, 2, 55, 44, 1, 100];
+		// arr.sort();  //會有問題-->[1, 100, 2, 33, 44, 55]
+		arr.sort(function (a, b) {
+			return a - b; //升序排列
+			// return b-a;//降序排列
+		})
+
+		console.log(arr);
+	</script>
+
+
+</head>
+
+<body>
+</body>
+
+</html>

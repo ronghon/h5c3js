@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		//163 Date()日期對象
+		var date = new Date();
+		// console.log(date); //獲取當前系統日期和時間
+		// var date1 = new Date(2019, 10, 13);
+		// console.log(date1);  用此格式月份需減1
+		// var date2 = new Date('2019/10/13');
+		// console.log(date2);  指定日期使用2019/10/13格式
+
+		//164格式化日期年月日星期
+		// var year = date.getFullYear();//獲取年
+		// var month = date.getMonth() + 1;//獲取月份,記得要加1
+		// var day = date.getDate();      //獲取日
+		// var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+		// var week = date.getDay();  //通過數組方式獲取星期幾
+		// console.log('今天是:' + year + '年' + month + '月' + day + '日 ' + arr[week]);
+
+
+		//165獲取當前時間函數
+		function getTime() {
+			var time = new Date();
+			var h = time.getHours();
+			h = h < 10 ? '0' + h : h;
+			var m = time.getMinutes();
+			m = m < 10 ? '0' + m : m;
+			var s = time.getSeconds();
+			s = s < 10 ? '0' + s : s;
+			return h + ':' + m + ':' + s;
+		}
+		var now = getTime();
+		console.log(now);
+
+		// function getTime() {
+		// 	var time = new Date();//Date為構造函數,需使用new關鍵字創建
+		// 	var h = time.getHours();
+		// 	h = h < 10 ? '0' + h : h; //10以下自動補上0
+		// 	var m = time.getMinutes();
+		// 	m = m < 10 ? '0' + m : m;
+		// 	var s = time.getSeconds();
+		// 	s = s < 10 ? '0' + s : s;
+		// 	return h + ':' + m + ":" + s;
+		// }
+		// console.log(getTime());
+	</script>
+</body>
+
+</html>

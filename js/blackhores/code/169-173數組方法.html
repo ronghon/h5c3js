@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script type="text/javascript">
+		//170翻轉數組,檢測是否為數組
+		function reverse(arr) {
+			if (arr instanceof Array) {
+				var newArr = []; //1.設置新數組為空
+				for (var i = arr.length - 1; i >= 0; i--) { //遍歷數組,並將最後一個元素賦值給新數組第一個元素
+					newArr[newArr.length] = arr[i]; //從後往前遍歷
+				}
+				return newArr;
+			} else {
+				// alert('請輸入正確的數組格式ex:[1,2,3]')
+				return '請輸入正確的數組格式ex:[1,2,3]'
+			}
+		}
+		var newArr1 = reverse([1, 4, 6, 7, 21]);
+
+		var newArr2 = reverse(['blue', 'red', 'true', 4, 6, 7, 21]);
+		// var newArr3 = reverse([1, 2, 3, 4]);
+		// console.log(newArr1);//翻輚數組
+		// console.log(newArr2);//翻數數組
+		// console.log(newArr3);
+		//檢測是否為數組
+		// console.log(newArr1 instanceof Array); //第一種方式
+		// console.log(Array.isArray(newArr2)); //第二種方式
+
+		//171添加刪除數組元素方法
+		var arr = ['red', 'blue', 1, 2, 3, 'pink', 'true'];
+		// 1.添加元素-->push(向末尾添加元素)、unshift(向開頭添加元素)
+		// arr.push(4, '李四'); //向數組末尾添加元素
+		// arr.unshift(55, 44); //向數組開頭添加元素
+		//2.刪除元素-->pop(刪除數組末尾最後一個元素)、shift(刪除數組開頭第一個元素)
+		// console.log(arr.pop()); //刪除數組最後一個元素,返回值為刪除的元素true
+		// console.log(arr); //刪除後數組狀態
+		// console.log(arr.shift()); //刪除數組第一個元素,返回值為刪除的元素red
+		// console.log(arr); //刪除後數組狀態
+
+		//172篩選數組
+
+		// var arr = [1500, 1200, 2000, 2100, 1800];
+		// var newArr = [];
+		// for (var i = 0; i < arr.length; i++) {
+		// 	if (arr[i] < 2000) {
+		// 		// newArr[newArr.length]=arr[i];
+		// 		newArr.push(arr[i]); //將arr[i]元素添加到新數組中
+		// 	}
+		// }
+		// console.log(newArr);
+	</script>
+</head>
+
+<body>
+</body>
+
+</html>

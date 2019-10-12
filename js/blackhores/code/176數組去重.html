@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script type="text/javascript">
+		//176數組去重:
+		//核心思路:遍歷舊數組,並以舊數組元素去查詢新數組,如該元素不存在時,則添加到新數組中,如果已存在則不添加
+		//如何判斷新數組中該元素是否存在,利用新數組indexOf(數組元素)的值是否等於-1,如果等於-1代表新數組中不存在該元素
+		function one(arr) {
+			var newArr = [];
+			for (var i = 0; i < arr.length; i++) {
+				if (newArr.indexOf(arr[i]) === -1) {
+					newArr.push(arr[i]);
+				}
+			}
+			return newArr;
+		}
+		var res = one(['c', 'b', 'd', 'a', 'c', 'w', 'c', 'e', 'w', 'c', 'b', 'd', 'a', 'c', 'b', 'x', 'd']);
+		console.log(res);
+
+
+
+
+		/* function unique(arr) {
+			var newArr = [];
+			for (var i = 0; i < arr.length; i++) {	//遍歷舊數組與新數組作比較
+				if (newArr.indexOf(arr[i]) === -1) { //假如新數組没有該元素則新增到新數組中,利用indexOf查找特性,如找不到時則返回-1,會將該元素添加到新數組中
+					newArr.push(arr[i]);
+				}
+			}
+			return newArr;
+		}
+		var demo = unique(['c', 'b', 'd', 'a', 'c', 'b', 'x', 'd']);
+		console.log(demo); */
+	</script>
+</head>
+
+<body>
+</body>
+
+</html>

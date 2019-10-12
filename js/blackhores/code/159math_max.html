@@ -10,7 +10,7 @@
     // 利用對象封裝數學對象,包含PI,最大值和最小值
     var myMath = {
       PI: 3.14159632,
-      max: function () {
+      max: function () { //最大值方法
         var max = arguments[0];
         for (var i = 1; i < arguments.length; i++) {
           if (arguments[i] > max) {
@@ -19,7 +19,7 @@
         }
         return max;
       },
-      min: function () {
+      min: function () { //最小值方法
         var min = arguments[0];
         for (var i = 1; i < arguments.length; i++) {
           if (arguments[i] < min) {
@@ -32,8 +32,9 @@
     console.log(myMath.PI);
     console.log(myMath.max(11, 3, 1, 100, 5, 45));
     console.log(myMath.min(11, 3, 1, 100, 5, 45));
-
-
+    //直接使用Math內建對象的方法Math.max及Math.min
+    console.log(Math.max(11, 303, 201, 100, 5, 45));
+    console.log(Math.min(11, 33, 31, 100, 5, 45));
   </script>
 </head>
 

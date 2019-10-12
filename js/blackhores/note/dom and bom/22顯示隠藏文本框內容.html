@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    input {
+      color: #999;
+    }
+  </style>
+</head>
+
+<body>
+  <input type="text" value="手機">
+  <script>
+    //1.獲取input元素
+    var oText = document.querySelector('input');
+    //2.綁定事件 處理程序
+    oText.onfocus = function () { //獲取焦點時
+      if (this.value === '手機') { //判斷input的value值是否為手機,如果是則更改為''
+        this.value = '';
+      }
+      this.style.color = '#333';
+    }
+
+    oText.onblur = function () { //失去焦點時
+      if (this.value === '') { //判斷input的value值是否為'',如果是,則將value值重新設為手機
+        this.value = '手機';
+      }
+      this.style.color = '#999';
+    }
+  </script>
+</body>
+
+</html>
