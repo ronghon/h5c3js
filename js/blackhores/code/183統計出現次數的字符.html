@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //創建一個對象  透過該方法判斷字符出現次數
+    // var o = {
+    //   age: 18
+    // }
+    // if (o['sex']) {
+    //   console.log('有該屬性');
+
+    // } else {
+    //   console.log('没有該屬性');
+
+    // }
+    //統計字符串中字符出現次數,
+    var str = 'afldsjflkajlkjwwejlj';
+    var o = {};
+    for (var i = 0; i < str.length; i++) {
+      var chars = str.charAt(i)
+      if (o[chars]) {
+        o[chars]++;
+      } else {
+        o[chars] = 1;
+      }
+    }
+    console.log(o);
+    var max = 0;
+    var sh = '';
+    for (var k in o) {
+      if (o[k] > max) { //k是屬性名  o[k]是屬性值
+        max = o[k];
+        sh = k; //最大值的屬性名賦值給sh
+      }
+    }
+    console.log(max);
+    console.log('出現最多的字符是:' + sh);
+  </script>
+</body>
+
+</html>
