@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    div {
+      width: 100px;
+      height: 100px;
+      margin: 100px auto;
+      color: white;
+      background-color: blue;
+    }
+
+    .change {
+      background-color: chartreuse;
+      margin-top: 130px;
+      color: green;
+      font-size: 20px;
+      border: 10px solid red;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div>文字內容</div>
+  <script>
+    //1.獲取元素
+    var oDiv = document.querySelector('div');
+    //2.綁定事件,處理程序
+    oDiv.onclick = function () {
+      this.className = 'change'; //this指向當前對象,change不用加.
+    }
+  </script>
+</body>
+
+</html>

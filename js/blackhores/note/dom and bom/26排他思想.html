@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <button>按鈕1</button>
+  <button>按鈕2</button>
+  <button>按鈕3</button>
+  <button>按鈕4</button>
+  <button>按鈕5</button>
+  <script>
+    //1.獲取元素
+    var oBtn = document.getElementsByTagName('button');
+    //2.綁定事件 處理程序
+    for (var i = 0; i < oBtn.length; i++) {
+      //oBtn是偽數組,每一個元素以oBtn[i]表示
+      oBtn[i].onclick = function () {
+        //點擊後先清除所有背景顏色
+        for (var i = 0; i < oBtn.length; i++) {
+          oBtn[i].style.backgroundColor = '';
+        }
+        //再為自己添加背景顏色
+        this.style.backgroundColor = 'pink';
+      }
+    }
+  </script>
+</body>
+
+</html>
