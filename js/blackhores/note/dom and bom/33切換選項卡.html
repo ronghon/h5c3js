@@ -11,22 +11,22 @@
             margin: 0;
             padding: 0;
         }
-        
+
         li {
             list-style-type: none;
         }
-        
+
         .tab {
             width: 978px;
             margin: 100px auto;
         }
-        
+
         .tab_list {
             height: 39px;
             border: 1px solid #ccc;
             background-color: #f1f1f1;
         }
-        
+
         .tab_list li {
             float: left;
             height: 39px;
@@ -35,16 +35,16 @@
             text-align: center;
             cursor: pointer;
         }
-        
+
         .tab_list .current {
             background-color: #c81623;
             color: #fff;
         }
-        
+
         .item_info {
             padding: 20px 0 0 20px;
         }
-        
+
         .item {
             display: none;
         }
@@ -52,7 +52,9 @@
 </head>
 
 <body>
+    <!-- 利用大盒子包住兩個小盒子 -->
     <div class="tab">
+        <!-- 第一個盒子是選項部份 -->
         <div class="tab_list">
             <ul>
                 <li class="current">商品介绍</li>
@@ -62,6 +64,7 @@
                 <li>手机社区</li>
             </ul>
         </div>
+        <!-- 第二個盒子是該選項相對應顯示的內容 -->
         <div class="tab_con">
             <div class="item" style="display: block;">
                 商品介绍模块内容
@@ -81,27 +84,48 @@
 
         </div>
     </div>
-    <script>
-        // 获取元素
-        var tab_list = document.querySelector('.tab_list');
-        var lis = tab_list.querySelectorAll('li');
+    <!-- <script>
+        var tablist = document.querySelector('.tab_list');
+        var lis = tablist.querySelectorAll('li');
         var items = document.querySelectorAll('.item');
-        // for循环绑定点击事件
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].setAttribute('index', i);
+            lis[i].onclick = function () {
+                for (var i = 0; i < lis.length; i++) {
+                    lis[i].className = '';
+                }
+                this.className = 'current';
+                var getindex = this.getAttribute('index');
+                for (var i = 0; i < items.length; i++) {
+                    items[i].style.display = 'none';
+                }
+                items[getindex].style.display = 'block';
+            }
+        }
+    </script> -->
+
+
+    <!-- <script>
+        //1.获取元素
+        var tab_list = document.querySelector('.tab_list');//父元素
+        var lis = tab_list.querySelectorAll('li'); //子元素
+        var items = document.querySelectorAll('.item');
+        // 2.利用for循环绑定点击事件
         for (var i = 0; i < lis.length; i++) {
             // 开始给5个小li 设置索引号 
             lis[i].setAttribute('index', i);
             lis[i].onclick = function() {
-                // 1. 上的模块选项卡，点击某一个，当前这一个底色会是红色，其余不变（排他思想） 修改类名的方式
+                // 3. 上的模块选项卡，点击某一个，当前这一个底色会是红色，其余不变（排他思想） 修改类名的方式
 
-                // 干掉所有人 其余的li清除 class 这个类
+                // 3.干掉所有人 其余的li清除 class 这个类
                 for (var i = 0; i < lis.length; i++) {
                     lis[i].className = '';
                 }
-                // 留下我自己 
+                // 4.留下我自己 
                 this.className = 'current';
                 // 2. 下面的显示内容模块
                 var index = this.getAttribute('index');
-                console.log(index);
+                // console.log(index);
                 // 干掉所有人 让其余的item 这些div 隐藏
                 for (var i = 0; i < items.length; i++) {
                     items[i].style.display = 'none';
@@ -110,7 +134,7 @@
                 items[index].style.display = 'block';
             }
         }
-    </script>
+    </script> -->
 </body>
 
 </html>
