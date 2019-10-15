@@ -102,3 +102,37 @@
     (2)element.setAttribute('屬性','值');主要針對自定義屬性
   3.移除屬性
     (1)element.removeAttribute('屬性');
+36H5自定義性
+  自定義屬性的目的:為了保存並使用數據,可以通過getAttribute('屬性')來獲取,但有些自定義屬性很容易
+  引起歧義,不容易判斷是元素內建屬性還是自定義屬,所以H5規定自定義屬性均以data-開頭做為屬性名並賦值
+  因此,我們自己設置自定義屬性時也遵循此一規範 設置時: element.setAttribute('data-屬性名',屬性值);
+  獲取方式有二:
+  1.element.getAttribute('屬性名');->無兼容性問題
+  2.h5新增獲取自定義屬性:element.dataset.屬性名或 使用['屬性名']->IE11以上支持
+    (1)dataset是一個集合,內存放了所有以data開頭的自定義屬性
+    (2)如果自定義屬性裏面有多個單詞以-鏈接時,獲取時需採用駝峰命名法
+37節點操作
+  為什麼學習節點操作?->獲取元素,通常使用兩種方式
+  1.利用DOM提供的方法獲取元素->缺點:繁瑣、邏輯性不強  ex:document.getElementById()...
+  2.利用節點層級關係獲取元素
+    (1)利用父子兄節點關係獲取元素
+    (2)邏輯性強,但兼容性較差
+  3.節點以node來表示,網頁頁面中所有內容均為節點,HTML DOM樹中的所有節點均可通過Javascript進行訪問
+    所有HTML元素(節點)均可被創建、修改或刪除
+    (1)節點有:nodeType(節點類型)、nodeName(節點名稱)和nodeValue(節點值)三個基本屬性
+    (2)nodeType值元素節點:1  屬性節點:2  文本節點:3(文本節點含文字、空格、換行等)
+    (3)節點操作主要是元素節點
+38-39節點層級
+  1.父節點:node.parentNode 獲取離元素最近的父級節點(直接父節點),如果找不到父節點則返回null
+  2.子節點:
+    (1)parent.childNodes 注意:獲取的是所有子節點,包含文本及元素等
+    (2)parent.children 獲取所有的子元素節點(常用)
+40獲取第一個子元素或最後一個子元素
+    (1)獲取第一個子節點:parent.firstchild-->換行所以是#text
+       獲取最後一個子節點:parent.lastchild-->也是換行所以也是#text
+    (2)獲取第一個子元素:parentNode.firstElementChild
+       獲取最後一個子元素:parentNode.lastElementChild
+       IE9以上才支持
+    (3)實際開發中使用方式:既無兼容性問題又可返回第一個子元素
+       獲取第一個子元素:parent.children[0]
+       獲取最後一個子元素:parent.children[ol.children.length - 1]
