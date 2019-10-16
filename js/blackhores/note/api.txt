@@ -136,3 +136,37 @@
     (3)實際開發中使用方式:既無兼容性問題又可返回第一個子元素
        獲取第一個子元素:parent.children[0]
        獲取最後一個子元素:parent.children[ol.children.length - 1]
+42兄弟節點
+  (1)nextSibling:獲取下一個兄弟節點,包含元素節點及文本節點等
+     previousSibling:獲取上一個兄弟節點,包含元素節點及文本節點等
+  (2)nextElementSibling:直接獲取下一個兄弟元素節點
+     previousElementSibling:直接獲取上一個兄弟元素節點
+      IE9以上兼容,解決方法自己封裝一個兼容性函數
+     function getNextElementSibling(element){
+       var el=element;
+       while (el=el.nextSibling){
+         if(el.nodeType===1){
+           return el;
+         }
+       }
+       return null;
+     }
+43創建節點
+  1.語法: documnent.creatElement('tagName')  創建元素節點
+    documnent.creatElement()方法創建由tagName指定的HTML元素,因為這些元素原先不存在,
+    是根據需求動態生成的,所以也稱為動態創建元素節點。
+  2.語法:node.appendChild(child)  添加子元素節點 node 父級  child 子級 是從後面追加元素,類似數組中的push
+    此一方法是將一個節點添加到指定父節點的子節點列表末尾,類似css中的after偽元素
+  3.語法:node.insertBefore(child,指定元素)
+    此一方法是將一個節點添加到指定父節點的子節點列表前面,類似css中的before偽元素
+  4.在頁面添加一個新的元素:
+    (1)創建元素
+    (2)添加元素
+45刪除節點
+  node.removeChild(child) 此方法是DOM中刪除一個子節點,返回刪除的節點, node 父級  child 子級
+46阻止鏈接跳轉使用javascript:;
+47複製節點
+  node.cloneNode()
+  (1)如果括號參數為空或false,則為淺拷貝,只複製節點本身,不複製裏面的子節點
+  (2)如果括號參數為true,則為深拷貝,會複製節點本身及裏面所有的子節點
+
