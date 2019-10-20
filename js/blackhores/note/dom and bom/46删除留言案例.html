@@ -11,11 +11,11 @@
             margin: 0;
             padding: 0;
         }
-        
+
         body {
             padding: 100px;
         }
-        
+
         textarea {
             width: 200px;
             height: 100px;
@@ -23,11 +23,11 @@
             outline: none;
             resize: none;
         }
-        
+
         ul {
             margin-top: 50px;
         }
-        
+
         li {
             width: 300px;
             padding: 5px;
@@ -36,7 +36,7 @@
             font-size: 14px;
             margin: 15px 0;
         }
-        
+
         li a {
             float: right;
         }
@@ -55,7 +55,7 @@
         var text = document.querySelector('textarea');
         var ul = document.querySelector('ul');
         // 2. 注册事件
-        btn.onclick = function() {
+        btn.onclick = function () {
             if (text.value == '') {
                 alert('您没有输入内容');
                 return false;
@@ -64,6 +64,7 @@
                 // (1) 创建元素
                 var li = document.createElement('li');
                 // 先有li 才能赋值
+                //阻止鏈結跳轉使用javascript:;
                 li.innerHTML = text.value + "<a href='javascript:;'>删除</a>";
                 // (2) 添加元素
                 // ul.appendChild(li);
@@ -71,8 +72,9 @@
                 // (3) 删除元素 删除的是当前链接的li  它的父亲
                 var as = document.querySelectorAll('a');
                 for (var i = 0; i < as.length; i++) {
-                    as[i].onclick = function() {
+                    as[i].onclick = function () {
                         // node.removeChild(child); 删除的是 li 当前a所在的li  this.parentNode;
+                        //li的父級為ul  as 的父級是li  所以子級部份是當前li,a的父級節點
                         ul.removeChild(this.parentNode);
                     }
                 }

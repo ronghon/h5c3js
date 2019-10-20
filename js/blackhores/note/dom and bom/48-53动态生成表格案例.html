@@ -41,7 +41,7 @@
         </tbody>
     </table>
     <script>
-        // 1.先去准备好学生的数据,以數組形式存放
+        // 1.先去准备好学生的数据,以數組對象形式存放
         var datas = [{
             name: '魏璎珞',
             subject: 'JavaScript',
@@ -70,7 +70,7 @@
             var tr = document.createElement('tr');
             tbody.appendChild(tr);
             // 2. 行里面创建单元格(跟数据有关系的3个单元格) td 单元格的数量取决于每个对象里面的属性个数  for循环遍历对象 datas[i]
-            for (var k in datas[i]) { // 里面的for循环管列 td
+            for (var k in datas[i]) { // 里面的for循环管列 td  使用遍歷對象方式獲取屬性名和屬性值
                 // 创建单元格 
                 var td = document.createElement('td');
                 // 把对象里面的属性值 datas[i][k] 给 td  

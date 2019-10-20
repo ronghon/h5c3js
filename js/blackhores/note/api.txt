@@ -123,7 +123,7 @@
     (2)nodeType值元素節點:1  屬性節點:2  文本節點:3(文本節點含文字、空格、換行等)
     (3)節點操作主要是元素節點
 38-39節點層級
-  1.父節點:node.parentNode 獲取離元素最近的父級節點(直接父節點),如果找不到父節點則返回null
+  1.父節點:node.parentNode 獲取離元素最近的父級節點(親爸爸),如果找不到父節點則返回null
   2.子節點:
     (1)parent.childNodes 注意:獲取的是所有子節點,包含文本及元素等
     (2)parent.children 獲取所有的子元素節點(常用)
@@ -132,10 +132,10 @@
        獲取最後一個子節點:parent.lastchild-->也是換行所以也是#text
     (2)獲取第一個子元素:parentNode.firstElementChild
        獲取最後一個子元素:parentNode.lastElementChild
-       IE9以上才支持
-    (3)實際開發中使用方式:既無兼容性問題又可返回第一個子元素
+       有兼容性問題,IE9以上才支持
+    (3)實際開發中使用方式:既無兼容性問題又可返回第一個子元素及最後一個元素
        獲取第一個子元素:parent.children[0]
-       獲取最後一個子元素:parent.children[ol.children.length - 1]
+       獲取最後一個子元素:ol.children[ol.children.length - 1]
 42兄弟節點
   (1)nextSibling:獲取下一個兄弟節點,包含元素節點及文本節點等
      previousSibling:獲取上一個兄弟節點,包含元素節點及文本節點等
@@ -159,9 +159,11 @@
     此一方法是將一個節點添加到指定父節點的子節點列表末尾,類似css中的after偽元素
   3.語法:node.insertBefore(child,指定元素)
     此一方法是將一個節點添加到指定父節點的子節點列表前面,類似css中的before偽元素
-  4.在頁面添加一個新的元素:
-    (1)創建元素
-    (2)添加元素
+    var lili =document.createElement('li');
+    ul.insertBefore(lili,ul.children[0])
+  總結:在頁面添加一個新的元素兩步驟:
+    (1)創建元素:createElement
+    (2)添加元素:appendChild(從最後面添加) 或 insertBefore(指定元素的前面)
 45刪除節點
   node.removeChild(child) 此方法是DOM中刪除一個子節點,返回刪除的節點, node 父級  child 子級
 46阻止鏈接跳轉使用javascript:;
@@ -169,13 +171,48 @@
   node.cloneNode()
   (1)如果括號參數為空或false,則為淺拷貝,只複製節點本身,不複製裏面的子節點
   (2)如果括號參數為true,則為深拷貝,會複製節點本身及裏面所有的子節點
-54三種動態創建元素區別
+48-53動態生成表格(重點案例多加練習)  
+54-55三種動態創建元素區別
   1.document.write():是直接將內容寫入頁面的內容流,但原先的文檔流已加載完畢,所以它會導致頁面全部重新構建
   2.element.innerHTML:是將內容寫入某個DOM節點,不會導致頁面重繪,創建多個元素效率更高(但不要採取字符串拼接,
     而是採取數組形式拼接),結構稍微複雜
   3.document.createElement():創建多個元素效率稍低一點點,但結構較清晰
   總結:不同瀏覽下,innerHTML效率比createElement高
-56
-
+56DOM重點核心內容回顧
+  1.DOM:文檔對象模型,是W3C推薦處理可擴展標記語言的標準編程接口,透過這些DOM接口可以改變網頁的內容、結構和樣式。
+  2.對於Javascript,為了能够使javascript操作HTML,javascript就有了一套自己的DOM編程接口
+  3.對於HTML,DOM使得HTML形成了一棵DOM樹,包含文檔、元素、節點。
+  4.凡是獲取過來的DOM元素均是一個對象,因此稱為文檔對象模型(Document Object Model)
+  對於DOM操作,主要針對元素進行創建、增刪改查,屬性操作及事件操作
+  (1)創建
+    1.document.write
+    2.innerHTML
+    3.createElement
+  (2)增
+    1.appendChild
+    2.insertBefore
+  (3)刪  removeChild
+  (4)改:主要是修改DOM的元素屬性,DOM元素的內容、屬性、表單的值等。
+    1.修改元素屬性:src  href   title等
+    2.修改普通元素內容: innerHTML innerText
+    3.修改表單元素:valus type disable
+    4.修改元素樣式:style(行內樣式) className(樣式較多,添加或修改class)
+  (5)查:主要是獲取查詢DOM的元素
+    1.DOM提供的API方法:getElementById、getElementsByTagName等古老用法(不太推薦)
+    2.H5新增的方法:querySelector、querySelectorAll (提倡)
+    3.利用節點操作獲取元素:父(parentNode)、子(children)、兄(previousElementSibling  nextElementSibling)(提倡)
+  (6)屬性操作:主要針對自定義屬性
+    1.setAttribute:設置DOM的屬性值
+    2.getAttribute:獲取DOM的屬性值
+    3.removeAttribute:移除屬性
+  (7)事件操作:主要是給元素綁定注冊事作,採取事件源、事件類型、事件處理程序三要素執行
+    1.onclick:點擊
+    2.onmouseover:鼠標經過
+    3.onmouseout:鼠標離開
+    4.onfocus:獲取鼠標焦點
+    5.onblur:失去鼠標焦點
+    6.onmousemove:鼠標移動
+    7.onmouseup:鼠標彈起
+    8.onmousedown:鼠標按下
 57事件高級==============================================================================
 58  

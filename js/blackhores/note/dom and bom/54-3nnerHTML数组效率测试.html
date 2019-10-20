@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>效率测试</title>
+    <title>數組形式innerHTML拼接</title>
 
 </head>
 
@@ -12,16 +12,14 @@
 </body>
 
 <script>
+    //以數組形式innerHTML 拼接,效率檢測-->效率最好
     function fn() {
         var d1 = +new Date();
-
+        var array = [];
         for (var i = 0; i < 1000; i++) {
-            var div = document.createElement('div');
-            div.style.width = '100px';
-            div.style.height = '2px';
-            div.style.border = '1px solid red';
-            document.body.appendChild(div);
+            array.push('<div style="width:100px; height:2px; border:1px solid green;"></div>');
         }
+        document.body.innerHTML = array.join('');
         var d2 = +new Date();
         console.log(d2 - d1);
     }
