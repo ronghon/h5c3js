@@ -215,4 +215,24 @@
     7.onmouseup:鼠標彈起
     8.onmousedown:鼠標按下
 57事件高級==============================================================================
-58  
+58注冊事件(綁定事件)
+  注冊事件區分為兩種:傳統方式及方法監聽注冊方式
+  (1)傳統注冊事件:利用on開頭的事件,ex:onclick、onmouseover...具唯一性:同一個元素同一個事件只能設置一個處理函數,最後注
+     冊的處理函數將會覆蓋前面注冊的處理函數。
+  (2)方法監聽注冊方式:w3c標準,推薦方式,addEventLister()它是一個方法,IE9以前不支持此方法,可使用attachEvent()代替
+     特點:同一個元素同一個事件可以添加多個監聽器,依注冊順序依次執行
+     addEventListener事件監聽方式 語法:
+     目標(監聽)對象.addEventListener(type,listener,[useCapture])
+     1.type:事件類型字符串,ex:click、mouseover 注意不用加on,要加''號
+     2.listener:事件處理函數,事件發生時,會調用該監聽函數 function()
+     3.useCapture:可選參數,是一個布尔值,默認為false 
+59.attachEvent('onclick',function(){})支持IE9以前-->直接使用傳統方式即可取代
+60.刪除事件(解綁事件)
+  1.傳統解綁方式:
+     btn.onclick=null;
+  2.addEventListener-->removeEventListener('click', listener)
+    注意:不可使用匿名函數,可利用函數關鍵字定義一個函數,然後listener再使用該函數名即可
+61.DOM事件流:描述的是從頁中接收事件的順序,事件發生時會在元素節點之間按照特的順序傳播,這個傳播過程即DOM事件流
+  區分為三個階段:捕獲階段(由上到下,由大到小)、當前目標階段、冒泡階段(由內往外,或由小到大)
+  事件捕獲:網景最早提出,由DOM最頂層節點開始,然後逐級向下傳播到最具體的元素接收的過程(document->html->body->element)  
+  事件冒泡:IE最早提出,事件開始時由最具體的元素接收,然後逐級向上傳播到DOM最頂層節點的過程(element->body->html->document)
