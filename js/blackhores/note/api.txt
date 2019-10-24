@@ -222,17 +222,44 @@
   (2)方法監聽注冊方式:w3c標準,推薦方式,addEventLister()它是一個方法,IE9以前不支持此方法,可使用attachEvent()代替
      特點:同一個元素同一個事件可以添加多個監聽器,依注冊順序依次執行
      addEventListener事件監聽方式 語法:
-     目標(監聽)對象.addEventListener(type,listener,[useCapture])
+     目標(監聽)對象.addEventListener(type,listener,[useCapture])->事件監聽方式
      1.type:事件類型字符串,ex:click、mouseover 注意不用加on,要加''號
      2.listener:事件處理函數,事件發生時,會調用該監聽函數 function()
      3.useCapture:可選參數,是一個布尔值,默認為false 
-59.attachEvent('onclick',function(){})支持IE9以前-->直接使用傳統方式即可取代
+59.attachEvent('onclick',function(){})IE獨有,支持IE9以前-->直接使用傳統注冊事件方式即可取代
 60.刪除事件(解綁事件)
   1.傳統解綁方式:
      btn.onclick=null;
   2.addEventListener-->removeEventListener('click', listener)
     注意:不可使用匿名函數,可利用函數關鍵字定義一個函數,然後listener再使用該函數名即可
-61.DOM事件流:描述的是從頁中接收事件的順序,事件發生時會在元素節點之間按照特的順序傳播,這個傳播過程即DOM事件流
+61.DOM事件流:描述的是從頁中接收事件的順序,事件發生時會在元素節點之間按照特定的順序傳播,這個事件的傳播過程即DOM事件流
   區分為三個階段:捕獲階段(由上到下,由大到小)、當前目標階段、冒泡階段(由內往外,或由小到大)
   事件捕獲:網景最早提出,由DOM最頂層節點開始,然後逐級向下傳播到最具體的元素接收的過程(document->html->body->element)  
   事件冒泡:IE最早提出,事件開始時由最具體的元素接收,然後逐級向上傳播到DOM最頂層節點的過程(element->body->html->document)
+62.DOM事件流注意事項
+  1.JS代碼中只能執行捕獲或冒泡其中的一個階段
+  2.onclick和attachEvent只能得到冒包階段
+  3.addEventListener(tyoe,listener[,useCapture])第三個參數如果是true,表示在事件捕獲階段調用事件處理程序,
+    如果是false,表示在事件冒泡階段調用事件處理程序
+  4.實際開發中,較少使用事件捕獲,較關注事件冒泡階段
+  5.有些事件是没有冒泡的,ex:onblur onfocus onmouseenter onmouseleave
+  6.事件冒泡有時會帶來麻煩,有時又會很巧妙的做某些事件
+63.事件對象***
+  1.event就是一個事件對象,寫到監聽函數的小括號中,當形參使用
+  2.事件對象只有有了事件才會存在,它是系統自動創建的,不需要傳遞參數
+  3.事件對象是與事件一系列相關數據的集合,與事件相關的屬性和方法,ex:鼠標點擊內就包含了鼠標的相關信息(鼠標坐標等),
+    如果是鍵盤事件內,就包含鍵盤事件的信息(如判斷用戶按下了那一個鍵)
+    (1)傳統注冊事件:
+     div.onclick=function(event){
+       console.log(event);
+     }
+    (2)事件監聽方式:
+     div.addEventListener('click',function(event){
+       console.log(event);
+     })
+  4.這個事件對象可以自行命名,通常使用event  e  evt等...
+  5.事件對象也有兼容性問題,IE678需使用window.event,可使用 e=e || window.event來解決
+64.常見事件對象的屬性和方法
+  1.target與this的區別: e.target 点击了那个元素，就返回那个元素,而 this 那个元素绑定了这个点击事件,那么就返回谁
+    e.target 返回的是触发事件的对象（元素）
+    this 返回的是绑定事件的对象（元素）
