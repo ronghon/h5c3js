@@ -232,13 +232,13 @@
      btn.onclick=null;
   2.addEventListener-->removeEventListener('click', listener)
     注意:不可使用匿名函數,可利用函數關鍵字定義一個函數,然後listener再使用該函數名即可
-61.DOM事件流:描述的是從頁中接收事件的順序,事件發生時會在元素節點之間按照特定的順序傳播,這個事件的傳播過程即DOM事件流
+61.DOM事件流:描述的是從頁面中接收事件的順序,事件發生時會在元素節點之間按照特定的順序傳播,這個事件的傳播過程即DOM事件流
   區分為三個階段:捕獲階段(由上到下,由大到小)、當前目標階段、冒泡階段(由內往外,或由小到大)
   事件捕獲:網景最早提出,由DOM最頂層節點開始,然後逐級向下傳播到最具體的元素接收的過程(document->html->body->element)  
   事件冒泡:IE最早提出,事件開始時由最具體的元素接收,然後逐級向上傳播到DOM最頂層節點的過程(element->body->html->document)
 62.DOM事件流注意事項
   1.JS代碼中只能執行捕獲或冒泡其中的一個階段
-  2.onclick和attachEvent只能得到冒包階段
+  2.onclick和attachEvent只能得到冒泡階段
   3.addEventListener(tyoe,listener[,useCapture])第三個參數如果是true,表示在事件捕獲階段調用事件處理程序,
     如果是false,表示在事件冒泡階段調用事件處理程序
   4.實際開發中,較少使用事件捕獲,較關注事件冒泡階段
@@ -246,7 +246,7 @@
   6.事件冒泡有時會帶來麻煩,有時又會很巧妙的做某些事件
 63.事件對象***
   1.event就是一個事件對象,寫到監聽函數的小括號中,當形參使用
-  2.事件對象只有有了事件才會存在,它是系統自動創建的,不需要傳遞參數
+  2.事件對象只有有了事件才會存在,它是系統自動創建的,不需要傳遞參數-->前提條件
   3.事件對象是與事件一系列相關數據的集合,與事件相關的屬性和方法,ex:鼠標點擊內就包含了鼠標的相關信息(鼠標坐標等),
     如果是鍵盤事件內,就包含鍵盤事件的信息(如判斷用戶按下了那一個鍵)
     (1)傳統注冊事件:
@@ -260,6 +260,103 @@
   4.這個事件對象可以自行命名,通常使用event  e  evt等...
   5.事件對象也有兼容性問題,IE678需使用window.event,可使用 e=e || window.event來解決
 64.常見事件對象的屬性和方法
-  1.target與this的區別: e.target 点击了那个元素，就返回那个元素,而 this 那个元素绑定了这个点击事件,那么就返回谁
-    e.target 返回的是触发事件的对象（元素）
-    this 返回的是绑定事件的对象（元素）
+  觸發事件的對象(標準寫法:e.target)
+  1.e.target:返回的是觸發事件的對象(元素)  VS this 返回的是绑定事件的对象（元素）
+  2.target與this的區別: e.target 点击了那个元素，就返回那个元素,而 this 那个元素绑定了这个点击事件,那么就返回谁
+  3.IE678 則使用e.srcElement  
+  4.與this 相似的屬性currentTarget(了解即可,IE678不支持)   
+
+65.返回事件類型和阻止默認行為
+  a.返回事件類型:e.type  ex:click mouseover mouseout
+  b.阻止默認行為(事件):就是鏈接不跳轉或讓提交按鈕不提交
+    1.e.preventDefault() -->(方法) ->DOM標準寫法  IE9以上
+    2.e.returnValue -->(屬性) IE678瀏覽器支持 
+    3.return false; 没有兼容性問題,但return後的代碼不執行,且限於使用傳統注冊事件方式onclick
+  
+66.阻止事件冒泡的兩種方式**
+  1.標準寫法:利用事件對象中的stopPropagation() (方法) 代碼寫在具體的元素內 propagation傳播
+  2.IE678:e.cancelBubble=true;
+
+67.事件委託(代理、委派)-->事件冒泡應用
+  不要給每個子節點單獨設置事件監聽器,而是將事件監聽器設置在其父節點上,然後利用事件冒泡原理影響設置給每個子節點
+  事件委托的作用:只操作了一次DOM,提高程序的性能
+  ex:給ul注冊點擊事件,然後利用事件對象的target找到當前點擊的li,因為點擊li,事件會冒泡到ul上,ul有注冊事件,就會觸發事件監聽器
+  
+68.常用鼠標事件
+  1.禁止鼠標右鍵菜單:contextmenu 主要控制應該如何顯示上下文菜單,主要用於取消默認的上下文菜單
+    用法: document.addEventListener('contextmenu',function(e){
+      e.preventDefault();
+    })
+  2.禁止鼠標選中文字:selectstart 開始選中
+    document.addEventListener('selectstart',function(e){
+      e.preventDefault();
+    })
+    
+69.鼠標事件對象:MouseEvent 鍵盤事件對象:KeyboardEvent
+   常見屬性:獲取坐標值
+   1.e.clientX:返回鼠標相對於瀏覽器窗口可視區的X坐標
+     e.clientY:返回鼠標相對於瀏覽器窗口可視區的Y坐標
+   2.e.pageX:返回鼠標在頁面文檔的X坐標(IE9+支持)
+     e.pageY:返回鼠標在頁面文檔的Y坐標
+   3.e.screenX:返回鼠標在電腦屏幕的X坐標
+     e.screenY:返回鼠標在電腦屏幕的Y坐標
+     
+70.鼠標移動事件mousemove,藉由鼠標移動事件觸發獲取最新的鼠標座標,並將x和y座標值賦值給圖片的top和left值即可移動圖片
+
+72.常用鍵盤事件
+	1.onkeyup   ->按鍵彈起時觸發
+	2.onkeydown ->按鍵按下時觸發
+	3.onkeypress->按鍵按下時觸發,不能識別功能鍵 ex:shift ctrl alt 左右箭頭
+	4.執行順序 keydown->keypress->keyup
+  
+73.鍵盤事件(keyboardEvent)對象-->e.keyCode
+	1.e.keyCode:會返回相應按鍵的ASCII值,能區分大小寫
+	2.keyup和keydown事件不区分字母大小写  a 和 A 得到的都是65
+	3.keypress事件区分字母大小写  a  97 和 A 得到的是65,但無法識別功能鍵,實際開發中較少用
+	4.注意:keydown和keypress在文本框中的特點:這兩個事件觸發時,文字還没有落入文本框中,而keyup事件觸發時,文字已落入文本框中
+  
+77.BOM瀏覽器對象模型============================================================================================
+78.BOM概述:
+	1.瀏覽器對象模型,它提供了獨立於內容而與瀏覽器窗口進行交互的對象,其核心對象是window
+	2.BOM昰由一系列相關的對象構成,且每個對象都提供了很多方法和屬性。
+	3.BOM缺乏標準,JS語法的標準化組是ECMA,DOM是W3C,BOM最初是Netscape瀏覽標準的一部份,但目前由各瀏覽器公司自訂標準無統一規範
+	4.BOM的頂級對象是window,它具有雙重角色,BOM比DOM更大,它包含了DOM
+	  (1)它是JS訪問瀏覽器窗口的一個接口。
+	  (2)它是一個全局對象,定義在全局作用域中的變量、函數都會變成window對象的屬性和方法。
+	  在調用時可省略window,alert()、prompt()等均屬於window的對象方法。查詢window的屬性和方法-->console.dir(window);
+	5.window下面包含document  location  navigation  screen  history
+  
+79.window對象常見事件
+	1.窗口加載事件:window.onload = function(){} 或者 window.addEventListener('load',function(){})
+	  當文檔內容完全加載完成會觸發該事件(包括圖像、腳本文件、CSS等),就調用的處理函數,運用這個方式即可將script寫在頁面的任何地方
+	  ,甚至外部文件亦可,但傳統注冊事件方法會有唯一性問題,如果使用addEventListener就無此限制
+	2.DOMcontentLoaded是DOM加載完畢,不包含圖片、flash css等就可執行,加載速度比load更快些
+	  load則需等頁面內容全部加載完畢,包含頁面DOM元素、圖片、flash css等才會執行
+
+80.調整窗口大小事件window.onresize=function(){} 或 window.addEventListener('resize',function(){})
+   window.onresize是調整窗口大小加載事件,當觸發時就調用的處理函數
+   1.只要窗口大小發生像素變化,就會觸發這個事件
+   2.經常利用這個事件執行響應式布局,window.innerWidth獲取當前屏幕的寛度
+81.定時器
+	window對象提供兩個非常好的方法:setTimeout()、setInterval()
+	1.setTimeout():設置一個定時器,該定時器在定時器到期後執行調用函數。
+	  語法:window.setTimeout(調用函數,[延遲的亳秒數])	window可省略 亳秒數可省略,如果省略默認為0(立即執行)
+	  用法:
+	  (1)setTimeout(function(){
+		  console.log('bob!!');      //直接寫函數
+	    },2000)
+      (2)function callback(){
+		  console.log('bob!!');
+	     }
+		 setTimeout(callback,2000);  //使用函數名,setTimeout再調用該函數  提倡使用方式
+	  (3)頁面中可能有很多的定時器,因此經常會給定時器添加標識符(名字)來區別不同的定時器	
+82.回調函數callback,回頭調用,等某一事件處理完畢後再回頭調用該函數
+   element.onclick=function(){}或者element.addEventListener('click',fn);內的函數也是回調函數	
+   設置定時器關閉廣告
+83.停止setTimeout()定時器:clearTimeout(定時器名字)
+84.setInterval()定時器
+	2.window.setInterval(調用函數,[延遲的亳秒數]),可以重複調用一個函數,每隔一定時間,就去調用一次回調函數,其餘注意事項與
+	  setTimeout大致相同
+	  setTimeout  延时时间到了就去调用这个回调函数,只调用一次就结束了这个定时器
+	  setInterval  每隔这个延时时间就去调用这个回调函数,会调用很多次重复调用这个函数
+85.倒數計時定時器(重點案例加強練習)
