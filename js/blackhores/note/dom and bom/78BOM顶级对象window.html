@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // window.document.querySelector()
+        var num = 10;
+        console.log(num);
+        console.log(window.num);
+
+        function fn() {
+            console.log(11);
+
+        }
+        fn();
+        window.fn();
+        // alert(11);
+        // window.alert(11)
+        console.dir(window);//列出window對象的屬性和方法
+        // var name = 10;
+        console.log(window.name);//不要使用name當作變量名,因為name為window下有一個特殊屬性window.name
+    </script>
+</body>
+
+</html>

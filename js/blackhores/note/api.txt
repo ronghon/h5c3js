@@ -316,27 +316,43 @@
 	4.注意:keydown和keypress在文本框中的特點:這兩個事件觸發時,文字還没有落入文本框中,而keyup事件觸發時,文字已落入文本框中
   
 77.BOM瀏覽器對象模型============================================================================================
+  1.BOM概述
+  2.window對象的常見事件
+  3.定時器
+  4.JS執行機制
+  5.location對象
+  6.navigator對象
+  7.history對象
+
 78.BOM概述:
 	1.瀏覽器對象模型,它提供了獨立於內容而與瀏覽器窗口進行交互的對象,其核心對象是window
 	2.BOM昰由一系列相關的對象構成,且每個對象都提供了很多方法和屬性。
-	3.BOM缺乏標準,JS語法的標準化組是ECMA,DOM是W3C,BOM最初是Netscape瀏覽標準的一部份,但目前由各瀏覽器公司自訂標準無統一規範
+	3.BOM缺乏標準,JS語法的標準化組織是ECMA,DOM是W3C,BOM最初是Netscape瀏覽標準的一部份,但目前由各瀏覽器公司自訂標準無統一規範
 	4.BOM的頂級對象是window,它具有雙重角色,BOM比DOM更大,它包含了DOM
 	  (1)它是JS訪問瀏覽器窗口的一個接口。
 	  (2)它是一個全局對象,定義在全局作用域中的變量、函數都會變成window對象的屬性和方法。
 	  在調用時可省略window,alert()、prompt()等均屬於window的對象方法。查詢window的屬性和方法-->console.dir(window);
 	5.window下面包含document  location  navigation  screen  history
   
+  DOM                                  BOM
+  文檔對象模型                       --> 瀏覽器對象模型
+  DOM就是把文檔當做一個對象來看待       --> 把瀏覽器當做一個對象來看待
+  DOM的頂級對象是document            --> BOM的頂級對象是window 
+  DOM主要學習的是操作頁面元素          --> BOM學習的是瀏覽器窗口交互的一些對象
+  DOM是W3C標準規範                   --> BOM是瀏覽器廠商在各自瀏覽器上定義的,兼容性較差
+
 79.window對象常見事件
 	1.窗口加載事件:window.onload = function(){} 或者 window.addEventListener('load',function(){})
 	  當文檔內容完全加載完成會觸發該事件(包括圖像、腳本文件、CSS等),就調用的處理函數,運用這個方式即可將script寫在頁面的任何地方
 	  ,甚至外部文件亦可,但傳統注冊事件方法會有唯一性問題,如果使用addEventListener就無此限制
-	2.DOMcontentLoaded是DOM加載完畢,不包含圖片、flash css等就可執行,加載速度比load更快些
+	2.DOMContentLoaded是DOM加載完畢,不包含圖片、flash css等就可執行,加載速度比load更快些,IE9以上才支持
 	  load則需等頁面內容全部加載完畢,包含頁面DOM元素、圖片、flash css等才會執行
 
 80.調整窗口大小事件window.onresize=function(){} 或 window.addEventListener('resize',function(){})
    window.onresize是調整窗口大小加載事件,當觸發時就調用的處理函數
    1.只要窗口大小發生像素變化,就會觸發這個事件
    2.經常利用這個事件執行響應式布局,window.innerWidth獲取當前屏幕的寛度
+
 81.定時器
 	window對象提供兩個非常好的方法:setTimeout()、setInterval()
 	1.setTimeout():設置一個定時器,該定時器在定時器到期後執行調用函數。
@@ -345,18 +361,22 @@
 	  (1)setTimeout(function(){
 		  console.log('bob!!');      //直接寫函數
 	    },2000)
-      (2)function callback(){
+    (2)function callback(){
 		  console.log('bob!!');
 	     }
 		 setTimeout(callback,2000);  //使用函數名,setTimeout再調用該函數  提倡使用方式
 	  (3)頁面中可能有很多的定時器,因此經常會給定時器添加標識符(名字)來區別不同的定時器	
+    
 82.回調函數callback,回頭調用,等某一事件處理完畢後再回頭調用該函數
    element.onclick=function(){}或者element.addEventListener('click',fn);內的函數也是回調函數	
    設置定時器關閉廣告
+   
 83.停止setTimeout()定時器:clearTimeout(定時器名字)
-84.setInterval()定時器
+
+84.setInterval()定時器-->會重複調用函數
 	2.window.setInterval(調用函數,[延遲的亳秒數]),可以重複調用一個函數,每隔一定時間,就去調用一次回調函數,其餘注意事項與
 	  setTimeout大致相同
-	  setTimeout  延时时间到了就去调用这个回调函数,只调用一次就结束了这个定时器
-	  setInterval  每隔这个延时时间就去调用这个回调函数,会调用很多次重复调用这个函数
+	  setTimeout  延遲時間到了就會調用這個回調函数,只調用一次就结束了這個定時時器
+	  setInterval  每隔这个延遲時間就會调用這個回调函数,會重複調用這個函數很多次
+
 85.倒數計時定時器(重點案例加強練習)
