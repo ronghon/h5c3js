@@ -6,6 +6,10 @@ git優勢:分散式管理
   4.分支操作非常快捷流暢-->快照處理
   5.與linux命令全面兼容
 
+本地庫與遠端庫操作形式
+  1.團隊內部協作  
+  2.跨團隊協作
+
 架構:工作流程
   工作區 add--> 暫存區 commit--> 本地庫 push --> github代碼托管中心:負責維護遠端庫
                                      pull <-- 第一次clone <-- github
@@ -19,10 +23,6 @@ Git 專案的三個主要區域：工作目錄(working directory)、暫存區(st
   - 工作目錄是專案被檢出的某一個版本。 這些檔案從 Git 目錄內被壓縮過的資料庫中拉出來並放在硬碟供你使用或修改。
   - 暫存區是一個單一檔案，一般來說放在 Git 目錄下，儲存關於下次提交的資訊。 有時它會稱為索引「index」，但現在更常被稱呼為暫存區。
   - Git 資料夾是 Git 用來儲存你專案的後設資料及物件資料庫的地方。 這是 Git 最重要的部份，而且當你克隆一個其他電腦的儲存庫時，這個資料夾也會被同時複製。
-
-本地庫與遠端庫操作形式
-  1.團隊內部協作  
-  2.跨團隊協作
 
 terminal終端機常用指令(linux命名)
 mkdir name  創建name目錄夾
@@ -67,19 +67,33 @@ git book有中文版  https://git-scm.com/book/zh-tw/v2
   2.從github伺服器克隆（clone）一份現有的 Git 倉儲 -->git clone 遠端空間的網址 本機資料夾名稱 -->第一次下載GitHub雲端專案
 
 **提送流程  
-  git add  檔案名稱  -> 將工作區檔案增加至暫存區
-        -p 修改內容提示
-  git rm --cached 檔案名稱  將檔案從暫存區移回工作區(track-->untracked)
-  git commit -m "message"-->未加-m參數會進入vim編輯器i o a :qw ,將暫存區的檔案提交到本地庫
+  工作區 -> git add  檔案名稱  -> 暫存區 -> git commit -m 'message' -> 本地端倉庫 
+        <- git reset HEAD 
+  工作區 -> git commit -m -a -> 本地端倉庫(對untracked檔案無效) 修改部份直接提交本地端倉庫        
+  
+**刪除檔案
+  1.直接刪 rm       -> 需git add 和 git commit 兩步將刪除紀錄提交
+  2.使用git rm 刪除 -> 需git commit 將刪除紀錄提交 
+  3.使用git rm --cached 檔名 -> 並不是真的把檔案刪了,而僅是把檔案從 Git 裡移掉而已變成untracked
 
-  git log 查看完整紀錄
+**更名檔案
+  1.直接更名 mv 舊名 新名 -> 需git add 和 git commit
+  2.使用git mv 舊名 新名 -> 需git commit 
+  
+**修改 commit message紀錄
+  1.把 .git 目錄整個刪除(誤):把該專案所有的 Git 紀錄全部清掉，除非必要，不要輕易使用
+  2.使用 git rebase 來修改歷史: git rebase -i sha --> -i 參數是指要進入 Rebase 指令的「互動模式」,sha指要從現在到那一個commit 
+    -->進入編輯模式 --> pick  保留不修改(p)  reword 修改(r)
+  3.先把 commit 用 git reset 拆掉,整理後再重新 Commit。
+  4.使用 --amend 參數來修改最後一次的 commit:直接使用 git commit -m --amend 'message'就可修改最後一次提交的訊息。
+
+**git log 查看完整紀錄
     git log --pretty=oneline
     git log --oneline(簡潔版)
+
+**版本回退
   
-  git reflog查看操作日誌
-    git reflog:HEAD@{}移動HEAD從當前版本到目標要多少步
-    HEAD只是指向某個分支的指標
-  
+  HEAD指向的是當前分支
   歷史紀錄查詢與返回
     -使用索引值  git reset --hard 索引值 ,可返回到任意版本,使用時請先確認版本(建議使用此法)
     -使用HEAD^  git reset --hard HEAD^ 後退到前一版本,使用N個^即往前回退N的版本
@@ -89,7 +103,11 @@ git book有中文版  https://git-scm.com/book/zh-tw/v2
     --soft:僅在本地庫移動HEAD指針,只有本地庫向倒退
     --mixed:在本地庫移動HEAD指針,且重置暫存區,只有本地庫及暫存區向後倒退
     --hard: 在本地庫移動HEAD指針,且重置暫存區及工作區,三者一起向後倒退
-  
+
+  git reflog查看操作日誌
+    git reflog:HEAD@{}移動HEAD從當前版本到目標要多少步
+    HEAD只是指向某個分支的指標
+    
   刪除文件並找回:前提是刪除前,文件存在時狀況已提交本地庫,
     git reset --hard [指針位置]
     刪除前已提交本地庫:指針位置指向歷史紀錄
@@ -111,8 +129,7 @@ git book有中文版  https://git-scm.com/book/zh-tw/v2
     解決衝突:
       衝突表現
 
-  git rm 檔名 刪除暫存區檔案名
-  git mv 舊檔名 新檔名  為檔案重新命名
+ 
   git ls-files 查詢本地倉庫有多少檔案尚未上傳
 
 =================================================================================================
@@ -152,10 +169,6 @@ git pull 遠端空間的名稱 遠端空間的分支-->從GitHub雲端專案下�
 開發者協作的基本流程
 code devol1 git pull-->coding-->end-->git add.->git commit-->git push-->code devol2 git pull-->coding...
 
-
-
-
-
 git 應用開發詳解==================================================================================
   特性:
   -直接紀錄快照,而非差異比較
@@ -176,8 +189,7 @@ git 應用開發詳解==========================================================
       1. /etc/gitconfig(幾乎不會使用)-->git config --system
       2. ~/.gitconfig(很常用)--> git config --global  
       3. 針對特定項目,在.git/config文件中-->git config --local 優先使用
-    -git checkout -- 檔名 捨棄文件變更,小心使用,因尚未提交到本地庫,如捨棄變更將回到尚未變更前狀態,則所
-      有變更會重來。
+    -git checkout -- 檔名 捨棄文件變更,小心使用,因尚未提交到本地庫,如捨棄變更將回到尚未變更前狀態,則所有變更會重來。
     -git reset HEAD 檔名-->會使檔案從暫存區又回到工作區(unstage)
   
 第五講git添加、刪除、修改與日誌
