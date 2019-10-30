@@ -24,7 +24,7 @@
                 if (time == 0) {  //如果变量为0 说明到了时间，我们需要停止定时器，并且复原按钮初始状态
                     clearInterval(timer);// 清除定时器
                     btn.disabled = false;//复原按钮
-                    btn.innerHTML = '发送';
+                    btn.innerHTML = '发送'; //button是以innerHTML修改內容
 					time =3;  //time需重新開始
 			    } else {
                  btn.innerHTML = '还剩下' + time + '秒';

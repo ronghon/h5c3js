@@ -16,7 +16,7 @@
         var stop = document.querySelector('.stop');
         var timer = null; // 設置timer為全局变量  null是一个空对象
         begin.addEventListener('click', function() {
-            timer = setInterval(function() {
+            timer = setInterval(function() {  //timer是一個局部變量,會報錯
                 console.log('ni hao ma');
 
             }, 1000);
