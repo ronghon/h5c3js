@@ -160,27 +160,36 @@ git pull 遠端空間的名稱 遠端空間的分支-->從GitHub雲端專案下�
 code devol1 git pull-->coding-->end-->git add.->git commit-->git push-->code devol2 git pull-->coding...
 
 git 應用開發詳解==================================================================================
+第三講
+  git與github、gitlab是不同的系統,github與gitlab均為服務器端版本管理庫,gitlab是公司內部自建的版本管理庫  
   特性:
   -直接紀錄快照,而非差異比較
   -幾乎所有操作都在本地操作
   -隨時保持資料完整性
   -大多數操作僅添加數據
   -文件的三種狀態
-    -已修改(modified):在工作目錄中修改了git文件-->untracked
-    -已暫存(staged):對已修改的文件執行git暫存操作(git add),將文件存入暫存區
-    -已提交(committed):將已暫存文件執行git提交操件(git commit),將文件存入本地庫
-    git help
-    git log 
-    git diff
-  
+   -已修改(modified):在工作目錄中修改了git文件-->untracked
+   -已暫存(staged或index):對已修改的文件執行git暫存操作(git add),將文件存入暫存區
+   -已提交(committed):將已暫存文件執行git提交操件(git commit),將文件存入本地庫
+   
+   GUI圖形介面工具使用SourceTree or Github Desktop 
+   git init 本地端創建一個版本庫 
+    內含一個.git 隠藏目錄夾,建議不要直接操作此目錄夾內的文件,否則會造成git錯亂,如將此目錄夾刪除(rm -rf .git),則會變成非git版本管理內容 
+        
 第四講git 重要命令操作
-    -git提交的id(commit id)是一個摘要值,這個值實際上是一個sha1計算出來的hash
-    -user.name和user.email,有三個地方可設置
-      1. /etc/gitconfig(幾乎不會使用)-->git config --system
-      2. ~/.gitconfig(很常用)--> git config --global  
-      3. 針對特定項目,在.git/config文件中-->git config --local 優先使用
-    -git checkout -- 檔名 捨棄文件變更,小心使用,因尚未提交到本地庫,如捨棄變更將回到尚未變更前狀態,則所有變更會重來。
-    -git reset HEAD 檔名-->會使檔案從暫存區又回到工作區(unstage)
+  git log查看提交歷史紀錄
+  git log -n 查看最後n筆提交歷史紀錄
+  git log --oneline 
+  -git提交的id(commit id)是一個摘要值,這個值實際上是一個sha1計算出來的hash
+  -user.name和user.email,有三個地方可設置
+    git config --global user.name 'name'   
+    git config --global user.email 'email'
+    git config --global --unset user.name -->刪除user.name
+    1./etc/gitconfig(幾乎不會使用)-->git config --system 針對整個操作系統
+    2.~/.gitconfig(很常用)--> git config --global 針對特定login 用戶  
+    3.在.git/config文件中-->git config --local 針對特定版本倉庫項目   上述三個均配置時,優先使用local內的資訊
+  -git checkout -- 檔名 捨棄文件變更,小心使用,因尚未提交到本地庫,如捨棄變更將回到尚未變更前狀態,則所有變更會重來。
+  -git reset HEAD 檔名-->會使檔案從暫存區又回到工作區(unstage)
   
 第五講git添加、刪除、修改與日誌
   git rm 檔名
@@ -298,10 +307,10 @@ mkdir name  創建name目錄夾
 pwd 顯示目前所在目錄
 ll 或ls 查詢目錄 -al含隠藏目錄及檔案
 touch 檔案名  建立一個空白檔案,如已存在時則僅會變修改時間,原內容不會變更
+cat 檔名-->查看檔案內容
 mv 原檔名 新檔名 
 rm 檔名  or rm *.*刪除有檔案
 cp 原檔名  另一檔案名 copy原檔名到另一檔名
-cat 檔名-->查看檔案內容
 clear 畫面清除 ctrl+L
 which  命令-->查詢命令在那一個目錄下
 cd - 回到上次命令目錄
