@@ -442,8 +442,171 @@
 				display: -webkit-box;  //彈性伸縮盒子模型顯示
 				-webkit-line-clamp: 2;  //限制在一個塊元素顯示的文本行數
 				-webkit-box-orient: vertical; //設置或檢索伸縮盒對象的子元素的排列方式
-			
-			
+275.HTML5和CSS3新增特性==================================================================================================================
+	1.div 對搜索引擎無意義,因此新增具有語義的標籤,如
+		- header 頭部
+		- nav 導航
+		- article 內容文章
+		- section 區塊
+		- aside 側邊欄
+		- footer 底部
+	2.這些語義化標籤主要針對搜索引擎的,可在頁面中重覆使用,在IE9中,這些元素會被視為行級元素,所以需轉換為塊級元素
+	1.<audio>音頻
+		支持三種格式: MP3 Wav Ogg Vorbis,注意事項:因為不同瀏覽器支持不同格式,因此需同時準備多種格式,並利用<source src="url">
+		<audio src="文件地址" 
+		屬性值:
+		 -autoplay 自動撥放-->google禁用此項屬性
+		 -controls 顯示控件
+		 -loop 重新開始播放(循環)
+		 -src url地址
+06.視頻==
+	2.<video>視頻
+		支持三種格式:Mp4 Ogg WebM
+		屬性值大致與audio相同
+	
+	div 對搜索引擎無意義,因此新增具有語義的標籤,H5新增屬性都有兼容性問題,IE9以上才支持
+	1.語義化標籤
+		<header>頭部  <nav>導航   <article>內容   <section>定義文檔某個區域  <aside>側邊欄  <footer>底部
+		注意事項:
+		(1)這些語義化標籤主要是針對搜索引擎
+		(2)可在頁面中重複使用多次
+		(3)在IE9中需將這些標籤轉換為塊級元素
+		(4)移動端常用,較無兼容性問題
+	2.多媒體標籤:可在頁面嵌入,不再使用flash和其他瀏覽器插件
+		(1)音頻<audio>:支持三種格式mp3、wav、ogg,其中mp3所有瀏覽器都支持,所以儘量使用mp3格式,音頻與視頻播放設置屬性大致相同
+		(2)視頻<video>:僅支持三種格式mp4、WebM、Ogg,不同瀏覽器支持情況不同,但mp4都支持,所以儘量使用mp4格式
+			<video src="路徑" controls="controls"></video>  controls播放控件  autoplay自動播放  loop自動循環播放  muted靜音  poster加載等待圖片
+			可使用<source srce="路徑" type="格式">分別設置不同格式	
+	3.input新增類型:
+		type="email"->需包含@及@後面要有內容
+		type="url"->驗證只能輸入合法的網址,必須含http
+		type="date"->日期:年月日
+		type="time"->時間:時分秒
+		type="datetime"大多數瀏覽器不支持datetime,只有safari支援,可改用datetime-local
+		type="month"->月份
+		type="week"->星期
+		type="number"->限制只能輸入數字,包含小數,可使用min最小值 和max 最大值,value="60"預設值
+		type="tel"->它不是用來實現驗證,目的為可在移動端打開數字鍵盤,意味著限制用戶只能輸入數字
+		type="search"-->搜索,可提供更人性化的輸入體驗
+		type="range"->範圍,可設最大值 max 和最小值 min 預設值value  ex:調音量大小
+		type="color"->顏色選擇表單
+  4.input表單屬性==
+		-required 必填,內容不能為空  pattern="正則表達式驗證"
+		-placeholder提示文本(佔位符)
+		-autofocus自動獲取鼠標焦點
+		-autocomolete自動提示曾經提交的內容 on 打開該功能 -->注意:使用時需同時加上name屬性並曾經成功提交內容 off 關閉該功能
+		-multiple 可多選文件提交
+		-form:form="myForm"指定表單id,在將來指定form id="myForm"
+		form: 
+			select 
+				-option value:具體的值  label:提示信息,輔助值
+			datalist
+				-option value:具體的值  label:提示信息,輔助值-->firefox不支援value
+		與input建立關連時,使用list="datalist的id號"
+		如果input輸入框的type="url"時,value值必須添加http://
+280.CSS3新增特性
+	1.CSS3新增選擇器:屬性選擇器、結構偽類選擇器、偽元素選擇器
+		(1)屬性選擇器:可以根據元素特定屬性來選擇元素,使用上會更便利,可以不用加id或class即可選取所要的元素,透過[]來表示
+			 E[att屬性]-->選擇含有att屬性的E元素  範圍最大
+			 E[att屬性="val"]-->選擇具有att屬性且屬性值等於val的E元素 全等
+			 E[att屬性^="val"]-->匹配具有att屬性且值以val開頭的E元素 ^=開頭含有
+			 E[att屬性$="val"]-->匹配具有att屬性且值以val結尾的E元素 $=結尾含有 
+			 E[att屬性*="val"]-->匹配具有att屬性且值中含有val的E元素 *=任意位置含有
+			 類選擇器、偽類選擇器和屬性選擇器的權重為0,0,1,0
+		(2)結構偽類選擇器(上):主要根據文檔結構來選擇元素,常用於根據父級選擇器裏面的子元素
+			 E:first-child-->父元素中的第一個子元素
+			 E:last-child-->父元素中的最後一個子元素
+			 E:nth-child(n)-->父元素中的第n個子元素, 
+			 *** n 可以是數字、關鍵字(ex:even(偶數)、odd(奇數))或公式,如果n是公式,從0開始計算,但第0個元素或超出了元素的個數時會被忽略
+			 n    指所有子元素
+			 2n   偶數(even)
+			 2n+1 奇數(odd)
+			 5n   5的倍數
+			 n+5  從第5個開始到最後
+			 -n+5 前5個(包含第5個)
+			 ***nth-child 使用時只指向是第n子元素,並不會管是何種類型的元素
+    (3)結構偽類選擇器(下):
+			 E:first-of-type-->指定類型E的第一個
+			 E:last-of-type-->指定類型E的最後一個
+			 E:nth-of-type(n)-->指定類型E的第n個
+	     ***選擇指定類型的元素ex:如有多個p、多個span混合為子元素時,則可使用此一方式指定那一個類型的第n個子元素 
+			 **nth-child與nth-of-type使用區別:
+			 1.nth-child對父元素裏面所有子元素排序選擇(序號是固定的),先找到第n個孩子,再檢查是否和E標籤匹配上
+			 2.nth-of-type對父元素裏面指定子元素進行排序選擇,先匹配E,再根據E找第n個孩子
+		(4)偽元素選擇器:可以協助我們利用CSS創建新標籤元素,而不需要HTML標籤,從而簡化HTML結構
+			 1. ::before-->在元素內部的前面插入內容
+			 2. ::after -->在元素內部的後面插入內容
+			 3.屬性:	content是必須有的
+			 4.before和after會創建一個元素,但屬於行內元素,如需設置寛高則需轉換為塊級元素
+			 5.因為在DOM中看不見創建的元素,因此稱之為偽元素
+			 6.偽元素和標籤選擇器一樣,權重為1。
+			 7.應用:
+				(1)偽元素字體圖標
+					div::after{
+						position: absolute;
+						top:10px;
+						right:20px;
+						content:'\e91e';
+						font-size:20px;
+						color: red;
+					  }
+				(2)仿土豆效果,加上hover 時使用:hover::before{}
+				(3)偽元素清除浮動
+					.clear:after{
+						content:"";
+						display:block;
+						height:0;
+						clear:both;
+						visibility:hidden;
+					}
+					***使用雙偽元素清除浮動是額外標籤法的升級和優化:
+					.clearfix:before,.clearfix:after{
+							content:"";
+							display:table;  //轉換為塊級元素且一行顯示
+					}
+					.clearfix:after{
+						clear:both;
+					}
+		2.CSS3盒子模型:透過box-sizing來指定盒模型,s屬性值為兩個
+			(1)content-box:預設,盒子大小=width+padding+border,padding和border的寛度會撐大盒子大小
+			(2)border-box:盒子大小=width,不會撐開盒子
+		3.CSS3濾鏡filter:將模糊或顏色偏移等圖形效果應用於元素 filter:函數()
+      (1)filter:blur(5px)  blur模糊處理,數值越大越模糊 
+			(2)calc()可在聲明CSS屬性值時執行計算
+			   width: calc(100%-80px); //可執行+ - * / 運算
+		4.CSS3過渡效果(transition):當元素從一種樣式轉換為另一樣式時為元素添加效果,應用:過渡動畫,但IE9以下不支持,經常與:hover一起搭配使用
+			過渡效果執行完畢後,默認會還原到原始狀態,口訣:誰作過渡給誰加
+			語法:transition: css屬性名稱  花費時間(duration)  運動曲線(timing-function)  延遲時間(delay)
+			使用注意事項:
+			1.為多個屬性同時添加過渡效果,以逗號隔開。
+			2.為所有屬性添加過渡效果時,使用all改變所有屬性-->所有屬性的過渡效果一樣,但執行效率降低,建議不要這樣寫。
+			3.為過渡效果區分為指定的步數執行,使用steps(步數)
+			4.添加過渡效困只能產生從某一個值到另一個具體的值的過渡效果
+			5.使用時需加前綴:-moz  firefox  -webkit  chrome   -o opera IE 10以上支持
+			6.運動曲線:
+					linear:均速
+					ease:預設值,先慢後快
+299.網站製作流程:
+	1.與客戶討論需求內容及製作方案,簽訂合約,並預付訂金-->初稿交客戶審核-->轉psd格式-->前端、後台開發-->測試驗收-->上線培訓-->後期維護
+302.模塊化開發:將一個項目按照功能劃分,一個功能一個模塊,互不影響,具有重複使用,更換方便等優點,將公共樣式(如版心寛度、清除浮動、頁面文字顏色等)
+		集中,以利後續維護工作
+303.網站favicon圖標
+	favicon.ico一般用於作為縮略的網站標誌,顯示於瀏覽器的地址欄或標籤上,制作方式:
+	1.製作favicon圖標:png->ico 比特蟲網站轉換生成ico
+	2.將favicon圖標放到網站根目錄下
+	3.在HTML頁面中引入favicon圖標
+304.網站TDK三大標籤SEO優化:SEO搜索引擎優化,是一種利用搜索引擎的規則提高網站在有關搜索引擎內自然排名的方式,頁面中必須有三個標籤用來符合SEO優化
+	1.title網站標題:具有不可替代性,是搜索引擎了解網頁的入口和對網頁主題歸屬的最佳判斷點。網站名-網站介紹
+	2.description描述說明:
+	3.keyword關鍵字:頁面關鍵字,是搜索引擎的關注點之一,以英文逗號隔開
+310.LOGO優化
+	1.logo內先放一個h1標籤,目的是為了提權,告訴搜索引擎,這個地方很重要
+	2.h1內再放一個鏈接,可以返回苜頁的,把logo的背景圖片給鏈接即可
+	3.為了搜索引擎收錄網站,在鏈接內要放文字(網站名稱),但文字不要顯示出來
+		(1)方法1:使用text-indent:-9999px移到盒子外面,然後overflow:hidden
+		(2)方法2:直接給font-size:0;就是讓文字看不到了
+	4.給鏈接設置title屬性,這樣鼠標放到logo上就可看到提示文字
+	
 
 絕對(位址)路徑:在任何情況下,都可以找得到的地址,完整位置路徑,ex:http://www.google.com/
 相對(位址)路徑:以當前所在目錄為基礎,相對位址,以./表示當前目錄, ../表示跳出當前目錄到上一層目錄
