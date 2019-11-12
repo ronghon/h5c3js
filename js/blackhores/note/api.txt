@@ -331,7 +331,8 @@
 	4.BOM的頂級對象是window,它具有雙重角色,BOM比DOM更大,它包含了DOM
 	  (1)它是JS訪問瀏覽器窗口的一個接口。
 	  (2)它是一個全局對象,定義在全局作用域中的變量、函數都會變成window對象的屬性和方法。
-	  在調用時可省略window,alert()、prompt()等均屬於window的對象方法。查詢window的屬性和方法-->console.dir(window);
+	  在調用時可省略window,alert()、prompt()等均屬於window的對象方法。
+    查詢window的屬性和方法-->console.dir(window);
 	5.window下面包含document  location  navigation  screen  history
   
   DOM                                  BOM
@@ -355,29 +356,31 @@
 
 81.定時器
 	window對象提供兩個非常好的方法:setTimeout()、setInterval()
-	1.setTimeout():設置一個定時器,該定時器在定時器到期後執行調用函數。
+	1.setTimeout():設置一個定時器,該定時器在定時器到期後執行調用函數-->類似定時炸彈。
 	  語法:window.setTimeout(調用函數,[延遲的亳秒數])	window可省略 亳秒數可省略,如果省略默認為0(立即執行)
 	  用法:
 	  (1)setTimeout(function(){
-		  console.log('bob!!');      //直接寫函數
+		  console.log('bob!!');      //直接使用匿名函數
 	    },2000)
-    (2)function callback(){
+    (2)function callback(){      //取函數名
 		  console.log('bob!!');
 	     }
-		 setTimeout(callback,2000);  //使用函數名,setTimeout再調用該函數  提倡使用方式
-	  (3)頁面中可能有很多的定時器,因此經常會給定時器添加標識符(名字)來區別不同的定時器	
-    
-82.回調函數callback,回頭調用,等某一事件處理完畢後再回頭調用該函數
-   element.onclick=function(){}或者element.addEventListener('click',fn);內的函數也是回調函數	
-   設置定時器關閉廣告
+		 setTimeout(callback,2000);  //先定義函數,再使用setTimeout再調用該函數(不用加())  提倡使用方式
+	  (3)頁面中可能有很多的定時器,因此經常會給定時器添加標識符(名字)來區別不同的定時器
+       var timer1=setTimeout(callback,5000);
+       var timer2=setTimeout(callback,2000);
+        
+82.回調函數(callback),回頭調用,等某一事件處理完畢後再回頭調用該函數
+   element.onclick=function(){}或者element.addEventListener('click',fn);等注冊事件內的函數也是回調函數	
+   案例:設置定時器關閉廣告
    
 83.停止setTimeout()定時器:clearTimeout(定時器名字)
 
-84.setInterval()定時器-->會重複調用函數
+84.setInterval()定時器-->會重複調用函數-->經常使用場景:倒數計時器,定時輪播圖
 	2.window.setInterval(調用函數,[延遲的亳秒數]),可以重複調用一個函數,每隔一定時間,就去調用一次回調函數,其餘注意事項與
-	  setTimeout大致相同
-	  setTimeout  延遲時間到了就會調用這個回調函数,只調用一次就结束了這個定時器
-	  setInterval  每隔延遲時間就會調用這個回調函数,會重複調用這個函數很多次
+	  setTimeout大致相同,不同之處:調用次數不同-->
+	 (1) setTimeout  --> 延遲時間到了就會調用這個回調函数,只調用一次就结束了這個定時器
+	 (2) setInterval --> 每隔延遲時間就會調用這個回調函数,會重複調用這個函數很多次
 
 85.倒數計時定時器(重點案例加強練習)
 
