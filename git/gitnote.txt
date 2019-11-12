@@ -57,7 +57,7 @@ git book有中文版  https://git-scm.com/book/zh-tw/v2
 **提送流程  
   工作區 -> git add  檔案名稱  -> 暫存區 -> git commit -m 'message' -> 本地端倉庫 
         <- git reset HEAD 
-  工作區 -> git commit -m -a -> 本地端倉庫(對untracked檔案無效) 修改部份直接提交本地端倉庫  
+  工作區 -> git commit -am 'message' -> 本地端倉庫(對untracked檔案無效) 修改部份直接提交本地端倉庫  
   
 **刪除檔案
   1.直接刪 rm       -> 需git add 和 git commit 兩步將刪除紀錄提交
@@ -259,6 +259,11 @@ git 應用開發詳解==========================================================
   pull 提取,同時會執行合併merge
   pull = fetch + merge
   gitlab-->區域網路內部類似github之版本控制中心
+  將創建好的本地庫推送到github流程
+  1.先在github創建一個新的版本庫
+  2.git remote add origin 遠程庫URL -->新增遠程庫關連地址 並以origin別名取代遠程庫URL
+  3.git push -u origin master -->將本地庫與遠程庫master作一關聯並推送到遠程庫
+	git push --ff origin master 允許強制快進
   git remote show 顯示遠程庫的別名,代表遠程庫地址
   git remote show origin 顯示遠程庫詳細資訊
 
