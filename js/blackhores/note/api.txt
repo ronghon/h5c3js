@@ -431,9 +431,47 @@
 	1.location.assign():與href一樣,可以跳轉頁面(重定向頁面),紀錄瀏覽歷史,所以可以實現後退功能
 	2.location.replace():替換當前頁面(也可以跳轉頁面),因為不紀錄歷史,所以不能後退頁面
 	3.location.reload():重新加載頁面,相當於刷新按鈕或f5,如果參數為true-->強制刷新ctrl+f5
-96.navigator對象
+96.navigator對象:包含有關瀏覽器的信息,常用屬性userAgent,該屬性可以返回由客戶機發送服務器的user-agent頭部的值
+	藉由下列代碼可以判斷用戶那個終端(PC端或移動端)打開頁面,實現跳轉功能
+	location.href="";
+97.history對象:主要與瀏覽歷史紀錄進行交互效果,該對象包含用戶(在瀏覽器窗口中)訪問過的URL,主要方法如下:
+	1.back():後退功能  history.back()
+	2.forward():前進功能  history.forward()
+	3.go(參數):具前進後退功能,如果是1 ,前進1個頁面,如果是-1,後退1個頁面  
+			前進:  history.go(1)
+			後退:  history.go(-1)
+
 98.01pc端網頁特效===============================================================================================
-02.元素偏移量offset系列
+02.元素偏移量offset系列:可以動態獲取該元素的位置(偏移),大小等
+	1.獲取元素距離帶有定位父元素的位置
+	2.獲取元素自身的大小(寛度和高度)
+	3.返回的數值均不帶單位
+	4.屬性:
+		(1)E.offsetParent:返回作為該元素帶有定位的父級元素,如果父級都没有定位則返回body
+		(2)E.offsetTop:返回元素距離帶有定位父元素上方的偏移量,如果没有父級或父級没有定位,則以body為準
+		(3)E.offsetLeft:返回元素距離帶有定位父元素左邊的偏移量,如果没有父級或父級没有定位,則以body為準
+		(4)E.offsetWidth:返回自身包括padding、邊框、內容區的寛度,返回值不帶單位,當未設置寛度時,可動態獲取寛度
+		(5)E.offsetHeight:返回自身包括padding、邊框、內容區的高度,返回值不帶單位
+		
+		son.offsetParent:返回帶有定位的父級,如没有定位的父級,則返回body
+		son.parentNode:返回的父級是最近一級的父級(親爸爸),不管父親有無定位
+04.offset與style區別
+		offset
+		1.offset可獲取任意樣式表中的樣式值
+		2.offset系列獲得的數值是没有單位(number)
+		3.offsetWidth包含padding+border+width
+		4.offsetWidth等屬性是只讀屬性,只能獲取不能賦值
+		5.總結:想要獲取元素大小和位置,使用offset更合適,不能改變大小和位置(需使用style)
+		
+		style
+		1.style只能得到行內樣式表中的樣式值
+		2.style.width獲得的是帶有單位的字符串(string)
+		3.style.width獲得不包含padding和border的值
+		4.style.width是可讀寫屬性,可獲取也可賦值
+		5.總結:想要給元素更改值,使用style來改變
+05.案例:獲取鼠標在盒子內的坐標=鼠标在页面中的坐标（ e.pageX, e.pageY）- 盒子在页面中的距离(box.offsetLeft, box.offsetTop)
+06.	案例:模態框拖拽
+
 
 
 
