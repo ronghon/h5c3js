@@ -36,7 +36,7 @@ git book有中文版  https://git-scm.com/book/zh-tw/v2
 - 使用--global 個人帳號專用的設定檔 -> ~/.gitconfig
 - 使用--local  個別本地端倉庫設定檔 -> .git/config
 
-**本地庫初始化
+**本地庫初始化(使用前環境配置)
 - git --version 查看git版本
 1.git init 初始化倉庫,內含.git目錄,不要刪除,否則git無法正常運作,使該目錄夾作為本地庫受git追踨管制。
 - 系統用戶級別:--global 指登入作業系統的用戶,設置的user name和email與遠端庫的帳號密碼無關,僅作為區分文件作者
@@ -44,6 +44,8 @@ git book有中文版  https://git-scm.com/book/zh-tw/v2
 2.git config --global user.name 'ronghon'  可加入--global參數代表系統用戶級(全局),
   git config --global user.email 'ronghon1969@gmail'
   git config --list 檢視目前環境設定狀況或者用下列兩個指令檢查設定檔
+  git config --global user.name 新名 -->如欲修改新的user.name直接輸入新名即可
+  git config --unset user.name -->刪除user.name
     cat .git/config 用來查看user--各別項目級別的config  使用--loacl設置
     cat ~/.gitconfig 用來查看user--系統用戶級別的gitconfig,通常設置此項即可,特殊用途才會用到項目級別設置 使用--global設置
     cat .git/COMMIT_EDITMSG 查看上一次commit資訊
@@ -87,13 +89,13 @@ git book有中文版  https://git-scm.com/book/zh-tw/v2
 **版本回退  版本快照-->commit  
  撤銷:
   1.工作區階段:當你改亂了工作區某個文件的內容,想直接丟棄工作區的修改時,用命令git checkout -- file
-  2.暫存區階段:當你不但改亂了工作區某個文件的內容,還添加到了暫存區時,想丟棄修改,分兩步,第一步git reset HEAD <file>,第二步git checkout -- file
-  3.版本庫階段:已經提交了不合適的修改到版本庫時,想要撤銷本次提交,使用版本回退
+  2.暫存區階段:當你不但改亂了工作區某個文件的內容,還添加到暫存區時,想丟棄修改,分兩步,第一步git reset HEAD <file>,第二步git checkout -- file
+  3.版本庫階段:已經提交了不合適的修改到版本庫時,想要撤銷本次提交,使用版本回退,如下
 
  版本回退  
-  -直接倒退到某一特定版本-->使用索引值  git reset --hard commit_id,可返回到任意版本,使用時請先確認版本(建議使用此法)
-  -僅倒退到前一版本     -->使用HEAD^   git reset --hard HEAD^ 後退到前一版本,使用N個^即往前回退N的版本
-  -一次倒退N個版本      -->使用HEAD~N  git reset --hard HEAD~3 往後退三個版本
+  -直接倒退到某一特定版本-->使用索引值  git reset --hard commit_id -->可返回到任意版本,使用時請先確認版本(建議使用此法)
+  -僅倒退到前一版本     -->使用HEAD^   git reset --hard HEAD^ -->後退到前一版本,使用N個^即往前回退N的版本
+  -一次倒退N個版本      -->使用HEAD~N  git reset --hard HEAD~3 -->往後退三個版本
   
  reset 重置HEAD  HEAD指向的是當前分支的版本
   --soft:僅在本地庫移動HEAD指針,只有本地庫向倒退
