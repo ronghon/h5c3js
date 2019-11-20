@@ -470,8 +470,18 @@
 		4.style.width是可讀寫屬性,可獲取也可賦值
 		5.總結:想要給元素更改值,使用style來改變
 05.案例:獲取鼠標在盒子內的坐標=鼠标在页面中的坐标（ e.pageX, e.pageY）- 盒子在页面中的距离(box.offsetLeft, box.offsetTop)
-06.	案例:模態框拖拽
-
+06.案例:模態框拖拽
+	拖拽觸發事件包括鼠標按下(mousedown)、鼠標移動(mousemove)、鼠標彈起(mouseup)
+  拖拽過程分析:鼠標移動過中,獲得最新的值賦值給模態框的left和top值,如此模態框就可跟著鼠標走了
+	鼠標按下後獲取鼠標在盒子內的坐標
+		var x = e.pageX -login.offsetLeft;
+		var y = e.pageY -login.offsetTop;
+	鼠標移動時,把鼠標在頁面的坐標減去鼠標在盒子內的坐標就是模態框的left和top值
+		login.style.left = e.pageX - x +'px';
+		login.style.top = e.pageY - y +'px';
+	鼠標彈起,就停止拖拽讓鼠標移動事件解除
+	  使用removeEventListener('mousemove',move)
+09.仿京東放大鏡案例:
 
 
 
