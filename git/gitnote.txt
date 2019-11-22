@@ -304,10 +304,14 @@ udemy git入門=================================================================
      檔案在暫存區狀態時使用git rm --cached 檔名-->從暫存區退回到工作區(狀態改變,可再修改
 
   第六章遠程庫管理   
-
-    git remote add <name> 遠程庫網址-->創建本地端與遠程庫關聯,以利與遠程庫同步化
-    git push <name> <分支名>-->將本地庫推送到遠程庫中
-    git clone 遠程庫網址 目錄夾-->第一次從遠程庫下載檔案
+  1.從遠端github倉庫下載本地端程序:
+    git remote add <name> 遠程庫網址-->創建本地端與遠程庫關聯,以利與遠程庫同步化  git remote add origin git@github.com
+    git clone 遠程庫網址 目錄夾-->第一次從遠程庫下載檔案 
+    git pull = git fetch + git merge
+    git pull --rebase 在執行git pull指令的時候,也可以再加上 --rebase參數,它在fetch完成之後,便會使用Rebase方式進行合併：
+              如果你不想要這個額外的Commit,可考慮使用Rebase方式來進行合併
+  2.將本地庫倉庫推送到遠程倉庫
+    git push -u origin master
 
 terminal終端機常用指令(linux命名)
 mkdir name  創建name目錄夾
@@ -329,5 +333,5 @@ ssh-add ~/.ssh/id_rsa  /*將ssh key加入到ssh-agent
 code ~/.ssh/id_rsa.pub /*進入公鑰檔,copy到新增的ssh檔
 ssh git@github.com /*確認公鑰已成功加入
 
-添加SSH鏈接github
-git remote srt-url origin 遠端網址SSH
+更換Git遠端伺服器倉庫網址,使用：git remote set-url
+git remote set-url origin 新的遠端伺服器網址https://git.github/
