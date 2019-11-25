@@ -39,8 +39,8 @@ git book有中文版  https://git-scm.com/book/zh-tw/v2
 **本地庫初始化(使用前環境配置)
 - git --version 查看git版本
 1.git init 初始化倉庫,內含.git目錄,不要刪除,否則git無法正常運作,使該目錄夾作為本地庫受git追踨管制。
-- 系統用戶級別:--global 指登入作業系統的用戶,設置的user name和email與遠端庫的帳號密碼無關,僅作為區分文件作者
-- 項目級別:--local 僅在當前本地庫(目錄夾)有效-->就近原則,優先使用項目級別的user name和email。
+  - 系統用戶級別:--global 指登入作業系統的用戶,設置的user name和email與遠端庫的帳號密碼無關,僅作為區分文件作者
+  - 項目級別:--local 僅在當前本地庫(目錄夾)有效-->就近原則,優先使用項目級別的user name和email。
 2.git config --global user.name 'ronghon'  可加入--global參數代表系統用戶級(全局),
   git config --global user.email 'ronghon1969@gmail'
   git config --list 檢視目前環境設定狀況或者用下列兩個指令檢查設定檔
@@ -62,8 +62,16 @@ git book有中文版  https://git-scm.com/book/zh-tw/v2
   工作區 -> git commit -am 'message' -> 本地端倉庫(對untracked檔案無效) 修改部份直接提交本地端倉庫  
   
 **刪除檔案
-  1.直接刪 rm       -> 需git add 和 git commit 兩步將刪除紀錄提交
-  2.使用git rm 刪除 -> 需git commit 將刪除紀錄提交 
+  1.使用git rm 刪除 
+    (1)真刪：git rm 檔名
+      1.刪除了一個文件 --> git rm 檔名
+      2.需將刪除文件的資訊提交 --> git commit -m 'delete 檔名'
+    (2)誤刪：若要恢復被刪除的文件,需進行下列兩個動作:
+        1.git reset HEAD 檔名-->將待刪除的文件從暫存區恢復到工作區
+        2.git checkout -- 檔名-->將工作區中的修改捨棄掉
+  2.直接使用rm 檔名：被刪除的文件並未納入暫存區中
+   -> 需使用git add 和 git commit 兩步驟將刪除紀錄提交
+   -> 誤刪時需先git add 再 git reset 和 git checkout 
   3.使用git rm --cached 檔名 -> 並不是真的把檔案刪了,而僅是把檔案從 Git 裡移掉而已變成untracked
 
 **更名檔案
@@ -188,7 +196,7 @@ git 應用開發詳解==========================================================
     git config --global user.email 'email'
     git config --global --unset user.name -->刪除user.name
     1./etc/gitconfig(幾乎不會使用)-->git config --system 針對整個操作系統
-    2.~/.gitconfig(很常用)--> git config --global 針對特定login 用戶  
+    2.~/.gitconfig(很常用)-->git config --global 針對特定login 用戶  
     3.在.git/config文件中-->git config --local 針對特定版本倉庫項目   上述三個均配置時,優先使用local內的資訊
   -git checkout -- 檔名 捨棄文件變更,小心使用,因尚未提交到本地庫,如捨棄變更將回到尚未變更前狀態,則所有變更會重來。
   -git reset HEAD 檔名-->會使檔案從暫存區又回到工作區(unstage)
@@ -196,10 +204,10 @@ git 應用開發詳解==========================================================
 第五講git添加、刪除、修改與日誌
   git rm 檔名
     1.刪除了一個文件
-    2.將刪除的文件納入到暫存區(stage,index)
-    若要恢復被刪除的文件,需進行下列兩個動作:
-      1.git reset HEAD 檔名-->將待刪除的文件從暫存區恢復到工作區
-      2.git checkout -- 檔名-->將工作區中的修改捨棄掉
+    2.將刪除檔案資訊提交
+   若要恢復被刪除的文件,需進行下列兩個動作:
+    1.git reset HEAD 檔名-->將待刪除的文件從暫存區恢復到工作區
+    2.git checkout -- 檔名-->將工作區中的修改捨棄掉
   rm(mv) 檔名:在terminal下刪除檔案
     1.工作區階段,直接將檔案刪除,無法回退
     2.暫存區階段,雖將檔名刪除掉,但可藉由回退方式將修改部份放棄回到未修改前狀態
@@ -327,9 +335,9 @@ which  命令-->查詢命令在那一個目錄下
 cd - 回到上次命令目錄
 
 **使用ssh登入驗證程序
-ssh-keygen -t rsa -b 4096 -C "email"  /*創建email的私鑰
-eval $(ssh-agent -s)  /*start the ssh-agent in the background
-ssh-add ~/.ssh/id_rsa  /*將ssh key加入到ssh-agent
+ssh-keygen -t rsa -C "email"  /*創建email的私鑰
+  eval $(ssh-agent -s)  /*start the ssh-agent in the background
+  ssh-add ~/.ssh/id_rsa  /*將ssh key加入到ssh-agent
 code ~/.ssh/id_rsa.pub /*進入公鑰檔,copy到新增的ssh檔
 ssh git@github.com /*確認公鑰已成功加入
 
