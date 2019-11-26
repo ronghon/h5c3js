@@ -39,7 +39,7 @@
 			sing(song){  //類中的創建方法
 				console.log(song)
 			}
-	  }
+	  }
 		var ldh = new Star('劉德華',36); //透過Star類創建一個ldh對象,具有name和age兩個屬性
 		var zxy = new Star('張學友',40); 
 		console.log(ldh.name);//劉德華
@@ -80,5 +80,7 @@
 	1.在ES6中,類没有變量提升,所以必須先定義類,才能通過類實例化對象
 	2.類裏面的共有的屬性和方法一定要加this使用。 
 	3.類裏面的this指向問題
-	4.constructor中的this指向的是創建的實例對象
-		方法中的this指向的是這個方法的調用者,誰調用this指向誰
+	4.constructor中的this指向的是創建的實例化對象
+	  方法中的this指向的是這個方法的調用者,誰調用this指向誰
+	  
+10.tab選項卡案例
