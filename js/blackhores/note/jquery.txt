@@ -23,7 +23,7 @@
   3.3X:兼容IE678等低版本瀏覽器,是官網目前主要更新維護的版本
   使用步驟:
   1.引入jquery文件:src="路徑";
-  2.加載引用:等著DOM結構渲染完畢即可執行內部代碼,不必等到所有外部資源加載完成,jquery完成了封裝,相當於原生JS中的DOMContentLoaded,不同於原生JS中的load事件
+  2.加載引用入口函數:等著DOM結構渲染完畢即可執行內部代碼,不必等到所有外部資源加載完成,jquery完成了封裝,相當於原生JS中的DOMContentLoaded,不同於原生JS中的load事件
     是等頁面文檔,外部JS文件,css文件、圖片均加載完畢才執行內部代碼
 	$(function(){
 		...   //頁面DOM加載完成的入口
@@ -31,3 +31,47 @@
 	$(document).ready(function(){
 		...   //頁面DOM加載完成的入口
 	})
+05.jquery的頂級對象$
+  1.$是jquery的別稱,在代碼中可以使用jquery代替$,但一般都直接使用$
+  2.$是jquery的頂級對象,相當於原生JS中的window,把元素利用$包裝成jquery對象,就可以調用jquery的方法
+06.jquery對象和DOM對象
+  1.用原生JS獲取來的對象就是DOM對象
+  2.用jquery方法獲取的元素就是jquery對象
+  3.jquery對象的本質是利用$對DOM對象包裝後產生的對象(偽數組形式存儲)
+  4.jquery對象只能使用jquery方法,DOM對象則使用原生JS的屬性和方法
+07.DOM對象和jquery對象之間是可以互相轉換的
+  因為原生JS對象比jquery對象大,原生JS中的某些屬性和方法,jquery並没有封裝,如要使用這些jquery没有封裝的屬性和方法時,需把jquery對象轉換為DOM對象才能使用
+  如video 中的play屬性,jquery並没有封裝
+  1.DOM對象轉換為jquery對象:使用$(DOM對象)
+	(1)直接使用$('元素')-->jquery對象
+	(2)已使用原生JS獲取DOM對象時,需轉換為jquery對象,使用 $(myvideo).play()
+  2.jquery對象轉換為DOM對象(兩種方式)
+	(1)$('元素')[index]  index是索引號
+	(2)$('元素').get(index)  index是索引號
+08.jquery常用API
+	1.常用jquery選擇器
+	2.操作jquery樣式
+	3.常用jquery動畫
+	4.操作jquery屬性
+	5.操作jquery元素
+	6.操作jwuery元素尺寸、位置
+09.jquery選擇器
+	原生JS獲取元素的方法很多,兼容性也不一致,jquery封裝,使獲取元素統一標準
+	語法: $('選擇器')  //裏面選擇器直接寫CSS選擇器即可,但要加引號'' ,偽數組形式存儲
+  1.基本選擇器
+	$(#id)    -->id選擇器
+	$(.class) -->類選擇器
+	$('*')    -->通配符選擇器
+	$("div")  -->元素選擇器
+	$('div,p,li')  -->并集選擇器
+	$('li.current')-->交集選擇器
+  2.層級選擇器
+	$("ul>li")  -->子代選擇器
+	$("ul li")  -->後代選擇器
+10.隠式迭代:遍歷內部DOM元素的過程(以偽數組形式存儲),簡單理解:給匹配到的所有元素進行循環遍歷,執行相應的方法,而不用我們再進行for循環遍歷數組,簡化操作,方便調用
+   修改jquery樣式方式:$('div').css('屬性','值')
+11.篩選選擇器
+   $(":first")
+   $(":last")
+	
+	
