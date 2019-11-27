@@ -43,8 +43,8 @@
   因為原生JS對象比jquery對象大,原生JS中的某些屬性和方法,jquery並没有封裝,如要使用這些jquery没有封裝的屬性和方法時,需把jquery對象轉換為DOM對象才能使用
   如video 中的play屬性,jquery並没有封裝
   1.DOM對象轉換為jquery對象:使用$(DOM對象)
-	  (1)直接使用$('元素')-->jquery對象
-	  (2)已使用原生JS獲取DOM對象時,需轉換為jquery對象,使用 $(myvideo),但某些方法jquery不支援,所以$(myvideo).play()會報錯,需轉換為原生DOM才能使用
+	  (1)直接獲取使用$('元素')即可得到jquery對象
+	  (2)使用原生JS獲取DOM對象後,需轉換為jquery對象,使用 $(myvideo),但某些方法jquery不支援,所以$(myvideo).play()會報錯,需轉換為原生DOM才能使用
   2.jquery對象轉換為DOM對象(兩種方式)
 	  (1)$('元素')[index]  index是索引號
 	  (2)$('元素').get(index)  index是索引號
@@ -55,34 +55,35 @@
 	4.操作jquery屬性
 	5.操作jquery元素
 	6.操作jwuery元素尺寸、位置
-09.jquery選擇器
+09.jquery選擇器-->用來獲取元素,CSS怎麼寫,jquery就怎麼寫
 	原生JS獲取元素的方法很多,兼容性也不一致,jquery封裝,使獲取元素統一標準
 	語法: $('選擇器')  //裏面選擇器直接寫CSS選擇器即可,但要加引號'',偽數組形式存儲
   1.基本選擇器
-    $(#id)          -->id選擇器
-    $(.class)       -->類選擇器
-    $('*')          -->通配符選擇器
+    $("#id")        -->id選擇器
+    $(".class")     -->類選擇器
+    $("*")          -->通配符選擇器
     $("div")        -->元素選擇器
-    $('div,p,li')   -->并集選擇器
-    $('li.current') -->交集選擇器
+    $("div,p,li")   -->并集選擇器
+    $("li.current") -->交集選擇器
   2.層級選擇器
-	  $("ul>li")  -->子代選擇器
-	  $("ul li")  -->後代選擇器
+	  $("ul>li")  -->子代選擇器  以">"連結
+	  $("ul li")  -->後代選擇器  以空格連結
 10.隠式迭代:遍歷內部DOM元素的過程(以偽數組形式存儲),簡單理解:給匹配到的所有元素進行循環遍歷,執行相應的方法,而不用我們再進行for循環遍歷數組,簡化操作,方便調用
-   修改jquery樣式方式:$('div').css('屬性','值')
+   jquery樣式(設置或修改)方式:  
+   語法:  $('div').css('屬性','值')
 11.篩選選擇器
-   $(":first")  獲取第一個元素
-   $(":last")　　獲取最後一個元素
+   $(":first")    獲取第一個元素
+   $(":last")　　  獲取最後一個元素
    $(":eq(index)) 選擇索引號為index的元素,索引號從0開始 
-   $(":odd")  選擇索引號為奇數的元素
-   $(":even") 選擇索引號為偶數的元素
+   $(":odd")      選擇索引號為奇數的元素
+   $(":even")     選擇索引號為偶數的元素
 12.篩選方法
-  找父級:parent()                 $("li").parent()           返回最近一級的父級(親爸爸)
-  找子級:(1) children(selector)   $("ul").children("li")     相當於$("ul>li")最近一級(親兒子) 類似子代選擇器
-        (2) find(selector)        $("ul").find("li")        相當於$("ul li") 類似後代選擇器
-  找兄弟節點: siblings(selector)  除了自身元素之外的兄弟節點
-			 nextAll()           查找當前元素之後的所有同輩元素
-			 prevtAll()          查找當前元素之前的所有同輩元素
+  (1)找父級:   parent()             $("li").parent()           返回最近一級的父級(親爸爸)
+  (2)找子級:  親兒子 children(selector)   $("ul").children("li")     相當於$("ul>li")最近一級(親兒子) 類似子代選擇器
+             子孫輩 find(selector)       $("ul").find("li")         相當於$("ul li") 類似後代選擇器
+  (3)找兄弟節點:siblings(selector)  除了自身元素之外的兄弟節點
+	           nextAll()           查找當前元素之後的所有同輩元素
+			   prevtAll()          查找當前元素之前的所有同輩元素
 13.下拉菜單
 	鼠标经过mouseover    鼠标离开
 	$(this) jQuery 当前元素  this不要加引号
