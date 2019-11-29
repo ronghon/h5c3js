@@ -120,13 +120,17 @@
 	1.原生JS中className會覆蓋元素原先裹面的類名
 	2.jquey裹面類操作只是對指定類進行操作，不影響原先的類名，addClass相當於追加類名而非替代類名;remove也只是針對指定類名進行移除，並不影響原先類名	
 22.jquery動畫效果:
-  1.顯示隠藏:show()、hide()、toggle()
+  1.顯示隠藏:show()、hide()
 	2.滑動:slideDown()、slideUp()、slideToggle()
 	3.淡入淡出:fadeIn()、fadeOut()、fadeToggle()、fadeTo()
 	4.自定義動畫:animate()
-	show([speed],[easing],[fn])  hide()
+	show([speed],[easing],[fn])  hide()  toggle()
 	  顯示(隠藏)參數說明:
 		1.參數均可省略,表示無動畫直接顯示
 		2.speed:顯示的速度,slow normal fast或直接給毫秒數
 		3.easing:切換效果,默認swing(慢快慢)或linear(等速)
 		4.fn:回調函數,在動畫完成時執行的函數,每個元素執行一次
+23.事件切換:hover([over],out)
+	1.over:鼠標移到元素上觸發的函數(相當於mouseenter)
+	2.out:鼠標移出元素觸發的函數(相當於mouseleave)
+	
