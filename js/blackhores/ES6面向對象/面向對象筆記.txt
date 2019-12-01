@@ -84,3 +84,104 @@
 	  方法中的this指向的是這個方法的調用者,誰調用this指向誰
 	  
 10.tab選項卡案例
+91.ES6簡介:ECMAScript ES6實際上是一個泛指,泛指ES2015及後續的版本,它是ECMA國際標準化組織制定的
+   一項腳本語言的標準化規範
+	 為什麼使用ES6?每一次標準的誕生都意味著語言的完善,功能的加強,JS語言本身也有一些令人不滿意的地方如:
+	 1.變量提升特性增加了程序運行時不可預測性
+	 2.語法過於鬆散,實現相同的功能,不同的人可能會寫出不同的代碼
+92.let-->主要是用來替代var關鍵字  
+	 1.ES6中新增用於聲明變量的關鍵字
+	 2.let聲明的變量只在所處塊級作用域{}有效
+		 好處:
+		 (1)防止內部的變量覆蓋外部的變量		
+		 (2)防止循環變量變成全局變量
+				for (var i=0;i<2;i++){
+				}
+				console.log(i);  //2
+				for (let i=0;i<2;i++){
+				}	
+				console.log(i);  //i is not defined
+	 3.let和var最大區別:使用let關鍵字聲明的變量才具有塊級作用域,使用var聲明的變量不具有塊級作用域的特性
+		 if (true){
+		 	let num=10;
+		 	var abc=20;
+		 	}
+		 console.log(num);  //num not defined
+		 console.log(abc);  //20
+	 4.使用let聲明的變量没有變量提升	
+		 console.log(a);  //a is not defined
+		 let a=10;
+	 5.使用let聲明的變量具有暫時性死區的特性
+		 var num=10;
+		 if (true){
+			 console.log(num);  //num is not defined
+			 let num=20;
+		 }
+96.每次循環都會產生一個塊級作用域,每個塊級作用域中的變量都是不同的,當函數時執行時輸出的是自己上一級(循環產生
+   的塊級作用域)作用域下的值。
+97.const:作用是用來聲明常量(數),常量就是值(內存地址)不會變化的量,特點:
+	1.具有塊級作用域		
+	2.聲明常量時必須賦初始值,否則報錯
+	3.常量賦值後,值不可修改,意即內存地址不可更改(基本數據類型),但複雜數據類型如array數組
+	  const arry = [100,200];
+		arry[0]=123;  //ok
+		arry=[1,2];  //報錯,更改內存地址
+100.let  const  var 的區別
+	1.使用var聲明的變量,其作用域為該語句所在的函數內(函數作用域),且存在變量提升現象
+	2.使用let聲明的變量,其作用域為該語句所在的代碼塊{}內(塊級作用域),不存在變量提升現象
+	3.使用const聲明的是常量(塊級作用域),在後面出現的代碼中不可再修改該常量的值
+101.解構賦值:ES6中允計從數組中提取值,按照對應位置,對變量賦值,對象也可以實現解構。
+	1.數組解構:
+		let [a,b,c]=[1,2,3];  let a=1,b=2,c=3; 
+		console.log(a);  //1
+		console.log(b);  //2
+		console.log(c);  //3
+	2.對象解構:允許我們使用變量的名字匹配對象的屬性,匹配成功,將對象屬性的值賦值給變量
+	  let person = {name: 'lisi', age: 30, sex: '男'};
+		let { name, age, sex } = person;
+		console.log(name)  //lisi
+		console.log(age)   //30
+		console.log(sex)   //男
+		另一種寫法
+		let person = {name: 'lisi', age: 30, sex: '男'};
+		let {name: myName} = person;  name是用來匹配person對象中的name屬性,匹配成功,則將屬性值lisi賦值給myName變量
+		console.log(myName)
+104.箭頭函數:ES6中新增的用來簡化函數定義語法
+		() => {}   ()用來定義形參  {函數體}  內包含函數體
+	1.函數體中只有一句代碼,且代碼的執行結果就是返回值,則可省略大括號
+		const sum = (n1, n2) => n1 + n2;	 
+		const result = sum(10, 20);
+		console.log(result);  //30
+	2.如果形參只有一個,可以省略小括號
+	  const fn = v => {
+	  	alert(v);
+	  }
+	  fn(20);  //20
+105.箭頭函數不綁定this關鍵字,箭頭函數中的this,指向的是函數定義位置的上下文this
+
+107.剩餘參數:當實參個數大於形參個數時,可將形參放置在一數組中,利用...args來接收剩餘參數,
+    語法允許我們將一個不定數量的參數表示為一個數組
+		function sum (first, ...args){
+			console.log(first);  //10
+			console.log(args);   //[20,30]
+		}
+		sum(10,20,30);
+108.剩餘參數與解構配合使用
+    let ary1 = ['张三', '李四', '王五'];
+		let [s1, ...s2] = ary1;
+		console.log(s1)   //s1=張三
+		console.log(s2)  //s2=數組['李四', '王五']
+109.擴展運算符(展開語法)-->Array的擴展方法
+		擴展運算符可以將數組或對象轉為以逗號分隔的參數序列
+		let ary =[1,2,3];
+		console.log("1","2","3")  //1 2 3
+		console.log(...ary)  //1 2 3
+110.擴展運算符可應用於合併數組
+		方法一:
+		let ary1 = [1, 2, 3];
+		let ary2 = [4, 5, 6];
+		// ...ary1 // 1, 2, 3
+		// ...ary2 // 4, 5, 6
+		let ary3 = [...ary1, ...ary2];
+		console.log(ary3)
+		方法二:使用push()方法將ary2合併到ary1中  ary1.push(...ary2)
