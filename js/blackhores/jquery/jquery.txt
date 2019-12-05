@@ -126,7 +126,7 @@
 	1.原生JS中className會覆蓋元素原先裹面的類名
 	2.jquey裹面類操作只是對指定類進行操作,不影響原先的類名,addClass相當於追加類名而非替代類名;remove也只是針對指定類名進行移除,並不影響原先類名	
 22.jquery動畫效果:
-  1.顯示隠藏:show()、hide()
+  1.顯示隠藏:show()、hide()、toggle()
 	2.滑動:slideDown()、slideUp()、slideToggle()
 	3.淡入淡出:fadeIn()、fadeOut()、fadeToggle()、fadeTo()
 	4.自定義動畫:animate()
@@ -134,7 +134,7 @@
 	  顯示(隠藏)參數說明:
 		1.參數均可省略,表示無動畫直接顯示
 		2.speed:顯示的速度,slow normal fast或直接給毫秒數
-		3.easing:切換效果,默認swing(慢快慢)或linear(等速)
+		3.easing:指定切換效果,默認swing(慢快慢)或linear(等速)
 		4.fn:回調函數,在動畫完成時執行的函數,每個元素執行一次
 23.事件切換:hover([over],out),就是鼠標經過和離開的複合寫法
 	1.over:鼠標移到元素上觸發的函數(相當於mouseenter)
@@ -154,6 +154,7 @@
 26.自定義動畫animate()
 	 語法: animate(params,[speed],[easing],[fn])
 	 1.params:要修改的樣式屬性,以對象形式傳遞,必須寫,屬性名可以不加引號,如果是複合屬性需採用駝峰命名法,其餘參數都可省略
+	 2.其餘三個參數可省略,意義與用法和前面幾個相同
 27.王者榮耀手風琴案例
 29.jquery屬性操作
 	1.設置或獲取元素固有屬性值prop()
@@ -167,25 +168,26 @@
 	3.數據緩存data():此方法可以在指定的元素上存取數據,並不會修改DOM元素結構,一旦頁面刷新,之前存放的收都將被移除
 		這個裏面的數據是存放元素的內存裏面,這個方法獲取data-index h5自定義属性 第一個 不用寫data-  而且返回的是數字型
 30.購物車全選案例
-32.jquery內容本本值:主要針對元素的內容還有表單的值進行操作
+32.jquery內容文本值:主要針對元素的內容還有表單的值進行操作
 	1.普通元素內容html()-->(相當於原生innerHTML)
 		html()-->獲取元素內容
 		html("內容")-->設置元素的內容
 	2.普通元素文本內容text()-->(相當於原生innerText)
 		text()-->獲取文本內容
 		text("內容")-->設置或修改文本內容
-	3.表單的值也val()-->(相當於原生value)
+	3.表單的值val()-->(相當於原生value)
     val()-->獲取表單值
 		val("內容")-->設置或修改表單值
 33.購物車案例模塊-增減商品數量
-35.parents()可以返回所有祖元元素,parents("類名")可以返回指定類名的祖先元素
+35.parents()可以返回所有祖元元素,parents("選擇器")可以返回指定類名的祖先元素
 	 toFixed(n)方法可以保留n位小數
 37.jquery元素操作:主要是遍歷、創建、添加、刪除元素操作
 	1.遍歷(each):jquery隠式迭代是針對同一類元素做了同樣的操作,如果想要給同一類元素做不同操作時,就要使用遍歷
 		each(function(index,domEle){xxx;})
 		(1)each方法遍歷匹配的每一個元素,主要用DOM處理,each每一個
-		(2)裏面的回調函數有二個參數:index是每個元素的索引號可以自行指定名稱如i;domEle是每個DOM元素對象,不是jquery對象,可以自行指定名稱
+		(2)裏面的回調函數有二個參數:index是每個元素的索引號可以自行指定名稱如i;domEle是每個DOM元素對象,不是jquery對象,可
+			 以自行指定名稱
 		(3)想要使用jquery方法,需要給這個dom元素轉換為jquery對象$(domEle)
-		另一種用法:$.each(object,function(index,element){xxx;})使用$.each()方法可用於遍歷任何對象,主要用於數據處理,如數組、對象
-		  其中函數有2個參數:index是每個元素的索引號;element是遍歷內容
+		另一種用法:$.each(object,function(index,element){xxx;})使用$.each()方法可用於遍歷任何對象,主要用於數據處理,
+		如數組、對象,其中函數有2個參數:index是每個元素的索引號;element是遍歷內容
 40.創建元素
