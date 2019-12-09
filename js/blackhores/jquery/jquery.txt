@@ -45,7 +45,7 @@
   1.DOM對象轉換為jquery對象:使用$(DOM對象)
 	  (1)直接獲取使用$包裝,ex:$("元素")即可得到jquery對象,需加引號。
 	  (2)使用原生JS獲取DOM對象後,需轉換為jquery對象,使用$(myvideo),不需加引號
-		   但某些DDM方法jquery不支援,所以$(myvideo).play()會報錯,需轉換為原生DOM才能使用。
+		   但某些DDM方法jquery不支援,所以$(DOM對象).play()會報錯,需轉換為原生DOM才能使用。
   2.jquery對象轉換為DOM對象(兩種方式)
 	  (1)$("元素")[index]  index是索引號
 	  (2)$("元素").get(index)  index是索引號
@@ -85,7 +85,9 @@
              子孫輩 find(selector)       $("ul").find("li")         相當於$("ul li") 類似後代選擇器
   (3)找兄弟節點:siblings(selector)  除了自身元素之外的兄弟節點    siblings兄弟姐妹們	
 	             nextAll()           查找當前元素之後的所有同輩元素
+							 next()							 查找下一個兄
 			         prevtAll()          查找當前元素之前的所有同輩元素
+							 prev()							 查找上一個兄弟
 	(4)找特定元素(找第N個元素):eq(index)
 			1.利用選擇器方式選取特定元素-->:eq(index) -->寫在元素後面 ex:$("ul li:eq(2)")
 			2.利用篩選方法選取特定元素-->.eq(index)   -->寫在外面 ex:$("ul li").eq(2)
@@ -183,11 +185,111 @@
 	 toFixed(n)方法可以保留n位小數
 37.jquery元素操作:主要是遍歷、創建、添加、刪除元素操作
 	1.遍歷(each):jquery隠式迭代是針對同一類元素做了同樣的操作,如果想要給同一類元素做不同操作時,就要使用遍歷
-		each(function(index,domEle){xxx;})
+		語法: .each(function(index,domEle){xxx;})  遍歷DOM對象時使用
 		(1)each方法遍歷匹配的每一個元素,主要用DOM處理,each每一個
 		(2)裏面的回調函數有二個參數:index是每個元素的索引號可以自行指定名稱如i;domEle是每個DOM元素對象,不是jquery對象,可
 			 以自行指定名稱
 		(3)想要使用jquery方法,需要給這個dom元素轉換為jquery對象$(domEle)
-		另一種用法:$.each(object,function(index,element){xxx;})使用$.each()方法可用於遍歷任何對象,主要用於數據處理,
-		如數組、對象,其中函數有2個參數:index是每個元素的索引號;element是遍歷內容
-40.創建元素
+38.另一種遍歷方法:主要用於處理數據
+	語法: $.each(遍歷對象,function(index,element){xxx;})
+  1.使用$.each()方法可用於遍歷任何對象,主要用於數據處理,如數組、對象
+	2.函數中有2個參數:index是每個元素的索引號;element是遍歷DOM對象
+40.元素創建、添加、刪除
+	1.動態創建元素:$("<li></li>");
+	2.添加元素:
+		(1).內部添加元素:生成之後,它們是父子關係
+			E.append(li)-->把內容放到匹配元素內部最後面,類似原生appendChild
+			E.prepend(li)-->把內容放到匹配元素內部最前面	
+		(2).外部添加元素:生成之後,它們是兄弟關係
+			E.after(div)-->把內容放到目標元素後面
+			E.before(div)-->把內容放到目標元素前面
+	3.刪除元素
+		(1)直接刪除匹配的元素(自殺):$(目標元素).remove()	
+		(2)刪除匹配的元素集合中所有的子節點(清空):E.empty()
+		(3)清空匹配的元素內容(與empty作用相同):E.html("")
+43.jquery尺寸和位置操作
+	1.尺寸:
+		(1)width()/height()-->可獲取或設置匹配元素的寛度和高度,只算元素本身的width/height
+		(2)innerWidth()/innerHeight()-->可獲取或設置匹配元素的寛高值包含padding
+		(3)outerWidth()/outerHeight()-->可獲取或設置匹配元素的寛高值包含padding、border
+		(4)outerWidth(true)/outerHeight(true)-->可獲取或設置匹配元素寛高值包含padding、border、margin
+		以上參數為空,則是獲取相應值,返回的是數字型
+		如果參數為數字,則是修改相應值,不用加單位
+	2.位置:獲取元素的偏移,有offset()、position()、scrollTop()/scrollLeft()三種方法
+		(1)offset():設置或獲取元素偏移,用來設置或返回被選元素相對於文檔的偏移坐標,跟父級没有關係(與定位無關)
+			 該方法有兩個屬性:offset().top頂部距離,offset().left左側距離,並可利用offset({top:50,left:50})設置或修改元素的偏移位置
+		(2)position():獲取元素偏移,用於返回被選元素相對於帶有定位的父級偏移坐標,如果父級都没有定位,則以文檔為準
+       這個方法只能獲取偏移量不能設置
+		(3)scrollTop()/scrollLeft():用來設置或獲取元素被捲去的頭部和左側的距離
+			 頁面滾動事件:$(window).scroll(function(){})
+			 獲取文檔滾動被捲去的距離$(document).scrollTop()
+			 返回頁面頂部$("body,html").stop().animate({   只有元素才能作動畫,不可使用document
+				            scrollTop:0;
+										});	
+52.jquery事件
+	1.常見4種注冊事件
+	2.on綁定事件
+	3.事件委派的優點及方式
+	4.綁定事件及解綁事件
+53.事件注冊
+	1.單個事件注冊:E.事件(function(){}),事件如mouseover mouseout change blur focus keydown resize scroll等
+	2.一個或多個事件的事件處理函數:E.on(events,[selectors],fn) 
+	優勢1:可以綁定多個事件,多個事件處理程序
+		(1)events:事件源,可以一個或多個事件中間以空格隔開("click mouseleave",function(){})或以事件對象方式綁定多個事件
+				{mouseover:function(){
+						$(this).css("background","skyblue")
+				},
+				click:function(){
+					$(this).css("background","purple")
+				}
+				mouseleave:function(){
+					$(this).css("background","blue")
+				}
+		(2)selector:元素的子元素選擇器
+		(3)fn:回調函數,即綁定在元素身上的偵聽函數
+54.優勢2:事件委派(託):把原來加給子元素身上的事件綁定在父元素身上,就是把事件委派給父元素
+			$("ul").on("click","li",function(){  //click綁定在ul父元素身上,但觸發對象是li
+				})
+	 優勢3:click()方法無法為動態創建的元素綁定事件,但on()方法可以為未來動態生成的元素綁定事件
+55.微博發布案例		
+56.事件解綁off():可移除通過on()方法添加的事件處理程序,()內未加參數,代表解綁所有事件,如加參數,代表僅解綁特定事件
+   解綁事件委託$("ul").off("click","li");
+	 如果有的事件只想觸發一次,可使用one()方法來綁定事件
+57.自動觸發事件:trigger()有些事件希望自動觸發,比如輪播圖自動播放功能跟點擊右側按鈕一致,可利用定時器自動觸發右側按鈕點擊事件
+    ,不必鼠標點擊觸發
+	 (1)第一種簡寫形式:元素.事件() 刷新頁面自動調用該函數 --> E.click() 
+	 (2)第二種自動觸發模式:元素.trigger("事件")
+		  $("div").triggle("click");
+	 (3)第二種自動觸發模式:元素.triggleHandler("事件")-->最大區別:不會觸發元素的默認行為
+       $("div").triggleHandler("click");
+58.jquery事件對象:事件被觸發,就會有事件對象產生
+	E.on(events,[selector],function(event){})
+	event就是事件對象,如阻止默認行為event.preventDefault()或return false 阻止冒泡行為event.stopProgation()
+59.jquery其他方法
+	1.jquery對象的拷貝方法
+	2.jquery多庫共存的2種方法
+	3.常用的jquery插件
+60.jquery對象拷貝:如果想要把某個對象拷貝(合併)給另外一個對象使用,可使用$.extend()方法
+	語法: $.extend([deep],target,object1,[objectN])
+	說明:1.deep:如果設為true為深拷貝,默認為false淺拷貝
+				淺拷貝是把原來對象中的複雜數據類型中的地址拷貝給目標對象,修改目標對象會影響被拷貝對象
+				深拷貝(前面加true),完全克隆(拷貝的對象而不是地址),修改目標對象不會影響被拷貝的對象
+				把原來的數據完全複制一份給目標對象,如果裏面有不衝突的屬性會合併到一起
+			2.target:要拷貝的目標對象
+			3.object1:待拷貝到第一個對象的對象(拷貝來源)
+61.多庫共存:jquery使用$作為標識符,隨著jquery的流行,其他js庫也會用$作為標識符,這樣一起使用會引起衝突,如何讓jquery和其他js庫不
+   存在衝突,可以同時存在,這就叫做多庫共存
+	 解決方案:
+	 1.如果是$符號衝突,可將$符號統一改為jQuery,如jQuery("div")
+	 2.讓jQuery釋放對$標識符的控制權,由用戶自己決定使用何種符號或名字
+	   var qq=$.noConflict();  以qq取代$標識符
+62.jquery插件
+			
+	
+	
+
+
+	
+	
+	
+	
