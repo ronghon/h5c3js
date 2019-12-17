@@ -79,18 +79,22 @@
    $(":eq(index)") 選擇索引號為index的元素,索引號從0開始 
    $(":odd")       選擇索引號為奇數的元素
    $(":even")      選擇索引號為偶數的元素
+	 $(":gt(index)") 選擇大於index的元素 
+	 $(":lt(index)") 選擇小於index的元素
+	 $(":not(選擇器)")選擇排除某一元素以外的元素
 12.篩選方法
   (1)找父級:  parent()                   $("li").parent()           返回最近一級的父級(親爸爸)
+						 parents("name") -->用來查找多層父級時指定特定名稱的父級
   (2)找子級:  親兒子 children(selector)   $("ul").children("li")     相當於$("ul>li")最近一級(親兒子) 類似子代選擇器
              子孫輩 find(selector)       $("ul").find("li")         相當於$("ul li") 類似後代選擇器
-  (3)找兄弟節點:siblings(selector)  除了自身元素之外的兄弟節點    siblings兄弟姐妹們	
+  (3)找兄弟節點:siblings(selector)  除了自身元素之外的所有兄弟節點    siblings兄弟姐妹們	
 	             nextAll()           查找當前元素之後的所有同輩元素
-							 next()							 查找下一個兄
+							 next()							 查找下一個兄弟
 			         prevtAll()          查找當前元素之前的所有同輩元素
 							 prev()							 查找上一個兄弟
 	(4)找特定元素(找第N個元素):eq(index)
-			1.利用選擇器方式選取特定元素-->:eq(index) -->寫在元素後面 ex:$("ul li:eq(2)")
-			2.利用篩選方法選取特定元素-->.eq(index)   -->寫在外面 ex:$("ul li").eq(2)
+		 1.利用選擇器方式選取特定元素-->:eq(index) -->寫在元素後面 ex:$("ul li:eq(2)")
+		 2.利用篩選方法選取特定元素-->.eq(index)   -->寫在外面 ex:$("ul li").eq(2)-->推薦使用
 	(5)判斷是否含有某個特定的類名,如果有則返回true  --> hasClass(class)			
 13.下拉菜單
 	鼠标经过mouseover    鼠标离开 mouseout

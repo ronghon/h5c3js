@@ -46,9 +46,9 @@
     var ol = document.getElementById('isol');
     console.log(ol.getElementsByTagName('li'));
 08H5新增獲取元素方式==(IE9以上適用)
-  1.透過class名來獲取元素
-    document.getElementByClassName('類名')<--根據類名獲取元素返回元素對象集合(偽數組)
-  2.透過選擇器來獲取元素,只能獲取第一個元素對象
+  1.透過class類名獲取元素
+    document.getElementByClassName('類名')<--根據類名獲取元素返回的是元素對象集合(偽數組)
+  2.透過選擇器來獲取指定選擇器的第一個元素對象
     document.querySelector('選擇器')-->根據指定選擇器返回"第一個"元素對象,切記:裏面的選擇器需加符號如.box #nav
   3.返回指定選擇器的"所有元素"對象集合,可獲取全部選擇器的元素對象集合
     document.querySelectorAll('選擇器');-->與document.getElementsByTagName(div)或document.getElementByClassName(類名)類似
@@ -72,7 +72,6 @@
 		(1)element.innerText:從起始位置到終止位置的內容,但它去除html標籤,同時空格和換行也會去掉
 		(2)element.innerHTML(w3c):起始位置到終止位置的全部內容,包括html標籤,同時保留空格和換行
   2.操作常見元素屬性:src href title alt等
-    
   3.操作表單元素屬性:type value disabled
   4.操作元素樣式屬性:
     (1)改變的樣式較少時直接使element.style
@@ -98,14 +97,24 @@
   1.當樣式較多或功能較複雜時,可以透過修改或添加元素的className
   2.先將所需classname在style內寫好,當觸發事件時,將classname加到標籤中。
   3.注意樣式優先級問題
-  4.當原先已有class時,如要保留原來class,可使用添加方式,就是在原有class後面再加一個新的class
+  4.當原先已有class時,會覆蓋原先的類名,如要保留原來類名,可使用添加方式,就是在原有class後面再加一個新的className
+25操作元素總結:
+	操作元素是DOM核心內容
+		(1)操作元素內容-->innerText   innerHTML
+		(2)操作常見元素屬性-->src  href  title  alt等屬性
+		(3)操作表單元素屬性-->type value  disabled等屬性
+		(4)操作元素樣式屬性-->E.style   className
 26排他思想-->首先先排除其他人,然後再設置自己的樣式
   如果同一組元素,如要某一個元素實現某種樣式,則需要使用循環的排他思想,步驟有二
   1.先清除所有元素的全部樣式(幹掉其他人)
   2.再給當前元素設置樣式(留下我自己)
+	3.注意順序:先排除其他人,然後再設置自己的樣式
+27.網頁換膚效果
+28.表格隔行變色案例:onmouseover鼠標經過  onmouseout鼠標離開
+29.表單全選取消全選案例
 31自定義屬性操作1
   1.獲取屬性值
-    (1)element.屬性 :獲取內建屬性值(元素本身自帶的屬性)
+    (1)element.屬性:獲取內建屬性值(元素本身自帶的屬性)
     (2)element.getAttribute('屬性'):獲取自定義屬性(程序員自己添加的屬性意即自定義屬性)
 32自定義屬性操作2
   2.設置屬性值
@@ -113,15 +122,19 @@
     (2)element.setAttribute('屬性','值');主要針對自定義屬性
   3.移除屬性
     (1)element.removeAttribute('屬性');
-36H5自定義性
-  自定義屬性的目的:為了保存並使用數據,可以通過getAttribute('屬性')來獲取,但有些自定義屬性很容易
-  引起歧義,不容易判斷是元素內建屬性還是自定義屬,所以H5規定自定義屬性均以data-開頭做為屬性名並賦值
-  因此,我們自己設置自定義屬性時也遵循此一規範 設置時: element.setAttribute('data-屬性名',屬性值);
-  獲取方式有二:
-  1.element.getAttribute('屬性名');->無兼容性問題
-  2.h5新增獲取自定義屬性:element.dataset.屬性名或 使用['屬性名']->IE11以上支持
-    (1)dataset是一個集合,內存放了所有以data開頭的自定義屬性
-    (2)如果自定義屬性裏面有多個單詞以-鏈接時,獲取時需採用駝峰命名法
+33.Tab欄切換案例分析
+36.設置H5自定義屬性:以data-開頭的屬性名並且賦值
+  自定義屬性的目的:為了保存並使用數據,可以通過getAttribute('屬性')來獲取,但有些自定義屬性很容易引起歧義,不容易判斷
+	是元素內建屬性還是自定義屬性,所以H5規定自定義屬性均以data-開頭做為屬性名並賦值,因此,我們自己設置自定義屬性時也遵循此
+	一規範 
+	1.設置自定義屬性:
+	 (1)直接在元素內設置以data-開頭並賦值  ex: <div data-index="1"> </div>
+	 (2)使用JS設置並賦值 element.setAttribute('data-屬性名',屬性值);
+  2.獲取H5自定義屬性方式有二:
+   (1)element.getAttribute('屬性名');->無兼容性問題
+   (2)h5新增獲取自定義屬性方法:element.dataset.屬性名(或使用['屬性名'])->IE11以上支持
+    (a)dataset是一個集合,內存放了所有以data開頭的自定義屬性
+    (b)如果自定義屬性裏面有多個單詞以-鏈接時,獲取時需採用駝峰命名法
 37節點操作
   為什麼學習節點操作?->獲取元素,通常使用兩種方式
   1.利用DOM提供的方法獲取元素->缺點:繁瑣、邏輯性不強  ex:document.getElementById()...
@@ -137,7 +150,7 @@
   1.父節點:node.parentNode 獲取離元素最近的父級節點(親爸爸),如果找不到父節點則返回null
   2.子節點:
     (1)parent.childNodes 注意:獲取的是所有子節點,包含文本及元素等
-    (2)parent.children 獲取所有的子元素節點(常用)
+    (2)parent.children 獲取所有的子元素節點(常用),非標準,但各瀏覽器均支持
 40獲取第一個子元素或最後一個子元素
     (1)獲取第一個子節點:parent.firstchild-->換行所以是#text
        獲取最後一個子節點:parent.lastchild-->也是換行所以也是#text
@@ -147,12 +160,13 @@
     (3)實際開發中使用方式:既無兼容性問題又可返回第一個子元素及最後一個元素
        獲取第一個子元素:parent.children[0]
        獲取最後一個子元素:ol.children[ol.children.length - 1]
+41下拉菜單
 42兄弟節點
   (1)nextSibling:獲取下一個兄弟節點,包含元素節點及文本節點等
      previousSibling:獲取上一個兄弟節點,包含元素節點及文本節點等
   (2)nextElementSibling:直接獲取下一個兄弟元素節點
      previousElementSibling:直接獲取上一個兄弟元素節點
-      IE9以上兼容,解決方法自己封裝一個兼容性函數
+     上述兩個均為IE9以上兼容,解決方法自己封裝一個兼容性函數
      function getNextElementSibling(element){
        var el=element;
        while (el=el.nextSibling){
@@ -163,25 +177,30 @@
        return null;
      }
 43創建節點
-  1.語法: documnent.creatElement('tagName')  創建元素節點
-    documnent.creatElement()方法創建由tagName指定的HTML元素,因為這些元素原先不存在,
-    是根據需求動態生成的,所以也稱為動態創建元素節點。
-  2.語法:node.appendChild(child)  添加子元素節點 node 父級  child 子級 是從後面追加元素,類似數組中的push
+  1.創建元素節點 語法: documnent.creatElement('tagName')  
+    documnent.creatElement()方法創建由tagName指定的HTML元素,因為這些元素原先不存在,是根據需求動態生成的,
+		所以也稱為動態創建元素節點。
+  2.添加子元素節點 語法:node.appendChild(child) node 父級 child 子級 是從後面追加元素,類似數組中的push
     此一方法是將一個節點添加到指定父節點的子節點列表末尾,類似css中的after偽元素
-  3.語法:node.insertBefore(child,指定元素)
+  3.語法:node.insertBefore(child,指定元素) 
     此一方法是將一個節點添加到指定父節點的子節點列表前面,類似css中的before偽元素
     var lili =document.createElement('li');
     ul.insertBefore(lili,ul.children[0])
   總結:在頁面添加一個新的元素兩步驟:
     (1)創建元素:createElement
     (2)添加元素:appendChild(從最後面添加) 或 insertBefore(指定元素的前面)
+44簡單版發布留言案例
+	1.創建元素節點
+	2.插入內容
+	3.添加元素節點
+	
 45刪除節點
   node.removeChild(child) 此方法是DOM中刪除一個子節點,返回刪除的節點, node 父級  child 子級
-46阻止鏈接跳轉使用javascript:;
+46刪除留言紀錄,阻止鏈接跳轉使用javascript:;
 47複製節點
   node.cloneNode()
-  (1)如果括號參數為空或false,則為淺拷貝,只複製節點本身,不複製裏面的子節點
-  (2)如果括號參數為true,則為深拷貝,會複製節點本身及裏面所有的子節點
+  (1)如果括號參數為空或false,則為淺拷貝,只複製節點本身,不複製裏面的內容
+  (2)如果括號參數為true,則為深拷貝,會複製節點本身及裏面所有的內容
 48-53動態生成表格(重點案例多加練習)  
 54-55三種動態創建元素區別
   1.document.write():是直接將內容寫入頁面的內容流,但原先的文檔流已加載完畢,所以它會導致頁面全部重新構建
@@ -189,13 +208,13 @@
     而是採取數組形式拼接),結構稍微複雜
   3.document.createElement():創建多個元素效率稍低一點點,但結構較清晰
   總結:不同瀏覽下,innerHTML效率比createElement高
-56DOM重點核心內容回顧
+56DOM重點核心內容回顧***
   1.DOM:文檔對象模型,是W3C推薦處理可擴展標記語言的標準編程接口,透過這些DOM接口可以改變網頁的內容、結構和樣式。
   2.對於Javascript,為了能够使javascript操作HTML,javascript就有了一套自己的DOM編程接口
   3.對於HTML,DOM使得HTML形成了一棵DOM樹,包含文檔、元素、節點。
   4.凡是獲取過來的DOM元素均是一個對象,因此稱為文檔對象模型(Document Object Model)
   對於DOM操作,主要針對元素進行創建、增刪改查,屬性操作及事件操作
-  (1)創建
+  (1)創建新的DOM元素
     1.document.write
     2.innerHTML
     3.createElement
@@ -206,7 +225,7 @@
   (4)改:主要是修改DOM的元素屬性,DOM元素的內容、屬性、表單的值等。
     1.修改元素屬性:src  href   title等
     2.修改普通元素內容: innerHTML innerText
-    3.修改表單元素:valus type disable
+    3.修改表單元素:value type disabled
     4.修改元素樣式:style(行內樣式) className(樣式較多,添加或修改class)
   (5)查:主要是獲取查詢DOM的元素
     1.DOM提供的API方法:getElementById、getElementsByTagName等古老用法(不太推薦)
@@ -216,7 +235,7 @@
     1.setAttribute:設置DOM的屬性值
     2.getAttribute:獲取DOM的屬性值
     3.removeAttribute:移除屬性
-  (7)事件操作:主要是給元素綁定注冊事作,採取事件源、事件類型、事件處理程序三要素執行
+  (7)事件操作:主要是給元素綁定注冊事件,採取事件源、事件類型、事件處理程序三要素執行
     1.onclick:點擊
     2.onmouseover:鼠標經過
     3.onmouseout:鼠標離開
@@ -225,7 +244,15 @@
     6.onmousemove:鼠標移動
     7.onmouseup:鼠標彈起
     8.onmousedown:鼠標按下
-57事件高級==============================================================================
+57事件高級======================================================================================================
+	1.注冊事件(綁定事件)
+	2.刪除事件(解綁事件)
+	3.DOM事件流
+	4.事件對象
+	5.阻止事件冒泡
+	6.事件委托(代理、委派)
+	7.常用鼠標事件
+	8.常用鍵盤事件
 58注冊事件(綁定事件)
   注冊事件區分為兩種:傳統方式及方法監聽注冊方式
   (1)傳統注冊事件:利用on開頭的事件,ex:onclick、onmouseover...具唯一性:同一個元素同一個事件只能設置一個處理函數,最後注
@@ -249,9 +276,9 @@
   事件冒泡:IE最早提出,事件開始時由最具體的元素接收,然後逐級向上傳播到DOM最頂層節點的過程(element->body->html->document)
 62.DOM事件流注意事項
   1.JS代碼中只能執行捕獲或冒泡其中的一個階段
-  2.onclick和attachEvent只能得到冒泡階段
+  2.onclick和attachEvent(IE)只能得到冒泡階段
   3.addEventListener(tyoe,listener[,useCapture])第三個參數如果是true,表示在事件捕獲階段調用事件處理程序,
-    如果是false,表示在事件冒泡階段調用事件處理程序
+    如果是false或默認省略未註明時,表示在事件冒泡階段調用事件處理程序
   4.實際開發中,較少使用事件捕獲,較關注事件冒泡階段
   5.有些事件是没有冒泡的,ex:onblur onfocus onmouseenter onmouseleave
   6.事件冒泡有時會帶來麻煩,有時又會很巧妙的做某些事件

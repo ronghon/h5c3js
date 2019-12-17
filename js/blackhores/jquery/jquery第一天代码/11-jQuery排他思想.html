@@ -28,9 +28,8 @@
         //     });
         // })
 		$(function(){
-			$("button").click(function(){
-				$(this).css("background","pink");
-				$(this).siblings("button").css("background","");
+			$("button").mouseover(function(){
+				$(this).css("color","red").siblings("button").css("color","");
 			})
 		})
     </script>
