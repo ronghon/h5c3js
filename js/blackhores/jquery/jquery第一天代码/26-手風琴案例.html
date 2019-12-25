@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>手風琴案例</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .parent {
+      list-style: none;
+      text-align: center;
+    }
+
+    .menu {
+      width: 150px;
+      border: 1px solid #999;
+      background-color: #e0ecff;
+    }
+
+    div {
+      display: none;
+      background-color: #fff;
+      height: 200px;
+    }
+  </style>
+  <script src="jquery.min.js"></script>
+  <script>
+    $(function () {
+      $(".parent>.menu").click(function () {
+        $(this).children("div").show().parent().siblings("li").children("div").hide();
+      })
+    })
+  </script>
+
+</head>
+
+<body>
+  <ul class="parent">
+    <li class="menu">
+      <span class="group">標題1</span>
+      <div>彈出來的div1</div>
+    </li>
+    <li class="menu">
+      <span class="group">標題2</span>
+      <div>彈出來的div2</div>
+    </li>
+    <li class="menu">
+      <span class="group">標題3</span>
+      <div>彈出來的div3</div>
+    </li>
+    <li class="menu">
+      <span class="group">標題4</span>
+      <div>彈出來的div4</div>
+    </li>
+  </ul>
+
+</body>
+
+</html>

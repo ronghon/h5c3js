@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>開關燈</title>
+	<!-- <script type="text/javascript">
+		window.onload = function () {
+			document.getElementById("btn").onclick = function () {
+				if (this.value == "關燈") {
+					document.body.style.backgroundColor = "black";
+					this.value = "開燈";
+				} else {
+					document.body.style.backgroundColor = "white";
+					this.value = "關燈";
+				}
+			};
+		};
+	</script> -->
+	<script src=jquery.min.js> </script>
+	<script>
+		$(function () {
+			$("#btn").click(function () {
+				if ($(this).val() == "關燈") {
+					$("body").css("backgroundColor", "black");
+					$(this).val("開燈");
+				} else {
+					$("body").css("backgroundColor", "white");
+					$(this).val("關燈");
+				}
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<input type="button" value="關燈" id="btn">
+</body>
+
+</html>
