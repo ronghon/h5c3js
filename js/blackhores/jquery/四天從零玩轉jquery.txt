@@ -1,9 +1,9 @@
-[[]]01.原生JS的缺點:
+01.原生JS的缺點:
 	1.不能添加多個window.onload入口函數,如果添加多個,後面的會覆盖前面的
 	2.原生JS的API名字都很長難記
 	3.原生JS的代碼重覆冗餘
 	4.原生JS有些屬性和方法有瀏覽器兼容性問題
-	5.原生JS容錯率較低,前面的代碼出錯後面的代碼即無法執行
+	5.原生JS容錯率較低,前面的代碼出錯了,後面的代碼即無法執行
 02.JQ的魅力
 	1.入口函數:
 	  $(document).ready(function(){})
@@ -16,8 +16,8 @@
 		(5)JQ的容錯率較高,前面的代碼出錯,不影響後面的代碼執行
 03.JQ就是JS的函數庫,內封裝了很多方法和屬性,學習JQ就是學習這些方法和屬性
 04.如何使用JQ?使用步驟:
-	1.引入JQ文件
-	2.入口函數
+	1.引入JQ文件-->script src=""
+	2.入口函數-->
 	3.找到要操作的元素(JQ選擇器),操作它(添加屬性、樣式、文本...等)
 05.JQ官網下載JQ文件
 	1.X 支持IE678  停止更新
@@ -34,17 +34,18 @@
 	  jquery入口函數要等待頁面上DOM樹加載完後執行,而window.onload要等待頁面上所有資源(DOM樹/外部CSS/JS鏈接或圖片)
 		都加載完畢後執行
 07.jQuery頂級對象$===jQuery
-  引入一個JS文件,是會執行這個JS文件中的代碼,jquery其實是一個自執行函數,執行這個JS文件中的代碼,其實就是執行這個自執行函數
-	window.jQuery=window.$=jQuery 這個自執行文件就是給window對象添加一個jQuery屬性和$屬性,$其實和jQuery是等價的,是一個
-	函數,Object.prototype.toString.call($)-->object function
-	$是一個函數,如果參數傳遞不同,效果也不同
-	1.參數為匿名函數-->入口函數
-	2.參數為一個字符串-->選擇器或創建個標籤
-	3.參數為一個DOM對象,會將DOM對象轉換為jQuery對象
+  a.引入一個JS文件,是會執行這個JS文件中的代碼
+	b.jquery其實是一個自執行函數,執行這個JS文件中的代碼,其實就是執行這個自執行函數,window.jQuery=window.$=jQuery 這個自執行
+	  文件就是給window對象添加一個jQuery屬性和$屬性,
+	c.$其實和jQuery是等價的,是一個	函數,Object.prototype.toString.call($)-->object function
+	d.$是一個函數,如果參數傳遞不同,效果也不同
+		1.參數為匿名函數-->入口函數
+		2.參數為一個字符串-->選擇器或創建一個標籤
+		3.參數為一個DOM對象,它會將DOM對象轉換為jQuery對象
 08.DOM對象與jQuery對象
 	DOM對象:原生JS選擇器獲取到的對象,只能調用DOM方法和屬性,不能調用jQuery屬性和方法
 	jQuery對象:使用jQuery選擇器獲取到的對象,只能調用jQuery方法和屬性,不能調用原生JS DOM對象的屬性和方法
-	JQuery對象是一個偽數組,console.log($div1.__proto__===Array.prototype)  //false 
+	JQuery對象是一個偽數組,驗證方法:console.log($div1.__proto__===Array.prototype)  //false 
 	jQuery對象其實就是DOM對象的一個包裝集
 09.DOM對象與jQuery對象互轉
 	DOM對象轉為jQuery對象-->以$()括起來就成了jQuery對象(用錢轉)
