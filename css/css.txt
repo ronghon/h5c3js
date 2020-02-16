@@ -278,7 +278,7 @@ CSS第二天====================================================================
 	1.border-width:3px; 邊框寛度
 	2.border-style:solid(實線)、dashed(虛線)、dotted(點線)
 	3.border-color:預設black黑色
-	簡寫形式:border: 上述三個屬性没有順序問題 
+	簡寫形式:border: 上述三個屬性没有順序問題 border: 3px solid red;
 	也可分開指定上下左右邊框  border-top boder-left border-right border-bottom		
 13.表格的細邊框 
 	border-collapse:控制瀏覽器繪製表格邊框的方式,它控制相鄰單元格的邊框
