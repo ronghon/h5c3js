@@ -74,12 +74,12 @@ git book有中文版  https://git-scm.com/book/zh-tw/v2
    -> 誤刪時需先git add 再 git reset 和 git checkout 
   3.使用git rm --cached 檔名 -> 並不是真的把檔案刪了,而僅是把檔案從 Git 裡移掉而已變成untracked
 
-**更名檔案
+**更名檔案  mv是操作尚未添加到暫存區的檔案更名,git mv則是已添加到暫存區的檔案更名
   1.直接更名 mv 舊名 新名 -> 需git add 和 git commit
 	(1)尚未git add 至暫存區者,直接使用mv更名即可
 	(2)在暫存區狀態時,使用mv更名,需使用git  add/rm 將舊檔名被刪除紀錄提交,再使用git add 將新檔名
 	   加到暫存區,再git commit 提交到工作目錄
-  2.使用git mv 舊名 新名 (主要是針對檔案已提交狀態的更名) 
+  2.使用git mv 舊名 新名 (主要是針對檔案已提交狀態的檔案更名) 
 	(1)檔案在暫存區時,使用git mv 是直接更名
 	(2)檔案已提交至工作目錄時,需使用git commit 將更名紀錄提交 
 		

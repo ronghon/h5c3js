@@ -1,0 +1,22 @@
+02.
++ git help -a  用來查看git 所有命令
+  - git help add 用來查看git add 命令用法及參數
++ 安裝git -> git init 初始化倉庫
++ 設置用戶名及email
+  git config --global user.name 'name'
+  git config --global user.email 'email'
+    --system 系統 系統所有使用者和使用者倉儲的預設設定  -> /etc/gitconfig
+    --global 全局 個人帳號專用的設定檔 -> 配置訊息存放於 ~/.gitconfig
+    --local  項目 針對個別本地端倉庫設定檔 -> .git/config
+  git config --list 目前配置情況列表
+  git config --unset --global user.name -->刪除user.name或email 
+03.
++ git init 初始化倉庫
++ git status 查看目前git狀態
++ git add 檔名 或 git add . (全部)  將工作區的檔案添加到暫存區
++ git  commit -m 'message'  提交本次異動資訊並將暫存區檔案提交至版本庫' 
+04.
++ git log 查看提交紀錄日誌
++ git log --pretty=oneline
+  git log --oneline(簡潔版)
+05.git mv與mv操作
