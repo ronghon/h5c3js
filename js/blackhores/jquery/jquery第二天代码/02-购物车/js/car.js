@@ -5,6 +5,8 @@ $(function() {
     $(".checkall").change(function() {
         // console.log($(this).prop("checked"));
         $(".j-checkbox, .checkall").prop("checked", $(this).prop("checked"));
+
+        //當點擊全選時為所有項目添加背景顏色和移除背景顏色
         if ($(this).prop("checked")) {
             // 让所有的商品添加 check-cart-item 类名
             $(".cart-item").addClass("check-cart-item");
@@ -27,6 +29,7 @@ $(function() {
         } else {
             $(".checkall").prop("checked", false);
         }
+        //當該商品被選中時添加背景顏色,未選中時移除背景顏色
         if ($(this).prop("checked")) {
             // 让当前的商品添加 check-cart-item 类名
             $(this).parents(".cart-item").addClass("check-cart-item");
@@ -57,6 +60,7 @@ $(function() {
     $(".decrement").click(function() {
         // 得到当前兄弟文本框的值
         var n = $(this).siblings(".itxt").val();
+        //當文本框內的值==1時,就不再減了,否則會變0或負數
         if (n == 1) {
             return false;
         }
@@ -85,7 +89,7 @@ $(function() {
         getSum();
     });
     // 5. 计算总计和总额模块
-    getSum();
+    getSum();//頁面打開時默認先加總一次
 
     function getSum() {
         var count = 0; // 计算总件数 
@@ -95,7 +99,7 @@ $(function() {
         });
         $(".amount-sum em").text(count);
         $(".p-sum").each(function(i, ele) {
-            money += parseFloat($(ele).text().substr(1));
+            money += parseFloat($(ele).text().substr(1));//利用遍歷將每項商品小計加總並利用substr從第2位開始取,利用parseFloat轉換為數值型
         });
         $(".price-sum em").text("￥" + money.toFixed(2));
     }

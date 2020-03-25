@@ -1,7 +1,7 @@
 108.11.25
 01.jquery概述:
   (1)JS庫:即library,是一個封裝好的特定集合(方法和函數),從封裝一大堆函數的角度理解庫,就是在這個庫中,封裝了很多預先定義好的函數在
-	   裏面,如動畫animate、hide、shoe,又如獲取元素等。
+	   裏面,如動畫animate、hide、show,如獲取元素等。
      簡單理解:就是一個JS文件,裏面對我們原生JS代碼進行了封裝,存放到裏面,這樣我們可以快速高效的使用這些封裝好的功能,jQuery就是為
 		 了快速方便的操作DOM,裏面基本都是函數(方法)。
      常見的JS庫jQquery、Prototype、YUI、Dojo、Ext JS 、移動端的zepto,這些庫都是對原生JS庫進行封裝,內部都是用JS實現的
@@ -69,24 +69,24 @@
   2.層級選擇器
 	  $("ul>li")  -->子代選擇器  以">"連結
 	  $("ul li")  -->後代選擇器  以空格連結
-10.隠式迭代:遍歷內部DOM元素的過程(以偽數組形式存儲),簡單理解:給匹配到的所有元素進行循環遍歷,執行相應的方法,而不用我們再進行for循
+10.隠式迭代:遍歷內部DOM元素的過程(以偽數組形式存儲),簡單理解:給匹配到的所有元素進行遍歷循環,執行相應的方法,而不用我們再進行for循
    環遍歷數組,簡化操作,方便調用
    jquery樣式(設置或修改)方式:  
    語法:  $('div').css('屬性','值')
 11.篩選選擇器
-   $(":first")     獲取第一個元素
-   $(":last") 　   獲取最後一個元素
-   $(":eq(index)") 選擇索引號為index的元素,索引號從0開始 
-   $(":odd")       選擇索引號為奇數的元素
-   $(":even")      選擇索引號為偶數的元素
-	 $(":gt(index)") 選擇大於index的元素 
-	 $(":lt(index)") 選擇小於index的元素
-	 $(":not(選擇器)")選擇排除某一元素以外的元素
+   $("E:first")     獲取第一個元素
+   $("E:last") 　   獲取最後一個元素
+   $("E:eq(index)") 選擇索引號為index的元素,索引號從0開始 
+   $("E:odd")       選擇索引號為奇數的元素
+   $("E:even")      選擇索引號為偶數的元素
+	 $("E:gt(index)") 選擇大於index的元素 
+	 $("E:lt(index)") 選擇小於index的元素
+	 $("E:not(選擇器)")選擇排除某一元素以外的元素
 12.篩選方法
-  (1)找父級:  parent()                   $("li").parent()           返回最近一級的父級(親爸爸)
+  (1)找父級:  parent()                   $("li").parent()       返回最近一級的父級(親爸爸)
 						 parents("name") -->用來查找多層父級時指定特定名稱的父級
-  (2)找子級:  親兒子 children(selector)   $("ul").children("li")     相當於$("ul>li")最近一級(親兒子) 類似子代選擇器
-             子孫輩 find(selector)       $("ul").find("li")         相當於$("ul li") 類似後代選擇器
+  (2)找子級:  親兒子 children(selector)   $("ul").children("li") 相當於$("ul>li")最近一級(親兒子) 類似子代選擇器
+             子孫輩 find(selector)       $("ul").find("li")     相當於$("ul li") 類似後代選擇器
   (3)找兄弟節點:siblings(selector)  除了自身元素之外的所有兄弟節點    siblings兄弟姐妹們	
 	             nextAll()           查找當前元素之後的所有同輩元素
 							 next()							 查找下一個兄弟
@@ -105,30 +105,34 @@
 	2.為當前的元素改變背景顏色$(this).css("background","red");
 	3.其餘的兄弟去掉背景顏色$(this).siblings("button").css("background","");
 16.淘寶tab切換案例
+	核心原理:鼠標經過左側盒子某個小li,就讓內容區盒子相應圖片顯示,其餘的圖片隠藏。
 	獲取當前元素的索引號:$(this).index();	
 
 17.鏈式編程:是為了節省代碼,將重復的部份以鏈式方串接起來如鏈子一般,使用鏈式編程時一定要注意是為那個對象執行樣式
-18.操作CSS方法:jquery可以使用CSS方法來修改簡單元素樣式,也可以操作類,進行多個樣式修改
-	1.獲取屬性值:參數只寫屬性名,則返回屬性值
+18.jQuery樣式操作:
+ 1.操作CSS方法:jquery可以使用CSS方法來修改簡單元素樣式,也可以操作類,進行多個樣式修改
+	(1)獲取屬性值:參數只寫屬性名,則返回屬性值
 		$(this).css("color");-->返回color顏色值
-	2.設置樣式:參數是屬性名,屬性值,並以逗號分隔,屬性必須加引號,值如果是數字可以不用加單位和引號
-	3.參數可以是對象形式,方便設置多組樣式,屬性名和屬性值用冒號隔開,屬性可以不用加引號
+	(2)設置樣式:參數是屬性名,屬性值,並以逗號分隔,屬性必須加引號,值如果是數字可以不用加單位和引號
+		$(div).css("color","red");
+		$(div).css("width",300);
+	(3)參數可以是對象形式,方便設置多組樣式,屬性名和屬性值用冒號隔開,屬性可以不用加引號
 		如果是複合屬性則必須採取駝峰命名法  如backgroundColor, 如果值不是數字,則必須加引號
 		$("div").css({
 			width:400,
 			height:400,
 		  backgroundColor:"red"
 		})
-19.設置類樣式方法：作用等同於之前的classList,可以操作樣式，注意操作類中的參數不要加點
-	1.添加類：addClass("類名")   $("div").addClass("current")  不用加點
-	2.刪除類：removeClass("類名")
-	3.切換類：toggleClass("類名")  -->可添加類名與移除類名切換
+ 2.設置類樣式方法：作用等同於之前的classList,可以操作樣式，注意操作類中的參數不要加點
+	(1)添加類：addClass("類名")   $("div").addClass("current")  不用加點
+	(2)刪除類：removeClass("類名")
+	(3)切換類：toggleClass("類名")  -->可添加類名與移除類名切換
 20.tab切換案例(選項卡)
 	切換原理:當點擊當前li時,下面相應的div內容會顯示
 	1.點擊上面的li,當前li添加某一類名,其餘兄弟li移除類
 	2.點擊同時,得到當前li的索引號
 	3.讓下面相應索引號的內容顯示,其餘的隠藏
-21.類操作和className區別
+3.類操作和className區別
 	1.原生JS中className會覆蓋元素原先裹面的類名
 	2.jquey裹面類操作只是對指定類進行操作,不影響原先的類名,addClass相當於追加類名而非替代類名;
 	  remove也只是針對指定類名進行移除,並不影響原先類名	
@@ -191,31 +195,41 @@
 
 32.jquery內容文本值:主要針對元素的內容還有表單的值進行操作
 	1.普通元素內容html()-->(相當於原生innerHTML)
-		html()-->獲取元素內容
+		html()-->獲取元素+文本內容,包含標籤
 		html("內容")-->設置元素的內容
 	2.普通元素文本內容text()-->(相當於原生innerText)
-		text()-->獲取文本內容
+		text()-->只獲取文本內容,不含標籤
 		text("內容")-->設置或修改文本內容
 	3.表單的值val()-->(相當於原生value)
-    val()-->獲取表單值
+    val()-->獲取表單中的value值
 		val("內容")-->設置或修改表單值
 
 33.購物車案例模塊-增減商品數量
+	核心:先聲明一個變量,當點擊+號(increment),就讓這個值++,然後賦值給文本框
+	  注意點1:只能增加該商品的數量,也就是當前+號的兄弟文本框(itxt)的值,修改表單值的方法是val()
+		注意點2:這個變量初始值是這個文本框的值,在這個值的基礎上++,要獲取表單的值
+
 34.購物車案例-修改商品小計
 
 35.parents()可以返回所有祖元元素,parents("選擇器")可以返回指定類名的祖先元素
 	 toFixed(n)方法可以保留n位小數
+36.如果用戶直接修改表單中的值時,小計需重新計算
+	1.先得到文本框的里面的值 再乘以 当前商品的单价 
+	2.再將乘出來的結果修改小計中的值
+
 37.jquery元素操作:主要是遍歷、創建、添加、刪除元素操作
 	1.遍歷(each):jquery隠式迭代是針對同一類元素做了同樣的操作,如果想要給同一類元素做不同操作時,就要使用遍歷
 		語法: .each(function(index,domEle){xxx;})  遍歷DOM對象時使用
 		(1)each方法遍歷匹配的每一個元素,主要用DOM處理,each每一個
-		(2)裏面的回調函數有二個參數:index是每個元素的索引號可以自行指定名稱如i;domEle是每個DOM元素對象,不是jquery對象,可
-			 以自行指定名稱
+		(2)裏面的回調函數有二個參數:
+			index是每個元素的索引號可以自行指定名稱如i或index;
+			domEle是每個DOM元素對象,不是jquery對象,可以自行指定名稱
 		(3)想要使用jquery方法,需要給這個dom元素轉換為jquery對象$(domEle)
 38.另一種遍歷方法:主要用於處理數據
 	語法: $.each(遍歷對象,function(index,element){xxx;})
   1.使用$.each()方法可用於遍歷任何對象,主要用於數據處理,如數組、對象
 	2.函數中有2個參數:index是每個元素的索引號;element是遍歷DOM對象
+	
 40.元素創建、添加、刪除
 	1.動態創建元素:$("<li></li>");
 	2.添加元素:
@@ -227,8 +241,9 @@
 			E.before(div)-->把內容放到目標元素前面
 	3.刪除元素
 		(1)直接刪除匹配的元素(自殺):$(目標元素).remove()	
-		(2)刪除匹配的元素集合中所有的子節點(清空):E.empty()
+		(2)刪除匹配的元素集合中所有的子節點(清空),本身元素並不刪除:E.empty()
 		(3)清空匹配的元素內容(與empty作用相同):E.html("")
+
 43.jquery尺寸和位置操作
 	1.尺寸:
 		(1)width()/height()-->可獲取或設置匹配元素的寛度和高度,只算元素本身的width/height
@@ -248,6 +263,8 @@
 			 返回頁面頂部$("body,html").stop().animate({   只有元素才能作動畫,不可使用document
 				            scrollTop:0;
 										});	
+47.品優購電梯導航
+
 52.jquery事件
 	1.常見4種注冊事件
 	2.on綁定事件
@@ -255,42 +272,53 @@
 	4.綁定事件及解綁事件
 53.事件注冊
 	1.單個事件注冊:E.事件(function(){}),事件如mouseover mouseout change blur focus keydown resize scroll等
-	2.一個或多個事件的事件處理函數:E.on(events,[selectors],fn) 
+	2.一個或多個事件的事件處理函數:語法--E.on(events,[selectors],fn) 
+		
 	優勢1:可以綁定多個事件,多個事件處理程序
-		(1)events:事件源,可以一個或多個事件中間以空格隔開("click mouseleave",function(){})或以事件對象方式綁定多個事件
+		(1)events:事件源,可以一個或多個事件以事件對象方式綁定多個事件
 				{mouseover:function(){
 						$(this).css("background","skyblue")
 				},
 				click:function(){
 					$(this).css("background","purple")
-				}
+				},
 				mouseleave:function(){
 					$(this).css("background","blue")
-				}
+				}i
+				如事件處理程序相同者可以使用:以空格分隔
+				$("div").on("mouseenter mouseleave",function(){
+					$(this).toggleClass("current");
+				});
 		(2)selector:元素的子元素選擇器
 		(3)fn:回調函數,即綁定在元素身上的偵聽函數
 54.優勢2:事件委派(託):把原來加給子元素身上的事件綁定在父元素身上,就是把事件委派給父元素
-			$("ul").on("click","li",function(){  //click綁定在ul父元素身上,但觸發對象是li
+			$("ul").on("click","li",function(){  //click事件綁定在ul父元素身上,但觸發對象是子元素小li
 				})
-	 優勢3:click()方法無法為動態創建的元素綁定事件,但on()方法可以為未來動態生成的元素綁定事件
+	 優勢3:click()方法無法為動態創建的元素綁定事件,但on()方法可以為未來動態創建(生成)的元素綁定事件
+
 55.微博發布案例		
+
 56.事件解綁off():可移除通過on()方法添加的事件處理程序,()內未加參數,代表解綁所有事件,如加參數,代表僅解綁特定事件
    解綁事件委託$("ul").off("click","li");
 	 如果有的事件只想觸發一次,可使用one()方法來綁定事件
+
 57.自動觸發事件:trigger()有些事件希望自動觸發,比如輪播圖自動播放功能跟點擊右側按鈕一致,可利用定時器自動觸發右側按鈕點擊事件
     ,不必鼠標點擊觸發
 	 (1)第一種簡寫形式:元素.事件() 刷新頁面自動調用該函數 --> E.click() 
 	 (2)第二種自動觸發模式:元素.trigger("事件")
-		  $("div").triggle("click");
-	 (3)第二種自動觸發模式:元素.triggleHandler("事件")-->最大區別:不會觸發元素的默認行為
+		  $("div").trigger("click");
+	 (3)第二種自動觸發模式:元素.triggerHandler("事件")-->最大區別:不會觸發元素的默認行為
        $("div").triggleHandler("click");
+
 58.jquery事件對象:事件被觸發,就會有事件對象產生
 	E.on(events,[selector],function(event){})
 	event就是事件對象,如阻止默認行為event.preventDefault()或return false 阻止冒泡行為event.stopProgation()
+
 59.jquery其他方法
 	1.jquery對象的拷貝方法
 	2.jquery多庫共存的2種方法
 	3.常用的jquery插件
+
 60.jquery對象拷貝:如果想要把某個對象拷貝(合併)給另外一個對象使用,可使用$.extend()方法
 	語法: $.extend([deep],target,object1,[objectN])
 	說明:1.deep:如果設為true為深拷貝,默認為false淺拷貝
@@ -306,8 +334,22 @@
 	 2.讓jQuery釋放對$標識符的控制權,由用戶自己決定使用何種符號或名字
 	   var qq=$.noConflict();  以qq取代$標識符
 62.jquery插件
-			
-	
+	jQuery功能有限,想要更複雜的特效效果,可借助jQuery插件來完成。
+	注意:這些插件是依賴jQuery來完成的,所以須先引入jQuery文件,所以稱之為jQuery插件
+	1.jQuery插件常用網站:
+		(1)jQUery插件庫 http://www.jq22.com/
+		(2)jQuery之家 http://www.htmleaf.com/
+	2.jQuery插件使用步驟:
+		(1)引入相關文件(jQuery及js和css文件)
+		(2)複製相關html、css、js(調用插件)
+63.圖片懶加載:當頁面滑動到可視區域,再顯示圖片-->圖片使用延遲可提高網頁下載速度,減輕服務器負載
+	EasyLazyload.js	
+	使用jQuery插件庫EasyLazyload時,需注意:JS引入文件和調用必須放到DOM元素(圖片)的最後面
+64.全屏滾動插件(fullpage.js) gitHub: https://github.com/alvarotrigo/fullPage.js  特色:無滾動條,利用滑鼠滾輪向下滑動滾動頁面
+	 中文翻譯網站: http://www.dowebok.com/demo/2014/77/
+
+65.bootstrap框架
+66.bootstrap  JS插件
 	
 
 

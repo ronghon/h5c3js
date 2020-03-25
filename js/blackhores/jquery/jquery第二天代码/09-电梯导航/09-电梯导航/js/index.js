@@ -3,9 +3,9 @@ $(function() {
     // 节流阀  互斥锁 
     var flag = true;
     // 1.显示隐藏电梯导航
-    var toolTop = $(".recommend").offset().top;
+    var toolTop = $(".recommend").offset().top;//獲取.recommend模塊距離頁面頂部的距離
     toggleTool();
-
+   //電梯導航顯示隠藏函數
     function toggleTool() {
         if ($(document).scrollTop() >= toolTop) {
             $(".fixedtool").fadeIn();
