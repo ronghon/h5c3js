@@ -2,10 +2,11 @@
 git優勢:分散式管理
   1.大部份操作在本地端完成,不需要連結網路
   2.完整性保證-->hash演算法
-  3.儘可能添加內容而不是刪除或修改內容
-  4.分支操作非常快捷流暢-->快照處理
-  5.與linux命令全面兼容
-  6.Git跟踨並管理的是修改,而非文件
+  3.作用原理:儘可能添加內容而不是刪除或修改內容-->版本回退
+  4.Git跟踨並管理的是修改,而非文件
+  5.分支管理--分支操作非常快捷流暢-->文件系統快照處理
+  6.與linux命令全面兼容
+  7.權限管理:可對團隊以外開發者貢獻的代碼進行審核
 
 本地庫與遠端庫操作形式
   1.團隊內部協作  
@@ -40,10 +41,10 @@ git book有中文版  https://git-scm.com/book/zh-tw/v2
 - git --version 查看git版本
 1.git init 初始化倉庫,內含.git目錄,不要刪除,否則git無法正常運作,使該目錄夾作為本地庫受git追踨管制。
   - 系統用戶級別:--global 指登入作業系統的用戶,設置的user name和email與遠端庫的帳號密碼無關,僅作為區分文件作者
-  - 項目級別:--local 僅在當前本地庫(目錄夾)有效-->就近原則,優先使用項目級別的user name和email。
+  - 項目級別:   --local  僅在當前本地庫(目錄夾)有效-->就近原則,優先使用項目級別的user name和email。
 2.git config --global user.name 'ronghon'  可加入--global參數代表系統用戶級(全局),
-  git config --global user.email 'ronghon1969@gmail'
-  git config --list 檢視目前環境設定狀況或者用下列兩個指令檢查設定檔
+  git config --global user.email 'ronghon1969@gmail'  配置user.name和email的作用:用於區分不同開發人員身份,與登錄github遠程庫登錄帳號無關
+  git config --list 或git config -l 檢視目前環境設定狀況或者用下列兩個指令檢查設定檔
   git config --global user.name 新名 -->如欲修改新的user.name直接輸入新名即可
   git config --unset user.name -->刪除user.name
     cat .git/config 用來查看user--各別項目級別的config  使用--loacl設置
@@ -51,35 +52,47 @@ git book有中文版  https://git-scm.com/book/zh-tw/v2
     cat .git/COMMIT_EDITMSG 查看上一次commit資訊
 3.git status 查詢工作區、暫存區異動狀態
 4.git help 欲查詢之命令  或  git 欲查詢的命令 --help 
+5.使用git show來檢視最後一次提交的patch所修改的內容,如要檢視某一次修改的內容時,使用git show commit-id(前六碼即可)
+
 
 **取得一個 Git 倉儲
   1.將現有的專案或者資料夾匯入 Git  -->git init 或匯入
   2.從github伺服器克隆（clone）一份現有的 Git 倉儲 -->git clone 遠端空間的網址 本機資料夾名稱 -->第一次下載GitHub雲端專案
 
 **提送流程  
-  工作區 -> git add  檔案名稱  -> 暫存區 -> git commit -m 'message' -> 本地端倉庫 
-        <- git reset HEAD 
-  工作區 -> git commit -am 'message' -> 本地端倉庫(對untracked檔案無效) 修改部份直接提交本地端倉庫  
+  工作區 -> git add  檔案名稱  -> 暫存區 -> git commit -m 'message' -> 本地端倉庫 -> git push   
+  untracked:
+   git checkout -- file name
+tracked:
+  + 放棄修改：修改後尚未add至暫存區前放棄修改使用　git restore (file name)
+  + 回退工作區：git add 至暫存區後回退至修改前工作區　git restore --staged (file name)
+  + 直接提交本地庫: git commit -am 'commit message'
+ 
+tracked   <-- git reset HEAD  
+  工作區 ->         git commit -am 'message'                      -> 本地端倉庫(對untracked檔案無效) 修改部份直接提交本地端倉庫  
+
+  - 使用 git add . 或 git  add -A 或 git add --all 可一次將工作區的檔案狀態(Untracked files或 Changes not staged for commit)
+    "全部"添加到暫存區
   
 **刪除檔案
-  1.使用git rm 刪除 
+  1.使用git rm 刪除 (檔案已add至暫存區時)
     (1)真刪：git rm 檔名
       1.刪除了一個文件 --> git rm 檔名
       2.需將刪除文件的資訊提交 --> git commit -m 'delete 檔名'
     (2)誤刪：若要恢復被刪除的文件,需進行下列兩個動作:
-        1.git reset HEAD 檔名-->將待刪除的文件從暫存區恢復到工作區
-        2.git checkout -- 檔名-->將工作區中的修改捨棄掉
+      1.git reset HEAD 檔名-->將待刪除的文件從暫存區恢復到工作區
+      2.git checkout -- 檔名-->將工作區中的修改捨棄掉
   2.直接使用rm 檔名：被刪除的文件並未納入暫存區中
    -> 需使用git add 和 git commit 兩步驟將刪除紀錄提交
    -> 誤刪時需先git add 再 git reset 和 git checkout 
-  3.使用git rm --cached 檔名 -> 並不是真的把檔案刪了,而僅是把檔案從 Git 裡移掉而已變成untracked
+  3.使用git rm --cached 檔名 -> 並不是真的把檔案刪了,而僅是把檔案從 Git 中移掉而已變成untracked
 
 **更名檔案  mv是操作尚未添加到暫存區的檔案更名,git mv則是已添加到暫存區的檔案更名
   1.直接更名 mv 舊名 新名 -> 需git add 和 git commit
 	(1)尚未git add 至暫存區者,直接使用mv更名即可
-	(2)在暫存區狀態時,使用mv更名,需使用git  add/rm 將舊檔名被刪除紀錄提交,再使用git add 將新檔名
+	(2)已提交暫存區狀態時,使用mv更名,需使用git  add/rm 將舊檔名被刪除紀錄提交,再使用git add 將新檔名
 	   加到暫存區,再git commit 提交到工作目錄
-  2.使用git mv 舊名 新名 (主要是針對檔案已提交狀態的檔案更名) 
+  2.使用git mv 舊名 新名 (主要是針對檔案已提交暫存區的檔案更名) 
 	(1)檔案在暫存區時,使用git mv 是直接更名
 	(2)檔案已提交至工作目錄時,需使用git commit 將更名紀錄提交 
 		
@@ -93,6 +106,8 @@ git book有中文版  https://git-scm.com/book/zh-tw/v2
 **git log 查看提交紀錄日誌
     git log --pretty=oneline
     git log --oneline(簡潔版)
+  git reflog 查看操作命令紀錄日誌
+  git reflog:HEAD@{數值}-->數值指移動HEAD從當前版本到目標要多少步
 
 **版本回退  版本快照-->commit  
  撤銷:
@@ -109,14 +124,14 @@ git book有中文版  https://git-scm.com/book/zh-tw/v2
   --soft:僅在本地庫移動HEAD指針,只有本地庫向倒退
   --mixed:在本地庫移動HEAD指針,且重置暫存區,只有本地庫及暫存區向後倒退
   --hard: 在本地庫移動HEAD指針,且重置暫存區及工作區,三者一起向後倒退
-
- git reflog查看操作命令紀錄日誌
-  git reflog:HEAD@{數值}-->數值指移動HEAD從當前版本到目標要多少步
     
-**比較文件diff
-    git diff 檔名-->將工作區中的文件和暫存區進行比較
-    git diff [本地庫中歷史版本][檔名]-->將工作區中的文件和本地庫歷史紀錄作比較
-    如未輸入文檔名,則比較多個文件
+**比較文件diff  
++ 使用 git diff <file> 查看 "特定" 被修改檔案的內容
++ 使用 git diff 查看 "全部" 被修改檔案的內容
+  - 作用原理:將工作區中的文件和暫存區進行比較
+    git diff [本地庫中歷史版本][檔名]-->將工作區中的文件和本地庫歷史紀錄作比較,如未輸入文檔名,則比較多個文件
++ git diff 只能檢視(尚未提交)Changes not staged for commit 區塊的修改內容
++ 如果想要檢視(已提交)Changes to be committed 的修改內容，就必須在後面加上 --cached 或是 --staged 的參數
   
   分支管理(branch)
     git branch -v  查詢目前分支狀況
