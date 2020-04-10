@@ -44,5 +44,13 @@
 	1.移動端瀏覽器以webkit內核為主,可放心使用H5和C3
 	2.CSS初始化:normalize.css  官網:http://necolas.github.io/normalize.css/
 	3.CSS3盒子模型box-sizing:border-box; 盒子的寛度=CSS中設置的寛度,包含border和padding
-11.
-	 
+	4.傳統盒型box-sizing:content-box 
+11.特殊樣式
+	1.清除點擊高亮顯示:-webkit-tap-highlight-color:transparent(完全透明) a鏈接
+	2.清除iOS移動端默認外觀樣式:-webkit-appearance:none; 例如input
+	3.禁用長按頁面時彈出菜單 img,a{-webkit-touch-callout:none}
+12.移動端布局
+	1.單獨制作(主流):流式、rem、flex布局、混合
+	2.響應式:媒體查詢、bootstrap
+13.流式布局(百分比布局):通過設置盒子的寛度為百分比,根據屏幕尺寸進行縮放,不受固定寛度的限制,內容向兩側填充
+	通常配合設置max-width(最大寛度)、min-width(最小寛度)
