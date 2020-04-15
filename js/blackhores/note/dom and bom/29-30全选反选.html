@@ -57,7 +57,7 @@
             <thead>
                 <tr>
                     <th>
-                        <input type="checkbox" id="j_cbAll" />
+                        <input type="checkbox" id="j_cbAll" /> 全選
                     </th>
                     <th>商品</th>
                     <th>价钱</th>
@@ -66,28 +66,28 @@
             <tbody id="j_tb">
                 <tr>
                     <td>
-                        <input type="checkbox" />
+                        <input type="checkbox" /> 項目1
                     </td>
                     <td>iPhone8</td>
                     <td>8000</td>
                 </tr>
                 <tr>
                     <td>
-                        <input type="checkbox" />
+                        <input type="checkbox" /> 項目2
                     </td>
                     <td>iPad Pro</td>
                     <td>5000</td>
                 </tr>
                 <tr>
                     <td>
-                        <input type="checkbox" />
+                        <input type="checkbox" /> 項目3
                     </td>
                     <td>iPad Air</td>
                     <td>2000</td>
                 </tr>
                 <tr>
                     <td>
-                        <input type="checkbox" />
+                        <input type="checkbox" /> 項目4
                     </td>
                     <td>Apple Watch</td>
                     <td>2000</td>
@@ -96,11 +96,11 @@
             </tbody>
         </table>
     </div>
-    <script>
+    <!-- <script>
         //獲取元素
         var chAll = document.getElementById('j_cbAll');
         var tbs = document.getElementById('j_tb').getElementsByTagName('input');
-        //綁定點擊事件-->1.當thead的input checked值被選中時,所有tbody中所有input chedked值也會被選中,耿消時也連動
+        //綁定點擊事件1.當thead的input checked值被選中時,所有tbody中所有input chedked值也會被選中,耿消時也連動
         chAll.onclick = function () {
             for (var i = 0; i < tbs.length; i++) {
                 tbs[i].checked = this.checked
@@ -119,9 +119,7 @@
                 chAll.checked = flag; //同時改變thead的checked值
             }
         }
-    </script>
-
-
+    </script> -->
     <!-- <script>
         // 1. 全选和取消全选做法：  让下面所有复选框的checked属性（选中状态） 跟随 全选按钮即可
         // 获取元素
@@ -151,6 +149,30 @@
             }
         }
     </script> -->
+    <script>
+        //1.利用全選按鈕影響下面項目的複選框
+        var allInput = document.querySelector('#j_cbAll');
+        var oInput = document.querySelector('#j_tb').querySelectorAll('input');
+        allInput.onclick = function () {
+            for (var i = 0; i < oInput.length; i++) {
+                oInput[i].checked = this.checked;
+            }
+        }
+        //2.利用下面項目的input複選框判斷全選是否被選中
+        for (var i = 0; i < oInput.length; i++) {
+            oInput[i].onclick = function () {
+                var flag = true;
+                for (var i = 0; i < oInput.length; i++) {
+                    if (!oInput[i].checked) {
+                        flag = false;
+                        break;
+                    }
+                }
+                allInput.checked = flag;
+            }
+
+        }
+    </script>
 </body>
 
 </html>
