@@ -12,7 +12,7 @@
 		var obj = {
 			age: 20,
 			say: () => {
-				alert(this.age)
+				alert(this.age)  //undefined  100 關鍵:對象不能產生作用域,say方法是定義在全局作用域下,
 			}
 		}
 

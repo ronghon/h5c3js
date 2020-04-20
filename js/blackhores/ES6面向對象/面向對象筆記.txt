@@ -122,24 +122,25 @@
    的塊級作用域)作用域下的值。
 97.const:作用是用來聲明常量(數),常量就是值(內存地址)不會變化的量,特點:
 	1.具有塊級作用域		
-	2.聲明常量時必須賦初始值,否則報錯
+	2.聲明常量時必須賦予初始值,否則報錯。
 	3.常量賦值後,值不可修改,意即內存地址不可更改(基本數據類型),但複雜數據類型如array數組
 	  const arry = [100,200];
-		arry[0]=123;  //ok
-		arry=[1,2];  //報錯,更改內存地址
+		arry[0]=123;  //值可更改[123,200]
+		arry=[1,2];  //重新賦值時會報錯,更改內存地址
 100.let  const  var 的區別
-	1.使用var聲明的變量,其作用域為該語句所在的函數內(函數作用域),且存在變量提升現象
-	2.使用let聲明的變量,其作用域為該語句所在的代碼塊{}內(塊級作用域),不存在變量提升現象
+	1.使用var聲明的變量,其作用域為該語句所在的函數內(函數作用域),且存在變量提升現象,值可更改
+	2.使用let聲明的變量,其作用域為該語句所在的代碼塊{}內(塊級作用域),不存在變量提升現象,值可更改
 	3.使用const聲明的是常量(塊級作用域),在後面出現的代碼中不可再修改該常量的值
-101.解構賦值:ES6中允計從數組中提取值,按照對應位置,對變量賦值,對象也可以實現解構。
+101.解構賦值:分解數據結構,ES6中允許從數組中提取值,按照一一對應的位置,對變量賦值,對象也可以實現解構。
 	1.數組解構:
-		let [a,b,c]=[1,2,3];  let a=1,b=2,c=3; 
+		let [a,b,c]=[1,2,3];  let a=1,b=2,c=3; 等號左邊的[]代表數組解構,從數組中提取一一對應的值,再將值賦值給變量,
+		如變量數目大於等號右邊的值時,會產生未賦值情況,呈現undefined
 		console.log(a);  //1
 		console.log(b);  //2
 		console.log(c);  //3
-	2.對象解構:允許我們使用變量的名字匹配對象的屬性,匹配成功,將對象屬性的值賦值給變量
+	2.對象解構:等號左邊使用大括號表示對象解構,允許我們使用變量的名字匹配對象的屬性,匹配成功,將對象屬性的值賦值給變量
 	  let person = {name: 'lisi', age: 30, sex: '男'};
-		let { name, age, sex } = person;
+		let { name, age, sex } = person;  對象解構 person.name 
 		console.log(name)  //lisi
 		console.log(age)   //30
 		console.log(sex)   //男
@@ -148,41 +149,112 @@
 		let {name: myName} = person;  name是用來匹配person對象中的name屬性,匹配成功,則將屬性值lisi賦值給myName變量
 		console.log(myName)
 104.箭頭函數:ES6中新增的用來簡化函數定義語法
-		() => {}   ()用來定義形參  {函數體}  內包含函數體
+		語法: () => {}   ()用來定義形參  {函數體}  內包含函數體
+		const fn = () =>{  將箭頭函數賦值給fn常數  或使用let fn變量
+			console.log(123)
+		}
+		fn()
+	箭頭函數特性:
 	1.函數體中只有一句代碼,且代碼的執行結果就是返回值,則可省略大括號
-		const sum = (n1, n2) => n1 + n2;	 
+		const sum = (n1, n2) => n1 + n2;	//此處省略{}及return 
 		const result = sum(10, 20);
 		console.log(result);  //30
+		相當於下面的函數
+		function sum(n1,n2){
+			return n1+n2;
+		}	
+		console.log(sum(10,20)); //30
 	2.如果形參只有一個,可以省略小括號
-	  const fn = v => {
-	  	alert(v);
-	  }
+	  const fn = v => v ;
 	  fn(20);  //20
-105.箭頭函數不綁定this關鍵字,箭頭函數中的this,指向的是函數定義位置的上下文this
-
-107.剩餘參數:當實參個數大於形參個數時,可將形參放置在一數組中,利用...args來接收剩餘參數,
+		相當於下面的函數
+		function fn(x){
+			return x;
+		}
+		console.log(fn(10));//10
+105.箭頭函數不綁定this關鍵字,它没有自己的this關鍵字,箭頭函數中的this,指向的是函數定義位置的上下文this
+		function fn(){
+			console.log(this); // {name:'張三'}
+			return () => {
+				console.log(this)  // {name:'張三'}
+			}
+		}
+		const obj = {name:'張三'};
+		const resFn = fn.call(obj);
+		resFn();
+106.箭頭函數面試題:
+		var obj={
+			age:20,
+			say:()=>{   //箭頭函數中的this指向的是函數定義位置中的對象,而obj不能產生作用域,因此為window全局作用域
+				alert(this.age)  //this指向的是window,而window下没有age屬性,所以obj.say()得到的結果是undefined
+			}
+		}
+		obj.say();  //undefined
+107.剩餘參數:當實參個數大於形參個數時,可將剩餘形參放置在一數組中,利用...args來接收剩餘參數,
     語法允許我們將一個不定數量的參數表示為一個數組
+		在箭頭函數中無法使用arguments,但可以使用...args剩餘參數來接收數量不定的形參
 		function sum (first, ...args){
 			console.log(first);  //10
 			console.log(args);   //[20,30]
 		}
 		sum(10,20,30);
+
+		const sum = (...args) => {
+			let total = 0;
+			args.forEach(item => {   //大括號可以省略 forEach(item => total += item)  
+				total += item;
+			})
+			return total;         //forEach循環數組
+		}
+		console.log(sum(10.20)); //30
+		console.log(sum(10,20,30)) //60
 108.剩餘參數與解構配合使用
     let ary1 = ['张三', '李四', '王五'];
 		let [s1, ...s2] = ary1;
-		console.log(s1)   //s1=張三
-		console.log(s2)  //s2=數組['李四', '王五']
-109.擴展運算符(展開語法)-->Array的擴展方法
+		console.log(s1)   //s1='張三'
+		console.log(s2)  //s2=['李四', '王五'] 數組解構,s2成為數組同時接收['李四','王五']
+109.Array的擴展方法:
+  1.擴展運算符(展開語法),與剩餘參數(將剩餘的參數放在一個數組中)相反
 		擴展運算符可以將數組或對象轉為以逗號分隔的參數序列
 		let ary =[1,2,3];
-		console.log("1","2","3")  //1 2 3
-		console.log(...ary)  //1 2 3
+		console.log(...ary)  //1 2 3 與下面的代碼相同
+		console.log("1","2","3")  //1 2 3 
 110.擴展運算符可應用於合併數組
 		方法一:
 		let ary1 = [1, 2, 3];
 		let ary2 = [4, 5, 6];
 		// ...ary1 // 1, 2, 3
 		// ...ary2 // 4, 5, 6
-		let ary3 = [...ary1, ...ary2];
-		console.log(ary3)
+		let ary3 = [...ary1, ...ary2];//將ary1和ary2數組合併成ary3 = [1,2,3,4,5,6]
+		console.log(ary3)  [1,2,3,4,5,6]		
 		方法二:使用push()方法將ary2合併到ary1中  ary1.push(...ary2)
+112.將類數組或可遍歷對象轉換為真正的數組
+	let oDivs=document.getElementsByTagName('div);  //oDivs為偽數組
+	var ary = [...oDivs];  利用擴展運算符將偽數組轉換為真正的數組,好處:即可使用數組的方法,如push
+113.array.from方法
+114.find()方法:用於找出第一個符合條件的數組成員,如果没有找到則返回undeined
+115.findIndex()方法:用於找出第一個符合條件的數組成員的位置,如果没有找到則返回-1
+116.includes()方法:表示某個數組是否包含給定的值,返回true 或false  ==>ES6以前使用indexOf
+117.String擴展方法:
+	1.模板字符串:ES6新增的創建字符串的方式,使用反引號定義之。
+		特點:
+		(1)可以解析變量,使用${變量名}來取代字符串拼接
+		(2)模板字符串可以換行
+		(3)在模板字符串中可以調用函數
+	2.startsWith():表示參數字符串是否以某字符串開頭,返回布林值
+	  endsWith():表示參數字符串是否以某字符串結尾,返回布林值
+	3.repeat()方法:表示將原字符串重複n次,返回一個新字符串  原字符串.repeat(n)  'a'.repeat(2) //aa
+120.Set數據結構:ES6中的新的數據結構Set,它類似於數組,但成員的都是唯一的,没有重複的值,主要應用於搜索關
+    鍵字,利用值不重複特性,來存儲關鍵字
+		Set本身是一個構造函數,用來生成Set數據結構,有一內建屬性size,存儲數據個數
+121.利用Set作數組去重
+122.數據操作:
+	add(value):添加某個值,返回Set結構本身
+	delete(value):刪除某個值,返回一個布林值,表示刪除是否成功
+	has(value):判斷該值是否為Set的成員,返回一個布林值
+	clear():清除所有成員,没有返回值  
+123.遍歷:從中取值 使用forEach()方法    
+
+		
+
+
