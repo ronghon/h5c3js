@@ -24,7 +24,7 @@
   3.通過H5新增的方法獲取
   4.特殊元素獲取
   (1)因為文檔頁面由上往下加載,所以將script寫在body標籤中
-  (2)使用getElementById('id')返回的是一個元素對象(Object物件) 利用typeof檢測可得object
+  (2)使用getElementById('id')返回的是一個元素對象(Object物件) 利用typeof檢測數據類型可得object元素對象
   (3)使用console.dir()可以返回元素對象及查看裏面的屬性和方法
 07根據標籤名獲取元素==
  1.使用getElementsByTagName('div');
@@ -54,7 +54,7 @@
     document.querySelectorAll('選擇器');-->與document.getElementsByTagName(div)或document.getElementByClassName(類名)類似
 09獲取特殊元素(body.html)==
 	1.獲取body元素
-	  documnent.body  //返回body元素對象
+	  document.body  //返回body元素對象
 	2.獲取html元素
 	  document.documentElement //返回html元素對象
 10事件三要素==
@@ -90,11 +90,14 @@
   2.某個表單被禁用,不能再被點擊,使用disabled
     ex:btn.disabled=true;  也可以使用this,這個this指向的是事件函數的調用者
 17利用flag切換開關作法==仿京東password開關密碼
+  核心思路:點擊按鈕,把密碼框類型更改為文本框,但一個按鈕有兩個狀態,此時可利用flag變量來判斷flag的值,如果是1則切換
+  為文本框,同時設置flag的值為0,如果是0,就切換為密碼框,flag值設置為1。
 19樣式屬性操作==
-  1.element.style-->修改行內樣式 如點擊修改樣式:如改變背景顏色、長寛、文字大小...
+  1.element.style-->修改行內樣式 如點擊修改樣式:如改變背景顏色、長寛、文字大小...(修改單一樣式時使用)
     注意樣式需採用駝峰命名法 fontSize  backgroundColor  且修改style樣式屬於行內樣式,css權重較高
-  2.element.className-->修改類名樣式
-21循環精靈圖
+  2.element.className-->修改類名樣式(修改的樣式較多時可以將它們統一設置在同一的類名中,再藉由添加類名方式改變樣式)
+21循環精靈圖:
+  利用for循環設置一組元素的精靈圖背景,此一精靈圖排列是有一定規則可循,再藉由循環精靈圖的背景位置background-position
 23使用className更改元素樣式==
   1.當樣式較多或功能較複雜時,可以透過修改或添加元素的className
   2.先將所需classname在style內寫好,當觸發事件時,將classname加到標籤中。
