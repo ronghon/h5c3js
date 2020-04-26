@@ -102,7 +102,7 @@
   1.當樣式較多或功能較複雜時,可以透過修改或添加元素的className
   2.先將所需classname在style內寫好,當觸發事件時,將classname加到標籤中。
   3.注意樣式優先級問題
-  4.當原先已有class時,會覆蓋原先的類名,如要保留原來類名,可使用添加方式,就是在原有class後面再加一個新的className
+  4.當原先已有class時,會覆蓋原先的類名,如要保留原來類名,可使用多類名方式添加,就是在原有class後面再加一個新的className
 25操作元素總結:
 	操作元素是DOM核心內容
 		(1)操作元素內容-->innerText   innerHTML
