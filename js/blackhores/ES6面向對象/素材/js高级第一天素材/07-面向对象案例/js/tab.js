@@ -12,7 +12,7 @@ class Tab {
         this.init();
     }
     init() {
-            this.updateNode();
+            this.updateNode();//動態獲取新添加的元素li和section
             // init 初始化操作让相关的元素绑定事件
             this.add.onclick = this.addTab;
             for (var i = 0; i < this.lis.length; i++) {
@@ -24,7 +24,7 @@ class Tab {
 
             }
         }
-        // 因为我们动态添加元素 需要从新获取对应的元素
+        // 因為我們動態添加元素 需要重新獲取對應的元素li和section
     updateNode() {
             this.lis = this.main.querySelectorAll('li');
             this.sections = this.main.querySelectorAll('section');
@@ -34,7 +34,7 @@ class Tab {
         // 1. 切换功能
     toggleTab() {
             // console.log(this.index);
-            that.clearClass();
+            that.clearClass();  // 因為toggleTab中的this指向的是lis,所以使用that指向constructor中的this
             this.className = 'liactive';
             that.sections[this.index].className = 'conactive';
         }
@@ -55,7 +55,7 @@ class Tab {
             // (2) 把这两个元素追加到对应的父元素里面
             that.ul.insertAdjacentHTML('beforeend', li);
             that.fsection.insertAdjacentHTML('beforeend', section);
-            that.init();
+            that.init();  //當創建新的li和section時重新調用init初始化元素
         }
         // 3. 删除功能
     removeTab(e) {

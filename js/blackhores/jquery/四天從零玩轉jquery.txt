@@ -157,17 +157,23 @@
 	5.要包含padding和border的寛高時使用outerWidth()和outerHeight()
 	6.要包含padding和border和margin的寛高時使用outerWidth(true)和outerHeight(true)
 	7.要獲取網頁的可視區寛高使用$(window).width()、$(window).height()
+
 45.offset()可獲取到一個對象,元素距離document的top和left值
   position()可獲取元素距離相對于其最近帶有定位的父元素(offsetParent)的位置
+
 46.scrollTop()、scrollLeft()設置或獲取元素內容被捲曲出去的寛高
   $(window).scrollTop()設置或獲取頁面被捲曲出去的高
 	$(window).scrollLeft()設置或獲取頁面被捲曲出去的寛
+
 47.固定導航欄案例
 	给页面设置一个滚动事件:$(window).scroll(function(){})
+
 48.事件
-	原生JS注冊相同的事件,後面的事件會把前面的事件覆蓋掉
-	jquery給同一個元素注冊相同的事件時,後面的不會把前面的覆蓋掉
-	jquery1.7以後改以on()來綁定注冊事件
+	1.原生JS注冊相同的事件,後面的事件會把前面的事件覆蓋掉
+	2.jquery給同一個元素注冊相同的事件時,後面的不會把前面的覆蓋掉
+	jq
+	uery1.7以後改以on()來綁定注冊事件
+
 49.on()
  1.on()簡單注冊事件-->不支持動態注冊　on("click",function(){})
  2.on()注冊事件委托-->$(selector).on("click","span",function(){})
