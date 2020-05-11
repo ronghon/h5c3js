@@ -387,9 +387,95 @@
 
 65.bootstrap框架
 66.bootstrap  JS插件
+
+李南江jquery和ajax
+04.jquery入口函數寫法:
+	1.$(document).ready(function(){})
+	2.jQuery(document).ready(function(){})
+	3.$(function(){})-->推薦 符合write less,do more
+	4.jQuery(function(){})	
+
+05.jQuery衝突問題:頂級對象$與其他JS文件$使用衝突
+	1.解決方案1:釋放$的使用權
+		jQuery.noConflict();  //注意:釋放操作必須在編寫其它jQuery代碼之前編寫,釋放之後就不能再使用$符號,改為jQuery
+	2.解決方案2:自定義頂級對象取代$
+			var @ = jQuery.noConflict();
+			入口函數變成: @(function){}
+
+06.jQuery核心函數:  $()-->代表調用jQuery的核心函數;
+	根據()設定內容不同,產生不同的意義和作用
+	1.函數:function(){}-->入口函數
+	2.字符串
+		(1)選擇器 $("div") 或 $(".box") $("ul li")-->返回jQuery對象
+		(2)代碼片段:創建標籤元素 $(<li>我是新創建的li</li>);
+	3.DOM元素: $(DOM元素) -->jQuery對象   即DOM對象轉換為jQuery對象
+
+07.jQuery對象:是一個偽數組(有0到length-1的屬性且有length屬性的對象)
+
+08.靜態方法:直接添加到類上面的就是靜態方法,特性:靜態方法通過類名來調用
+	 實例方法:直接添加到類的原型,首先創建一個實例(對象),特性通過類的實例來調用
+
+09.each()方法
+	1.原生forEach方法
+	  forEach(function(value,index))
+		第一個參數:遍歷到的元素
+		第二個參數:當前遍歷到的索引
+		注意點:只能遍歷數組,不能遍歷偽數組
+
+	2.利用jquery中的each方法
+		$.each(arr,function(index,value){
+		})
+		第一個參數:當前遍歷到的索引
+		第二個參數:遍歷到的元素
+		注意點:可遍歷數組和偽數組
+		
+10.map()方法
+	1.和jquery中的each方法一樣,也可以遍歷偽數組
+		$.map(arr,function(value,index){})
+		第一個參數:要遍歷的數組
+		第二個參數:每遍歷一個元素之後執行的回調函數
+			(1)參數1:遍歷到的元素
+			(2)參數2:遍歷到的索引
+	2.和each方法的區別:
+		(1)each方法默認的返回值是遍歷誰就返回誰,而map方法默認的返回值是一個空數組
+		(2)each方法不支持在回調函數中對遍歷的數組進行處理(如加減運算),而map方法可以在回調函數中通過return對遍歷的
+		   數組進行處理,然後生成一個新的數組返回
+
+11.其他靜態方法trim(),isWindow(),isfunction
+	1.trim():去除字符串兩側的空格,參數:需要去除空格的字符串,返回值是去除空格之後的字符串
+	2.isWindow():用來判斷傳入的對象是否是window對象,返回值true/false
+	3.isArray():用來判斷傳入的對象是否是真數組,返回值true/false
+	4.isFunction():用來判斷傳入的對象是否是函數,返回值true/false
+		jquery框架本質上一個立即執行函數
+
+12.holdready():暫停/回復入口函數執行
+	holdready(true) 暫停ready執行 ,入口函數會在dom元素加載完執行,使用此一方法可先暫停執行入口函數中的代碼
+	holdready(false) 回復ready執行
+
+13.簡化vscode操作
+	setting-->user snippets	-->將snippets generator	產生的代碼copy貼上-->在欲輸入的代碼處輸入jq即可
+
+14.jquery內容選擇器:
+	1. :empty --> 作用:找到既没有文本內容也没有子元素的指定元素
+	2. :parent -->作用:找到有文本內容或有子元素的指定元素
+	3. :contains('文本內容')-->作用:找到包含指定文本內容的指定元素
+	4. :has('選擇器')  -->作用:找到包含指定子元素的指定元素
+
+15.屬性和屬性節點(JS DOM操作)
+	1.什麼是屬性?
+		對象身上保存的變量就是屬性
+	2.如何操作屬性?
+		設置:對象.屬性名稱=值;  對象["屬性名稱"]=值
+		獲取:對象.屬性名稱     對象["屬性名稱"]
+	3.屬性節點:在編寫HTML代碼時,在HTML標籤中添加的屬性就是屬性節點,在瀏覽器中找到span這個DOM元素之後,展開後
+	  看到的都是屬性,attributes屬性中保持的所有內容都是屬性節點(只有DOM元素才有屬性節點,保存在attributes屬性中)
+	4.操作屬性節點:
+		設置:DOM元素.setAttribute("屬性名稱","值")
+		獲取:DOM元素.getAttribute("屬性名稱")
+	5.屬性和屬性節點區別:任何對象都有屬性,但只有DOM對象才有屬性節點
+
+
 	
-
-
 	
 	
 	

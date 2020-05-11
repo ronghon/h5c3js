@@ -13,12 +13,12 @@
             border-collapse: collapse;
             text-align: center;
         }
-        
+
         td,
         th {
             border: 1px solid #333;
         }
-        
+
         thead tr {
             height: 40px;
             background-color: #ccc;
@@ -31,7 +31,7 @@
         <thead>
             <tr>
                 <th>姓名</th>
-                <th>科目</th>
+                <th>年齡</th>
                 <th>成绩</th>
                 <th>操作</th>
             </tr>
@@ -40,7 +40,7 @@
 
         </tbody>
     </table>
-    <script>
+    <!-- <script>
         // 1.先去准备好学生的数据
         var datas = [{
             name: '魏璎珞',
@@ -96,6 +96,56 @@
         //     k 得到的是属性名
         //     obj[k] 得到是属性值
         // }
+    </script> -->
+    <script>
+        //將個人基本資料以對象形式存儲,並將對象作為數組的元素存儲
+        var datas = [{
+            name: '李四',
+            age: 15,
+            scopt: 96
+        }, {
+            name: '王八',
+            age: 18,
+            scopt: 90
+        }, {
+            name: '孫悟空',
+            age: 50,
+            scopt: 36
+        }, {
+            name: '李三九',
+            age: 20,
+            scopt: 80
+        }, {
+            name: '李強',
+            age: 18,
+            scopt: 92
+        }]
+        //行的數量是根據數據資料的多少決定,數組元素有多少個(數組長度)就創建多少行
+        var tbody = document.querySelector('tbody');
+        for (var i = 0; i < datas.length; i++) {
+            // 1.創建行
+            var tr = document.createElement('tr');
+            tbody.appendChild(tr);
+            //2.創建單元格(td),單元格數量取決於對象屬性的個數
+            // 遍歷對象的屬性和屬性值方式,利用for...in語法 for(var k in obj){}
+            // 獲取對象的屬性 k ,屬性值 obj[k]
+            for (var k in datas[i]) {
+                var td = document.createElement('td');
+                tr.appendChild(td);
+                td.innerHTML = this.datas[i][k]; //將對象的屬性值插入到頁面中
+            }
+            //3.創建有刪除的單元格
+            var td = document.createElement('td');
+            tr.appendChild(td);
+            td.innerHTML = '<a href="javascript:;">刪除</a>';
+        }
+        //4.
+        var as = document.querySelectorAll('a');
+        for (var i = 0; i < as.length; i++) {
+            as[i].onclick = function () {
+                tbody.removeChild(this.parentNode.parentNode);
+            }
+        }
     </script>
 </body>
 

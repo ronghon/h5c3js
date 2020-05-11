@@ -57,7 +57,7 @@
 	  document.body  //返回body元素對象
 	2.獲取html元素
 	  document.documentElement //返回html元素對象
-10事件三要素==
+10事件三要素==JS使我們有能力創建動態頁面,而事件是可以被JS偵測到的行為,網頁中的每個元素都可以產生某些可以觸發JS的事件。
 	事件簡單說就是用戶與電腦交互的行為,觸發--響應機制,由下列三部份組成(事件三要素)
 	1.事件源:事件被觸發的對象(誰被觸發),如按鈕-->who對象(獲取事件源)
 	2.事件類型:如何觸發,什麼事件,如鼠標點擊(onclick).鼠標經過.或鍵盤按下(做了什麼觸發事件)(綁定事件)
@@ -114,9 +114,27 @@
   1.先清除所有元素的全部樣式(幹掉其他人)
   2.再給當前元素設置樣式(留下我自己)
 	3.注意順序:先排除其他人,然後再設置自己的樣式
-27.網頁換膚效果
+27.網頁換膚效果:核心算法-->把當前圖片的src路徑取過來,給body做為背景即可。
+  document.body.style.backgroundImage='url('+this.src+')';
 28.表格隔行變色案例:onmouseover鼠標經過  onmouseout鼠標離開
-29.表單全選取消全選案例
+  核心思路:鼠標經過tr行,當前的行改變背景顏色,鼠標離開去掉當前的背景顏色
+29.表單全選、取消全選案例
+  1.全選與全不選狀態:讓下面所有複選框的checked屬性(選中狀態),跟隨全選按鈕即可
+    this.checked 它可以得到當前複選框的選中狀態,true選中,false未選中
+    for(var i=0;i<j_tabs.length;i++){
+      j_tabs[i].checked=this.checked;
+    }
+  2.下面所有表單影響全選按鈕
+    為下面所有複選框綁定點擊事件,每選擇其中一複選框都循環檢查下面所有的複選框是否全選上,如其
+    中一個未選中,則上面全選按鈕就不選中
+    var flag=true; //利用一個變量flag控制全選按鈕是否被選中 
+    for(var i=0;i<j_tbs.length;i++){
+      if(!j_tbs[i].checked){  //假如下面的複選框未全部選中時,全選按鈕的值為false
+        flag=false;
+        break;  //退出for循環,提高執行效率,只要有一個未選中,其他剩下不用再循環
+      }
+    }
+    j_cbAll.checked=flag;  //下面複選框全選中時,全選按鈕的值為true選中
 31自定義屬性操作1
   1.獲取屬性值
     (1)element.屬性:獲取內建屬性值(元素本身自帶的屬性)
@@ -128,6 +146,7 @@
   3.移除屬性
     (1)element.removeAttribute('屬性');
 33.Tab欄切換案例分析
+  利用排他思想為小li綁定點擊事件
 36.設置H5自定義屬性:以data-開頭的屬性名並且賦值
   自定義屬性的目的:為了保存並使用數據,可以通過getAttribute('屬性')來獲取,但有些自定義屬性很容易引起歧義,不容易判斷
 	是元素內建屬性還是自定義屬性,所以H5規定自定義屬性均以data-開頭做為屬性名並賦值,因此,我們自己設置自定義屬性時也遵循此
@@ -154,8 +173,8 @@
 38-39節點層級
   1.父節點:node.parentNode 獲取離元素最近的父級節點(親爸爸),如果找不到父節點則返回null
   2.子節點:
-    (1)parent.childNodes 注意:獲取的是所有子節點,包含文本及元素等
-    (2)parent.children 獲取所有的子元素節點(常用),非標準,但各瀏覽器均支持
+    (1)parent.childNodes 注意:獲取的是所有子節點(集合,偽數組),包含文本節點及元素節點等(不提倡)
+    (2)parent.children 獲取所有的子元素節點(集合,偽數組,實際開發常用方式),非標準,但各瀏覽器均支持
 40獲取第一個子元素或最後一個子元素
     (1)獲取第一個子節點:parent.firstchild-->換行所以是#text
        獲取最後一個子節點:parent.lastchild-->也是換行所以也是#text
@@ -195,24 +214,25 @@
     (1)創建元素:createElement
     (2)添加元素:appendChild(從最後面添加) 或 insertBefore(指定元素的前面)
 44簡單版發布留言案例
-	1.創建元素節點
-	2.插入內容
-	3.添加元素節點
+	1.創建元素節點: document.createElement('元素')
+	2.插入內容 li.innerHTML=text.value
+	3.添加元素節點 node.appendchild('child子元素')
+               node.innerBefore('li',ul.children[0])
 	
 45刪除節點
   node.removeChild(child) 此方法是DOM中刪除一個子節點,返回刪除的節點, node 父級  child 子級
 46刪除留言紀錄,阻止鏈接跳轉使用javascript:;
 47複製節點
-  node.cloneNode()
+  node.cloneNode()方法返回調用該方法的節點的一個副本
   (1)如果括號參數為空或false,則為淺拷貝,只複製節點本身,不複製裏面的內容
   (2)如果括號參數為true,則為深拷貝,會複製節點本身及裏面所有的內容
 48-53動態生成表格(重點案例多加練習)  
 54-55三種動態創建元素區別
-  1.document.write():是直接將內容寫入頁面的內容流,但原先的文檔流已加載完畢,所以它會導致頁面全部重新構建
+  1.document.write():是直接將內容寫入頁面的文檔流,但原先的文檔流已加載完畢,所以它會導致頁面全部重新構建(很少用)
   2.element.innerHTML:是將內容寫入某個DOM節點,不會導致頁面重繪,創建多個元素效率更高(但不要採取字符串拼接,
     而是採取數組形式拼接),結構稍微複雜
   3.document.createElement():創建多個元素效率稍低一點點,但結構較清晰
-  總結:不同瀏覽下,innerHTML效率比createElement高
+  總結:不同瀏覽下,innerHTML(採取數組形式)效率比createElement高一些
 56DOM重點核心內容回顧***
   1.DOM:文檔對象模型,是W3C推薦處理可擴展標記語言的標準編程接口,透過這些DOM接口可以改變網頁的內容、結構和樣式。
   2.對於Javascript,為了能够使javascript操作HTML,javascript就有了一套自己的DOM編程接口

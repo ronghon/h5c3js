@@ -146,8 +146,10 @@
 	4.移除屬性:removeAttr("屬性名")可移除元素自帶屬性和自定義屬性
 		移除多個屬性:removeAttr("屬性名1 屬性名2 屬性名3")
 41.美女相冊案例
-42.prop():獲取或設置元素自帶屬性
-	jquery1.6以後,checked selected disabled等boolean類型的屬性,不可使用attr(),改使用prop()
+	1.阻止a標籤頁面跳轉: return false
+42.prop():獲取或設置元素自帶(內置)屬性
+	jquery1.6以後,checked selected disabled等boolean類型的屬性,不可使用attr(),無論是選中或未選中,均返回undefined,
+	因此欲獲取此類屬性,改使用prop()
 43.全選與全不選案例
 44.尺寸寛高:width()、height()
 	1.利用css()方法獲取到的寛高為字符串型.css("width")、.css("height")
