@@ -282,7 +282,7 @@
   注冊事件區分為兩種:傳統方式及方法監聽注冊方式
   (1)傳統注冊事件:利用on開頭的事件,ex:onclick、onmouseover...具唯一性:同一個元素同一個事件只能設置一個處理函數,最後注
      冊的處理函數將會覆蓋前面注冊的處理函數。
-  (2)方法監聽注冊方式:w3c標準,推薦方式,addEventLister()它是一個方法,IE9以前不支持此方法,可使用attachEvent()代替
+  (2)方法監聽注冊方式:w3c標準,推薦方式,addEventListener()它是一個方法,IE9以前不支持此方法,可使用attachEvent()代替
      特點:同一個元素同一個事件可以添加多個監聽器,依注冊順序依次執行
      addEventListener事件監聽方式 語法:
      目標(監聽)對象.addEventListener(type,listener,[useCapture])->事件監聽方式
@@ -333,7 +333,7 @@
   a.返回事件類型:e.type  ex:click mouseover mouseout
   b.阻止默認行為(事件):就是鏈接不跳轉或讓提交按鈕不提交
     1.e.preventDefault() -->(方法) ->DOM標準寫法  IE9以上
-    2.e.returnValue -->(屬性) IE678瀏覽器支持 
+    2.e.returnValue      -->(屬性) ->非標準       IE678瀏覽器支持 
     3.return false; 没有兼容性問題,但return後的代碼不執行,且限於使用傳統注冊事件方式onclick
   
 66.阻止事件冒泡的兩種方式**
