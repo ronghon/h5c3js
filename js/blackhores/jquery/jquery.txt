@@ -406,9 +406,9 @@
 	根據()設定內容不同,產生不同的意義和作用
 	1.函數:function(){}-->入口函數
 	2.字符串
-		(1)選擇器 $("div") 或 $(".box") $("ul li")-->返回jQuery對象
-		(2)代碼片段:創建標籤元素 $(<li>我是新創建的li</li>);
-	3.DOM元素: $(DOM元素) -->jQuery對象   即DOM對象轉換為jQuery對象
+		(1)選擇器 $("div") 或 $(".box") $("ul li")-->返回jQuery對象,對象保存了找到的DOM元素
+		(2)代碼片段:創建標籤元素 $(<li>我是新創建的li</li>);-->返回jQuery對象,對象保存了創建的DOM元素
+	3.DOM元素: $(DOM元素) -->jQuery對象   即DOM對象轉換為jQuery對象,
 
 07.jQuery對象:是一個偽數組(有0到length-1的屬性且有length屬性的對象)
 

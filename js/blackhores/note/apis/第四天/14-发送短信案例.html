@@ -19,6 +19,7 @@
         var btn = document.querySelector('button');
         var time = 3; // 定义剩下的秒数
         btn.addEventListener('click', function() {
+            // 按钮点击之后，会禁用 disabled 为true
             btn.disabled = true;
             var timer = setInterval(function() {
                 if (time == 0) {

@@ -284,7 +284,7 @@
      冊的處理函數將會覆蓋前面注冊的處理函數。
   (2)方法監聽注冊方式:w3c標準,推薦方式,addEventListener()它是一個方法,IE9以前不支持此方法,可使用attachEvent()代替
      特點:同一個元素同一個事件可以添加多個監聽器,依注冊順序依次執行
-     addEventListener事件監聽方式 語法:
+     addEventListener事件監聽方式 語法:IE9以上支持
      目標(監聽)對象.addEventListener(type,listener,[useCapture])->事件監聽方式
      1.type:事件類型字符串,ex:click、mouseover 注意不用加on,要加''號
      2.listener:事件處理函數,事件發生時,會調用該監聽函數 function()
@@ -302,12 +302,14 @@
 62.DOM事件流注意事項
   1.JS代碼中只能執行捕獲或冒泡其中的一個階段
   2.onclick和attachEvent(IE)只能得到冒泡階段
-  3.addEventListener(tyoe,listener[,useCapture])第三個參數如果是true,表示在事件捕獲階段調用事件處理程序,
+  3.addEventListener(type,listener[,useCapture])第三個參數如果是true,表示在事件捕獲階段調用事件處理程序,
     如果是false或默認省略未註明時,表示在事件冒泡階段調用事件處理程序
   4.實際開發中,較少使用事件捕獲,較關注事件冒泡階段
   5.有些事件是没有冒泡的,ex:onblur onfocus onmouseenter onmouseleave
   6.事件冒泡有時會帶來麻煩,有時又會很巧妙的做某些事件
 63.事件對象***
+  var div=document.querySelector('div');
+  div.onclick=function(event){}
   1.event就是一個事件對象,寫到監聽函數的小括號中,當形參使用
   2.事件對象只有有了事件才會存在,它是系統自動創建的,不需要傳遞參數-->前提條件
   3.事件對象是與事件一系列相關數據的集合,與事件相關的屬性和方法,ex:鼠標點擊內就包含了鼠標的相關信息(鼠標坐標等),
@@ -344,6 +346,9 @@
   不要給每個子節點單獨設置事件監聽器,而是將事件監聽器設置在其父節點上,然後利用事件冒泡原理影響設置給每個子節點
   事件委托的作用:只操作了一次DOM,提高程序的性能
   ex:給ul注冊點擊事件,然後利用事件對象的target找到當前點擊的li,因為點擊li,事件會冒泡到ul上,ul有注冊事件,就會觸發事件監聽器
+  事件委托的作用:只需操作一次DOM,提高程序運行的性能
+  可以結合e.target獲取點擊的對象,如要修改點擊的li改變背景顏色
+    e.target.style.backgroundColor = 'red';
   
 68.常用鼠標事件
   1.禁止鼠標右鍵菜單:contextmenu 主要控制應該如何顯示上下文菜單,主要用於取消默認的上下文菜單
@@ -356,6 +361,7 @@
     })
     
 69.鼠標事件對象:MouseEvent 鍵盤事件對象:KeyboardEvent
+  event對代表事件的狀態,跟事件相關的一系列信息的集合
    常見屬性:獲取坐標值
    1.e.clientX:返回鼠標相對於瀏覽器窗口可視區的X坐標
      e.clientY:返回鼠標相對於瀏覽器窗口可視區的Y坐標
@@ -365,6 +371,11 @@
      e.screenY:返回鼠標在電腦屏幕的Y坐標
      
 70.鼠標移動事件mousemove,藉由鼠標移動事件觸發獲取最新的鼠標座標,並將x和y座標值賦值給圖片的top和left值即可移動圖片
+   核心原理:每次鼠標移動時,都會獲得最新的鼠標坐標,再把這個X和Y坐標做為圖片的top和left值,就可移動圖片
+   var x=e.pageX;
+   var y=e.pageY;
+   pic.style.left=x+'px';
+   pic.style.top=y+'px';
 
 72.常用鍵盤事件
 	1.onkeyup   ->按鍵彈起時觸發
@@ -377,7 +388,10 @@
 	2.keyup和keydown事件不区分字母大小写  a 和 A 得到的都是65
 	3.keypress事件区分字母大小写  a  97 和 A 得到的是65,但無法識別功能鍵,實際開發中較少用
 	4.注意:keydown和keypress在文本框中的特點:這兩個事件觸發時,文字還没有落入文本框中,而keyup事件觸發時,文字已落入文本框中
-  
+74.京東按鍵輸入內容案例
+  用戶按下s鍵後,光標定到搜索框中
+  核心思路:檢測用戶是否按下s鍵,如按下s鍵,利用鍵盤事件對象中的keyCode值判斷用戶按下的是否是s鍵,搜索框獲得焦點:focus()方法
+
 77.BOM瀏覽器對象模型============================================================================================
   1.BOM概述
   2.window對象的常見事件
@@ -409,8 +423,10 @@
 	1.窗口加載事件:window.onload = function(){} 或者 window.addEventListener('load',function(){})
 	  當文檔內容完全加載完成會觸發該事件(包括圖像、腳本文件、CSS等),就調用的處理函數,運用這個方式即可將script寫在頁面的任何地方
 	  ,甚至外部文件亦可,但傳統注冊事件方法會有唯一性問題,如果使用addEventListener就無此限制
+    window.addEventListener('load',function(){})
 	2.DOMContentLoaded是DOM加載完畢,不包含圖片、flash css等就可執行,加載速度比load更快些,IE9以上才支持
 	  load則需等頁面內容全部加載完畢,包含頁面DOM元素、圖片、flash css等才會執行
+    document.addEventListener('DOMContentLoaded',function(){})
 
 80.調整窗口大小事件window.onresize=function(){} 或 window.addEventListener('resize',function(){})
    window.onresize是調整窗口大小加載事件,當觸發時就調用的處理函數
@@ -510,41 +526,53 @@
 	2.獲取元素自身的大小(寛度和高度)
 	3.返回的數值均不帶單位
 	4.屬性:
-		(1)E.offsetParent:返回作為該元素帶有定位的父級元素,如果父級都没有定位則返回body
-		(2)E.offsetTop:返回元素距離帶有定位父元素上方的偏移量,如果没有父級或父級没有定位,則以body為準
-		(3)E.offsetLeft:返回元素距離帶有定位父元素左邊的偏移量,如果没有父級或父級没有定位,則以body為準
-		(4)E.offsetWidth:返回自身包括padding、邊框、內容區的寛度,返回值不帶單位,當未設置寛度時,可動態獲取寛度
-		(5)E.offsetHeight:返回自身包括padding、邊框、內容區的高度,返回值不帶單位
+		(1)E.offsetParent:獲取作為該元素帶有定位的父級元素,如果父級都没有定位則返回body
+		(2)E.offsetTop:獲取元素距離帶有定位父元素上方的偏移量,如果没有父級或父級没有定位,則以body為準
+		(3)E.offsetLeft:獲取元素距離帶有定位父元素左邊的偏移量,如果没有父級或父級没有定位,則以body為準
+		(4)E.offsetWidth:獲取自身包括padding、邊框、內容區的寛度,返回值不帶單位,當未設置寛度時,可動態獲取寛度
+		(5)E.offsetHeight:獲取自身包括padding、邊框、內容區的高度,返回值不帶單位
 		
-		son.offsetParent:返回帶有定位的父級,如没有定位的父級,則返回body
-		son.parentNode:返回的父級是最近一級的父級(親爸爸),不管父親有無定位
+		son.offsetParent:獲取帶有定位的父級,如没有定位的父級,則返回body
+		son.parentNode:獲取的父級是最近一級的父級(親爸爸),不管父親有無定位
 04.offset與style區別
-		offset
+		offset=====
 		1.offset可獲取任意樣式表中的樣式值
 		2.offset系列獲得的數值是没有單位(number)
 		3.offsetWidth包含padding+border+width
 		4.offsetWidth等屬性是只讀屬性,只能獲取不能賦值
 		5.總結:想要獲取元素大小和位置,使用offset更合適,不能改變大小和位置(需使用style)
 		
-		style
+		style=====
 		1.style只能得到行內樣式表中的樣式值
 		2.style.width獲得的是帶有單位的字符串(string)
 		3.style.width獲得不包含padding和border的值
 		4.style.width是可讀寫屬性,可獲取也可賦值
 		5.總結:想要給元素更改值,使用style來改變
-05.案例:獲取鼠標在盒子內的坐標=鼠标在页面中的坐标（ e.pageX, e.pageY）- 盒子在页面中的距离(box.offsetLeft, box.offsetTop)
-06.案例:模態框拖拽
-	拖拽觸發事件包括鼠標按下(mousedown)、鼠標移動(mousemove)、鼠標彈起(mouseup)
-  拖拽過程分析:鼠標移動過中,獲得最新的值賦值給模態框的left和top值,如此模態框就可跟著鼠標走了
-	鼠標按下後獲取鼠標在盒子內的坐標
-		var x = e.pageX -login.offsetLeft;
-		var y = e.pageY -login.offsetTop;
-	鼠標移動時,把鼠標在頁面的坐標減去鼠標在盒子內的坐標就是模態框的left和top值
-		login.style.left = e.pageX - x +'px';
+05.案例:獲取鼠標在盒子內的坐標
+  1.利用事件對象中的屬性e.pageX和e.pageY先獲取鼠標在頁面中的坐標
+  2.利用offsetTop和offsetLeft偏移量獲取盒子與頁面左側和頂部的距離
+  3.將1.和2.相減即可得到鼠標在盒子的坐標
+  **網頁中x坐標向右為正,y坐標向下為正
+  x = e.pageX - box.offsetLeft;
+  y = e.pageY - box.offsetTop;
+06.案例:模態框拖拽:拖拽觸發事件包括鼠標按下(mousedown)、鼠標移動(mousemove)、鼠標彈起(mouseup)
+  拖拽過程分析:鼠標移動過程中,獲得最新的值賦值給模態框的left和top值,如此模態框就可跟著鼠標走了
+  1.當鼠標按下(mousedown)時,先獲取鼠標在盒子內的坐標
+   var x = e.pageX - box.offsetLeft;
+   var y = e.pageY - box.offsetTop; 
+  2.鼠標移動(mousemove)時,再把鼠標在頁面中的坐標 減去 鼠標在盒子內的坐標,就是模態框的left和top值
+    login.style.left = e.pageX - x +'px';
 		login.style.top = e.pageY - y +'px';
-	鼠標彈起,就停止拖拽讓鼠標移動事件解除
+	3.鼠標彈起(mouseup),就停止拖拽讓鼠標移動事件解除
 	  使用removeEventListener('mousemove',move)
 09.仿京東放大鏡案例:
+  整個案例區分為三個功能模塊
+  1.鼠標經過小圖片盒子,黃色的遮罩層和大圖片盒子顯示,離開時隐藏二個盒子
+  2.黃色的遮罩層跟隨鼠標移動功能
+
+    2.1解決黃色遮罩層超出盒子限制在盒子內部範圍內移動問題
+
+  3.移動黃色遮罩層,大圖片跟隨移動功能
 
 
 122.動畫函數封裝

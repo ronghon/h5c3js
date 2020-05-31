@@ -11,4 +11,34 @@
 	(4)搜索框提示文字下拉列表
 2.ajax運行環境:Ajax技術需運行在網站環境中才能生效,當前課程會使用Node創建的服務器作為網站服務器
 	Node:
+
+1.ajax:異步JS和XML,是一種創建交互式網頁應用的網頁開發技術
+3.JS原生ajax的開發步驟:
+	1.創建ajax引擎對象XMLHttpRequest
+	2.為ajax引擎對象XMLHttpRequest綁定監聽對象(服務器)變化的事件,設置回調函數(自定義函數,服務器響應成功後ajax自動調用函數)
+	3.設置ajax發送到服務器的路徑(提交地址)
+	4.發送請求
+	5.接收服務器響應數據
+4.jquery框架的ajax,方法有三種:
+	1.GET請求:$.get(url,[data],[callback],[type])
+		參數1:url 請求服務器路徑
+		參數2:data 發送到服務器的數據,格式使用鍵值對 key=value&key=value...
+		參數3:callback 回調函數,服務器響應成功,ajax會自動執行這個回調函數
+		參數4:type 預設服務器返回的數據類型(text,json)
+	2.POST請求:$.post(url,[data],[callback],[type])
+		參數規範與GET相同,
+	3.AJAX請求:$.ajax([settings]):是通過HTTP請求加載遠程數據,jquery底層AJAX實現,$.ajax()方法可以更加詳細的設置底層的參數
+		settings是一個js字面量形式的對象,格式(name:value,name=value...),常用的name屬性名如下:
+		$.ajax({
+			url:請求服務器的地址
+			async:設置異步請求方式,true:異步(默認),false:同步
+			data:發送到服務器的數據,格式: k=v&k=v...
+			type:設置請求方式(GET:不寫默認,POST)
+			dataType:預設服務器返回的數據類型(text,json)
+			success:請求成功後執行的回調函數
+			error:請求失敗後執行的回調函數
+		})
+8.綜合案例:檢測用戶名是否已被註冊
+
+
 	
