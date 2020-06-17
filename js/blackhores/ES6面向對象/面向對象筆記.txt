@@ -68,7 +68,7 @@
 	2.使用super關鍵字來訪問和調用父類上的函數,除了父類的構造函數外,也可調用父類的普通函數
 
 07.super調用父類普通函數原則==
-	繼承中的屬性和方法查找原則:就近原則(繼承中,如果實例化子類輸出一個方法,先看子類有没有這個方法,如果有就先執行子類的)
+	1.繼承中的屬性和方法查找原則:就近原則(繼承中,如果實例化子類輸出一個方法,先看子類有没有這個方法,如果有就先執行子類的)
 	2.如果子類中没有這個方法,就去查找父類有没有這個方法,如果有,則執行父類的這個方法(採用就近原則)
 	3.配合使用super關鍵字可以調用父類的普通函數
 
@@ -76,24 +76,45 @@
 	利用super調用父類的構造函數時,super必須在子類this之前調用,意即必須先調用父類的構造方法再使用子類構造方法
 
 09.使用類三個注意點
-	1.在ES6中,類没有變量提升,所以必須先定義類,才能通過類實例化對象
+	1.在ES6中,類没有變量提升,所以必須先定義類class,才能通過類實例化對象
 	2.類裏面的共有的屬性和方法一定要加this使用。 
-	3.類裏面的this指向問題
-	4.constructor中的this指向的是創建的實例化對象
-	  方法中的this指向的是這個方法的調用者,誰調用this指向誰
+	3.類裏面的this指向問題:
+		(1)constructor中的this指向的是創建的實例化對象
+	  (2)方法中的this指向的是這個方法的調用者,誰調用this指向誰
 	  
-10.tab選項卡案例(面向對象版)
+11.tab選項卡案例(面向對象版)
+	init()初始化操作讓相關的元素綁定事件
+
 	1.點擊tab欄可以切換效果
+		toggleTab(){}
 	2.點擊+號可以添加tab項和內容項
+		addTab(){}
 		(1)創建新的選項卡li和新的內容section
-			利用E.insertAdjacentHTML('插入位置','插入內容')直接把字符串格式元素添加到父元素中,appendChild不支
-			持追加字符串的子元素,insertAdjacentHTML支持追加字符串元素
+			
 		(2)把創建的兩個元素追加到對應的父元素中
+		  利用E.insertAdjacentHTML('插入位置','插入內容')直接把字符串格式元素添加到父元素中,appendChild不支
+			持追加字符串的子元素,insertAdjacentHTML支持追加字符串元素
 	3.點擊X號可以刪除當前的tab項和內容項
-	
+		removeTab(){}
 	4.雙擊tab項文字或者內容項文字,可以修改里面的文字內容
+		editTab(){}
+14.insertAdjacentHTML('position',Element)把傳入的字串解析成 HTML 或 XML,並把該節點插入到 DOM 樹指定的位置
+	可以直接把字符串格式元素添加到父元素中,appendChild不支持追加字符串的子元素,insertAdjacentHTML支持追加字符串元素
+	position:
+		1.'beforebegin': 在 element 之前。
+		2.'afterbegin': 在 element 裡面，第一個子元素之前。
+		3.'beforeend': 在 element 裡面，最後一個子元素之後。
+		4.'afterend': 在 element 之後。
+	Element:要插入DOM樹的字符串
 
-
+  <div id="one">one</div>
+	var d1 = document.getElementById('one');
+	d1.insertAdjacentHTML('afterend', '<div id="two">two</div>');在one元素後面插入一個div id='two'
+16.解決新創建的li和section無法切換class問題
+17.刪除功能
+	 1.x没有索引號,但它的父親li有索引號,而它正是我們所需的索引號
+	 2.點擊x號可刪除這個索引號對應的li和section	
+	 
 24.構造函數和原型
 	1.概述:在典型的OOP的語言中(如Java),都存在類(class)的概念,類就是對象的模板,對象就是類的實例,但在ES6以前,JS中尚未
 	      引入類的概念,在ES6以前,對象不是基於類創建的,而是用一種稱為構造函數來定義對象和它們的特徵。
@@ -133,9 +154,9 @@
 		享這些方法。
 	3.原型:一個對象,也稱之為prototype為原型對象,原型的作用是共享方法,一般情況,將公共屬性定義到構造函數中,公共的方法則放到原型對象中
 
-27.對象原型__proto__:每個對象都會有一個屬性__proto__指向構造函數的prototype原型對象,之所以我們對象可以使用構造函數
-   prototype原型對象的屬性和方法,就是因為對象有__proto__原型的存在(對象身上系統會自己自動添加一個__proto__指向我們構造
-	 函數的原型對象prototype),意即構造函數的prototype原型對象與對象自帶的__proto__原型是等價的(ldh.__proto===Star.prototype)
+27.對象原型__proto__(屬性)存在於每個對象上且系統自帶的屬性,:每個對象都會有一個屬性__proto__指向構造函數的prototype原型對象,之所以我們對象可以使用構造函數
+   prototype原型對象的屬性和方法,就是因為對象有__proto__原型屬性的存在(對象身上系統會自己自動添加一個__proto__原型屬性指向我們構造
+	 函數的原型對象prototype),意即構造函數的prototype原型對象與對象自帶的__proto__原型屬性是等價的(ldh.__proto===Star.prototype)
 	(1)方法的查找原則:首先先看對象ldh身上是否有sing方法,如果有就執行這個對象上的sing,如果没有sing這個方法,因為有__proto__
 	   的存在,就去構造函數原型對象prototype身上去查找sing這個方法
 	(2)__proto__對象原型的意義就在於為對象的查找機制提供一個方向,或者說一條路線,但是它是一個非標準屬性,因此實際開發中,不可使
@@ -145,13 +166,22 @@
 	對象原型(__proto__)和構造函數(prototype)原型對象中都有一個constructor屬性,constructor稱之為構造函數,因為它指回構造函數本身
 	constructor主要用於紀錄該對象引用於那個構造函數,它可以該原型對象重新指向原來的構造函數
 	如果我們修改了原來的原型對象,給原型對象賦值的是一個對象,則必須手動的利用constructor指向原來的構造函數
+	 Star.prototype = {
+      constructor: Star,// 如果我们修改了原来的原型对象,给原型对象赋值的是一个对象,则必须手动的利用constructor指回原来的构造函数
+      sing: function() {
+          console.log('我会唱歌');
+      },
+      movie: function() {
+          console.log('我会演电影');
+      }
+  }
 
 29.構造函數、實例、原型對象三者之間的關係
 	構造函數通過prototype屬性指向原型對象prototype,而原型對象prototype則通過constructor屬性又指回原來的構造函數
 	構造函數可以通過對象實例化創建實例化對象,而實例化對象中均有一個__proto__屬性指向原型對象prototype
 
 30.原型對象prototype中也有一個原型__proto__,它指向Object的原型對象,而Object原型對象prototype的__proto__原型為null
-	稱之為原型鏈
+   稱之為原型鏈
 
 31.JS的成員查找機制
 	1.當訪問一個對象的屬性或方法時,首先查找對象自身有没有該屬性。
@@ -167,14 +197,17 @@
 33.原型對象的應用--擴展內置對象(自定義方法)
 	可以通過原型對象,對原來的內置對象進行擴展自定義的方法,比如給數組增加自定義求偶數和的功能。
 	注意:數組或字符串內置對象不能給原型對象覆蓋操作 Array.prototype={},只能使用
-	Array.prototype.XXX=function(){}方式來追加方法
+	Array.prototype.XXX=function(){}方式來追加方法 XXX()
 
 34.繼承
   ES6前並没有extends繼承,需通過構造函數+原型對象模擬實現繼承,稱為組合繼承
-	1.call():調用這個函數,並且修改函數運行時的this指向
+	call()方法的作用:
+		(1)調用函數
+		(2)修改函數運行時的this指向
 		語法:  函數名.call(thisArg,arg1,arg2...)
 		thisArg:當前調用函數this的指向對象
 		arg1,arg2...傳遞的其他參數
+
 35.借用構造函數繼承父類型屬性
 	核心原理:通過call()把父類型的this指向子類型的this,這樣就可實現子類型繼承父類型的屬性。
 	      // 借用父构造函数继承属性
@@ -195,7 +228,17 @@
 
 36.借用構造函數繼承父類型方法
 
-38.ES5新增方法概述:
+
+38.ES6以前通過構造函數+原型來實現面向對象編程
+  ES6以後使用類(class)來實現面向對象編程,而類的本質:是一個函數function,就是構造函數的另一種寫法
+  構造函數的特點:
+	1.構造函數有原型對象prototype
+	2.構造函數原型對象prototype中有constructor指向構造函數本身
+	3.構造函數可以通過原型對象添加方法
+	4.構造函數創建的實例對象有__proto__原型屬性指向構造函數的原型對象
+	ES6中的類(class)也具有上述特性,新的class寫法只是讓對象原型的寫法更加清晰,更像面向對象編程的語法而已
+
+39.ES5新增方法概述:
 	1.數組方法:forEach(),map(),filter(),some(),every()
 		(1)forEach:增強版遍歷方法
 			array.forEach(function(currentValue,index,arr))
@@ -212,28 +255,239 @@
 			filter是查找滿足條件的元素,返回的一個新數組,而且是把所有滿足條件的元素都返回
 			some則是查滿足條件的元素是否存在,返回的是一個布林值,如果查到第一個滿足條件的元素就終止循環
 	 案例:
-
+   如果查詢數組中唯一的元素,用some()方法更合適,因為它找到這個元素後,就不再進行循環
+	
 	forEach和some區別
-	1.在forEach中的return不會終止遍歷
-	2.在some中遇到return就會終止遍歷,效率更高
+	1.在forEach中的return不會終止循環,會全部遍歷一遍
+	2.,在some中遇到return true就會終止遍歷,效率更高
 
-39.字符串方法:trim()方法用於去除字符串兩側空格,並返回新的字符串
-40.對象方法
+47.字符串方法:trim()方法用於去除字符串兩側空格,並返回新的字符串
+
+48.Object.defineProperty(obj,prop,descriptor)	用來定義對象中新屬性或修改原來屬性
+	obj:必需,要修改的目標對象,可以是任意數據類型
+	prop:必需,要定義或修改的屬性名字
+	descriptor:必需,目標屬性所擁有的特性說明,以對象形式{}書寫
+	(1)value:設置屬性的值,默認為undefined
+	(2)writable:值是否可重寫修改,true/false 默認為false-->如id值不可任意修改
+	(3)enumerable:目標屬性是否可被枚舉遍歷 true/false 默認為false 通常較私密資料不允許被遍歷顥示
+	(4)configurable:目標屬性是否可被刪除或是否可再修改特性 true/false 默認為false
+
+49.對象方法
 	1.Object.keys()用於獲取對象自身所有的屬性名,返回的一個數組,如需獲取每個屬性名,可配合forEach遍歷即可
 		Object.keys(obj)
 		效果類似for...in,它會返回一個由屬性名組成的數組
-	2.Object.defineProperty()用於定義對象中新的屬性或修改原有的屬性
-		語法 Object.defineProperty(obj,prop,descriptor)
-		obj:必需,目標對象
-		prop:必需,需定義或修改的屬性名字
-		descriptor:必需,目標屬性所擁有的特性,以對象形式{}書寫
-			value:設置屬性的值,默認為undefined
-			writable:值是否可重寫,true|false 默認false
-			enumerable:目標屬性是否可被枚舉,true|false 默認false
-			configurable:目標屬性是否可被刪除或是否可再次修改特性,true|false 默認false
 
+52.函數進階:
+  1.函數定義和調用
+		(1)function關鍵字聲明方式(命名函數)	function fn(){}
+		(2)函數表逹式(匿名函數)  var fn=function(){}
+		(3)利用構造函數 new Function('參數1','參數2','函數體'); 
+			var fn=new Function('a','b','console.log(a+b)');
+			fn(1,2);//3
+			**Function中的參數需使用字符串格式,但執行效率較低,較少使用
+			**所有函數都是Function的實例(對象)
+			**函數也是對象
 
+53.函數調用方式
+	1.普通函數
+		function fn() {
+       console.log('人生的巅峰');
+    }
+    fn();   fn.call()
+  2.对象的方法
+    var o = {
+     sayHi: function() {
+        console.log('人生的巅峰');
+       }
+    }
+    o.sayHi();
+  3.构造函数
+    function Star() {};
+    new Star();
+  4.绑定事件函数
+    btn.onclick = function() {};   // 点击了按钮就可以调用这个函数
+  5.定时器函数
+    setInterval(function() {}, 1000);  这个函数是定时器自动1秒钟调用一次
+  6.立即執行函数:立即執行函数是自動調用
+    (function() {
+      console.log('人生的巅峰');
+    })();
+
+54.this指向問題:是當調用函數時確定的,調用的方式不同,決定了this的指向不同,一般情況下指向函數調用者
+	1.普通函數:window
+	2.構造函數:實例化對象,原型對象中的方法也指向實例對象
+	3.對象方法:該方法所屬對象
+	4.事件綁定方法:綁定事件對象
+	5.定時器函數:window
+	6.立即執行函數:window
+	 
+	  1. 普通函数 this 指向window
+        function fn() {
+            console.log('普通函数的this' + this);
+        }
+        window.fn();
+    2. 對象的方法 this指向的是對象 o
+        var o = {
+            sayHi: function() {
+                console.log('对象方法的this:' + this);
+            }
+        }
+        o.sayHi();
+    3. 構造函數 this 指向 ldh 這個實例對象 原型對象里面的this 指向的也是 ldh 這個實例對象
+        function Star() {};
+        Star.prototype.sing = function() {
+
+        }
+        var ldh = new Star();
+    4. 绑定事件函數 this 指向的是函數的調用者 btn 這個按鈕對象
+        var btn = document.querySelector('button');
+        btn.onclick = function() {
+            console.log('绑定时间函数的this:' + this);
+        };
+    5. 定時器函數 this 指向的也是window
+        window.setTimeout(function() {
+            console.log('定時器的this:' + this);
+
+        }, 1000);
+    6. 立即執行函數 this 還是指向window
+        (function() {
+            console.log('立即執行函數的this' + this);
+        })();
+
+55.改變函數內部this指向:常用的有bind()、call()、apply()三種方法
+	1.call():可用來調用函數,也可改變this指向,主要作用可以實現繼承
+		call(this指向對象,形參1,形參2);
+	2.apply():可用來調用函數,也可改變this指向,主要應用於求數組中的最大值
+	  apply(this指向對象,[array數組])
+		var arr = [1, 66, 3, 99, 4];
+    var arr1 = ['red', 'pink'];
+    // var max = Math.max.apply(null, arr);
+    var max = Math.max.apply(Math, arr);
+    var min = Math.min.apply(Math, arr);
+    console.log(max, min);
+	3.bind()綁定之意:不可調用函數,但可改變函數內部this指向
+		bind(this指向對象,arg1,arg2,...)
+		返回值由指定的this值和初始化參數改造的原函數拷貝(產生新函數)
+		主要應用:如果有的函數不需要立即調用,且需改變函數內部this指向時可使用bind()
+		例如:點擊按鈕後就禁用這個按鈕,3秒鐘後開啟這個按鈕,
+		var btns = document.querySelectorAll('button');
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].onclick = function() {
+                this.disabled = true;
+                setTimeout(function() {
+                 中 this.disabled = false;
+                }.bind(this), 2000);  //這個this指向的是btn這個對象
+            }
+        }
+60.call、apply、bind總結
+	1.相同點:都可改變函數內部的this指向
+	2.區別:
+		(1)call和apply會調用函數,且需改變函數內部this指向
+		(2)call和apply傳遞的參數不同,call參數為arg1,arg2...形式,apply必須為數組形式
+		(3)bind不會調用函數,但可改變函數內部this指向
+	3.主要應用場景:
+		(1)call經常使用在繼承
+		(2)apply經常與數組有關係,如借助數學對象實現數組最大值最小值
+		(3)bind不調用函數,但要改變this指向時使用,如改變定時器內部的this指向
+61.嚴格模式ES5的嚴格模式採用具有限制性JS變體的一種方式,即在嚴格的條件下運行JS代碼,IE10以上支持
+	1.消除JS語法中不合理、不嚴謹之處,減少一些怪異行為
+	2.消除代碼運行的一些不安全之處,保證代碼運行的安全
+	3.提高編譯器效率,增加運行速度
+	4.禁用在ECMAScript的未來版本中可能會定義的一些語法,為未來新版本的JS做好舖墊,如一些保留字:class enum entends
+		export import super不能做變量名使用
+	5.開啟嚴格模式
+	  嚴格模式可應到整個腳本或個別函數中,在使用時,將嚴格模式區分為腳本開啟嚴格模式及函數開啟嚴格模式兩種
+		1.為整個腳本開啟:'use strict';
+		2.為某個函數開啟嚴格模式:
+		<script>
+        // 此時只為fn函數開啟嚴格模式
+        function fn() {
+            'use strict'; // 下面的代碼按照嚴格模式執行
+        }
+				//函數外部仍按普通模式執行
+        function fun() {
+            // 里面的還是按照普通模式執行
+        }
+    </script>
+62.嚴格模式的變化
+	1.變量:
+		(1)變量名需先聲明再使用,否則報錯
+		(2)嚴禁刪除已經聲明的變量,如deldte X;-->會報錯
+	2.this指向問題:
+		(1)在嚴格模式下全局作用域中函數的this是undefined(非嚴格模式下指向window)
+		(2)嚴格模式下,如果構造函數不加new調用,則當普通函數使用this會報錯
+		(3)new實例化的構造函數指向創建的對象實例
+		(4)定時器this還是指向window
+		(5)事件、對象還是指向調用者
+	3.函數:
+		(1)函數不能有重名的參數
+		(2)不允許在非函數的代碼塊內聲門函數
+			如if(true){
+				function(){}-->會報錯
+				}
+			for(var i=0;i<5;i++){
+				function(){} -->會報錯
+			}	
+			function(){
+				function(){}-->合法語法
+			}
 	
+63.高階函數:對其他函數進行操作的函數,它接收函數作為參數或將函數作為返回值輸出
+	 函數也是一種數據類型,同樣可以作為參數,傳遞給另一個參數使用,最典型的就是回調函數
+64.閉包(closure)
+  變量作用域:
+	變量依作用域不同分為全局變量和局部變量	
+	1.函數內部可以使用全局變量
+	2.函數外部不可以使用局部變量
+	3.當函數執行完畢,本作用域內的局部變量會銷毁
+	閉包:指有權訪問另一個函數作用域中變量的函數-->閉包是一個函數
+		簡言之就是一個作用域可以訪問另外一個函數內部的局部變量
+
+65.閉包的主要作用:延伸了變量的作用範圍
+
+6.遞歸
+
+78.正則表逹式(Regular Expression):是用於匹配符串中字符組合的模式,在JS中,正則表達式也是對象。
+	作用:
+	1.驗證表單:
+	2.替換敏感詞、關鍵詞
+	3.從字符串中獲取特定部份
+
+79.創建正則表達式
+	1.通過調用RegExp對象的構造函數
+		var 變量名 = new RegExp(/表達式/);  
+		var regexp = new RegExp(/123/);
+	2.通過字面量創建
+		var 變量名 = /表達式/;
+		var reg = /123/;
+	test()用於檢測字符串是否符合正則表達式要求的規範,符合會返回true或不符合返回false,參數是測試字符串。
+	regObj.test(str)-->true/false
+	regObj:正則表達式   str:要測試的文本
+
+80.正則表達式的組成
+	1.一個正則表達式可以由簡單的字符構成,如/abc/,也可以由簡單和特殊字符的組合,如/ab*c/,其中特殊字符也稱為
+	  元字符,在正則表達式中是具有特殊意義的專用符號,如^、$、+等
+	2.邊界符:^ $  用來提示字符所處的位置,如果^和$一起使用,表示必須精確匹配
+		(1)正則表達式中不需加引號,不管是數字型或字符串型
+		(2)/^abc/  ^開頭符號  以abc開頭均符合  表示匹配行首的文本(以誰開頭)
+		(3)/abc&/  $結尾符號	以abc結尾       表示匹配行尾的文本(以誰結束)
+		(4)/^abc$/  精確匹配,只有abc才符合規範
+		(5)/abc/    只要包含abc就符合規範
+
+81.字符類:[]中刮號:表示有一系列字符可供選擇,只要匹配其中一個就可以
+	var reg=/[abc]/;  表示只要包含有a 或 b 或 c 都會返回true
+	var reg1=/^[abc]$/;  表示三選一,只有是 a 或 b 或 c 三個字母才返回true
+	加上 - 表示方括號內部範圍符 /^[a-z]$/ 表示a到z 26個英文字母任何一個字母返回均為true
+
+82.
+
+
+
+
+
+
+
+
 91.ES6簡介:ECMAScript ES6實際上是一個泛指,泛指ES2015及後續的版本,它是ECMA國際標準化組織制定的
    一項腳本語言的標準化規範
 	 為什麼使用ES6?每一次標準的誕生都意味著語言的完善,功能的加強,JS語言本身也有一些令人不滿意的地方如:
