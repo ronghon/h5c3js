@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fileReader的應用:即時預覽</title>
+  </head>
+
+  <body>
+    <!-- 即時預覽: -->
+    <form action="">
+      文件:<input type="file" name="myfile" id="myfile" onchange="getFileContent();" /><br />
+      <input type="submit" />
+    </form>
+    <img src="" alt="" />
+    <script>
+      function getFileContent() {
+        // console.log(123);
+        // 1.創建文件讀取讀取對象
+        var reader = new FileReader();
+        //2.讀取文件,獲取DataURL
+        var file = document.querySelector("#myfile").files;
+        // 文件存儲在file表單元素的files屬性中,它是一個數組:
+        reader.readAsDataURL(file[0]);
+        // 獲取數據
+        reader.onload = function () {
+          // 展示
+          document.querySelector("img").src = reader.result;
+        };
+      }
+    </script>
+  </body>
+</html>

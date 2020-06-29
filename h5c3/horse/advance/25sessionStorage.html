@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  sessionStorage的使用:<br>
+  <input type="text" id="userName"><br>
+  <input type="button" value="設置數據" id="setData">
+  <input type="button" value="獲取數據" id="getData">
+  <input type="button" value="刪除數據" id="removeData">
+  <script>
+    // 存儲數據
+    document.querySelector("#setData").onclick = function () {
+      // 獲取用戶名
+      var name = document.querySelector("#userName").value;
+      // 存儲數據
+      window.sessionStorage.setItem("userName", name);
+    }
+    // 獲取數據
+    document.querySelector("#getData").onclick = function () {
+      //如果找不到對應名稱的key,就會獲取null
+      var name = window.sessionStorage.getItem("userName");
+      alert(name);
+    }
+    //刪除數據
+    document.querySelector("#removeData").onclick = function () {
+      //如果找不到對應名稱的key,不會報錯,也不會刪除數據
+      var name = window.sessionStorage.removeItem("userName");
+      alert(name);
+    }
+  </script>
+
+</body>
+
+</html>

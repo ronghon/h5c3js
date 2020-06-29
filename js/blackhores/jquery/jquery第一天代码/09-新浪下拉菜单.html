@@ -128,13 +128,13 @@
     <script>
         $(function () {
             // 鼠标经过
-            $(".nav>li").mouseover(function () {
+            $(".nav>li").mouseenter(function () {
                 // $(this) jQuery 当前元素  this不要加引号
                 // show() 显示元素  hide() 隐藏元素
                 $(this).children("ul").show();
             });
             // 鼠标离开
-            $(".nav>li").mouseout(function () {
+            $(".nav>li").mouseleave(function () {
                 $(this).children("ul").hide();
             })
         })

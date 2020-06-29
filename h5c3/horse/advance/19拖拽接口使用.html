@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>19拖拽接口使用</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .div1,
+      .div2,
+      .div3 {
+        width: 200px;
+        height: 200px;
+        float: left;
+        position: relative;
+        margin-left: 20px;
+      }
+
+      .div1 {
+        border: 1px solid orange;
+      }
+
+      .div2 {
+        border: 1px solid blue;
+      }
+      .div3 {
+        border: 1px solid green;
+      }
+
+      .div1 > p {
+        background-color: orange;
+        margin-top: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="div1" id="div1">
+      <p id="pe" draggable="true">試著把我拖過去</p>
+    </div>
+    <div class="div2" id="div2"></div>
+    <div class="div3" id="div3"></div>
+  </body>
+</html>

@@ -1,4 +1,12 @@
-02.h5:IE8及以下不支持,解決方案
+02.H5:並不是新的語言,而是HTML語言的第五次重大修改版本
+   H5:所有主流瀏覽器(chrome、firefox、safari)都支持H5,但IE8及以下不支持H5,解決方案
+	 H5改變了用戶與文檔的交互方法:多媒體-->video、audio、canvas...
+	 H5增加了其他的新特性:語義化標籤、本地存儲、網頁多媒體、二維三維、過渡和動畫特效
+	 相對於H4,H5抛棄了一些不合理不常用的標記和屬性,並新增了一些表單標籤和屬性,且網頁結構代碼更簡潔。
+03.H5新增語義化標籤使用
+	1.div 語義不明
+	2.新增具語義化標籤,如:header footer nav  main  article section aside
+
 04.解決IE8及以下不支持新增的語意化標籤方法:
   1.手動創建標籤:默認的標籤類型均為行內元素,所以使用時需自行轉換為塊級元素
     <script>
@@ -8,18 +16,35 @@
   <!--[if lt IE 9]>
   <script src="html5shiv.js"></script>
   <![endif]-->
-06.h5表單新增屬性
+05.H5表單新增的type屬性
+	1.type="text"  文本輸入框
+	2.type="password" 密碼輸入框,輸入的內容會以****顯示
+	3.type="email"  email提供了默認的電子郵箱完整驗證,要求必須包含@符號,同時必須包含服務器名稱,如
+	  不符合規範,則無法執行數據提交。
+	4.type="tel"  tel並不是用來實現驗證,它的本質目的是為了能在移動端打開數字鍵盤,意味限制用戶只能
+	  輸入數字。
+	5.type="url"  可用來驗證用戶輸入合法的網址,必須包含http://
+	6.type="number"  只能輸入數字(包含小數),不能輸入其他的字符
+		可用max:最大值  min:最小值  value:默認值
+	7.type="search"  可提供更人性化的輸入體驗
+	8.type="range"  範圍,也可設置max和min  value默認值50
+	9.type="color"  顏色,可用來選取顏色
+	10.type="time"  時間:時分秒
+	11.type="date"  日期:年月日
+06.h5表單新增其他屬性
   <input type="text" name="usrName" placeholder="請輸入用戶名" autofocus autocomplete="on">
   - placeholder:提示文本,提示佔位
   - autofocus:自動獲取焦點
   - autocomplete:自動提示完成 on 打開提示  off 關閉提示
     1.必須成功提交過
     2.必須添加name屬性
+  type="tel"  代表彈出數字輸入框
   - required:必填,否則無法提交
   - pattern:正則表達式驗證 ="^
 	  *:表示任意個  ?表示0個或1個  +表示1個或多個  \轉義
-  - multiple:可選擇多個文件或郵箱
-	- form="id name"指定表單id 在form表單元素內加入id="id name",功用:可以將未包含在form內的input 一起提交
+	type="file"  文件	
+  - multiple:可選擇多個文件或郵箱(多個郵箱間須以逗號分隔)
+  - form="id name" 指定表單id 在form表單元素內加入id="id name",功用:可以將未包含在form內的input 一起提交
 07.H5新增表單元素datalist-->firefox不支持
 	- selection 下拉列表
 	   option value=""  選項
@@ -36,168 +61,257 @@
   embed:可以嵌入音頻和視頻,但仍需透過本機安裝的音頻和視頻播放器來播放,有兼容性問題
 	flash:1.先學習flash,增加使用成本	2.iphone ipad不支持flash
 	基於上述問題,H5新增了audio和video兩個元素用來播放音頻和視頻,使用方法如下:
-	- src:檔案路徑
-	- controls:音頻播放控制器面板
+	- src:欲播放的檔案路徑
+	- controls:音頻播放控制器控制面板
 	- autoplay:頁面加載後自動播放
 	- loop:循環撥放
 	video增加屬性
 	- poster指定視頻尚未完全下載完畢,或用戶没有點擊播放前顯示的封面,默認為當前視頻的第一幀畫面,可放置視頻說明文件等資料
 	- width 和 height,一般只設置其中一個,使其等比例自動縮放,
-	- 檔案格式與瀏覽器兼容性問題-->使用source可設置多個不同格式的檔案,以利兼容不同瀏覽器,如全都不支持,就顯示您的瀏覽器不支持該檔案格式
-13.h5獲取dom元素
-	- document.querySelector	 query查詢  Selector選擇器 querySelector(傳入選擇器名稱):只能獲取單個元素,如要獲取的元素不只一個,只
+	- 檔案格式與瀏覽器兼容性問題-->
+	  因為不同瀏覽器支持的視頻文件格式不同,所以在進行視頻添加時,需考慮瀏覽器是否支持,可以使用source可設置多個不同格式的檔案,以利兼
+	  容不同瀏覽器,如全都不支持,就顯示您的瀏覽器不支持該檔案格式
+13.h5獲取dom元素方式
+	1.document.querySelector	 query查詢  Selector選擇器 querySelector(傳入選擇器名稱):只能獲取單個元素,如要獲取的元素不只一個,只
 	  會返回第一個元素,參數要求:如果是類選擇器,必須添加. ,如是id選擇器,則需添加#,否則會被當成標籤處理
-	- document.querySelectionAll獲取滿足條件的所有元素--數組形式
+	2.document.querySelectorAll獲取滿足條件的所有元素--數組形式
 14.操作元素類樣式
-	-classList:為當前元素的所有樣式的列表--數組形式
+	**classList:為當前元素的所有樣式的列表--數組形式
 	  - add:為元素添加指定名稱的樣式,一次只能添加一個樣式 .classList.add("red")
-		- remove:為元素移除指定名稱的樣式(不是移除class屬性),一次也只能移除一個 .classList.remove()
-		- toggle:切換元素的樣式,如果元素之前没有指定名稱的樣式,則添加,如果有則移除。
-		- contains:判斷是否包含指定名稱的樣式,有則返回true,没有則返回false
-		classList與className比較
-		- 獲取第一個樣式 .classList.item(0)
+	  - remove:為元素移除指定名稱的樣式(不是移除class屬性),一次也只能移除一個 .classList.remove()
+	  - toggle:切換元素的樣式,如果元素之前没有指定名稱的樣式,則添加,如果有則移除。
+	  - contains:判斷是否包含指定名稱的樣式,有則返回true,没有則返回false
+	**classList與className比較
+	  - className 設置樣式時會覆蓋之前存在的樣式
+	  - 獲取之前添加的樣式,使用.classList.item(i),第1個樣式 .classList.item(0),第2個樣式 .classList.item(1)...
 15.自定義屬性
-		1.以date開頭,date-後面至少必須有一個字符,多個單詞使用-連接
-		2.名稱應該都用小寫,不要包含任何大寫字符,且名稱中不要有任何的特殊符號,不要使用純數字
-		如何獲取自定義屬性值:將data-後面的單詞使用駝峰命名法連接,如未使用合法駝峰命名法,可能無法獲取到值(使用dataset["data-後面的名稱"];
+	1.以data-開頭,data-後面至少必須有一個字符,多個單詞使用-連接
+	2.名稱應該都用小寫,不要包含任何大寫字符,且名稱中不要有任何的特殊符號,不要使用純數字
+	使用dataset獲取自定義屬性值:
+	1.將data-後面的單詞使用駝峰命名法連接,如未使用合法駝峰命名法,可能無法獲取到值(使用dataset["data-後面的名稱"];
+	  dataset["userName"]  dataset["schoolName"]
 16.網路監聽接口
-	-ononline網路連通時觸發事件
-	 window.asddEventListener("online",function(){
+	1.ononline: 網路連通時觸發事件
+	 window.addEventListener("online",function(){
 		 alert("網路連通了")
 		 })
 	 window.asddEventListener("offline",function(){
 		 alert("網路斷開了")
 	   })
-17.全屏接口使用
+	2.onoffine:網路斷開時觸發事件
+
+17.全屏操作的主要方法和屬性:
+	1.requestFullScreen():開啟全屏顯示
+		不同瀏覽器需添加不同前綴
+		chrome:webkit  firefox:moz  ie:ms  opera:o
+	2.cancelFullScreen():退出全屏顯示
+		退出全屏時只能使用document來實現
+	3.fullScreenElement:是否是全屏狀態,也只能使用document來進行判斷
+
+18.fileReader:讀取文件內容,方法如下
+	1.readAsText():讀取文本文件(可使用Txt打開的文件),返回文本字符串,默認編碼格式是UTF-8
+	2.readAsBinaryString():可讀取任意類型的文件,返回二進制字符串。這個方法不是用來讀取文件展示給用戶看,而是存儲文件,例如:讀取文件的內容,獲取二進制數據,傳遞給後台,後台接收數據後,再將數據存儲
+	3.readAsDataURL():讀取文件獲取一段以data開頭的字符串。這段字符串的本質就是DataURL,
+	  (1) DataURL是一種將文件(指圖像或能嵌入到文檔的文件格式)嵌入到文檔的方案。
+	  (2) DataURL是將資源轉換為base64編碼的字符串形式,並且將這些內容直接存儲在url中,進而優化網站的加載速度和執行效率
+	  (3) src:指定路徑(資源定--url):src請求的是外部文件,一般來說是服務器資源,意味它需要向服務器發送請求,如此一來就會佔用服務器資源
+	  (4) 没有任何返回值:void,但讀取完文件後,它會將讀取的結果存儲在文件讀取對象的result中
+	  (5) 需傳遞一個參數blob(binary large object):文件(圖片或其它可嵌入到文檔的類型)
+	      文件存儲在file表單元素的files屬性中,它是一個數組
+	4.abort():中斷讀取
+	應用需求:即時預覽
+	即時:當用戶選擇完圖片後就立刻進行預覽處理,透過onchange事件來完成
+	預覽:使用文件讀取對象的readDataURL()來完成
+	fileReader提供一個完整的事件模型,用來捕獲讀取文件時的狀態
+	  onabort:讀取文件中斷時觸發
+	  onerror:讀取錯誤時觸發
+	  onload:文件讀取成功完成時觸發
+	  onloadend:讀取完成時觸發,無論成功與否
+	  onloadstart:開始讀取時觸發
+	  onprogress:讀取文件過程中持續觸發
+
+19.拖拽接口使用
+	1.在H5中,如果想拖拽元素,就必須為元素添加draggable="true",圖片和超鏈接默認就可拖拽
+	2.拖拽事件
+
+23.地理定位接口
+
+
+25.web存儲session storage
+    sessionStorage的使用:可用來存儲數據到本地,存儲的容量約5MB。
+    1.這個數據本質上是存儲在當前頁面的內存中。
+    2.它的生命周期為關閉當前頁面,關閉頁面後,數據會自動清除-->只能存儲臨時數據
+      - setItem(key,value):存儲數據,以鍵值對方式存儲
+      - getItem(key):獲取數據,通過指定名稱的key獲取對應的value值
+      - removeItem(key):刪除數據,通過指定名稱的key刪除對應的value值
+      - clear():清空所有存儲的內容
+26.localStorage的使用
+    localStorage的使用
+    1.存儲內容大小約20MB
+    2.不同瀏覽器不能共享數據,但在同一種瀏覽器的不同窗口中可以共享數據
+    3.永久生效,它的數據是存儲在硬盤上,並不會隨著頁面或瀏覽器的關閉而清除,如要清除需手動清除
+
+27.應用緩存
+	概念:使用H5通過創建cache manifest文件,可以輕鬆地創建web應用的離線版本
+	優勢:
+	  1.可配置需要緩存的資源
+	  2.網路無連接應用仍可使用
+	  3.本地讀取緩存資源,提升訪問速度,增強用戶體驗
+	  4.減少請求,緩解服務負擔
+	cache Manifest基礎:
+	1.如需啟用應用程序緩存,請在文檔的<html>標籤中包含manifest屬性
+
 32.css3屬性選擇器:就是根據指定名稱的屬性的值來查找元素
-		- E[attr]  ex li[style] div[class]  style和class 均為屬性 元素+屬性同時滿足時
-	  - E[attr=value] 用來查找指定的attr屬性且屬性值為value的標籤  元素+屬性+屬性值=value同時滿足
-		- E[attr*=value]	用來查找指定的attr屬性且屬性值中包含有value的標籤
-		- E[attr^=value]	用來查找指定的attr屬性且屬性值以value開頭的標籤
-		- E[attr$=value]	用來查找指定的attr屬性且屬性值以value結尾的標籤
+	- E[attr]  ex li[style] div[class]  style和class 均為屬性 元素+屬性同時滿足時
+	- E[attr=value]     用來查找指定的attr屬性且屬性值為value的標籤  元素+屬性+屬性值=value同時滿足
+	- E[attr*=value]	用來查找指定的attr屬性且屬性值中包含有value的標籤,value可以在任意位置
+	- E[attr^=value]	用來查找指定的attr屬性且屬性值以value開頭的標籤
+	- E[attr$=value]	用來查找指定的attr屬性且屬性值以value結尾的標籤
+
 33.偽類選擇器
 	1.超連結偽類:L.V.H.A.
 	2.結構偽類:以某元素相對於其父元素或兄弟元素的位置來獲取元素
-	- 兄弟偽類選擇器:
-	  + 獲取當前元素的相鄰的滿足條件的元素,條件:相鄰的且滿足條件  A+B
-		~ 獲取當前元素的滿足條件的兄弟元素,條件:只要滿足條件的兄弟元素均可 A~B
-	- 相對父元素之結構偽類(注意加type可限制類型,加last是從後面往前算,n是指0~子元素的長度)
+	 - 兄弟偽類選擇器:
+	    + 獲取當前元素的相鄰的滿足條件的元素,條件:相鄰的且滿足條件  A+B
+		~ 獲取當前元素的滿足條件的兄弟元素,條件:只要滿足條件的兄弟元素均可不一定要相鄰 A~B
+	 - 相對父元素之結構偽類(注意加type可限制類型,加last是從後面往前算,n是指0~子元素的長度)
 		E:first-child-->查找E元素的父級元素中的第一個子元素
 			需同時滿足兩個條件:
 			1.相對於當前指定元素的父元素
 			2.查找的類型必須是指定的類型
 		E:last-child-->查找E元素的父級元素中的最後一個子元素
-		E:first-of-type:比first-child更智能,限制查找類型,可避免因添加另一元素而造成無法查找到的結果
-		  1.相對於父元素
-			2.查找時只會查找指定類型的元素,可過濾其他類型的元素
+		E:first-of-type:比first-child更智能,限制查找類型,可避免因動態添加另一元素而造成無法查找到的結果
+		  1.相對於父元素的第一個子元素
+		  2.查找時只會查找指定類型的元素,可過濾其他類型的元素
 		E:last-of-type:查找指定類型的最後一個元素
 		E:nth-child(從1開始索引||關鍵字||表達式)
 		  1.even:第偶數個子元素
-			2.odd:第奇數個子元素
-			3.選取前面幾個子元素(n)n指0~子元素的長度,但當n<=0時,選取無效,nth-of-type(-n+5) nth-child(-n+5) 選取前面5個 
-			4.選取後面幾個子元素(n):nth-last-of-type(-n+5) nth-last-child(-n+5) 選取最後五個
+		  2.odd:第奇數個子元素
+		  3.選取從前面開始往後數的幾個子元素(n):nth-child(n)  nth-of-type(n)
+		    n:默認值範圍為0~子元素的長度,但當n<=0時,選取無效,nth-of-type(-n+5) nth-child(-n+5) 選取前5個 
+		  4.選取從後面往前數的幾個子元素(n):nth-last-of-type(-n+5) nth-last-child(-n+5) 選取最後五個
 		E:nth-of-type-->限制類型中的第幾個子元素
 		  1.even:偶數個子元素
-			2.odd:奇數個子元素
+		  2.odd:奇數個子元素
 		E:empty{} 空值:没有任何內容,連空格都没有
 		E:target:結合錨點使用,可為錨點目標元素添加樣式,當目標元素被觸發為當前錨連結的目標時調用此偽類樣式
+
 35.邊框陰影
 	文本陰影:text-shadow: offsetX offsetY blur color
 	邊框陰影:box-shadow:h v blur spread color inset
-	h:水平方向偏移量  v:垂直方向偏移量  blur:模糊--可選  spread:陰影尺寸,擴展和收縮陰影的大小--可選 inset:內陰影--可選
-38-39.偽元素選擇器-->隠形的子元素,如一對翅膀左右各一 
+	h:水平方向偏移量  
+	v:垂直方向偏移量  
+	blur:模糊--可選 默認0 
+	spread:陰影尺寸,擴展和收縮陰影的大小--可選 默認0
+	inset:內陰影--可選 默認外陰影	
+
+38.偽元素選擇器-->隠形的子元素,如一對翅膀左右各一 
 	- :before  :after(低版本不支持雙冒號::) 
 	  1.默認為行內元素,要設置寛高需轉換為塊級(使用display:block或float:**或position:)
-		2.必須添加content,無內容也要加content:""
-		3.它的功能完全與一個dom元素相同,但不會在dom樹中生成,所以無法通過js操作它
+	  2.必須添加content,無內容也要加content:""
+	  3.它的功能完全與一個dom元素相同,但不會在dom樹中生成,所以無法通過js操作它
+39.::first-letter首字母
+	首字下沈:使用文本環繞效果float:left即可
+   ::first-line 第一行
 40-41.顏色--紅橙黃緑青藍紫 rgb(r,g,b) 0~255 A:alpha透明度
-		HSLA:
-		H:色調或色相0~360
-		S:飽和度0%~100%
-		L:亮度0%~100% ,默認值是50%,<50%會變亮,大於50%會變暗
-		A:Alpha透明度0~1之間
+	 HSLA:
+	  H:色調或色相0~360
+	  S:飽和度0%~100%
+	  L:亮度0%~100% ,默認值是50%,<50%會變亮,大於50%會變暗
+	  A:Alpha透明度0~1之間
 42.兩種顏色設置方式
 	- opacity:透明度 0~1 只能設置給父容器,如果設置父容器,那麼父容器中的所有子元素會繼承父元素的透明度也會透明,背景與文字內容都會透明
 	- rgba(r,g,b,a) a值為透明度0~1 0表完全透明,1表完全不透明-->特點:子元素不會繼承父元素的透明,所以不會影響子元素
 	- hsla(顏色,飽和度,亮度,透明度)-->顏、飽、亮、透
-43.文本陰影
+43.文本陰影:text-shadow
+	opacity:只能針對整個盒子設置透明度,子盒子及內容會繼承父盒子的透明度。
+	transparent:不能調節透明度,始終完全透明。
+	使用rgba來控制顏色,相對opacity,不具有繼承性。
 	text-shadow: offsetX offsetY blur color,可加多個
 	 x軸偏移量:正值向右,負值向左
 	 y軸偏移量:正值向下,負值向上
 	 blur:模糊半徑,指陰影的模糊程度,不能是負值,值越大,陰影越模糊,反之陰影越清晰
 	 color:也可設置透明度rgba()
+
 44.盒模型
 	box-sizing:用來指定盒模型的大小計算方式
-	  - content-box:實際寛度=width+border+padding-->向外擴展(默認值)
-		- border-box:實際寛度=width值 -->向內擠壓內容寛度 border和padding值內含在width值中
-45.邊框圓角border-radius 
+	  - content-box:設置的寛度(width)是內容寛度,而實際寛度=內容width+border+padding-->向外擴展(默認值)
+	  - border-box:設置的寛度是邊框盒子的寛度,而實際寛度=width值(內含內容+padding+border) -->向內擠壓內容寛度 border和padding值內含在width值中
+
+45.圓角邊框border-radius 
 	 1.四個角設置順序:左上 右上 右下 左下 -->border-top-left-radius:5px;  border-bottom-left-radius:10px;
 	 2.兩個值:左上/右下  右上/左下  三個值:左上  右上/左下  右下
-	 3.添加"/"是用來設置不不同方向的半徑值,水平X方向/垂直Y方向
+	 3.添加"/"是用來設置單個不同方向的半徑值,水平X方向/垂直Y方向
 	 4.設置成圓形-->正方形邊長的一半(50%),橢圓形-->長方形邊長的一半 200px/100px
-	 5.設置單個角為圓角:border-top-right-radius、border-bottom-right-radius...
+	 5.設置單個角為圓角:border-上下top/bottom-左右left/right-radius、border-bottom-right-radius...
 	 6.設置四個角不同方向上的不同圓角值:border-radius: 100px 80px 60px 40px/20px 30px 40px 50px;	
 	 	->水平方向的左上,右上,右下,左下/垂直方向的左上,右上,右下,左下
+
+第四天--------------------------------------------------------------------
 47.線性漸層:linear-gradient
-	漸層不是使用一個單一色,它產生的是圖像,需使用background
-	background
+	漸層不是一個單一色,它產生的是圖像,需使用background來添加
 	- linear-gradient線性漸變:指沿著某條直線朝一個方向產生漸變效果
 	  語法:background: linear gradient(方向 開始顏色 位置,顏色2 位置,顏色3 位置...)
 	  -第一參數:方向 to left 從右到左,相當於270deg
-		             to right 從左到右,相當於90deg 
-								 to top 從下到上,相當於0deg
-								 to bottom 從上到下,相當於180deg(默認值)
-								 to top left從右下到左上
-								 也可以是度數
-		-第二個參數:起點顏色
-		-第三個參數:終點顏色,可以加更多個顏色,表示多種顏色的漸變
-48.徑向漸變-:radial-gradient指從一個中心點開始沿著四周產生漸變效果
+		           to right 從左到右,相當於90deg 
+			       to top 從下到上,相當於0deg
+				   to bottom 從上到下,相當於180deg(默認值)
+				   to top left從右下到左上,也可以是度數
+	  -第二個參數:起點顏色
+	  -第三個參數:終點顏色,可以加更多個顏色,表示多種顏色的漸變
+
+48.徑向漸變:radial-gradient指從一個中心點開始沿著四周產生漸變效果
 	radial-gradient(形狀,座標,大小,顏色1,顏色2...)
 	 -形狀: ellipse表示自適應當前的形狀  circle表示產生正方形的漸變色
 	 -座標:漸變中心點默認在正中心,可賦值座標(參照元素的左上角),也可賦值關鍵字(top、left、right...)
 	 	at 50px 50px或者使用at top left或at top(只提供一個值,另一值默認為center)
 	 -大小:漸變的大小,即漸變到那裏停止,有四個值
 	    closest-side最近邊  farthest-side最遠邊 closest-corner最近角 farthest-corner最遠角(默認)
+
 49.重覆漸變repeating-linear-gradient
 		background: repeat-linear-gradient(to top roght,#fff 0%,#fff 10%,#000 10%,#000 20%)
    重覆漸變repeating-radial-gradient
 	  background: repeat-radial-gradient(to top roght,#fff 0%,#fff 10%,#000 10%,#000 20%)
+
 50.background背景
-	-background-color:背景顏色
-	-background-image:url()背景圖片
-	-background-repeat:設置背景平舖
+	1.background-color:添加背景顏色
+	2.background-image:url()添加背景圖片,圖片大於容器,默認從容器左上角開始放置,圖片小於容器,默認圖片會平舖
+	3.background-repeat:設置背景平舖
 	  no-repeat;-->不平舖
-		repeat-X-->x軸方向平舖
-		repeat-Y-->y軸方向平舖
-		round-->會將圖片進行縮放之後再平舖(h5新增)
-		space-->圖片不會縮放平舖,只是會在圖片之間產生相同間距(h5新增)
-	-background-attachment:設置在滾動容器的背景的行為
-	 fixed:背景圖的位置固定不變
-	 scroll:當滾動容器時,背景圖片也會一起滾動
-	 **local與scroll的區別:前提是滾動當前容器的內容
-	 local:背景圖片會跟隨內容一起滾動(h5新增)
-	 scroll:背景圖片不會跟隨內容一起滾動
+	  repeat-X-->x軸方向平舖
+	  repeat-Y-->y軸方向平舖
+	  round-->會將圖片進行縮放之後再平舖(h5新增)
+	  space-->圖片不會縮放平舖,只是會在圖片之間產生相同間距(h5新增)
+	4.background-attachment:設置在滾動容器的背景的行為
+	  fixed:背景圖的位置固定不變
+	  scroll:當滾動容器時,背景圖片也會一起滾動
+	  **local與scroll的區別:前提是滾動當前容器的內容
+	  local:背景圖片會跟隨內容一起滾動(h5新增)
+	  scroll:背景圖片不會跟隨內容一起滾動
+
 51.background-size:設置背景圖片的大小,屬性有
-	-auto:原始圖片大小||nummber(數值)||百分比||cover(放大舖滿)||contain(縮小舖滿)
-	- width height或寛度/auto (保持等比例自動縮放)
-	  建議設置寛高時,要先確定與容器的寛高比是否一致,否則會造成圖片失真變形
+	- auto:原始圖片大小(默認值)||nummber(數值)||百分比||cover(放大舖滿)||contain(縮小舖滿)
+	參數說明:
+	- width height或寛度/auto(保持等比例自動縮放):建議設置寛高時,要先確定與容器的寛高比是否一致,否則會造成圖片失真變形
 	- 使用百分比時,是參照父容器可放置內容區域的百分比,而非圖片大小的百分比
 	- contain:按比例調整圖片大小,使圖片寛高自適應整個元素的背景區域,目標:使圖片全部包含在容器內
-		1.圖片大於容器:有可能造成容器的空白區域,將圖片縮小
-		2.圖片小於容器:有可能造成容器的空白區域,將圖片放大
+	  1.圖片大於容器:有可能造成容器的空白區域,將圖片縮小
+	  2.圖片小於容器:有可能造成容器的空白區域,將圖片放大
 	- cover:與contain剛好相反,背景圖片會按比例縮放自適應背景區域,如背景區域不足以包含所有背景圖片,圖片內容會溢出
 	  ,目標:填滿整個容器的內容區域
 	  1.圖片大於容器:等比例縮小,會填滿整個背景區域,有可能會就造成某些區域不可見
-		2.圖片小於容器:等比例放大,填滿整個背景區域,圖片有可能造成某些區域溢出
+	  2.圖片小於容器:等比例放大,填滿整個背景區域,圖片有可能造成某些區域溢出
+
 53.改善用戶點擊區域太小,擴張點擊區域,使用雪碧圖
  background-origin設置背景坐標原點	
-	- border-box:從border的位置開始填充背景,會與border重叠
-	- paddding-box:從padding的位置開始填充背景,會與padding重叠
-	- conttent-box:從內容的位置開始填充背景
+  - border-box:從border的位置開始填充背景,會與border重叠
+  - paddding-box:從padding的位置開始填充背景,會與padding重叠
+  - conttent-box:從內容的位置開始填充背景
  background-clip設置內容的裁切,設置的是裁切,控制的是顯示
   - border-box:顯示border及以內的內容
-	- paddding-box:顯示paddding及以內的內容
-	- conttent-box:顯示conttent及以內的內容
+  - paddding-box:顯示paddding及以內的內容
+  - conttent-box:顯示conttent及以內的內容
+
 54.邊框圖片的原理:一一對應
 	添加邊框圖片
 	border-image-source:可以指定邊框圖片的路徑,默認只是填充到容器的四個角點
@@ -216,19 +330,22 @@
 	- stretch:默認值,拉伸
 	縮寫格式:
 	border-image: source  slice / width/outset repeat
+
 57.過渡transition將元素從一種樣式轉換到另一種樣式時為元素所添加的效果,過渡效果執行完畢後,默認會還原到原始狀態
    語法:transition: css屬性名稱  花費時間(duration)  運動曲線(timing-function)  延遲時間(delay)
-	 使用注意事項:
-	 1.為多個樣式同時添加過渡效果,以逗號隔開。
-	 2.為所有樣式添加過渡效果時,使用all所有樣式-->所有樣式的過渡效果一樣,但執行效率降低,建議不要這樣寫。
-	 3.為過渡效果區分為指定的步數執行,使用steps(步數)
-	 4.添加過渡效困只能產生從某一個值到另一個具體的值的過渡效果
-	 5.使用時需加前綴:-moz  firefox  -webkit  chrome   -o opera IE 10以上支持
-	 6.運動曲線:
-	 		linear:均速
-	 		ease:預設值,先慢後快
+	使用注意事項:
+	1.為多個樣式同時添加過渡效果,以逗號隔開。
+	2.為所有樣式添加過渡效果時,使用all所有樣式-->所有樣式的過渡效果一樣,但執行效率降低,建議不要這樣寫。
+	3.為過渡效果區分為指定的步數執行,使用steps(步數)
+	4.添加過渡效果只能產生從某一個值到另一個具體的值的過渡效果
+	5.使用時需加前綴:-moz  firefox  -webkit  chrome   -o opera IE 10以上支持
+	6.運動曲線:
+		linear:均速
+	 	ease:預設值,先慢後快
+
 58.transition-timing-function:steps(步數)
-		手風琴菜單收縮擴張案例-->重要案例
+	手風琴菜單收縮擴張案例-->重要案例
+
 59.轉換:transform-->可使用在2D和3D轉換:移動、縮放、旋轉、斜切等操作
 	 1.移動:translate(x,y)
 		-可加兩個值分別代表x軸和y軸,如果只有一個值則代表x軸。
@@ -332,3 +449,148 @@
 	一個元素可添加多個動畫,之間以逗號分隔
 74.動畫-->無縫滾動輪播圖-->重要案例
 77.動畫-->時鐘製作--重要案例
+
+80.多列布局:
+	1.column-count:設置列的具體個數
+	2.column-width:控制列的寛度
+	3.column-gap:兩列之間的間隔
+	4.column-rule:規定列之間的寛度、樣式和顏色,和邊框樣式的設置方式相同
+	5.column-span:規定元素應橫跨多少列(n:指定跨n列、all:跨所有列)
+	當設置列寛和列數相衝突時,原則:取大優先
+
+81.伸縮布局:
+    傳統布局的侷限性:傳統布局基於盒模型,依賴display、position、float等屬性進行布局,這些屬性對於特殊布局方式無法順利完成,CSS3改善塊級元素的布局排列,對於後續響應式開發起了極大的作用
+
+   02flex布局原理==
+   	1.flex Flexible Box彈性布局,為盒狀模型提供最大的靈活性,任何一個容器都可以指定為flex布局
+   	2.注意事項:當父容器設置為flex以後,子元素的float clear vertical-align屬性將失效
+   	3.flex布局原理:通過為父容器設置flex屬性,來控制子元素(項目)的位置和排列方式
+   	4.重要觀念:子元素是沿著主軸的正方向來排列。
+
+   03父容器常見屬性==
+   	1.flex-direction:決定主軸是那一條及子元素排列方向
+   	2.justify-content:設置主軸上的子元素排列方式
+   	3.flex-wrap:設置子元素是否換行
+   	4.align-content:設置側軸上的子元素的排列方式(多行時使用)
+   	5.align-items:設置側軸上的子元素的排列方式(單行時使用)
+   	6.flex-flow:複合屬性,為flex-direction和flex-wrap的簡寫方式
+
+   	- flex-direction設置主軸的方向
+   	1.默認主軸方向是x軸方向,水平向右,默認側軸方向是y軸方向,垂直向下
+   	2.注意:主軸和側軸是會變化的,就看flex-direction設置誰為主軸,另一垂直方向就是側軸,而子元素是沿著主軸正方向來排列的
+   	3.屬性值:
+   	 - row:默認值從左到右
+   	 - row-reverse:從右到左
+   	 - column:從上到下
+   	 - column-reverse:從下到上
+
+   04justify-content==
+   	1.設置主軸上子元素的對齊排列方式
+   	2.使用這個屬性前一定要先確定好主軸是那一條
+   	3.屬性值:
+   	 - flex-start:默認值,對齊start線,沿著主軸正方向排列,讓子元素從父容器的起始位置(start)開始排列
+   	 - flex-end:對齊end線,沿著主軸正方向排列(子元素的順序是不變的),讓子元素從父容器的結束位置(end)開始排列
+   	 - center:在主軸居中對齊(如主軸是x軸則水平居中),讓子元素從父容器的中間位置開始排列
+   	 - space-around:平均分配剩餘空間,將剩餘空間平均分配在每個子元素的兩邊。
+   	 - space-between:先兩邊貼邊再平分剩餘空間,左右對齊父容器的開始和結束位置,中間剩餘空間平均分配,產生相同間距。
+
+   05flex-wrap==
+   	1.flex-wrap設置子元素是否換行
+   	2.默認情況(flex-wrap:nowrap)不換行下,子元素是排列在軸線上,當空間不足時,會平均壓縮子元素的寛度來自適應寛度
+   	3.屬性值:
+   	 - nowrap:默認值,不換行
+   	 - wrap:換行
+   	 - wrap-reverse:換行且順序反轉
+    
+	06align-items==>單行時使用
+      1.align-items:設置側軸上的子元素的排列方式
+   	  2.屬性值:
+   	 - flex-start:從start開始,沿著側軸方向排列,設置在側軸方向上頂對齊
+   	 - flex-end:從end開始排列,沿著側軸方向排列,設置在側軸方向上底對齊
+   	 - center:沿著側軸方向居中對齊,設置在側軸方向居中對齊
+   	 - stretch:默認值,子元素未設置寛高時,預設為拉伸填滿效果,讓子元素在側軸方向上進行拉伸,填充滿整個側軸方向
+   	 - baseline:基線對齊,
+
+   07align-content==>多行時使用
+   	1.align-content:設置側軸上的子元素的排列方式
+   	2.配合flex-wrap:wrap換行,多行時使用,單行下無效果應使用align-items
+   	3.屬性值:
+   	 - flex-start:從start開始,沿著側軸方向排列
+   	 - flex-end:從end開始排列,沿著側軸方向排列
+   	 - center:沿著側軸方向居中對齊
+   	 - space-around:子元素在側軸平均分配剩餘空間
+   	 - space-between:子元素在側軸先兩邊貼邊再平分剩餘空間
+   	 - stretch:設置子元素高度平分父容器高度
+
+   08flex-flow==
+   	flex-flow是flex-direction和flex-wrap兩個屬性的簡寫
+   	flex-flow:row nowrap(默認值)
+
+   09子元素常見屬性==
+   	- flex:設置子元素佔的份數,可使用百分比
+   	- align-self:控制個別子元素在側軸上的排列方式
+   	- order:定義子元素的排序順序(前後順序)
+
+   	- flex:定義子元素分配剩餘空間和空間不足時如何收縮,用來設置當前伸縮項佔剩餘空間的比例值,它由flex-grow、flex-shrink
+   	  、flex-basis的簡寫,默認值0 1 auto,後面兩個屬性可選
+      1.flex-grow:(擴展比:剩餘空間的分配比例值)可用來擴展子元素的寛度,設置當前元素佔剩餘空間的比例值(當前元素的flex-grow/所有兄弟元素的flex-grow值的和),默認值為0,比例值用來分配剩餘空間
+      2.flex-shrink:(收縮比:空間不足時如何收縮的比例值),用來設置當前元素在空間不足時,收縮的比例值(當前元素的flex-shrink/所有兄弟元素的flex-shrink值的和),默認值為1,比例值用來定義空間不足時收縮的比例
+
+   10align-self和order==
+   	- align-self:控制個別子元素在側軸上的排列方式
+   		1.默認值為auto:表示繼承父容器的align-items屬性,如無父容器設置,預設為stretch
+   		2.配合nth-child(n)使用
+   	- order:默認值0,數值越小越靠前,可設置負數,-1比0小所以在前面,注意:和z-index不同
+
+flexbox彈性布局(基本要領:align部份是指交錯軸的屬性)
+  一、(父)容器屬性:
+	1.display:flex; inline-flex;
+	2.flex-direction:決定主軸的方向 (預設:row)
+	    row列由左至右
+	    row-reverse列由右至左
+	    column欄由上至下
+	    column-reverse欄由下至上
+	3.flex-wrap:子元素換行方式(預設:nowrap)
+	    nowrap
+	    wrap
+	    wrap-reverse
+	    ***flex-flow: row nowrap;  是上面兩個屬性的縮寫方式
+	4.justify-content:(水平對齊)資料流的對齊-主軸線的對齊
+		flex-start靠左
+		flex-end靠右
+		center置中
+		space-between兩端對齊
+		space-around平均分配對齊
+	5.align-items(垂直對齊)交錯軸線的對齊-僅針對單行子物件
+      	stretch預設值,依元素內容自動撐開高度
+      	baseline以元素內容基線作為對齊基準
+      	flex-start靠上
+      	flex-end靠下
+      	center置中
+    6.align-content:針對多行子元素設定
+        flex-start靠上
+        flex-end靠下
+        center置中
+        space-between兩端對齊
+        space-around平均分配對齊
+        stretch將flex項目撐開至容器的高度
+二、(子)元素屬性:
+    1.flex(預設grow|shrink|basis三個屬性 0 1 auto)(auto:1 1 auto)(none: 0 0 auto)
+      flex-grow:延展比，當子元素的 flex-basis 長度「小」於它自己在父元素分配到的長度，按照數字做相對應的「伸展」
+                比例分配，預設值為 0，不會進行彈性變化，不可為負值，設為 1 則會進行彈性變化。
+      flex-shrink:收縮比,當子元素的 flex-basis 長度「大」於它自己在父元素分配到的長度，按照數字做相對應的「壓縮」
+                比例分配，預設值為 1，設為 0 的話不會進行彈性變化，不可為負值。
+      flex-basis:基本比,子元素的基本大小，作為父元素的大小比較基準，預設值為0時，會以直接採用flex-grow屬性，如果設為auto，就表示子元
+                 素以自己的基本大小為單位。
+    2.order(預設0)用來決定align-items位置由左至右0,1,2,3,4,5,.....
+    3.align-self(預設auto)針對個別項目設定
+      auto
+      flex-start
+      flex-end
+      center
+      stretch
+      baseline
+
+      應用：RWD網頁|rwd image
+
+第六天--------------------------------------------------------------------
