@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="085d877e-91e6-4336-9ee0-60beaaf02a40" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/h5c3/sgu/note.md" beforeDir="false" afterPath="$PROJECT_DIR$/h5c3/sgu/note.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/h5c3/sgu/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/h5c3/sgu/note.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,13 +20,31 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/h5c3/sgu/note.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="636">
-              <caret line="89" column="27" selection-start-line="89" selection-start-column="27" selection-end-line="89" selection-end-column="27" />
+            <state relative-caret-position="335">
+              <caret line="241" column="1" selection-start-line="241" selection-start-column="1" selection-end-line="241" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/02_CSS/12.单位.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="520">
+              <caret line="32" column="44" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="32" selection-end-column="44" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>属</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>選</replace>
+      <replace>屬</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -53,7 +72,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -72,10 +90,26 @@
               <item name="h5c3" type="462c0819:PsiDirectoryNode" />
               <item name="sgu" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="h5c3js" type="b2602c69:ProjectViewProjectNode" />
+              <item name="h5c3js" type="462c0819:PsiDirectoryNode" />
+              <item name="h5c3" type="462c0819:PsiDirectoryNode" />
+              <item name="sgu" type="462c0819:PsiDirectoryNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="h5c3js" type="b2602c69:ProjectViewProjectNode" />
+              <item name="h5c3js" type="462c0819:PsiDirectoryNode" />
+              <item name="h5c3" type="462c0819:PsiDirectoryNode" />
+              <item name="sgu" type="462c0819:PsiDirectoryNode" />
+              <item name="code" type="462c0819:PsiDirectoryNode" />
+              <item name="02_CSS" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="ProjectViewState">
@@ -137,17 +171,19 @@
       <workItem from="1593907882602" duration="11994000" />
       <workItem from="1593928496955" duration="1889000" />
       <workItem from="1594127587522" duration="4503000" />
+      <workItem from="1594514228544" duration="1895000" />
+      <workItem from="1594517774654" duration="6496000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24493000" />
+    <option name="totallyTimeSpent" value="32884000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.09320809" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.18208092" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -236,10 +272,156 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/02_CSS/03_常用选择器.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1326" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/02_CSS/04.复合选择器.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="34" column="40" lean-forward="true" selection-start-line="32" selection-start-column="12" selection-end-line="34" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/02_CSS/05.关系选择器.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/02_CSS/06.属性选择器.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="14" column="39" lean-forward="true" selection-start-line="10" selection-start-column="12" selection-end-line="14" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/02_CSS/07.伪类选择器.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="936">
+          <caret line="36" column="33" lean-forward="true" selection-start-line="13" selection-start-column="8" selection-end-line="36" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/03_layout/03.盒子模型_边框.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/03_layout/05.盒子模型_外边距.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/03_layout/12.轮廓和圆角.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/03_layout/04.盒子模型_内边距.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/02_CSS/08.a元素的伪类.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="35" column="28" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/03_layout/02.盒模型.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-234" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/03_layout/01.文档流.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-508" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/10_flex/01.弹性盒.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-390" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/10_flex/02.弹性容器的样式.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-780" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/10_flex/05.像素.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-234" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/10_flex/06.移动端.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-552" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/10_flex/07.移动端页面.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/10_flex/08.视口.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-624" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/10_flex/09.vw适配.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-624" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/10_flex/a.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/exercise/01_图片的列表.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-664" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/10_flex/04.弹性元素的样式.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1014" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/exercise/02_京东左侧导航条.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3472" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/10_flex/03.弹性容器的样式.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1248" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/02_CSS/09.伪元素选择器.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/02_CSS/10.样式的继承.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="676">
+          <caret line="26" column="10" lean-forward="true" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/02_CSS/11.选择器的权重.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-26">
+          <caret line="50" column="17" lean-forward="true" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/02_CSS/12.单位.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="32" column="44" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="32" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/h5c3/sgu/note.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="636">
-          <caret line="89" column="27" selection-start-line="89" selection-start-column="27" selection-end-line="89" selection-end-column="27" />
+        <state relative-caret-position="335">
+          <caret line="241" column="1" selection-start-line="241" selection-start-column="1" selection-end-line="241" selection-end-column="1" />
         </state>
       </provider>
     </entry>
