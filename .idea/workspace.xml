@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="085d877e-91e6-4336-9ee0-60beaaf02a40" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/h5c3/sgu/note.md" beforeDir="false" afterPath="$PROJECT_DIR$/h5c3/sgu/note.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/h5c3/sgu/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/h5c3/sgu/note.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/leesj/weblearn/h5c3/note/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/js/leesj/weblearn/h5c3/note/note.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,26 +14,7 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/h5c3/sgu/note.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="241" column="1" selection-start-line="241" selection-start-column="1" selection-end-line="241" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/02_CSS/12.单位.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="32" column="44" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="32" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -70,47 +49,7 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="h5c3js" type="b2602c69:ProjectViewProjectNode" />
-              <item name="h5c3js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="h5c3js" type="b2602c69:ProjectViewProjectNode" />
-              <item name="h5c3js" type="462c0819:PsiDirectoryNode" />
-              <item name="h5c3" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="h5c3js" type="b2602c69:ProjectViewProjectNode" />
-              <item name="h5c3js" type="462c0819:PsiDirectoryNode" />
-              <item name="h5c3" type="462c0819:PsiDirectoryNode" />
-              <item name="sgu" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="h5c3js" type="b2602c69:ProjectViewProjectNode" />
-              <item name="h5c3js" type="462c0819:PsiDirectoryNode" />
-              <item name="h5c3" type="462c0819:PsiDirectoryNode" />
-              <item name="sgu" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="h5c3js" type="b2602c69:ProjectViewProjectNode" />
-              <item name="h5c3js" type="462c0819:PsiDirectoryNode" />
-              <item name="h5c3" type="462c0819:PsiDirectoryNode" />
-              <item name="sgu" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-              <item name="02_CSS" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+    <panes />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -173,15 +112,15 @@
       <workItem from="1594127587522" duration="4503000" />
       <workItem from="1594514228544" duration="1895000" />
       <workItem from="1594517774654" duration="6496000" />
+      <workItem from="1595081477587" duration="199000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32884000" />
+    <option name="totallyTimeSpent" value="33083000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.18208092" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -411,17 +350,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/02_CSS/12.单位.html">
+    <entry file="file://$PROJECT_DIR$/h5c3/sgu/note.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="32" column="44" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="32" selection-end-column="44" />
+        <state relative-caret-position="1585">
+          <caret line="224" selection-start-line="224" selection-end-line="224" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/h5c3/sgu/note.txt">
+    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/02_CSS/12.单位.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="241" column="1" selection-start-line="241" selection-start-column="1" selection-end-line="241" selection-end-column="1" />
+        <state>
+          <caret line="32" column="44" selection-start-line="16" selection-start-column="16" selection-end-line="32" selection-end-column="44" />
         </state>
       </provider>
     </entry>
