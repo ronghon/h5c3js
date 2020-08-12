@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //ES6允許給函數參數賦值初始值
+        // 1.形參初始值  具有默認值的參數,一般位置要靠後
+        function add(a, b, c = 10) {
+            return a + b + c;
+        }
+        // let result = add(1, 2,3);
+        // console.log(result);//6
+        //2.當實參個數少於形參個數時,c的值為undefined,所以相加結果為NaN
+        // let result = add(1, 2);
+        // console.log(result);   //NaN
+        // 3.c直接賦值=10,則相加結果為13
+        let result = add(1, 2);
+        console.log(result); //13  
+        // 3.與解構賦值結合
+        //  一般設置情況,其中options會重複
+        // function connect(options){
+        //     let host=options.host;
+        //     let username=options.username;
+
+        // }
+        // 改以與解構賦值結合
+        function connect({
+            host = "127.0.0.1",
+            username,
+            password,
+            port
+        }) {
+            console.log(host);
+            console.log(username);
+            console.log(password);
+            console.log(port);
+        }
+        connect({
+            // host:'localhost',
+            username: 'root',
+            password: 'root',
+            port: 3306
+        })
+    </script>
+</body>
+
+</html>

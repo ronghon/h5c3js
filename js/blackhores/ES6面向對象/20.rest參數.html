@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //ES5使用arguments獲取實參,arguments是一個偽數組
+        function date() {
+            console.log(arguments);
+        }
+        date('明天', '今天', '後天');
+        //ES6使用...args獲取實參,
+        // function date(...args) {
+        //     console.log(args);
+        // }
+        // date('明天', '今天', '後天');
+    </script>
+
+</body>
+
+</html>

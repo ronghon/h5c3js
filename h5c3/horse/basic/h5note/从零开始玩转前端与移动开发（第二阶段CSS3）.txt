@@ -305,14 +305,16 @@
       border: 5px solid rgba(255,255,255,.3);
     }
 10.過渡效果transition經常與hover配合使用
-  -transition:過渡屬性(property) 花費時間(duration) 運動曲線(timing-function) 何時開始(delay)
-    過渡屬性(property):屬性名稱
+  -transition:過渡屬性(property) 花費時間(duration) 運動曲線(timing-function) 延遲時間(delay)
+    過渡屬性(property):屬性名稱,指想要過渡效果的CSS屬性,ex:寛度/高度/背景顏色/內外邊距
     花費時間(duration):默認為0,單位是s秒(前兩個屬性為必須)
     運動曲線(timing-function):默認是ease(逐漸慢下來)  ease-in加速 ease-out減速 linear均速 ease-in-out先加速後減速
-    何時開始(delay):默認為0
+    延遲時間(delay):單位秒,默認為0s
   -transition是寫在作用的盒子中-->誰作動畫給誰加過渡
   -所有屬性都變化時使用all,後面兩個屬性可省略
   -背景過渡 transition: background-color  1s;  或  all 1s;
+  -多個屬性產生過渡效果時,使用逗號隔開
+   transition:width 1s,height .5s;
   -盒子上移並加陰影效果
 11.變形(transform)--2D:可用來執行元素的位移、旋轉、傾斜、動畫等效果
   -translate(x,y)移動,x軸向右為正值,向左為負值,y軸向下為正值,向上為負值  

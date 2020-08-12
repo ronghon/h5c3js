@@ -2,8 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="085d877e-91e6-4336-9ee0-60beaaf02a40" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/leesj/weblearn/h5c3/code/60文字屬性.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/css.txt" beforeDir="false" afterPath="$PROJECT_DIR$/css/css.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/h5c3/horse/basic/h5note/从零开始玩转前端与移动开发（第二阶段CSS3）.txt" beforeDir="false" afterPath="$PROJECT_DIR$/h5c3/horse/basic/h5note/从零开始玩转前端与移动开发（第二阶段CSS3）.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/blackhores/ES6面向對象/素材/js高级第五天素材/11.find方法介绍.html" beforeDir="false" afterPath="$PROJECT_DIR$/js/blackhores/ES6面向對象/素材/js高级第五天素材/11.find方法介绍.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/blackhores/ES6面向對象/素材/js高级第五天素材/2.经典面试题.html" beforeDir="false" afterPath="$PROJECT_DIR$/js/blackhores/ES6面向對象/素材/js高级第五天素材/2.经典面试题.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/blackhores/ES6面向對象/素材/js高级第五天素材/3.使用const关键字声明常量.html" beforeDir="false" afterPath="$PROJECT_DIR$/js/blackhores/ES6面向對象/素材/js高级第五天素材/3.使用const关键字声明常量.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/blackhores/ES6面向對象/素材/js高级第五天素材/8.剩余参数.html" beforeDir="false" afterPath="$PROJECT_DIR$/js/blackhores/ES6面向對象/素材/js高级第五天素材/8.剩余参数.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/blackhores/ES6面向對象/面向對象筆記.txt" beforeDir="false" afterPath="$PROJECT_DIR$/js/blackhores/ES6面向對象/面向對象筆記.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/blackhores/code/04創建類與生成實例.html" beforeDir="false" afterPath="$PROJECT_DIR$/js/blackhores/code/04創建類與生成實例.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/blackhores/code/118-.html" beforeDir="false" afterPath="$PROJECT_DIR$/js/blackhores/code/118-.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/blackhores/code/126-131.html" beforeDir="false" afterPath="$PROJECT_DIR$/js/blackhores/code/126-131.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/blackhores/node/code/02-module.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/blackhores/node/code/02-module.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/blackhores/node/筆記.txt" beforeDir="false" afterPath="$PROJECT_DIR$/js/blackhores/node/筆記.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/blackhores/note/JS基礎.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/leesj/weblearn/h5c3/code/124浮動元素貼靠現象.html" beforeDir="false" afterPath="$PROJECT_DIR$/js/leesj/weblearn/h5c3/code/124浮動元素貼靠現象.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/leesj/weblearn/h5c3/note/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/js/leesj/weblearn/h5c3/note/note.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,28 +30,21 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/leesj/weblearn/h5c3/note/note.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="398" column="15" lean-forward="true" selection-start-line="398" selection-start-column="15" selection-end-line="398" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>属</find>
+      <find>3D</find>
+      <find>2D</find>
     </findStrings>
     <replaceStrings>
       <replace>選</replace>
@@ -50,85 +57,33 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$APPLICATION_CONFIG_DIR$/idea64.exe.vmoptions" />
-        <option value="$PROJECT_DIR$/js/leesj/weblearn/jQuery原理/07-jQueryDOM操作相关方法.html" />
-        <option value="$PROJECT_DIR$/h5c3/sgu/note.txt" />
-        <option value="$PROJECT_DIR$/js/leesj/weblearn/h5c3/code/60文字屬性.html" />
-        <option value="$PROJECT_DIR$/js/leesj/weblearn/h5c3/code/130.清除浮動方式1.html" />
-        <option value="$PROJECT_DIR$/js/leesj/weblearn/h5c3/note/note.txt" />
+        <option value="$PROJECT_DIR$/js/blackhores/node/code/ithaima/01.helloNode.js" />
+        <option value="$PROJECT_DIR$/js/blackhores/node/code/ithaima/05.readfile.js" />
+        <option value="$PROJECT_DIR$/js/blackhores/node/筆記.txt" />
+        <option value="$PROJECT_DIR$/js/blackhores/code/126-131.html" />
+        <option value="$PROJECT_DIR$/js/blackhores/code/04創建類與生成實例.html" />
+        <option value="$PROJECT_DIR$/js/blackhores/code/118-.html" />
+        <option value="$PROJECT_DIR$/js/leesj/weblearn/h5c3/code/161a標籤偽類選擇器練習.html" />
+        <option value="$PROJECT_DIR$/h5c3/horse/basic/h5note/从零开始玩转前端与移动开发（第二阶段CSS3）.txt" />
+        <option value="$PROJECT_DIR$/css/css.txt" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-4" />
-    <option name="y" value="9" />
+    <option name="x" value="-33" />
+    <option name="y" value="26" />
     <option name="width" value="1400" />
     <option name="height" value="820" />
   </component>
   <component name="ProjectId" id="1eDV2TegzdTS2NNa1JjTlIxlMzU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="h5c3js" type="b2602c69:ProjectViewProjectNode" />
-              <item name="h5c3js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="h5c3js" type="b2602c69:ProjectViewProjectNode" />
-              <item name="h5c3js" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="h5c3js" type="b2602c69:ProjectViewProjectNode" />
-              <item name="h5c3js" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="leesj" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="h5c3js" type="b2602c69:ProjectViewProjectNode" />
-              <item name="h5c3js" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="leesj" type="462c0819:PsiDirectoryNode" />
-              <item name="weblearn" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="h5c3js" type="b2602c69:ProjectViewProjectNode" />
-              <item name="h5c3js" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="leesj" type="462c0819:PsiDirectoryNode" />
-              <item name="weblearn" type="462c0819:PsiDirectoryNode" />
-              <item name="h5c3" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="h5c3js" type="b2602c69:ProjectViewProjectNode" />
-              <item name="h5c3js" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="leesj" type="462c0819:PsiDirectoryNode" />
-              <item name="weblearn" type="462c0819:PsiDirectoryNode" />
-              <item name="h5c3" type="462c0819:PsiDirectoryNode" />
-              <item name="code" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="h5c3js" type="b2602c69:ProjectViewProjectNode" />
-              <item name="h5c3js" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="leesj" type="462c0819:PsiDirectoryNode" />
-              <item name="weblearn" type="462c0819:PsiDirectoryNode" />
-              <item name="h5c3" type="462c0819:PsiDirectoryNode" />
-              <item name="note" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -141,10 +96,20 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="javascript.nodejs.core.library.typings.version" value="12.12.54" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\bhjs\h5c3js\js\blackhores\node\code\sdo" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\bhjs\h5c3js\js\blackhores\node" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -157,6 +122,32 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager" selected="HTTP Request.node#1">
+    <configuration name="node#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" nameIsGenerated="true" path="C:/Program Files/nodejs/node.exe">
+      <method v="2" />
+    </configuration>
+    <configuration name="03-module-b.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="03-module-b.js" working-dir="$PROJECT_DIR$/js/blackhores/node/code/ithaima">
+      <method v="2" />
+    </configuration>
+    <configuration name="03.require.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/js/blackhores/node/code/sdo/03.require.js" working-dir="$PROJECT_DIR$/js/blackhores/node/code/sdo">
+      <method v="2" />
+    </configuration>
+    <configuration name="04global.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/js/blackhores/node/code/sdo/04global.js" working-dir="$PROJECT_DIR$/js/blackhores/node/code/sdo">
+      <method v="2" />
+    </configuration>
+    <configuration name="05.readfile.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="05.readfile.js" working-dir="$PROJECT_DIR$/js/blackhores/node/code/ithaima">
+      <method v="2" />
+    </configuration>
+    <configuration name="b.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="b.js" working-dir="$PROJECT_DIR$/js/blackhores/node/code/ithaima">
+      <method v="2" />
+    </configuration>
+    <configuration name="node" type="NodeJSConfigurationType" activateToolWindowBeforeRun="false" path-to-node="node" working-dir="$PROJECT_DIR$/js/blackhores/node/code/sdo">
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="HTTP Request.node#1" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -196,23 +187,43 @@
       <workItem from="1595757604145" duration="2023000" />
       <workItem from="1595766472777" duration="20000" />
       <workItem from="1595766980124" duration="6512000" />
+      <workItem from="1596939874124" duration="1746000" />
+      <workItem from="1596954092026" duration="1184000" />
+      <workItem from="1596955931313" duration="324000" />
+      <workItem from="1596956441133" duration="39000" />
+      <workItem from="1596956553493" duration="40000" />
+      <workItem from="1596956669221" duration="77000" />
+      <workItem from="1596956831353" duration="77000" />
+      <workItem from="1596956986957" duration="48000" />
+      <workItem from="1596957405087" duration="23000" />
+      <workItem from="1596957468748" duration="82000" />
+      <workItem from="1596957628167" duration="1254000" />
+      <workItem from="1596959303056" duration="9302000" />
+      <workItem from="1596970371884" duration="57000" />
+      <workItem from="1596977886406" duration="21000" />
+      <workItem from="1596978618585" duration="402000" />
+      <workItem from="1596979168142" duration="5634000" />
+      <workItem from="1597040753726" duration="1199000" />
+      <workItem from="1597149828093" duration="1138000" />
+      <workItem from="1597156659153" duration="200000" />
+      <workItem from="1597156954698" duration="12000" />
+      <workItem from="1597235890956" duration="3044000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41638000" />
+    <option name="totallyTimeSpent" value="11629000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.18569364" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.25433525" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Designer" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -220,17 +231,17 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Maven" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Database" order="8" />
@@ -244,233 +255,226 @@
       <screen x="1440" y="0" width="1680" height="1010" />
     </state>
     <state x="1872" y="146" key="#Plugins/1440.0.1680.1010/0.0.1440.860@1440.0.1680.1010" timestamp="1593857665256" />
+    <state x="359" y="30" key="#Unnamed" timestamp="1596960730206">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="359" y="30" key="#Unnamed/1440.0.1680.1010/0.0.1440.860@0.0.1440.860" timestamp="1596960730206" />
+    <state x="264" y="211" key="#Usage_Scope" timestamp="1596961071775">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="264" y="211" key="#Usage_Scope/1440.0.1680.1010/0.0.1440.860@0.0.1440.860" timestamp="1596961071775" />
+    <state x="169" y="15" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1596961747557">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="169" y="15" key="#com.intellij.execution.impl.EditConfigurationsDialog/1440.0.1680.1010/0.0.1440.860@0.0.1440.860" timestamp="1596961747557" />
+    <state x="446" y="63" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1596961479148">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="446" y="63" key="#com.intellij.ide.macro.MacrosDialog/1440.0.1680.1010/0.0.1440.860@0.0.1440.860" timestamp="1596961479148" />
+    <state x="359" y="30" key="#node" timestamp="1596960738478">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="359" y="30" key="#node/1440.0.1680.1010/0.0.1440.860@0.0.1440.860" timestamp="1596960738478" />
+    <state x="533" y="123" width="702" height="612" key="EnvironmentVariablesDialog" timestamp="1596961563685">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="533" y="123" width="702" height="612" key="EnvironmentVariablesDialog/1440.0.1680.1010/0.0.1440.860@0.0.1440.860" timestamp="1596961563685" />
+    <state x="437" y="125" key="FileChooserDialogImpl" timestamp="1596961735452">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="437" y="125" key="FileChooserDialogImpl/1440.0.1680.1010/0.0.1440.860@0.0.1440.860" timestamp="1596961735452" />
+    <state width="1412" height="157" key="GridCell.Tab.0.bottom" timestamp="1596970274972">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1412" height="157" key="GridCell.Tab.0.bottom/1440.0.1680.1010/0.0.1440.860@0.0.1440.860" timestamp="1596970274972" />
+    <state width="1412" height="157" key="GridCell.Tab.0.center" timestamp="1596970274971">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1412" height="157" key="GridCell.Tab.0.center/1440.0.1680.1010/0.0.1440.860@0.0.1440.860" timestamp="1596970274971" />
+    <state width="1412" height="157" key="GridCell.Tab.0.left" timestamp="1596970274971">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1412" height="157" key="GridCell.Tab.0.left/1440.0.1680.1010/0.0.1440.860@0.0.1440.860" timestamp="1596970274971" />
+    <state width="1412" height="157" key="GridCell.Tab.0.right" timestamp="1596970274971">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1412" height="157" key="GridCell.Tab.0.right/1440.0.1680.1010/0.0.1440.860@0.0.1440.860" timestamp="1596970274971" />
+    <state x="0" y="0" key="SettingsEditor" timestamp="1596968037959">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="0" y="0" key="SettingsEditor/1440.0.1680.1010/0.0.1440.860@0.0.1440.860" timestamp="1596968037959" />
+    <state x="1698" y="87" key="SettingsEditor/1440.0.1680.1010/0.0.1440.860@1440.0.1680.1010" timestamp="1596957920182" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/h5c3/horse/advance/27分頁轉換縮放.html">
+    <entry file="file://$PROJECT_DIR$/js/leesj/weblearn/jQuery基础/01-初识jQuery.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/05.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/blackhores/node/code/sdo/01.hellonode.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/h5c3/horse/advance/38brfore and after.html">
+    <entry file="file://$PROJECT_DIR$/js/blackhores/jsbasic/js基础第五天素材/code/01-arguments使用.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/h5c3/horse/advance/js/h5shiv.js">
+    <entry file="file://$PROJECT_DIR$/js/blackhores/jsbasic/JS基礎.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-10914" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/blackhores/node/code/ithaima/03-module-a.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/h5c3/horse/advance/css/formcss.css">
+    <entry file="file://$PROJECT_DIR$/js/blackhores/node/code/ithaima/03-module-b.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/blackhores/node/code/ithaima/b.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="2" column="20" lean-forward="true" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/blackhores/node/code/ithaima/a.js">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/blackhores/node/code/ithaima/05.readfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/blackhores/node/筆記.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="37" column="59" selection-start-line="37" selection-start-column="59" selection-end-line="37" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/blackhores/code/126-131.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="75" column="35" selection-start-line="75" selection-start-column="35" selection-end-line="75" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/blackhores/code/04創建類與生成實例.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/blackhores/code/118-.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/blackhores/ES6面向對象/面向對象筆記.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="146" column="31" selection-start-line="146" selection-start-column="31" selection-end-line="146" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/leesj/weblearn/h5c3/code/161a標籤偽類選擇器練習.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/01begin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-202" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5c3/horse/advance/05-ie8及以下支援.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/code/第十二天/shoping/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-9340">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/h5c3/horse/advance/19.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/leesj/weblearn/jQuery原理/01-jQuery的基本结构.html">
+    <entry file="file://$PROJECT_DIR$/code/CSS3进阶素材-包含小熊动画/vscode.html">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/idea64.exe.vmoptions">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="11" column="63" selection-start-line="11" selection-start-column="63" selection-end-line="11" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h5c3/horse/advance/2018版Html5+Css3由浅入深教程筆記">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h5c3/horse/advance/10表單總結案例.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/leesj/weblearn/jQuery原理/07-jQueryDOM操作相关方法.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="15" column="15" lean-forward="true" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/02_CSS/03_常用选择器.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1326" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/02_CSS/04.复合选择器.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="34" column="40" lean-forward="true" selection-start-line="32" selection-start-column="12" selection-end-line="34" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/02_CSS/05.关系选择器.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/02_CSS/06.属性选择器.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="14" column="39" lean-forward="true" selection-start-line="10" selection-start-column="12" selection-end-line="14" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/02_CSS/07.伪类选择器.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="936">
-          <caret line="36" column="33" lean-forward="true" selection-start-line="13" selection-start-column="8" selection-end-line="36" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/03_layout/03.盒子模型_边框.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/03_layout/05.盒子模型_外边距.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/03_layout/12.轮廓和圆角.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/03_layout/04.盒子模型_内边距.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/02_CSS/08.a元素的伪类.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="35" column="28" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/03_layout/02.盒模型.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-234" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/03_layout/01.文档流.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-508" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/10_flex/01.弹性盒.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-390" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/10_flex/02.弹性容器的样式.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-780" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/10_flex/05.像素.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-234" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/10_flex/06.移动端.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-552" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/10_flex/07.移动端页面.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/10_flex/08.视口.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-624" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/10_flex/09.vw适配.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-624" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/10_flex/a.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/exercise/01_图片的列表.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-664" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/10_flex/04.弹性元素的样式.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1014" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/exercise/02_京东左侧导航条.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3472" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/10_flex/03.弹性容器的样式.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1248" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/02_CSS/09.伪元素选择器.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/02_CSS/10.样式的继承.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="676">
-          <caret line="26" column="10" lean-forward="true" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/02_CSS/11.选择器的权重.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-26">
-          <caret line="50" column="17" lean-forward="true" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h5c3/sgu/note.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1585">
-          <caret line="224" selection-start-line="224" selection-end-line="224" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/h5c3/sgu/code/02_CSS/12.单位.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="32" column="44" selection-start-line="16" selection-start-column="16" selection-end-line="32" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/leesj/weblearn/h5c3/code/60文字屬性.html" />
-    <entry file="file://$PROJECT_DIR$/js/leesj/weblearn/h5c3/code/130.清除浮動方式1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="23" column="23" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="23" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/leesj/weblearn/h5c3/note/note.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="398" column="15" lean-forward="true" selection-start-line="398" selection-start-column="15" selection-end-line="398" selection-end-column="15" />
+        <state relative-caret-position="1616">
+          <caret line="485" column="70" selection-start-line="485" selection-start-column="70" selection-end-line="485" selection-end-column="70" />
         </state>
       </provider>
     </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>11</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
+    <entry file="file://$PROJECT_DIR$/css/流式布局.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-848" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hfJS/note/h5c3筆記.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-144" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pratice/.project">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/emmet.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5c3/horse/basic/h5note/移動端流式布局.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-16" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/h5c3/horse/basic/h5note/从零开始玩转前端与移动开发（第二阶段CSS3）.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10432">
+          <caret line="316" column="34" selection-start-line="316" selection-start-column="34" selection-end-line="316" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/css.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21728">
+          <caret line="652" column="24" selection-start-line="652" selection-start-column="24" selection-end-line="652" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/snipaste.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/blackhores/note/WebAPI.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-18562" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/blackhores/node/code/ithaima/01.helloNode.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

@@ -516,7 +516,7 @@
 	 為什麼使用ES6?每一次標準的誕生都意味著語言的完善,功能的加強,JS語言本身也有一些令人不滿意的地方如:
 	 1.變量提升特性增加了程序運行時不可預測性
 	 2.語法過於鬆散,實現相同的功能,不同的人可能會寫出不同的代碼
-92.let-->主要是用來替代var關鍵字  
+92.let-->主要是用來替代var關鍵字,使用let關鍵字聲明的變量具有塊級作用域  
 	 1.ES6中新增用於聲明變量的關鍵字
 	 2.let聲明的變量只在所處塊級作用域{}有效
 		 好處:
@@ -542,14 +542,19 @@
 		 var num=10;
 		 if (true){
 			 console.log(num);  //num is not defined
-			 let num=20;
+			 let num=20;  //使用let聲明num變量成為塊級作用域綁定所以之前的console.log會報錯
 		 }
 96.每次循環都會產生一個塊級作用域,每個塊級作用域中的變量都是不同的,當函數時執行時輸出的是自己上一級(循環產生
-   的塊級作用域)作用域下的值。
+   的塊級作用域)作用域下的i值。
 97.const:作用是用來聲明常量(數),常量就是值(內存地址)不會變化的量,特點:
-	1.具有塊級作用域		
-	2.聲明常量時必須賦予初始值,否則報錯。
-	3.常量賦值後,值不可修改,意即內存地址不可更改(基本數據類型),但複雜數據類型如array數組
+	1.具有塊級作用域	
+		if (true){
+			const a = 10;
+			console.log(a);  //10 
+		}	
+		console.log(a);   //報錯,因為a is not defined
+	2.const聲明常量時必須賦予初始值,否則報錯。
+	3.常量賦值後,值不可修改,意即對基本數據類型而言,內存地址不可更改,但複雜數據類型如array數組,值可透過索引值更改,但不可重新賦值。
 	  const arry = [100,200];
 		arry[0]=123;  //值可更改[123,200]
 		arry=[1,2];  //重新賦值時會報錯,更改內存地址
@@ -557,10 +562,11 @@
 	1.使用var聲明的變量,其作用域為該語句所在的函數內(函數作用域),且存在變量提升現象,值可更改
 	2.使用let聲明的變量,其作用域為該語句所在的代碼塊{}內(塊級作用域),不存在變量提升現象,值可更改
 	3.使用const聲明的是常量(塊級作用域),在後面出現的代碼中不可再修改該常量的值
-101.解構賦值:分解數據結構,ES6中允許從數組中提取值,按照一一對應的位置,對變量賦值,對象也可以實現解構。
+	使用注意事項:數據不可更改時,使用const
+101.解構賦值:分解數據結構,為變量賦值,在ES6中允許從數組中提取值,按照一一對應的位置,對變量賦值,對象也可以實現解構。
 	1.數組解構:
-		let [a,b,c]=[1,2,3];  let a=1,b=2,c=3; 等號左邊的[]代表數組解構,從數組中提取一一對應的值,再將值賦值給變量,
-		如變量數目大於等號右邊的值時,會產生未賦值情況,呈現undefined
+		let [a,b,c]=[1,2,3];  ==>  let a=1,b=2,c=3; 
+		等號左邊的[]代表數組解構,從數組中提取一一對應的值,再將值賦值給變量,如變量數目大於等號右邊的值時,會產生未賦值情況,呈現undefined
 		console.log(a);  //1
 		console.log(b);  //2
 		console.log(c);  //3
@@ -579,7 +585,8 @@
 		const fn = () =>{  將箭頭函數賦值給fn常數  或使用let fn變量
 			console.log(123)
 		}
-		fn()
+		調用函數
+		fn();
 	箭頭函數特性:
 	1.函數體中只有一句代碼,且代碼的執行結果就是返回值,則可省略大括號
 		const sum = (n1, n2) => n1 + n2;	//此處省略{}及return 
@@ -640,8 +647,8 @@
 		console.log(s1)   //s1='張三'
 		console.log(s2)  //s2=['李四', '王五'] 數組解構,s2成為數組同時接收['李四','王五']
 109.Array的擴展方法:
-  1.擴展運算符(展開語法),與剩餘參數(將剩餘的參數放在一個數組中)相反
-		擴展運算符可以將數組或對象轉為以逗號分隔的參數序列
+  1.擴展運算符(展開語法)與剩餘參數(將剩餘的參數放在一個數組中)相反
+	擴展運算符可以將數組或對象拆分轉為以逗號分隔的參數序列
 		let ary =[1,2,3];
 		console.log(...ary)  //1 2 3 與下面的代碼相同
 		console.log("1","2","3")  //1 2 3 
@@ -654,25 +661,42 @@
 		let ary3 = [...ary1, ...ary2];//將ary1和ary2數組合併成ary3 = [1,2,3,4,5,6]
 		console.log(ary3)  [1,2,3,4,5,6]		
 		方法二:使用push()方法將ary2合併到ary1中  ary1.push(...ary2)
-112.將類數組或可遍歷對象轉換為真正的數組
+112.將偽數組或可遍歷對象轉換為真正的數組
 	let oDivs=document.getElementsByTagName('div);  //oDivs為偽數組
 	var ary = [...oDivs];  利用擴展運算符將偽數組轉換為真正的數組,好處:即可使用數組的方法,如push
-113.array.from方法
-114.find()方法:用於找出第一個符合條件的數組成員,如果没有找到則返回undeined
-115.findIndex()方法:用於找出第一個符合條件的數組成員的位置,如果没有找到則返回-1
-116.includes()方法:表示某個數組是否包含給定的值,返回true 或false  ==>ES6以前使用indexOf
+113.Array.from方法:將偽數組或可遍歷對象轉換為真正的數組
+        // var arrayLike = {    變量arrayLike是一個偽數組
+		// 	"0": "张三",
+		// 	"1": "李四",
+		// 	"2": "王五",
+		// 	"length": 3
+		// }
+		// var ary = Array.from(arrayLike);   經過Array.from方法將arrayLike轉換為真數組
+		// console.log(ary)
+	此方法還可以接受第二個參數,作用類似數組中的map方法,用來對每個元素進行處理,將處理後的值放入返回的數組
+114.find()方法:用於查找出第一個符合條件的數組成員,如果没有找到則返回undeined
+	ary.find((item,index){
+	})
+	item為元素,index為索引
+115.findIndex()方法:用於找出第一個符合條件的數組成員的位置的索引值,如果没有找到則返回-1
+	let ary = [10, 20, 50];
+	let index = ary.findIndex(item => item > 15);
+	console.log(index)  //20的索引值為1
+116.includes()方法:用來判斷某個數組是否包含給定的值,返回true 或false  ==>ES6以前使用indexOf
 117.String擴展方法:
 	1.模板字符串:ES6新增的創建字符串的方式,使用反引號定義之。
 		特點:
 		(1)可以解析變量,使用${變量名}來取代字符串拼接
 		(2)模板字符串可以換行
 		(3)在模板字符串中可以調用函數
-	2.startsWith():表示參數字符串是否以某字符串開頭,返回布林值
-	  endsWith():表示參數字符串是否以某字符串結尾,返回布林值
-	3.repeat()方法:表示將原字符串重複n次,返回一個新字符串  原字符串.repeat(n)  'a'.repeat(2) //aa
-120.Set數據結構:ES6中的新的數據結構Set,它類似於數組,但成員的都是唯一的,没有重複的值,主要應用於搜索關
-    鍵字,利用值不重複特性,來存儲關鍵字
-		Set本身是一個構造函數,用來生成Set數據結構,有一內建屬性size,存儲數據個數
+	2.startsWith():用來判斷字符串是否以某字符串開頭,返回布林值
+	  endsWith():用來判斷字符串是否以某字符串結尾,返回布林值
+	3.repeat()方法:表示將原字符串重複n次,返回一個新字符串  
+	  原字符串.repeat(n)  n代表字符串重複的次數 'a'.repeat(2) //aa
+120.Set數據結構:ES6中的新的數據結構Set,它類似於數組,但成員的都是唯一的,没有重複的值,主要應用於搜索關鍵字,利用值不重複特性,來存儲關鍵字,Set本身是一個構造函數,用來生成Set數據結構,有一內建屬性size,存儲數據個數
+	const s=new Set();  有一內建屬性size,存儲數據個數,s.size 為0 
+	Set函數可以接受一個數組作為參數,用來初始化
+	const set = new Set([1,2,3,4,5]);
 121.利用Set作數組去重
 122.數據操作:
 	add(value):添加某個值,返回Set結構本身
@@ -682,5 +706,112 @@
 123.遍歷:從中取值 使用forEach()方法    
 
 		
+
+
+**模版字符串‵‵反引號:作用聲明字符串的方式
+	1.聲明
+	  let str=`模版字符串!`;
+	  console.log(str,typeof str);
+	2.特性
+		(1)內容中可直接出現換行符
+			let str=`<ul>
+						<li>abc</li>
+						<li>def</li>
+						<li>sss</li>
+					</ul>`;
+		(2)變量拼接
+			let a='abc';
+			let b=‵${a}是我心目中的大英雄`;  //abc是我心目中的大英雄
+
+**簡化對象的寫法:ES6允許在大括號中,直接寫入變量和函數,作為對象的屬性和方法
+	let name='abc'
+	let change=function(){
+		console.log('我們可以改變你');
+	}
+	const school={
+		name,     //相當於name:name,
+		change    //change:change
+		improve:function(){  //可以省略成improve(){}
+			console.log('我們可以提高');
+		}
+	}
+
+**箭頭函數(=>)
+  1.聲明一個函數fn
+	let fn = function(){
+
+	}
+	let fn = (a,b) => {     //省略function  添加箭頭  a,b形參
+		return a+b;
+	}
+  2.調用函數
+    let result=fn(1,2);
+	console.log(result);
+  3.特性:
+    (1)this是靜態的,this始終指向函數聲明時所在作用域下的this的值,没有自己本身的this
+		function getName(){
+			console.log(this.name);
+		}
+		let getName2=()=>{
+			console.log(this.name);
+		}
+		//設置window對象name屬性
+		window.name='尚硅谷';
+		const school={
+			name:"ATGUIGU"
+		}
+		1.直接調用時
+		  getName();  //尚硅谷
+		  getName2(); //尚硅谷
+		2.使用call方法調用
+		  getName.call(school);  //ATGUIGU
+		  getName2.call(school)  //尚硅谷
+	(2)不能作為構造函數實例化對象
+		let Person=(name,age)=>{
+			this.name=name;
+			this.age=age
+		}
+		let me=new Person('abc',30);
+		console.log(me);  //報錯
+	(3)不能使用arguments變量
+		let fn=()=>{
+			console.log(arguments);
+		}
+		fn(1,2,3);  //報錯
+	(4)箭頭函數簡寫方式
+		1.省略小括號--當形參只有一個時
+			let add = (n)=>{   //可省略小括號  let add = n =>{
+				return n+n;  
+			}
+			console.log(add(9));  //18
+		2.省略大括號,當代碼體只有一條語句時,此時return必須省略,且語句的執行結果就是函數的返回值
+			let pow =(n)=>{
+				return n*n;
+			}
+			console.log(pow(9));
+			可省略大括號及return
+			let pow =(n)=>n*n;   或  let pow= n =>n*n;
+			console.log(pow(9));  //81  
+	總結箭頭函數的應用場景:
+	1.箭頭函數適合用於與this無關的回調,如:定時器、數組的方法回調
+	2.箭頭函數不適合用於與this有關的回調,如:DOM的事件回調、對象的方法
+	
+**ES6允許給函數的形參賦予初始值
+	1.當實參個數<形參個數時,未賦值的形參為undefined
+	2.可以直接給形參賦予初始值,一般默認具有初始值的形參,靠後位置
+	3.可與解構賦值結合使用
+
+**剩餘參數(...args),主要用於獲取函數的實參,代替arguments
+	1.ES5獲取實參的方式使用arguments,是一個偽數組
+		function date(){
+			console.log(arguments);
+		}
+		date('明天','今天','後天');
+	2.ES6使用剩餘參數(...args)獲取實參,是一個真數組,可供filter、some、every、map使用
+		function date(...args){
+			console.log(args);
+		}
+		date('明天','今天','後天');
+
 
 

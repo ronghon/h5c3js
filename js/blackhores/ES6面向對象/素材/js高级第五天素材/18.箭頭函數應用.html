@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            ;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="ad"></div>
+    <script>
+        //需求1:點擊div  2s後背景顏色變成pink
+        let oad = document.getElementById('ad');
+        oad.addEventListener("click", function () {
+            //解決使用this方法:保存this值 ,將外層函數作用域中的this保存為_this
+            //  let _this=this;
+            //設置定時器
+            // setTimeout(function () {
+            setTimeout(() => { //修改使用箭頭函數,this指向事件源ad
+                //修改背景顏色this  
+                this.style.background = 'pink'; //此時this指向window,而window無background屬性,所以報錯
+            }, 2000);
+        });
+        //需求2:從數組中返回偶數的元素
+
+        const arr = [1, 6, 9, 10, 100, 25];
+        // 1.使用原生js
+        // const result =arr.filter(function(item){
+        //     if(item%2===0){
+        //         return true;
+        //     }else{
+        //         return false;
+        //     }
+        // });
+        // console.log(result);  // [6,10,100]
+        //2.使用箭頭函數
+        // const result = arr.filter(item => {
+        //     if (item % 2 === 0) {
+        //         return true;
+        //     } else {
+        //         return false;
+        //     }
+        // });
+        //3.使用箭頭函數簡化模式
+        const result = arr.filter(item => item % 2 === 0);
+        console.log(result); // [6,10,100]
+    </script>
+</body>
+
+</html>
