@@ -2,45 +2,46 @@
 
 04.新增標籤語義化==
 	1.div 對搜索引擎無意義,因此新增具有語義的標籤,如
-		- header 頭部
-		- nav 導航
-		- article 內容文章
-		- section 區塊
-		- aside 側邊欄
-		- footer 底部
+	  - header 頭部
+	  - nav 導航
+	  - article 內容文章
+	  - section 區塊
+	  - aside 側邊欄
+	  - footer 底部
 	2.這些語義化標籤主要針對搜索引擎的,可在頁面中重覆使用,在IE9中,這些元素會被視為行級元素,所以需轉換為塊級元素
 05.H5新增多媒體標籤==
 	1.<audio>音頻
 		支持三種格式: MP3 Wav Ogg Vorbis,注意事項:因為不同瀏覽器支持不同格式,因此需同時準備多種格式,並利用<source src="url">
-		<audio src="文件地址" 
+		<audio src="文件地址" controls="controls"></audio> 
 		屬性值:
-		 -autoplay 自動撥放-->google禁用此項屬性
+		 -autoplay 自動撥放-->google禁用此項屬性,解決方案,添加muted屬性,但音頻不可以
 		 -controls 顯示控件
-		 -loop 重新開始播放(循環)
+		 -loop 自動循環播放
 		 -src url地址
 06.視頻==
 	2.<video>視頻
 		支持三種格式:Mp4 Ogg WebM
 		屬性值大致與audio相同
-		-autoplay 自動撥放-->google禁用此項屬性,解決方案,添加muted屬性,但音頻不可以
-07.input表單==
-	type="email"->需包含@及@後面要有內容
-	type="url"->驗證只能輸入合法的網址,必須含http
+		- autoplay 自動撥放-->google禁用此項屬性,解決方案,添加muted屬性,但音頻不可以
+		- poster 預先加載等待的畫面圖片
+07.input新增表單類型(type)==
+   *type="email"->需包含@及@後面要有內容
+   *type="url"->驗證只能輸入合法的網址,必須含http
 	type="date"->日期:年月日
 	type="time"->時間:時分秒
 	type="datetime"大多數瀏覽器不支持datetime,只有safari支援,可改用datetime-local
 	type="month"->月份
 	type="week"->星期
-	type="number"->限制只能輸入數字,包含小數,可使用min最小值 和max 最大值,value="60"預設值
+   *type="number"->限制只能輸入數字,包含小數,可使用min最小值 和max 最大值,value="60"預設值
 	type="tel"->它不是用來實現驗證,目的為可在移動端打開數字鍵盤,意味著限制用戶只能輸入數字
-	type="search"-->搜索,可提供更人性化的輸入體驗
+   *type="search"-->搜索,可提供更人性化的輸入體驗
 	type="range"->範圍,可設最大值 max 和最小值 min 預設值value  ex:調音量大小
 	type="color"->顏色選擇表單
 08.input表單屬性==
 	-required 必填,內容不能為空  pattern="正則表達式驗證"
-	-placeholder提示文本(佔位符)
+	-placeholder提示文本(佔位符) 可利用input::placeholder {color:red}修改提示文本顏色,(font-size:16)字體大小
 	-autofocus自動獲取鼠標焦點
-	-autocomolete自動提示曾經提交的內容 on 打開該功能 -->注意:使用時需同時加上name屬性並曾經成功提交內容 off 關閉該功能
+	-autocomolete自動提示曾經成功提交的內容(預設)on打開該功能 -->注意:使用時需同時加上name屬性並曾經成功提交內容,一般使用off關閉該功能(資安問題)
 	-multiple 可多選文件提交
 	-form:form="myForm"指定表單id,在將來指定form id="myForm"
   form: 
@@ -50,25 +51,28 @@
 	    -option value:具體的值  label:提示信息,輔助值-->firefox不支援value
 	與input建立關連時,使用list="datalist的id號"
 	如果input輸入框的type="url"時,value值必須添加http://
-10css3導讀==
+09css3導讀==
+	1.掌握CSS3新增屬性、結構偽類和偽元素選擇器
+	2.掌握CSS3 2D轉換、移動、旋轉和縮放屬性
+	3.掌握CSS3 3D轉換、移動、旋轉和縮放屬性
+	4.掌握CSS3動畫屬性
 11、12屬性選擇器(上)==
 	1.button{
 		cursor: pointer;//鼠標移入鼠標變成小手
 	  }
-	2.disabled 禁用狀態
+	2.disabled 設置按鈕禁用狀態
 	3.選擇符:
 	  - E[att屬性]-->選擇含有att屬性的E元素  範圍最大
-		- E[att屬性="val"]-->選擇具有att屬性且屬性值等於val的E元素 全等
-		- E[att屬性^="val"]-->匹配具有att屬性且值以val開頭的E元素 ^=開頭含有
-		- E[att屬性$="val"]-->匹配具有att屬性且值以val結尾的E元素 $=結尾含有 
-		- E[att屬性*="val"]-->匹配具有att屬性且值中含有val的E元素 *=任意位置含有
+	  - E[att屬性="val"]-->選擇具有att屬性且屬性值等於val的E元素 全等
+	  - E[att屬性^="val"]-->匹配具有att屬性且值以val開頭的E元素 ^=開頭含有
+	  - E[att屬性$="val"]-->匹配具有att屬性且值以val結尾的E元素 $=結尾含有 
+	  - E[att屬性*="val"]-->匹配具有att屬性且值中含有val的E元素 *=任意位置含有
 	4.類選擇器 屬性選擇器 偽類選擇器 權重為10  標籤選擇器權重為1
 
 13、14結構偽類選擇器(上)==
 	E:first-child-->第一個子元素
 	E:last-child-->最後一個子元素
 	E:nth-child(n)-->第n個子元素
-	
 	n可以是數字、關鍵字(ex:even(偶數)、odd(奇數))或公式
 	如果n是公式,從0開始計算,但第0個元素或超出了元素的個數時會被忽略
 	2n 偶數=even
@@ -76,12 +80,17 @@
 	5n 5的倍數
 	n+5 從第5個開始到最後
 	-n+5前5個(包含第5個)
-	***nth-child 使用時只指向是第n子元素,並不會管是何種類型的元素
+	***nth-child(n) 選取父元素中的第n個子元素,使用時只指向是第n子元素,並不管是何種類型的子元素
 15結構偽類選擇器(下)==
   E:first-of-type-->指定類型E的第一個
-	E:last-of-type-->指定類型E的最後一個
-	E:nth-of-type(n)-->指定類型E的第n個
-	選擇指定類型的元素ex:如有多個p、多個span混合為子元素時,則可使用此一方式指定那一個類型的第n個子元素 
+  E:last-of-type-->指定類型E的最後一個
+  E:nth-of-type(n)-->指定類型E的第n個
+  ***選擇指定類型的子元素ex:如有多個p、多個span混合為子元素時,則可使用此一方式指定那一個類型的第n個子元素 
+  **nth-child與nth-of-type使用區別:選取順序不同
+    1.div:nth-child(2):先查找所有子元素中的第2個子元素,再檢查前面的指定元素(div)
+      會將所有子元素作排序選擇,其中以第二個子元素作為選取對象,然後再檢查前面標籤div,符合條件才  被選上
+    2.div:nth-of-type(2):先查找指定類型(div)的子元素,再找出指定類型子元素中第2個子元素
+      會把指定類型(div)的子元素作為排序對象,然後再選取指定類型的第2個子元素作為選取對象 
 17、18偽元素選擇器==
 	1. ::before-->在元素內部的前面插入內容
 	2. ::after -->在元素內部的後面插入內容
