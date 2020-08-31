@@ -179,30 +179,33 @@
 		@keyframes 動畫名稱{
 			0%{
 				css樣式屬性;
-				}
+			}
+			50%{
+			    屬性;
+			}
 			100%{
 				屬性;
-				}
+			}
 		  }
 		-->0%是動畫的開始,100%是動畫的完成,動畫序列
 	4.調用動畫:animation-name: 動畫名稱;
 	5.持續時間:animation-duration: 持續時間;
 31動畫序列==
-	1.動畫是使元素從一種樣式逐漸變化為另一種樣式的效果,可改變任意多的樣式和任意多的次數
-	2.請用百分比來規定變化發生的時間,或用關鍵詞from到to,等同於0%到100%
+	1.動畫是使元素從一種狀態(樣式)逐漸變化為另一種狀態(樣式)的效果,可改變任意多的樣式和任意多的次數
+	2.可用百分比來規定變化發生的時間,或用關鍵詞from到to,等同於0%到100%
 	3.百分比需為整數
 	4.百分比就是總的時間來劃分
 32動畫常用屬性==
-	1.@keyframes:規定動畫
-	2.animation:所有動畫屬性的簡寫形式,除animation-play-state屬性
+	1.@keyframes 動畫名:定義動畫
+	2.animation:所有動畫屬性的簡寫形式,除了animation-play-state屬性
 	3.animation-name:規定動畫名稱(必須)
 	4.animation-duration:規定動畫完成一個週期所花費的秒或毫秒,默認為0(必須)
-	5.animation-timing-function:規定動畫的速度曲線,默認為ease
+	5.animation-timing-function:規定動畫的運動速度曲線,默認為ease
 	6.animation-delay:規定動畫何時開始,默認為0(延遲播放)
 	7.animation-iteration-count:規定動畫播放的次數,默認為1,無限使用infinite(重複播放與否)
 	8.animation-direction:規定動畫是否在下一個週期逆向播放,默認為normal,逆播放altermate(是否反方向播放,跑馬燈)
-	9.animation-play-state:規定動畫提否正在運行或暫停,默認為running 暫停為paused,經常與鼠標經過配合使用
-	10.animation-fill-mode:規定動畫結束狀態,保持forwards回到起backwards,默認為backwards
+   *9.animation-play-state:規定動畫提否正在運行或暫停,默認為running 暫停為paused,經常與鼠標經過(:hover)配合使用
+	10.animation-fill-mode:規定動畫結束後的狀態,forwards:停留在結束狀態,回到起始狀態:backwards(默認)
 33動畫簡寫==
 	animation: 動畫名稱 持續時間 運動曲線 何時開始 播放次數 是否反方向 動畫起始或結束狀態;
 	前面兩個屬性是必須的(名稱和時間)
@@ -226,57 +229,60 @@
 		y軸:垂直向下 下面是正值,上面是負值
 		z軸:垂直屏幕 往外是正值,往內是負值
 39 3D轉換==
-  1.3D位移translate3d(x,y,z)
-	2.3D旋轉rotate3d(x,y.z)
-	3.透視perpective
-	4.3D呈現transfrom-style
+    1.3D位移translate3d(x,y,z)
+	2.3D旋轉rotate3d(x,y,z)
+	3.透視perspective
+	4.3D呈現transform-style
 	=========================
 	3D移動translate3d:增加z軸方向
 	1.translateZ(100px)-->沿著Z軸移動(後面的單位一般使用px),正值向外移動,負值向內移動
+	  transform:translateX(100px) translateY(100px) translateZ(100px)
 	2.3D移動簡寫方式:translate3d(x,y,z)
+	  transform:translate3d(100px,100px,100px)
 	3.x y z 三個值不能省略,如果没有就寫0
-40透視(類似3D眼鏡功能)==
+40.透視perspective(類似3D眼鏡功能)==設置眼睛到屏幕的距離,單位px,近大遠小原則,3D效果需設置,設置在被觀察的父元素上
 	在2D平面產生近大遠小的視覺立體,但是只是二維的
 	1.如果想要在網頁產生3D效果需要透視(理解成3D物體投影2D平面上)
 	2.模擬人類的視覺位置,可認為安排一只眼睛去看
 	3.透視也稱為視距,就是人的眼睛到屏幕的距離
 	4.距離視覺點越近的在電腦平面成像越大,越遠成像越小(近大遠小)
 	5.透視的單位是像素
-	透視寫在被觀察元素的父元素上
-		d:就是視距,指人的眼睛到屏幕的距離-->設置在perspective: 500px; d數值越大,距離越遠,物體成像越小,反之成像越大
-		z:就是z軸,指物體與屏幕之間的距離,z軸越大(正值),越靠近眼睛,所以我們看到的物體就越大(0為原來大小,正值變大,物體
-		  也越來越大,負值變小,物體也越來越小)
-41translateZ==
-	當perspective:d值固定時,translateZ(z值),z值不同時,0為原來大小,正值變大,表示越靠近眼睛,物體也越來越大,負值變
-	小,表示離眼睛越來越遠,所以物體也越來越小,就會呈現近大遠小原則
-42 3D旋轉rotate3D==
-	可讓元素在三維立體空間上沿著x、y、z軸或自定義軸進行旋轉
-	語法:translateX(45deg)沿著x軸正方向旋轉45度
-	    translateY(45deg)沿著y軸正方向旋轉45度
-	    translateZ(45deg)沿著z軸正方向旋轉45度
-	    translate3d(x,y,z,45deg):沿著自定義軸旋轉,deg為角度
+	***透視(perspective)屬性(d值)必須設置在被觀察元素的父元素上
+	   d:就是視距,指人的眼睛到屏幕的距離-->設置在perspective: 500px; d數值越大,距離越遠,物體成像越小,反之成像越大
+	   z:就是z軸,指物體與屏幕之間的距離,z軸越大(正值),越靠近眼睛,所以我們看到的物體就越大(0為原來大小,正值變大,物體
+		 也越來越大,負值變小,物體也越來越小)
+41.translateZ軸位移==perspective控制d值,translateZ控制z值
+	當perspective:(d值)固定時,translateZ(z值)
+	(1)0為代表原來大小
+	(2)正值變大,表示越靠近眼睛,物體也越來越大;
+	(3)負值變小,表示離眼睛越來越遠,所以物體也越來越小,就會呈現近大遠小原則
+42.3D旋轉rotate3d:可讓元素在三維立體空間上沿著x、y、z軸或自定義軸進行旋轉
+	語法:transform:rotateX(45deg)沿著x軸正方向旋轉45度
+	    transform:rotateY(45deg)沿著y軸正方向旋轉45度
+	    transform:rotateZ(45deg)沿著z軸正方向旋轉45度
+	    transform:rotate3d(x,y,z,45deg):沿著自定義軸旋轉,deg為角度
 	x軸旋轉(可想像為單摃):對於元素旋轉的方向判斷,我們需要先學習一個左手準則
 	1.左手大拇指指向x軸的正方向
 	2.其餘手指的彎曲方向就是該元素沿著x軸旋轉的方向為正值,反方向為負值
-43 rotateY()==
+43.rotateY()==
 	y軸旋轉(可想像為鋼管舞)
 	1.左手大拇指指向y軸的正方向
 	2.其餘手指的彎曲方向就是該元素沿著y軸旋轉的方向為正值,反方向為負值
-44 rotateZ()==
+44.rotateZ()==
   z軸旋轉(可想像為抽奬旋轉盤)
 	1.左手大拇指指向z軸的正方向
 	2.其餘手指的彎曲方向就是該元素沿著z軸旋轉的方向為正值,反方向為負值
-	translate3d(x,y,z,45deg):沿著自定義軸旋轉,deg為角度
-	translate3d(1,0,0,45deg):沿著X軸旋轉45度
-	translate3d(0,1,0,45deg):沿著y軸旋轉45度
-	translate3d(1,1,0,45deg):沿著x y軸之間的對角線旋轉45度
-45 3D呈現transfrom-style==
+      transform:rotate3d(x,y,z,45deg):沿著自定義軸旋轉,deg為角度
+      transform:rotate3d(1,0,0,45deg):沿著X軸旋轉45度
+      transform:rotate3d(0,1,0,45deg):沿著y軸旋轉45度
+      transform:rotate3d(1,1,0,45deg):沿著x y軸之間的對角線旋轉45度
+45.3D呈現transform-style==設置在父元素上,讓子元素保持3D立體效果,經常與perspective一起使用
 	作用:
 	1.控制子元素是否開啟三維立體環境
-	2.默認值:transfrom-style:flat 子元素不開啟3D立體空間
+	2.默認值:transform-style:flat 子元素不開啟3D立體空間
 	3.transform-style:preserve-3d-->開啟子元素3D立體空間,preserve保持
 	4.代碼設置給父元素,但影響的是子元素,這個屬性很重要必用
-46兩面翻轉的盒子==
+46.兩面翻轉的盒子==
 	46twoside.html
 47、48翻轉導航欄==
 	47nav3d.html

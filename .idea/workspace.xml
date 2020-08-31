@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="085d877e-91e6-4336-9ee0-60beaaf02a40" name="Default Changelist" comment="">
+    <list default="true" id="085d877e-91e6-4336-9ee0-60beaaf02a40" name="Default Changelist" comment="Default Changelist">
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/css.txt" beforeDir="false" afterPath="$PROJECT_DIR$/css/css.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/h5c3/horse/basic/h5note/从零开始玩转前端与移动开发（第二阶段CSS3）.txt" beforeDir="false" afterPath="$PROJECT_DIR$/h5c3/horse/basic/h5note/从零开始玩转前端与移动开发（第二阶段CSS3）.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/blackhores/ES6面向對象/素材/js高级第五天素材/11.find方法介绍.html" beforeDir="false" afterPath="$PROJECT_DIR$/js/blackhores/ES6面向對象/素材/js高级第五天素材/11.find方法介绍.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/blackhores/ES6面向對象/素材/js高级第五天素材/2.经典面试题.html" beforeDir="false" afterPath="$PROJECT_DIR$/js/blackhores/ES6面向對象/素材/js高级第五天素材/2.经典面试题.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/blackhores/ES6面向對象/素材/js高级第五天素材/3.使用const关键字声明常量.html" beforeDir="false" afterPath="$PROJECT_DIR$/js/blackhores/ES6面向對象/素材/js高级第五天素材/3.使用const关键字声明常量.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/blackhores/ES6面向對象/素材/js高级第五天素材/8.剩余参数.html" beforeDir="false" afterPath="$PROJECT_DIR$/js/blackhores/ES6面向對象/素材/js高级第五天素材/8.剩余参数.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/blackhores/ES6面向對象/面向對象筆記.txt" beforeDir="false" afterPath="$PROJECT_DIR$/js/blackhores/ES6面向對象/面向對象筆記.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/blackhores/code/04創建類與生成實例.html" beforeDir="false" afterPath="$PROJECT_DIR$/js/blackhores/code/04創建類與生成實例.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/blackhores/code/118-.html" beforeDir="false" afterPath="$PROJECT_DIR$/js/blackhores/code/118-.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/blackhores/code/126-131.html" beforeDir="false" afterPath="$PROJECT_DIR$/js/blackhores/code/126-131.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/blackhores/node/code/02-module.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/blackhores/node/code/02-module.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/h5c3/horse/advance/H5C3/最全面的Html5+css3教程筆記.txt" beforeDir="false" afterPath="$PROJECT_DIR$/h5c3/horse/advance/H5C3/最全面的Html5+css3教程筆記.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/blackhores/node/code/sdo/01.hellonode.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/blackhores/node/code/sdo/01.hellonode.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/blackhores/node/筆記.txt" beforeDir="false" afterPath="$PROJECT_DIR$/js/blackhores/node/筆記.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/blackhores/note/JS基礎.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/leesj/weblearn/h5c3/code/124浮動元素貼靠現象.html" beforeDir="false" afterPath="$PROJECT_DIR$/js/leesj/weblearn/h5c3/code/124浮動元素貼靠現象.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/leesj/weblearn/h5c3/note/note.txt" beforeDir="false" afterPath="$PROJECT_DIR$/js/leesj/weblearn/h5c3/note/note.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/尚硅谷javascipt(李立超).txt" beforeDir="false" afterPath="$PROJECT_DIR$/js/尚硅谷javascipt(李立超).txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,8 +20,24 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="h5c3js" />
+  </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/leesj/leenanjs.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="170">
+                <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -66,6 +73,13 @@
         <option value="$PROJECT_DIR$/js/leesj/weblearn/h5c3/code/161a標籤偽類選擇器練習.html" />
         <option value="$PROJECT_DIR$/h5c3/horse/basic/h5note/从零开始玩转前端与移动开发（第二阶段CSS3）.txt" />
         <option value="$PROJECT_DIR$/css/css.txt" />
+        <option value="$PROJECT_DIR$/js/leesj/weblearn/jQuery基础/03-jQuery和JS入口函数的区别.html" />
+        <option value="$PROJECT_DIR$/js/blackhores/node/webpack.md" />
+        <option value="$PROJECT_DIR$/js/尚硅谷javascipt(李立超).txt" />
+        <option value="$PROJECT_DIR$/js/blackhores/node/code/sdo/01.hellonode.js" />
+        <option value="$PROJECT_DIR$/nodejs/01/README.md" />
+        <option value="$PROJECT_DIR$/js/leesj/李南江老師JS.txt" />
+        <option value="$PROJECT_DIR$/js/leesj/leenanjs.md" />
       </list>
     </option>
   </component>
@@ -76,9 +90,7 @@
     <option name="height" value="820" />
   </component>
   <component name="ProjectId" id="1eDV2TegzdTS2NNa1JjTlIxlMzU" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="1" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -97,18 +109,24 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="javascript.nodejs.core.library.typings.version" value="12.12.54" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/js/leesj" />
+    <property name="node.js.detected.package.stylelint" value="true" />
+    <property name="node.js.path.for.package.stylelint" value="project" />
+    <property name="node.js.selected.package.stylelint" value="" />
+    <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="nodejs_package_manager_path" value="C:/Program Files/nodejs/node_modules/npm" />
+    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
+    <property name="settings.editor.splitter.proportion" value="0.21686748" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\bhjs\h5c3js\js\leesj" />
+      <recent name="D:\bhjs\h5c3js\js\blackhores\node" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\bhjs\h5c3js\js\blackhores\node\code\sdo" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\bhjs\h5c3js\js\blackhores\node" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -123,11 +141,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="HTTP Request.node#1">
+  <component name="RunManager" selected="Node.js.02module.js">
     <configuration name="node#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" nameIsGenerated="true" path="C:/Program Files/nodejs/node.exe">
       <method v="2" />
     </configuration>
-    <configuration name="03-module-b.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="03-module-b.js" working-dir="$PROJECT_DIR$/js/blackhores/node/code/ithaima">
+    <configuration name="02module.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="02module.js" working-dir="$PROJECT_DIR$/js/blackhores/node/code/sdo">
       <method v="2" />
     </configuration>
     <configuration name="03.require.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/js/blackhores/node/code/sdo/03.require.js" working-dir="$PROJECT_DIR$/js/blackhores/node/code/sdo">
@@ -147,7 +165,18 @@
     </configuration>
     <list>
       <item itemvalue="HTTP Request.node#1" />
+      <item itemvalue="Node.js.node" />
+      <item itemvalue="Node.js.03.require.js" />
+      <item itemvalue="Node.js.04global.js" />
+      <item itemvalue="Node.js.05.readfile.js" />
+      <item itemvalue="Node.js.b.js" />
+      <item itemvalue="Node.js.02module.js" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.02module.js" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -208,18 +237,34 @@
       <workItem from="1597156659153" duration="200000" />
       <workItem from="1597156954698" duration="12000" />
       <workItem from="1597235890956" duration="3044000" />
+      <workItem from="1598176574117" duration="325000" />
+      <workItem from="1598179312146" duration="579000" />
+      <workItem from="1598185727088" duration="535000" />
+      <workItem from="1598186491260" duration="3978000" />
+      <workItem from="1598191129777" duration="3832000" />
+      <workItem from="1598531033945" duration="4668000" />
+      <workItem from="1598537570983" duration="1745000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11629000" />
+    <option name="totallyTimeSpent" value="27291000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.25433525" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.20750709" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" weight="0.3293201" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />
       <window_info id="UI Designer" order="5" />
@@ -230,12 +275,15 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32911393" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007082" side_tool="true" weight="0.32281205" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
+      <window_info anchor="bottom" id="运行" order="12" sideWeight="0.49929178" weight="0.35868007" />
+      <window_info anchor="bottom" id="调试" order="13" weight="0.32998565" />
+      <window_info anchor="bottom" id="找到" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -318,9 +366,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/blackhores/node/code/sdo/01.hellonode.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/blackhores/jsbasic/js基础第五天素材/code/01-arguments使用.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -353,13 +398,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
           <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/blackhores/node/筆記.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="37" column="59" selection-start-line="37" selection-start-column="59" selection-end-line="37" selection-end-column="59" />
         </state>
       </provider>
     </entry>
@@ -473,6 +511,119 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32">
           <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/leesj/weblearn/jQuery基础/03-jQuery和JS入口函数的区别.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-149">
+          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/blackhores/node/webpack.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="93">
+            <caret line="2" selection-start-line="2" selection-end-line="2" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/尚硅谷javascipt(李立超).txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="300" column="59" selection-start-line="300" selection-start-column="59" selection-end-line="300" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/blackhores/node/code/sdo/01.hellonode.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="21" selection-start-column="21" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/blackhores/node/code/sdo/02module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/blackhores/node/code/sdo/03.require.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/blackhores/node/筆記.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="78" column="79" selection-start-line="78" selection-start-column="79" selection-end-line="78" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nodejs/01/code/00-helloworld.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nodejs/01/ip華硊睿傷諳瘍.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nodejs/01/code/data/斕疑.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nodejs/01/網站架構.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/尚硅谷 李立超老師103集html+css基礎.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nodejs/03/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nodejs/01/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="170">
+            <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nodejs/01/code/12-http-fs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/leesj/leenanjs.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="5" column="17" lean-forward="true" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="170">
+            <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
