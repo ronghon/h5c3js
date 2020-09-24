@@ -499,6 +499,29 @@
       (3)陰影顏色默認與文字顏色相同。
     **文字陰影:text-shadow:水平偏移 垂直偏移 模糊度 陰影顏色  ;使用注意點與盒子陰影相同
 173.翻轉菜單案例
-    
-174.
+
+174.動畫animate:與過渡(transition)區別
+	1.不同點:過渡須人為的觸發才會執行動畫,而動畫不需人為觸發就能執行動畫
+	2.相同點:
+	  (1)過渡和動晝都是用來為元素添加動畫的
+	  (2)過渡和動畫均是CSS3新增屬性,均需滿足三要素才會有動畫效果
+	3.動畫三要素:
+	  (1)創建動畫名稱@keyframes 動畫名稱{
+		  from{    或使用百分比
+
+		  }
+		  to{
+
+		  }
+	  }
+	  (2)執行動畫名稱animation-name
+	  (3)執行動畫效果時長animation-duration:3s;
+175.動畫其他屬性:
+	1.animation-delay:2s;延遲時間後再執行動畫
+	2.animation-timing-function:動畫執行的運動速度
+	3.animation-iteration-count:3;動畫執行次數
+	4.animation-direction:alternate;動畫往返效果
+	5.animation-play-state:控制動畫執行狀態 running執行動畫  paused暫停動畫
+	6.
+
 
