@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="085d877e-91e6-4336-9ee0-60beaaf02a40" name="Default Changelist" comment="Default Changelist" />
+    <list default="true" id="085d877e-91e6-4336-9ee0-60beaaf02a40" name="Default Changelist" comment="Default Changelist">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/blackhores/ajax/14ajax/day01/PPT/01-Ajax 晤最價插.ppt" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,10 +40,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-33" />
-    <option name="y" value="26" />
+    <option name="x" value="40" />
+    <option name="y" value="12" />
     <option name="width" value="1400" />
-    <option name="height" value="820" />
+    <option name="height" value="816" />
   </component>
   <component name="ProjectId" id="1eDV2TegzdTS2NNa1JjTlIxlMzU" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -55,15 +59,21 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="javascript.nodejs.core.library.typings.version" value="12.12.54" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/js/leesj" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.stylelint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.stylelint" value="" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="C:/Program Files/nodejs/node_modules/npm" />
-    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="settings.editor.splitter.proportion" value="0.21686748" />
   </component>
   <component name="RecentsManager">
@@ -175,6 +185,14 @@
       <workItem from="1598537570983" duration="1745000" />
       <workItem from="1599381069068" duration="7196000" />
       <workItem from="1600995866557" duration="22000" />
+      <workItem from="1601429898996" duration="213000" />
+      <workItem from="1601430696968" duration="696000" />
+      <workItem from="1601434106793" duration="1742000" />
+      <workItem from="1601436111616" duration="746000" />
+      <workItem from="1601436927780" duration="647000" />
+      <workItem from="1601437881119" duration="403000" />
+      <workItem from="1601444811053" duration="864000" />
+      <workItem from="1601861832345" duration="510000" />
     </task>
     <servers />
   </component>
@@ -239,9 +257,10 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state width="1412" height="157" key="GridCell.Tab.0.right/1440.0.1680.1010/0.0.1440.860@0.0.1440.860" timestamp="1596970274971" />
-    <state x="0" y="0" key="SettingsEditor" timestamp="1596968037959">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state x="0" y="0" key="SettingsEditor" timestamp="1601862349328">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="0" y="0" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1601862349328" />
     <state x="0" y="0" key="SettingsEditor/1440.0.1680.1010/0.0.1440.860@0.0.1440.860" timestamp="1596968037959" />
     <state x="1698" y="87" key="SettingsEditor/1440.0.1680.1010/0.0.1440.860@1440.0.1680.1010" timestamp="1596957920182" />
   </component>
