@@ -1,267 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="085d877e-91e6-4336-9ee0-60beaaf02a40" name="Default Changelist" comment="Default Changelist">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="de2f165d-a9c7-43f6-ae68-e3505519ffc2" name="默认的" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/h5c3js.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/blackhores/ajax/14ajax/day01/PPT/01-Ajax 晤最價插.ppt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/code/HelloWorld.class" beforeDir="false" afterPath="$PROJECT_DIR$/java/code/HelloWorld.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/code/HelloWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/code/HelloWorld.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DefaultGradleProjectSettings">
-    <option name="isMigrated" value="true" />
-  </component>
-  <component name="FavoritesManager">
-    <favorites_list name="h5c3js" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="HTML File" />
-        <option value="JavaScript File" />
-      </list>
-    </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>属</find>
-      <find>3D</find>
-      <find>2D</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>選</replace>
-      <replace>屬</replace>
-    </replaceStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="40" />
-    <option name="y" value="12" />
-    <option name="width" value="1400" />
-    <option name="height" value="816" />
-  </component>
-  <component name="ProjectId" id="1eDV2TegzdTS2NNa1JjTlIxlMzU" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="1ilpHEdHdWEgZWk5pYR2z48c1d7" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="javascript.nodejs.core.library.typings.version" value="12.12.54" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.stylelint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.stylelint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.stylelint" value="" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="nodejs_package_manager_path" value="C:/Program Files/nodejs/node_modules/npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-    <property name="settings.editor.splitter.proportion" value="0.21686748" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\bhjs\h5c3js\js\leesj" />
-      <recent name="D:\bhjs\h5c3js\js\blackhores\node" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\bhjs\h5c3js\js\blackhores\node\code\sdo" />
-    </key>
-  </component>
-  <component name="RunManager" selected="HTTP 请求.node#1">
-    <configuration name="node#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" nameIsGenerated="true" path="C:/Program Files/nodejs/node.exe">
-      <method v="2" />
-    </configuration>
-    <configuration name="02module.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="02module.js" working-dir="$PROJECT_DIR$/js/blackhores/node/code/sdo">
-      <method v="2" />
-    </configuration>
-    <configuration name="03.require.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/js/blackhores/node/code/sdo/03.require.js" working-dir="$PROJECT_DIR$/js/blackhores/node/code/sdo">
-      <method v="2" />
-    </configuration>
-    <configuration name="04global.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/js/blackhores/node/code/sdo/04global.js" working-dir="$PROJECT_DIR$/js/blackhores/node/code/sdo">
-      <method v="2" />
-    </configuration>
-    <configuration name="05.readfile.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="05.readfile.js" working-dir="$PROJECT_DIR$/js/blackhores/node/code/ithaima">
-      <method v="2" />
-    </configuration>
-    <configuration name="b.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="b.js" working-dir="$PROJECT_DIR$/js/blackhores/node/code/ithaima">
-      <method v="2" />
-    </configuration>
-    <configuration name="node" type="NodeJSConfigurationType" activateToolWindowBeforeRun="false" path-to-node="node" working-dir="$PROJECT_DIR$/js/blackhores/node/code/sdo">
-      <method v="2" />
-    </configuration>
-    <list>
-      <item itemvalue="HTTP 请求.node#1" />
-      <item itemvalue="Node.js.node" />
-      <item itemvalue="Node.js.02module.js" />
-      <item itemvalue="Node.js.03.require.js" />
-      <item itemvalue="Node.js.04global.js" />
-      <item itemvalue="Node.js.05.readfile.js" />
-      <item itemvalue="Node.js.b.js" />
-    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="085d877e-91e6-4336-9ee0-60beaaf02a40" name="Default Changelist" comment="" />
-      <created>1593788471831</created>
+      <changelist id="de2f165d-a9c7-43f6-ae68-e3505519ffc2" name="默认的" comment="" />
+      <created>1602491942807</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1593788471831</updated>
-      <workItem from="1593788473675" duration="20000" />
-      <workItem from="1593788512190" duration="20000" />
-      <workItem from="1593788578233" duration="70000" />
-      <workItem from="1593788669365" duration="26000" />
-      <workItem from="1593854779819" duration="24000" />
-      <workItem from="1593855958580" duration="25000" />
-      <workItem from="1593856033463" duration="96000" />
-      <workItem from="1593856176920" duration="52000" />
-      <workItem from="1593856404181" duration="842000" />
-      <workItem from="1593857304686" duration="65000" />
-      <workItem from="1593857416502" duration="76000" />
-      <workItem from="1593857534748" duration="70000" />
-      <workItem from="1593857648087" duration="500000" />
-      <workItem from="1593860037845" duration="160000" />
-      <workItem from="1593860265426" duration="214000" />
-      <workItem from="1593860545203" duration="459000" />
-      <workItem from="1593861072112" duration="131000" />
-      <workItem from="1593861277885" duration="96000" />
-      <workItem from="1593868047529" duration="5047000" />
-      <workItem from="1593907882602" duration="11994000" />
-      <workItem from="1593928496955" duration="1889000" />
-      <workItem from="1594127587522" duration="4503000" />
-      <workItem from="1594514228544" duration="1895000" />
-      <workItem from="1594517774654" duration="6496000" />
-      <workItem from="1595081477587" duration="199000" />
-      <workItem from="1595757604145" duration="2023000" />
-      <workItem from="1595766472777" duration="20000" />
-      <workItem from="1595766980124" duration="6512000" />
-      <workItem from="1596939874124" duration="1746000" />
-      <workItem from="1596954092026" duration="1184000" />
-      <workItem from="1596955931313" duration="324000" />
-      <workItem from="1596956441133" duration="39000" />
-      <workItem from="1596956553493" duration="40000" />
-      <workItem from="1596956669221" duration="77000" />
-      <workItem from="1596956831353" duration="77000" />
-      <workItem from="1596956986957" duration="48000" />
-      <workItem from="1596957405087" duration="23000" />
-      <workItem from="1596957468748" duration="82000" />
-      <workItem from="1596957628167" duration="1254000" />
-      <workItem from="1596959303056" duration="9302000" />
-      <workItem from="1596970371884" duration="57000" />
-      <workItem from="1596977886406" duration="21000" />
-      <workItem from="1596978618585" duration="402000" />
-      <workItem from="1596979168142" duration="5634000" />
-      <workItem from="1597040753726" duration="1199000" />
-      <workItem from="1597149828093" duration="1138000" />
-      <workItem from="1597156659153" duration="200000" />
-      <workItem from="1597156954698" duration="12000" />
-      <workItem from="1597235890956" duration="3044000" />
-      <workItem from="1598176574117" duration="325000" />
-      <workItem from="1598179312146" duration="579000" />
-      <workItem from="1598185727088" duration="535000" />
-      <workItem from="1598186491260" duration="3978000" />
-      <workItem from="1598191129777" duration="3832000" />
-      <workItem from="1598531033945" duration="4668000" />
-      <workItem from="1598537570983" duration="1745000" />
-      <workItem from="1599381069068" duration="7196000" />
-      <workItem from="1600995866557" duration="22000" />
-      <workItem from="1601429898996" duration="213000" />
-      <workItem from="1601430696968" duration="696000" />
-      <workItem from="1601434106793" duration="1742000" />
-      <workItem from="1601436111616" duration="746000" />
-      <workItem from="1601436927780" duration="647000" />
-      <workItem from="1601437881119" duration="403000" />
-      <workItem from="1601444811053" duration="864000" />
-      <workItem from="1601861832345" duration="510000" />
+      <updated>1602491942807</updated>
+      <workItem from="1602491944274" duration="30000" />
     </task>
     <servers />
   </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="1872" y="146" key="#Plugins" timestamp="1593857665256">
-      <screen x="1440" y="0" width="1680" height="1010" />
-    </state>
-    <state x="1872" y="146" key="#Plugins/1440.0.1680.1010/0.0.1440.860@1440.0.1680.1010" timestamp="1593857665256" />
-    <state x="359" y="30" key="#Unnamed" timestamp="1596960730206">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state x="359" y="30" key="#Unnamed/1440.0.1680.1010/0.0.1440.860@0.0.1440.860" timestamp="1596960730206" />
-    <state x="264" y="211" key="#Usage_Scope" timestamp="1596961071775">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state x="264" y="211" key="#Usage_Scope/1440.0.1680.1010/0.0.1440.860@0.0.1440.860" timestamp="1596961071775" />
-    <state x="169" y="15" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1596961747557">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state x="169" y="15" key="#com.intellij.execution.impl.EditConfigurationsDialog/1440.0.1680.1010/0.0.1440.860@0.0.1440.860" timestamp="1596961747557" />
-    <state x="446" y="63" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1596961479148">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state x="446" y="63" key="#com.intellij.ide.macro.MacrosDialog/1440.0.1680.1010/0.0.1440.860@0.0.1440.860" timestamp="1596961479148" />
-    <state x="359" y="30" key="#node" timestamp="1596960738478">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state x="359" y="30" key="#node/1440.0.1680.1010/0.0.1440.860@0.0.1440.860" timestamp="1596960738478" />
-    <state x="533" y="123" width="702" height="612" key="EnvironmentVariablesDialog" timestamp="1596961563685">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state x="533" y="123" width="702" height="612" key="EnvironmentVariablesDialog/1440.0.1680.1010/0.0.1440.860@0.0.1440.860" timestamp="1596961563685" />
-    <state x="437" y="125" key="FileChooserDialogImpl" timestamp="1596961735452">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state x="437" y="125" key="FileChooserDialogImpl/1440.0.1680.1010/0.0.1440.860@0.0.1440.860" timestamp="1596961735452" />
-    <state width="1412" height="157" key="GridCell.Tab.0.bottom" timestamp="1596970274972">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state width="1412" height="157" key="GridCell.Tab.0.bottom/1440.0.1680.1010/0.0.1440.860@0.0.1440.860" timestamp="1596970274972" />
-    <state width="1412" height="157" key="GridCell.Tab.0.center" timestamp="1596970274971">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state width="1412" height="157" key="GridCell.Tab.0.center/1440.0.1680.1010/0.0.1440.860@0.0.1440.860" timestamp="1596970274971" />
-    <state width="1412" height="157" key="GridCell.Tab.0.left" timestamp="1596970274971">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state width="1412" height="157" key="GridCell.Tab.0.left/1440.0.1680.1010/0.0.1440.860@0.0.1440.860" timestamp="1596970274971" />
-    <state width="1412" height="157" key="GridCell.Tab.0.right" timestamp="1596970274971">
-      <screen x="0" y="0" width="1440" height="860" />
-    </state>
-    <state width="1412" height="157" key="GridCell.Tab.0.right/1440.0.1680.1010/0.0.1440.860@0.0.1440.860" timestamp="1596970274971" />
-    <state x="0" y="0" key="SettingsEditor" timestamp="1601862349328">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="0" y="0" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1601862349328" />
-    <state x="0" y="0" key="SettingsEditor/1440.0.1680.1010/0.0.1440.860@0.0.1440.860" timestamp="1596968037959" />
-    <state x="1698" y="87" key="SettingsEditor/1440.0.1680.1010/0.0.1440.860@1440.0.1680.1010" timestamp="1596957920182" />
   </component>
 </project>
