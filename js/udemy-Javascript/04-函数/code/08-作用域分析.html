@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		<script type="text/javascript">
+			/*
+			 * 预解析
+			 * 		第1行: var a;
+			 * 		第2行: fn1 = function(){...}
+			 * 
+			 * 逐行解析
+			 * 		第1行: a = 1;
+			 * 
+			 * 		第6行: fn1()
+			 * 			预解析
+			 * 				第2行: var _a;	// 局部变量
+			 * 			逐行解析
+			 * 				第3行: alert(_a);	// 输出undefined
+			 * 				第4行: _a = 2;
+			 * 
+			 * 
+			 * 		第7行: alert(a);			// 输出1	
+			 */
+			var a = 1;			
+			function fn1(a){
+				alert(a);	// ?
+				a = 2;
+			}
+			fn1();
+			alert(a);		// ?
+		</script>
+	</body>
+</html>

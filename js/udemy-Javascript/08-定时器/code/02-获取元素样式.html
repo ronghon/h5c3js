@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 300px;
+				height: 300px;
+				background: red;
+			}
+		</style>
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var oBt = document.getElementById('bt');
+				var oBox = document.getElementById('box');
+				oBt.onclick = function(){
+					// alert(oBox.style.width);
+					
+					// 非IE
+					var style = getComputedStyle(oBox);
+					// alert(style.height);
+					
+					// IE
+					// alert(oBox.currentStyle.height);
+					
+					// 兼容操作
+					var width = '';
+					if(window.getComputedStyle){	// 非IE
+						var style = getComputedStyle(oBox);
+						width = style.width;
+					} else {
+						width = oBox.currentStyle.width;
+					}
+					// alert(width);
+					
+					// 函数封装
+					var width = getStyle(oBox,'height');
+					alert(width);
+				}
+				
+				// 获取元素样式
+				// object: 元素对象
+				// att: 需要获取的属性()
+				function getStyle(object,att){
+					if(window.getComputedStyle){	// 非IE
+						// return getComputedStyle(object).'width';
+						return getComputedStyle(object)[att];
+					} else {
+						return object.currentStyle[att];
+					}
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<input type="button" value="按钮" id="bt" />
+		<div id="box"></div>
+	</body>
+</html>

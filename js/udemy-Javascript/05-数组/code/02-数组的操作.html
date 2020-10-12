@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		<script type="text/javascript">
+			var zhangsan = ["张三",'20',"男","13800138000","一年3班"];
+			
+			// 数组元素读取(数组下标从0开始)
+//			alert(zhangsan[0]);
+//			alert(zhangsan[1]);
+//			alert(zhangsan[2]);
+//			alert(zhangsan[3]);
+
+			// 数组元素修改
+//			zhangsan[1] = "21";
+//			alert(zhangsan[1]);
+
+			// 数组遍历
+//			for(var i=0; i<4; i++){
+//				alert(zhangsan[i]);
+//			}
+			
+//			for(var i=0; i<zhangsan.length; i++){
+//				alert(zhangsan[i]);
+//			}
+
+			// for-in
+			// for(index in object){}
+//			for(index in zhangsan){
+//				alert(zhangsan[index]);
+//			}
+
+			// 数组转换方法
+			// alert(zhangsan);		// 隐性装换
+			// alert( typeof zhangsan.toString() );
+			
+			
+			// 数组元素 103~300
+			var arr = [];
+			for(var i=103; i<=300; i++){
+				// arr[103]
+				// arr[i]
+				
+				// 下标0，数组长度0 
+				// 下标1，数组长度1
+				arr[arr.length] = i;
+			}
+			console.log(arr);
+			
+		</script>
+	</body>
+</html>

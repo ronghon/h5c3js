@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 300px;
+				height: 30px;
+				background: red;
+				line-height: 30px;
+				/*color: white;*/
+				text-align: center;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div id="box" style="color: white;">
+			hello world!
+		</div>
+		
+		
+		<script type="text/javascript">
+			var oTitle = document.getElementById('box');
+			// img属性？
+			oTitle.img = "1.png";
+			oTitle.desc = "描述信息";
+			
+			// 默认背景是红色
+			oTitle.bg = "red";
+			
+			document.onclick = function(){
+//				alert(oTitle.img);
+//				alert(oTitle.desc);
+//				alert(oTitle.style.color);
+
+
+				if(oTitle.bg == 'red'){
+					oTitle.style.background = 'purple';
+					oTitle.bg = 'purple';
+				} else {
+					oTitle.style.background = 'red';
+					oTitle.bg = 'red';
+				}
+			}
+		</script>
+	</body>
+</html>

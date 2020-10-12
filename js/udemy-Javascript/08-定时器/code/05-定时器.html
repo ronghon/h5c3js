@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript" src="zyz.js" ></script>
+		<script type="text/javascript">
+			$(function(){
+				var timer = null;
+				var index = 0;
+				
+				// 开启
+				$('start').onclick = function(){
+					// setTimeout()  clearTimeout()	只执行一次
+					// setInterval() clearInterval() 重复
+					/* setInterval(函数,间隔)定时器: 重复操作
+					 * 函数: 事件处理
+					 * 间隔: 间隔时间(毫秒) 【最小10】
+					 * 返回值: 时钟对象
+					 */
+					if(timer == null){
+						timer = setInterval(speak,1000);
+					}
+				}
+				
+				function speak(){
+					index++;
+					console.log(index);
+				}
+				
+				// 停止
+				$('stop').onclick = function(){
+					clearInterval(timer);
+					timer = null;
+				}
+				
+				
+			});
+		</script>
+	</head>
+	
+	<body>
+		<input type="button" name="start" id="start" value="开始" />
+		<input type="button" name="start" id="stop" value="停止" />
+	</body>
+</html>

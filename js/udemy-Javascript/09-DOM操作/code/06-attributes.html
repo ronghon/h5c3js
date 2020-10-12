@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="zyz.js" ></script>
+		<script type="text/javascript">
+			$(function(){
+				var oView = $('view');
+				
+				// alert(oView.attributes.length);
+				// alert(oView.attributes[0]);
+				
+				// 遍历
+//				for(name in oView.attributes){
+//					document.write(name);
+//					document.write('<br />');
+//				}
+
+				// oView.attributes['id'] 获取属性节点
+				alert(oView.attributes['id'].nodeValue);
+				alert(oView.attributes['id'].nodeType);
+				alert(oView.attributes['id'].nodeName);
+			});
+		</script>
+	</head>
+	
+	<body>
+		<div id="view" class="section"></div>
+	</body>
+</html>

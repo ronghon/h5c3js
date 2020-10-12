@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				var oUser = document.getElementById('user');
+				var oPs = document.getElementById('ps');
+				var oBt = document.getElementById('bt');
+				
+				oUser.onkeydown = function(ev){
+					// 哪个?
+					ev = event || ev;
+					console.log(ev.keyCode);
+					
+					// 回车
+					if(ev.keyCode == 13){
+						oPs.focus();
+					}
+				}
+				
+				oPs.onkeydown = function(ev){
+					ev = event || ev;
+					// 回车
+					if(ev.keyCode == 13){
+						login();
+					}
+				}
+				
+				// 登录
+				function login(){
+					alert('正在登录中...');
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<input type="text" placeholder="账号" id="user" /> <br />
+		<input type="password" placeholder="密码" id="ps" /> <br />
+		<input type="button" value="登录" id="bt" />
+	</body>
+</html>

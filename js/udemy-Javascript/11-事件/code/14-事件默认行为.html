@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#menu{
+				width: 50px;
+				height: 80px;
+				border: 1px solid blue;
+				position: absolute;
+				display: none;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var oMenu = document.getElementById('menu');
+				
+				document.oncontextmenu = function(ev){
+					// alert(1);
+					
+					ev = event || ev;
+					
+					// 鼠标位置
+					oMenu.style.display = 'block';
+					oMenu.style.left = ev.clientX + 'px';
+					oMenu.style.top = ev.clientY + 'px';
+					
+					// 禁止默认行为
+					// ev.preventDefault ? ev.preventDefault() : ev.returnValue = false;
+					
+					return false;
+				}
+				
+				document.onclick = function(){
+					oMenu.style.display = 'none';
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<div id="menu"></div>
+	</body>
+</html>

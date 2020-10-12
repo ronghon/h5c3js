@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box1,#box2,#box3,#box4{
+				width: 100px;
+				height: 50px;
+				background: red;
+			}
+		</style>
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var aBox = document.getElementsByTagName('div');
+				
+				// 单个物体: 100 -> 300 [时钟]
+				
+				
+				// 多物体问题: 时钟只有一个
+				for(var i=0; i<aBox.length; i++){
+					aBox[i].onmouseover = function(){
+						startMove(this,300);
+					}
+					aBox[i].onmouseout = function(){
+						startMove(this,100);
+					}
+					
+					// 给每个物体添加时钟(自带时钟)
+					aBox[i].timer = null;
+				}
+				
+				
+				// 操作的对象: obj
+				// 目标点: target
+				function startMove(obj,target){
+					clearInterval(obj.timer);
+					obj.timer = setInterval(function(){
+						var speed = (target - obj.offsetWidth) / 7;
+						speed = speed>0 ? Math.ceil(speed) : Math.floor(speed);
+						
+						if(obj.offsetWidth == target){	// 停止
+							clearInterval(obj.timer);
+						} else {	// 运动
+							obj.style.width = obj.offsetWidth + speed + 'px';
+						}
+					},100);
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<div id="box1"></div> <br />
+		<div id="box2"></div> <br />
+		<div id="box3"></div> <br />
+		<div id="box4"></div> <br />
+	</body>
+</html>

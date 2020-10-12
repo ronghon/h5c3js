@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 200px;
+				height: 200px;
+				background: red;
+				margin: 30px;
+			}
+			#test{
+				width: 100px;
+				height: 100px;
+				background: purple;
+			}
+		</style>
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var oBox = document.getElementById('box');
+				var oTest = document.getElementById('test');
+				
+				oTest.onclick = function(ev){
+					// 事件对象
+					ev = window.event || ev;
+					// 事件源
+					var self = ev.target || ev.srcElement;
+					
+					
+					// 鼠标相对于浏览器页面位置
+					// alert(ev.clientX);
+					// alert(ev.clientY);
+					
+					// 鼠标相对于事件源的位置
+					// alert(ev.offsetX);
+					// alert(ev.offsetY);
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<div id="box">
+			<div id="test"></div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		<script type="text/javascript">
+			// 全局变量
+			var num = 10;
+			
+			// 全局函数
+			function test(){
+				// 使用全局变量
+				// alert(num);
+				
+				
+				// 局部变量
+				var a = 5;
+				
+				// 局部变量
+				function speak(){
+					alert("hello");
+				}
+			}
+			
+			// 使用全局变量
+			// alert(num);
+			
+			// 不能使用局部变量
+			// alert(a);
+			
+			// 使用全局函数
+			// test();
+			
+			// 不能使用局部函数
+			// speak();
+			
+			
+		</script>
+	</body>
+</html>

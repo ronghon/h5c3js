@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#view{
+				width: 200px;
+				height: 200px;
+				background: red;
+				border: 5px solid black;
+				padding: 10px;
+				overflow: auto;
+				/*margin: 40px;*/
+				position: absolute;
+				left: 50px;
+				top: 100px;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var oView = document.getElementById('view');
+				
+				document.onclick = function(){
+					// 1、通过style内联样式获取元素大小
+					// alert(oView.style.width);
+					
+					// 2、通过计算获取元素大小
+					var height = window.getComputedStyle ? getComputedStyle(oView).height : oView.currentStyle.height;
+					// alert(height);
+					
+					// 3、clientWidth获取元素可视化区域 width+padding
+					// alert(oView.clientWidth);
+					
+					// 4、offsetWith实际大小即占位大小 width+padding+border
+					// alert(oView.offsetWidth);
+					
+					// 5、scollHeight滚动内容大小
+					// alert(oView.scrollHeight);
+					
+					// 6、clientLeft左边边框大小
+					// 右边边框大小: oView.offsetWidth - oView.clientWidth - oView.clientLeft
+					// alert(oView.clientLeft);
+					// alert(oView.offsetWidth - oView.clientWidth - oView.clientLeft);
+					
+					
+					// 7、offsetTop获取相对父元素的位置
+					 alert(oView.offsetLeft);
+					// alert(oView.offsetTop);
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<div id="view">
+			hello world!hello world!hello world!hello world!hello world!hello world!
+			hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!hello world!
+		</div>
+	</body>
+</html>

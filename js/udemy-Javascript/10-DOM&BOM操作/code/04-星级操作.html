@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul{
+				list-style: none;
+				width: 135px;
+				height: 27px;
+				/*background: red;*/
+				margin: 30px;
+			}
+			li{
+				float: left;
+				width: 27px;
+				height: 27px;
+				background: url(img/star.gif);
+			}
+			.active{
+				background-position-y: -29px;
+			}
+		</style>
+		<script type="text/javascript" src="zyz.js" ></script>
+		<script type="text/javascript">
+			$(function(){
+				var aLi = document.getElementsByTagName('li');
+				var oInfo = document.getElementsByTagName('p')[0];
+				// 保存评分下标
+				// 评分值: 0~4
+				// 只是初始化状态，默认不是为0
+				var current = -1;
+				
+				for(var i=0; i<aLi.length; i++){
+					// 自定义属性 -- 下标
+					aLi[i].index = i;
+					
+					// 鼠标移入
+					aLi[i].onmouseover = function(){
+						// 遍历所有星星 
+						for(var j=0; j<aLi.length; j++){
+							if(j <= this.index){	// 点亮
+								aLi[j].className = 'active';
+							} else { // 熄灭
+								aLi[j].className = '';
+							}
+						}
+					}
+					
+					// 鼠标移出
+					aLi[i].onmouseout = function(){
+						// 没评分: 所有的都熄灭
+						// 有评分时num: num已经num前面的点亮
+						for(var j=0; j<aLi.length; j++){
+							if(j <= current){
+								aLi[j].className = 'active';
+							} else {
+								aLi[j].className = '';
+							}
+						}
+					}
+					
+					// 鼠标点击
+					aLi[i].onclick = function(){
+						current = this.index;
+						oInfo.innerHTML = '评分: ' + (current+1);
+					}
+				}
+				
+			});
+		</script>
+	</head>
+	
+	<body>
+		<div id="view">
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+			
+			<p></p>
+		</div>
+	</body>
+</html>

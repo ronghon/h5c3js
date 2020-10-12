@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 600px;
+				margin: 50px auto;
+			}
+			#img{
+				width: 600px;
+				
+			}
+		</style>
+		<script type="text/javascript" src="zyz.js" ></script>
+		<script type="text/javascript">
+			$(function(){
+				var oImg = $("img");
+				// 控制图片
+				var index = 1;
+				// 图片名
+				var imgName = '';
+				
+				// 开启时钟
+				setInterval(function(){
+					index++;
+					if(index > 5){
+						index = 1;
+					}
+					// console.log(index);
+					
+					// 图片拼接
+					imgName = 'img1/img_0' + index + '.png';
+					
+					// 改变图片
+					oImg.src = imgName;
+				},2000);
+			});
+		</script>
+	</head>
+	
+	<body>
+		<div>
+			<img src="img1/img_01.png" id="img" />
+		</div>
+	</body>
+</html>

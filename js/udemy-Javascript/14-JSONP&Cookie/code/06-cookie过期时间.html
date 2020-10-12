@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				bt1.onclick = function(){
+					// 获取当前时间
+					var expiresTime = new Date()
+					// 设置过期时间
+					expiresTime.setSeconds(expiresTime.getSeconds() + 10)
+					// 设置cookie 
+					document.cookie = 'age=20;expires=' + expiresTime.toGMTString()
+					
+					document.cookie = 'name=张三'
+					document.cookie = 'id=1001'					
+					alert('存储数据成功')
+				}
+				
+				bt2.onclick = function(){
+					// 获取当前网站下所有cookie;
+					// 数据之间 '分号+空格' 间隔
+					alert(document.cookie)
+				}
+				
+				bt3.onclick = function(){
+					var expiresTime = new Date()
+					expiresTime.setSeconds(expiresTime.getSeconds()-10)
+					document.cookie = 'name=z;expires=' + expiresTime.toGMTString()
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<input type="button" name="bt1" id="bt1" value="存储数据" />
+		<input type="button" name="bt2" id="bt2" value="获取数据" />
+		<input type="button" name="bt3" id="bt3" value="删除单个cookie" />
+	</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 100px;
+				height: 100px;
+				background: red;
+				opacity: 0.3;
+			}
+		</style>
+		<script type="text/javascript" src="move2.js" ></script>
+		<script type="text/javascript">
+			window.onload = function(){
+				var oBox = document.getElementById('box');
+				
+				oBox.onclick = function(){
+					// 1、宽度变为300
+					startMove(oBox,'width',300,function(){
+						// 2、高度变为300
+						startMove(oBox,'height',300,function(){
+							// 3、透明度1
+							startMove(oBox,'opacity',100);
+						});
+					});
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<!--
+			宽度变为300
+			高度变为300
+			透明度1
+		-->
+		<div id="box"></div>
+	</body>
+</html>

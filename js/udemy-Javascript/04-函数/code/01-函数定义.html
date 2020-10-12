@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		<input type="button" value="按钮" id="bt" /> <br />
+		
+		<script type="text/javascript">
+			// 先定义函数，后调用(不同script)
+			function hi(){
+				alert("Hi...");
+			}
+			
+			
+			// 先调用
+			run();
+			
+			// 可以先调用，后定义
+			function run(){
+				alert("快跑啊...");
+			}
+			
+			// run();
+		</script>
+		
+		<script type="text/javascript">
+			// 定义变量
+			var a = 10;
+			
+			// 定义函数 hello
+			function hello(){
+				document.write("hello world!");
+				document.write("<br />");
+			}
+			// 函数调用
+			hello();
+			hello();
+			hello();
+			hello();
+			hello();
+			hello();
+			
+			
+			// 匿名函数
+			// 定义变量speak，变量中装的是一个函数
+			var speak = function(){
+				document.write("哈哈...");
+				document.write("<br />");
+			}
+			// 匿名函数调用
+			speak();
+			
+			
+			
+			var oBt = document.getElementById("bt");
+//			oBt.onclick = function(){
+//				alert(1);
+//			}
+			// 将整个函数赋值
+			// oBt.onclick = speak;
+			
+			// 备注: speak()函数调用，并不是赋值给oBt.onclick
+			oBt.onclick = speak();
+			
+			
+			hi();
+		</script>
+	</body>
+</html>

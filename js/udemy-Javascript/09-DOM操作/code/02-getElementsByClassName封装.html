@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script type="text/javascript" src="zyz.js" ></script>
+		<script type="text/javascript">
+			$(function(){
+				// document.getElementById()
+				// document.getElementsByTagName()
+				// document.getElementsByClassName()
+				
+				// 系统的
+//				var aList = document.getElementsByClassName('section');
+//				for(var i=0; i<aList.length; i++){
+//					aList[i].style.color = 'red';
+//				}
+
+				// 自己封装
+				var aList = getElementByClassName(document,'section','li');
+				for(var i=0; i<aList.length; i++){
+					aList[i].style.color = 'red';
+				}
+				/*
+				 * object: 要获取该元素中的子元素
+				 * className: 元素的class名
+				 * tagName: 标签名
+				 */
+				function getElementByClassName(object,className,tagName){
+					var aEle = object.getElementsByTagName(tagName);
+					var arr = [];
+					
+					// 遍历元素
+					for(var i=0; i<aEle.length; i++){
+						// class="section section1 section section"
+//						if(aEle[i].className == className){
+//							arr.push(aEle[i]);
+//						}
+
+						
+						// 将字符串，以空格拆分 -- 数组(每个元素其实就是一个class名)
+						var names = aEle[i].className.split(' ');
+						
+						// 遍历class名称
+						for(var j=0; j<names.length; j++){
+							if(names[j] == className){
+								arr.push(aEle[i]);
+								
+								break;
+							}
+						}
+					}
+					
+					return arr;
+				}
+			});
+		</script>
+	</head>
+	
+	<body>
+		<ul>
+			<li class="section section1 section section">1、你好</li>
+			<li class="section section2">2、你好</li>
+			<li class="section section3 center">3、你好</li>
+			<li class="clearfix section">4、你好</li>
+			<li class="section4">5、你好</li>
+			<li class="section5">6、你好</li>
+		</ul>
+	</body>
+</html>

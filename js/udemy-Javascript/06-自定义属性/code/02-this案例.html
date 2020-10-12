@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.active{
+				background: red;
+				color: white;
+				border: 0;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<input type="button" value="按钮1" />
+		<input type="button" value="按钮2" />
+		<input type="button" value="按钮3" />
+		
+		<script type="text/javascript">
+			var aBt = document.getElementsByTagName("input");
+			
+			for(var i=0; i<aBt.length; i++){
+				aBt[i].onclick = function(){
+					// this 谁调用指向谁
+					// console.log(this);
+					
+					// 清空所有按钮的样式
+					for (var j=0; j<aBt.length; j++) {
+						aBt[j].className = '';
+					}
+					
+					// 给点击的按钮添加样式
+					this.className = 'active';
+				}
+			}
+		</script>
+	</body>
+</html>

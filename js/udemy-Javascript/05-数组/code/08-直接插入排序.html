@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		<script type="text/javascript">
+			var arr = [12,23,1,13,4,21,18,17,10];
+			
+			var i = j = temp = 0;
+			// 将第一个元素当做是已经排序好的		
+			for(i=1; i<arr.length; i++){		
+				// 待排序
+				temp = arr[i];
+				
+				// 将待排序 与 已经排序好的  进行比较(从后往前)
+				// i: 表示待排序
+				// i-1: 表示已经排序好的
+				for(j=i-1; j>=0; j--){
+					if(temp > arr[j]){	// 待排序 比较大 (无需往前比较)
+						break;
+					} else {				// 需要往后挪
+						arr[j+1] = arr[j];
+					}
+				}
+				
+				arr[j+1] = temp;
+			}
+			
+			document.write(arr);
+		</script>
+	</body>
+</html>

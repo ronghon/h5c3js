@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// 查找某个字符串出现的次数
+			var str = '在拼多多上买了几样东西之后，我觉得它需要管管货源了丨冷评.在拼多多上买了几样东西之后，我觉得它需要管管货源了丨冷评.';
+			
+			var searchValue = '多';
+			var index = 0;
+			var sum = 0;
+			
+			while(str.indexOf(searchValue,index) != -1){
+				// 出现的位置
+				index = str.indexOf(searchValue,index);
+				alert(index);
+				
+				// 加上查找字符串的长度
+				index += searchValue.length;
+				sum++;
+			}
+			
+			alert(sum);
+		</script>
+	</body>
+</html>
