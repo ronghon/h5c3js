@@ -121,6 +121,25 @@
     注意: 1.強制類型轉換不推薦使用,可能發生數據溢出,精度損失問題  
          2.byte/short/int三種類型可作數學運算,如加法
          3.byte/short/int三種類型在運算時,都會先被提昇為int類型,再參與運算
-
+55.IDE 集成開發環境,是一門專門用來提高Java開發效率的軟體
+    Eclipse 免費
+    IntelliJ IEDA 收費但目前廣受JAVA開發人員喜愛與使用
+56.IntelliJ IDEA下載與安裝
+    https://www.jetbrains.com 下載Ultimate(旗鑑版)
+57.IDEA項目結構
+    project專案->module模組->package包
+59.基本配置
+    1.font code字體大小  editor->font
+    2.智能提示
+    keymap-> main menu -> code -> completion -> basic -> 先刪除原來shortcut再設置為alt+/
+60.IDEA常用快捷鍵
+  **1.Alt+Enter 自動修正代碼
+    2.Ctrl+Y    刪除光標所在行
+    3.Ctrl+D    複製光標所在行的內容
+  **4.Ctrl+Alt+L格式化碼
+    5.Ctrl+/    單行注釋(取消注釋)
+    6.Ctrl+Shift+/多行注釋(取消注釋)
+    7.Alt+Ins   自動生成代碼
+    8.Alt+Shift+上下箭頭  移動當前代碼行
 
 
