@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>TOM</title>
+		<style type="text/css">
+			#box {
+				width: 320px;
+				height: 568px;
+				margin: 50px auto;
+				position: relative;
+			}
+			
+			#box .bigImg {
+				width: 320px;
+				height: 568px;
+			}
+			
+			#box .bt {
+				position: absolute;
+				text-decoration: none;
+			}
+			
+			#box .bt1 {
+				left: 5px;
+				bottom: 135px;
+			}
+			
+			#box .bt2 {
+				left: 5px;
+				bottom: 65px;
+			}
+			
+			#box .bt3 {
+				left: 5px;
+				bottom: 5px;
+			}
+			
+			#box .bt4 {
+				right: 5px;
+				bottom: 135px;
+			}
+			
+			#box .bt5 {
+				right: 5px;
+				bottom: 65px;
+			}
+			
+			#box .bt6 {
+				right: 5px;
+				bottom: 5px;
+			}
+		</style>
+
+		<script type="text/javascript" src="zyz.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				var oImg = $('box').getElementsByTagName('img')[0];
+				var aBt = $('box').getElementsByTagName('a');
+				var timer = null;
+				var page = 0;
+				var currentBt = null;
+				
+				// 点击操作
+				for(var i = 0; i < aBt.length; i++) {
+					aBt[i].onclick = function() {
+						// 停止时钟
+						stopTimer();
+
+						// 哪个按钮点击
+						currentBt = this;
+
+						// 开始时钟
+						startTimer();
+					}
+				}
+
+				// 开启时钟
+				function startTimer() {
+					if(timer == null) {
+						timer = setInterval(upDate, 100);
+					}
+				}
+
+				// 停止时钟
+				function stopTimer() {
+					clearInterval(timer);
+					timer = null;
+				}
+
+				// 时钟事件
+				function upDate() {
+					page++;
+					changeView();
+				}
+
+				// 改变视图
+				function changeView() {
+					// 图片保存有对应图片张数、图片名称
+					var temp = currentBt.getElementsByTagName('img')[0];
+					
+					// 图片张数
+					if(page > temp.alt) {
+						page = 0;
+						stopTimer();
+					}
+
+					// 图片名称
+					oImg.src = 'img2/' + temp.name + '/' + temp.name + '_' + format(page, 2) + '.jpg';
+				}
+
+				/* 格式化
+				 * index: 数字
+				 * num: 位数
+				 */
+				function format(index, num) {
+					var str = index.toString();
+					while(str.length != num) {
+						str = '0' + str;
+					}
+
+					return str;
+				}
+			})
+		</script>
+	</head>
+
+	<body>
+		<div id="box">
+			<img src="img2/angry/angry_00.jpg" class="bigImg" />
+
+			<a href="#" class="bt bt1"> <img src="img2/Buttons/cymbal.png" name="cymbal" alt="12" /> </a>
+			<a href="#" class="bt bt2"> <img src="img2/Buttons/drink.png" name="drink" alt="80" /> </a>
+			<a href="#" class="bt bt3"> <img src="img2/Buttons/cymbal.png" name="cymbal" alt="39" /> </a>
+			<a href="#" class="bt bt4"> <img src="img2/Buttons/fart.png" name="fart" alt="27" /> </a>
+			<a href="#" class="bt bt5"> <img src="img2/Buttons/pie.png" name="pie" alt="23" /> </a>
+			<a href="#" class="bt bt6"> <img src="img2/Buttons/scratch.png" name="scratch" alt="55" /> </a>
+		</div>
+	</body>
+
+</html>

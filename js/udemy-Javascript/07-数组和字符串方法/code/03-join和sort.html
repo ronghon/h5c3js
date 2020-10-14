@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		<script type="text/javascript">
+			// arrayObject.join(sep)
+			
+			var arr = [1,2,3,4];
+			
+			// 默认元素之间以逗号隔开
+			// var str = arr.join();
+			
+			// var str = arr.join('-');
+			
+			// var str = arr.join("^_^");
+			
+			// var str = arr.join('');
+			
+			//document.write(str);
+		</script>
+		
+		<script type="text/javascript">
+			var str1 = 'abblefasdfd';
+			var str2 = 'abcdfdsfaldfj';
+			// alert(str1 > str2);
+			
+			var arr = [2,3,1,7,12,32,45,13];
+			
+			// 1、默认以字符串形式比较
+			// var temp = arr.sort();
+			
+			// 2、排序的处理
+			arr.sort(function(a,b){
+				// return a - b;	// 从小到大
+				return b - a;	// 从大到小
+			});
+			
+			// document.write(arr);
+			 
+			 
+			 // 3、比较特殊的
+			 var arr2 = ['323px','123px','874px','300px','210px'];
+			 arr2.sort(function(a,b){
+			 	// return parseInt(a) - parseInt(b);
+			 	return parseInt(b) - parseInt(a);
+			 });
+			 
+			 // document.write(arr2);
+			 
+			 // 4、打乱数组
+			 var arr3 = [1,2,3,4,5,6,7,8,9,10];
+			 arr3.sort(function(){
+			 	return Math.random() - 0.5;
+			 });
+			 document.write(arr3);
+			
+		</script>
+	</body>
+</html>

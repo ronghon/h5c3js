@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--CSS-->
+		<style type="text/css">
+
+		</style>
+
+		<!--JS-->
+		<script type="text/javascript">
+			// 是一个事件，当文档加载完成之后就会触发
+			// 只会执行一次
+			window.onload = function() {
+				var oBt = document.getElementById('bt');
+				oBt.onclick = function() {
+					alert(1);
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<input type="button" id="bt" value="按钮" />
+
+		<!--<script type="text/javascript">
+			var oBt = document.getElementById('bt');
+			oBt.onclick = function(){
+				alert(1);
+			}
+		</script>-->
+	</body>
+
+</html>

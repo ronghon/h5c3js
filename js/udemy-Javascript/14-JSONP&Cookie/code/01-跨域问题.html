@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="ajax.js"></script>
+		<!--不存在跨域请求限制-->
+		<script src="https://cdn.staticfile.org/jquery/3.3.1/jquery.min.js"></script>
+		<script type="text/javascript">
+			// $ 是jQuery中
+			alert($)
+		</script>
+		
+		<!--<script type="text/javascript">
+			window.onload = function(){
+				document.onclick = function(){
+					// 域: 127.0.0.1:8020
+					// 域: api.douban.com
+					ajax('get', 'http://api.douban.com/v2/movie/search?tag=喜剧', '', function(response){
+						console.log(response)
+					})
+				}
+			}
+		</script>-->
+	</head>
+	
+	<body>
+		<img src="https://www.staticfile.org/assets/images/qiniu.png" alt="" />
+	</body>
+</html>

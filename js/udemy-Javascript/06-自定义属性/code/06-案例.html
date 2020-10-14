@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.bt{
+				width: 65px;
+				height: 65px;
+				background: url(img/icon_00.png);
+				float: left;
+				margin: 10px;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="bt"></div>
+		<div class="bt"></div>
+		<div class="bt"></div>
+		<div class="bt"></div>
+		<div class="bt"></div>
+		<div class="bt"></div>
+		<div class="bt"></div>
+		<div class="bt"></div>
+		<div class="bt"></div>
+		<div class="bt"></div>
+		
+		<script type="text/javascript">
+			var aBt = document.getElementsByClassName('bt');
+			
+//			for (var i=0; i<aBt.length; i++) {
+//				aBt[i].src = 'img/icon_00.png';
+//				
+//				aBt[i].onclick = function(){
+//					 // alert(this);
+//					
+//					if(this.src == 'img/icon_00.png'){
+//						// console.log(1);
+//						this.style.backgroundImage = 'url(img/icon_01.png)';
+//						this.src = 'img/icon_01.png';
+//					} else {
+//						// console.log(2);
+//						this.style.backgroundImage = 'url(img/icon_00.png)';
+//						this.src = 'img/icon_00.png';
+//					}
+//				}
+//			}
+
+			for (var i=0; i<aBt.length; i++) {
+				aBt[i].src = 'img/icon_00.png';
+				aBt[i].isShow = true;
+				
+				aBt[i].onclick = function(){
+					// true => false
+					// false => true
+					this.isShow = !this.isShow;
+					
+					this.style.backgroundImage = this.isShow ? 'url(img/icon_00.png)' : 'url(img/icon_01.png)';
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+//				var str = '<ul>';
+//				
+//				for(var i=0; i<5; i++){
+//					str += '<li>' + (i+1) + '、hello world!</li>'
+//				}
+//				
+//				str += '</ul>';
+//				
+//				// 写入操作
+//				document.write(str);
+
+
+				// 创建元素节点
+				var oTitle = document.createElement('h1');
+				// 设置元素节点
+				oTitle.innerHTML = '你好!';
+				// 添加元素到界面中
+				document.body.appendChild(oTitle);
+				
+				
+				var oBd = document.createElement('a');
+				oBd.href = '#';
+				oBd.innerHTML = '百度一下';
+				// oTitle和oBd同级别
+				// document.body.appendChild(oBd);
+				// oTitle和oBd父子关系
+				// oTitle.appendChild(oBd);
+				
+				
+				// 创建文件节点(显示文本)
+				var oText = document.createTextNode('<h1>你好</h1>');
+				oTitle.appendChild(oText);
+				
+				// insertBefore 将新节点插入到前面
+				var oLi = document.createElement('li');
+				oLi.innerHTML = '测试代码';
+				oView = document.getElementById('view');
+				
+				// 在oView前面添加oLi
+				// oView.parentNode.insertBefore(oLi,oView);
+				
+				// oView.insertBefore(oLi,oView.firstChild);
+				
+				oView.appendChild(oLi);
+			}
+		</script>
+	</head>
+	
+	<body>
+		<ul id="view">
+			<li>1、哈哈</li>
+			<li>2、哈哈</li>
+			<li>3、哈哈</li>
+			<li>4、哈哈</li>
+		</ul>
+	</body>
+</html>

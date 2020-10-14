@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			#box{
+				width: 1000px;
+				height: 500px;
+				border: 1px solid gray;
+				margin: 30px auto;
+				overflow: hidden;
+				position: relative;
+			}
+			#box img{
+				width: 320px;
+				height: 480px;
+				margin: 10px;
+			}
+			
+			#box ul{
+				width: 2040px;
+				height: 480px;
+				
+				position: absolute;
+				left: -2070px;
+			}
+			
+			li{
+				list-style: none;
+				float: left;
+				display: block;
+			}
+		</style>
+		
+		<script type="text/javascript">
+			
+			window.onload = function(){
+				var oBox = document.getElementById('box');
+				var oUl = document.getElementsByTagName('ul')[0];
+				var timer = null;
+				
+				oUl.innerHTML += oUl.innerHTML;
+				oUl.style.width = oUl.offsetWidth * 2 + 'px';
+				
+				startTimer()
+				
+				oBox.onmouseover = function(){
+					stopTimer()
+				}
+				
+				oBox.onmouseout = function(){
+					startTimer()
+				}
+				
+				
+				function startTimer(){
+					if(timer == null){
+						timer = setInterval(scroll, 20)
+					}
+				}
+				
+				function stopTimer(){
+					clearInterval(timer)
+					timer = null
+				}
+				
+				
+				// 滚动函数
+				function scroll(){
+					oUl.style.left = oUl.offsetLeft - 3 + 'px'
+					
+					// 一组: 2040
+					// 二组: 4080
+					
+					// -2040  临界值 
+					// -2050 (第二组相片)
+					if(oUl.offsetLeft <= -oUl.offsetWidth/2){
+						// 拉回到原点
+						oUl.style.left = 0
+					}
+				}
+			}
+			
+		</script>
+	</head>
+	
+	
+	<body>
+		<div id="box">
+			<ul>
+				<li><img src="img/3_1.jpg"></li>
+				<li><img src="img/3_2.jpg"></li>
+				<li><img src="img/3_3.jpg"></li>
+				<li><img src="img/3_4.jpg"></li>
+				<li><img src="img/3_5.jpg"></li>
+				<li><img src="img/3_6.jpg"></li>
+			</ul>
+		</div>
+	</body>
+</html>

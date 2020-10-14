@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		<script type="text/javascript">
+			// 个人信息
+			var zhangsan = ["张三","13800","123321"];
+			var lisi = ["李四","120","78987"];
+			var wangwu = ["王五","110","4566543"];
+			var zhaoliu = ["赵六","119","31231213"];
+			var tianqi = ["田七","12306","123125345"];
+			
+			// 通讯录
+			var list = [zhangsan,lisi,wangwu,zhaoliu,tianqi];
+			
+			/// alert(list[0][1]);
+			
+			// 通讯录
+			var test =[
+						["张三","13800","123321"],
+						["李四","120","78987"],
+						["王五","110","4566543"],
+						["赵六","119","31231213"],
+						["田七","12306","123125345"]
+					  ];
+			
+			// 遍历通讯录
+			for(index in test){
+				document.write(test[index] + '<br />');
+			}
+			
+		</script>
+	</body>
+</html>

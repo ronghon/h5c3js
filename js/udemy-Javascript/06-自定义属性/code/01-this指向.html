@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		<input type="button" value="按钮" id="bt" />
+		
+		<script type="text/javascript">
+			// 1、this 这，这里? ==> 具体哪里?
+			// alert(this);		// Window
+			// console.log(this);	// Window
+			
+			
+			function fn(){
+				// this?
+				console.log(this);
+			}
+			
+			// 2、this 这，这里? ==> 具体哪里?
+			// fn();	// window
+			
+			// 3、this 这，这里? ==> 具体哪里?
+			var oBt = document.getElementById("bt");
+//			oBt.onclick = function(){
+//				console.log(this);	// bt
+//			}
+
+			// 4、this 这，这里? ==> 具体哪里?
+			// oBt.onclick = fn;	// bt
+			
+			// 5、this 这，这里? ==> 具体哪里?
+			oBt.onclick = function(){
+				console.log(this);   // bt
+				
+				// 函数调用
+				fn();		// window
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<!-- 引入-->
+		<script type="text/javascript" src="zyz.js" ></script>
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				
+//				document.getElementById('bt1').onclick = function(){
+//					alert(getStyle(this,'width'));
+//				}
+
+				getId('bt1').onclick = function(){
+					alert(getStyle(this,'width'));
+				}
+				
+				$('bt2').onclick = function(){
+					alert(getStyle(this,'width'));
+				}
+				
+				// 通过id获取对应元素
+				function getId(id){
+					return document.getElementById(id);
+				}
+				
+				// jQuery的封装
+				// $ 函数名
+				function $(id){
+					return document.getElementById(id);
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<input type="button" id="bt1" value="按钮1" />
+		<input type="button" id="bt2" value="按钮2" />
+		<input type="button" id="bt3" value="按钮3" />
+	</body>
+</html>

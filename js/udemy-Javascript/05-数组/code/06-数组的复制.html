@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		<script type="text/javascript">
+			// 值类型
+			var a = 100;
+			// 值复制
+			var b = a;
+			b = 200;
+			// alert(a);
+			
+			// 引用类型
+			var arr1 = [1,2,3,4];
+			// 类似桌面快捷键
+			var arr2 = arr1;
+			arr2[0] = 100;
+			// alert(arr1);
+			
+			
+			// 数组复制
+			var arr3 = [3,4,5,6];
+			var arr4 = [];
+			
+			for(index in arr3){
+				arr4[index] = arr3[index];
+			}
+			
+			arr4[0] = 100;
+			alert(arr3);
+			
+		</script>
+	</body>
+</html>

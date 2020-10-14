@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				bt1.onclick = function(){
+					document.cookie = 'name=张三'
+					document.cookie = 'id=1001'					
+					alert('存储数据成功')
+				}
+				
+				bt2.onclick = function(){
+					// 获取当前网站下所有cookie;
+					// 数据之间 '分号+空格' 间隔
+					alert(document.cookie)
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<input type="button" name="bt1" id="bt1" value="存储数据" />
+		<input type="button" name="bt2" id="bt2" value="获取数据" />
+	</body>
+</html>

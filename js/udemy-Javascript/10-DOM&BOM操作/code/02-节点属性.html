@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				var oBox = document.getElementById('box');
+				
+				// 自定义属性
+				oBox.tab = 10;
+				
+				// 获取节点属性
+				// alert(oBox.tab);
+				
+				// 获取节点属性
+				// var att = oBox.attributes;
+				// alert(att['id'].nodeValue);
+				
+				// 获取节点属性
+				// alert(oBox.getAttribute('data-isShow'));
+				
+				
+				// 设置节点属性
+				// oBox.style.color = 'red';
+				
+				// 设置节点属性
+				// name:value
+				 oBox.setAttribute('style', 'color:red; background: blue;');
+				// oBox.setAttribute('class','view1');
+				
+				// 删除节点属性
+				oBox.removeAttribute('class');
+			}
+		</script>
+	</head>
+	
+	<body>
+		<!-- data-name: 自定义属性-->
+		<div id="box" class="section" data-index='0' data-isShow='true'>
+			hello world!
+		</div>
+	</body>
+</html>

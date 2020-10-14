@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+		<script type="text/javascript">
+			alert(a);					// 1
+			var a = 1;					// 2
+			function a(){				// 3
+				alert("1----函数a");		// 4
+			}							// 5
+			alert(a);					// 6
+			var a = 3;					// 7
+			alert(a);					// 8
+			function a(){				// 9
+				alert("2----函数a");		// 10
+			}							// 11
+			alert(a);					// 12
+			
+			/*
+			 * 预解析
+			 * 		第2行: var a;
+			 * 		第3行: a = function(){ alert("1----函数a");	 }
+			 * 		第7行: var a;
+			 * 		第9行: a = function(){ alert("2----函数a");	 }
+			 * 
+			 * 		// 只留函数
+			 * 
+			 * 逐行解析
+			 * 		第1行: alert(a);		// 输出: function(){ alert("2----函数a");	 }
+			 * 		第2行: a = 1;
+			 * 		第6行: alert(a);		// 输出: 1
+			 * 		第7行: a = 3;
+			 * 		第8行: alert(a);		// 输出: 3
+			 * 		第12行: alert(a);	// 输出: 3
+			 */
+		</script>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="zyz.js" ></script>
+		<script type="text/javascript">
+			$(function(){
+				// 元素节点
+				var oBox = $('box');
+				
+				// nodeName/nodeType/nodeValue
+				// nodeType: 元素节点1   属性节点2   文本节点3
+				// nodeValue: 元素节点(null)  属性节点(属性值)    文本节点(文本内容)
+				
+				// 元素节点
+				// alert(oBox.nodeName);
+				// alert(oBox.nodeType)
+				// alert(oBox.nodeValue);
+				
+				// 属性节点 id='box'
+				var att = oBox.attributes[0];
+				// alert(att.nodeName);
+				// alert(att.nodeValue);
+				// alert(att.nodeType);
+			});
+		</script>
+	</head>
+	
+	<body>
+		<div id="box">
+			hello world!
+		</div>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#view{
+				width: 200px;
+				height: 200px;
+				background: red;
+			}
+			#test{
+				width: 100px;
+				height: 100px;
+				background: blue;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var oView = document.getElementById('view');
+				var oTest = document.getElementById('test');
+				
+				
+				// 点击blue时，也会触发，blue就是事件源
+				oView.onclick = function(ev){
+					// alert(1);
+					
+					// 事件触发时，会将事件所有相关信息保存到envet对象中
+					ev = window.event || ev;
+					
+					// IE: srcElemment属性
+					// 火狐: target属性
+					// 谷歌/Safari: srcElemment属性/target属性
+					
+					// 事件信息中就包含有事件源
+					var self = ev.target || ev.srcElement;
+					
+					alert(self.id);
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<div id="view">
+			<div id="test"></div>
+		</div>
+	</body>
+</html>

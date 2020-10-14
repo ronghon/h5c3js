@@ -1,11 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="085d877e-91e6-4336-9ee0-60beaaf02a40" name="Default Changelist" comment="Default Changelist">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java/code/HelloWorld.class" beforeDir="false" afterPath="$PROJECT_DIR$/java/code/HelloWorld.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java/code/HelloWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/code/HelloWorld.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java/note/黑馬.txt" beforeDir="false" afterPath="$PROJECT_DIR$/java/note/黑馬.txt" afterDir="false" />
+=======
+    <list default="true" id="de2f165d-a9c7-43f6-ae68-e3505519ffc2" name="默认的" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/h5c3js.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/code/HelloWorld.class" beforeDir="false" afterPath="$PROJECT_DIR$/java/code/HelloWorld.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/code/HelloWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/java/code/HelloWorld.java" afterDir="false" />
+>>>>>>> 40c479d5c92917ae45e3cd3790bb42250cf2493b
     </list>
     <ignored path="$PROJECT_DIR$/es2019/node_modules/" />
     <ignored path="$PROJECT_DIR$/nodejs/03/code/express-demo/node_modules/" />
@@ -23,6 +37,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
@@ -106,31 +121,24 @@
       </pane>
     </panes>
   </component>
+=======
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1ilpHEdHdWEgZWk5pYR2z48c1d7" />
+>>>>>>> 40c479d5c92917ae45e3cd3790bb42250cf2493b
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="javascript.nodejs.core.library.typings.version" value="12.12.54" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.stylelint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.stylelint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.stylelint" value="" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+<<<<<<< HEAD
     <property name="nodejs_package_manager_path" value="C:/Program Files/nodejs/node_modules/npm" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="settings.editor.splitter.proportion" value="0.21686748" />
@@ -181,16 +189,19 @@
     <list>
       <item itemvalue="HTTP Request.node#1" />
     </list>
+=======
+>>>>>>> 40c479d5c92917ae45e3cd3790bb42250cf2493b
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="085d877e-91e6-4336-9ee0-60beaaf02a40" name="Default Changelist" comment="" />
-      <created>1593788471831</created>
+      <changelist id="de2f165d-a9c7-43f6-ae68-e3505519ffc2" name="默认的" comment="" />
+      <created>1602491942807</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< HEAD
       <updated>1593788471831</updated>
       <workItem from="1593788473675" duration="20000" />
       <workItem from="1593788512190" duration="20000" />
@@ -309,9 +320,17 @@
       <window_info anchor="right" id="Database" order="8" />
     </layout>
   </component>
+=======
+      <updated>1602491942807</updated>
+      <workItem from="1602491944274" duration="30000" />
+    </task>
+    <servers />
+  </component>
+>>>>>>> 40c479d5c92917ae45e3cd3790bb42250cf2493b
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+<<<<<<< HEAD
   <component name="WindowStateProjectService">
     <state x="1872" y="146" key="#Plugins" timestamp="1593857665256">
       <screen x="1440" y="0" width="1680" height="1010" />
@@ -380,4 +399,6 @@
       </provider>
     </entry>
   </component>
+=======
+>>>>>>> 40c479d5c92917ae45e3cd3790bb42250cf2493b
 </project>
