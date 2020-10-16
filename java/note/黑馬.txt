@@ -67,13 +67,13 @@
   4.類名使用大駝峰命名法
   5.變量名及方法名使用小駝峰命名法
 
-16.常量(常數):在程序運行過程中,其值固定不會改變
+16.常量(常數):在程序運行過程中,固定不變的值
   1. 字符串常量:用雙引號括起來的內容 "Hello World" "黑馬程序員"  ""
   2. 字符常量:用單引號括起來的單個字符  'A' '0' '中' 不可以為空或兩個以上字符 '' 或 'ab'
   3. 整數常量:不帶小數的數字 0 100 -120
   4. 符點數常量:帶小數的數字  0.0
   5. 布林常量:布林值,true/false
-  6. 空常量:一個特殊的值,空值 null **不能直接輸出**
+  6. 空常量:代表没有任何數據,空值 null **不能直接輸出**
 
 17.數據類型
   1.1B(byte)=8bit
@@ -121,17 +121,22 @@
     注意: 1.強制類型轉換不推薦使用,可能發生數據溢出,精度損失問題  
          2.byte/short/int三種類型可作數學運算,如加法
          3.byte/short/int三種類型在運算時,都會先被提昇為int類型,再參與運算
+
 55.IDE 集成開發環境,是一門專門用來提高Java開發效率的軟體
     Eclipse 免費
     IntelliJ IEDA 收費但目前廣受JAVA開發人員喜愛與使用
+
 56.IntelliJ IDEA下載與安裝
     https://www.jetbrains.com 下載Ultimate(旗鑑版)
+
 57.IDEA項目結構
     project專案->module模組->package包
+
 59.基本配置
     1.font code字體大小  editor->font
     2.智能提示
     keymap-> main menu -> code -> completion -> basic -> 先刪除原來shortcut再設置為alt+/
+
 60.IDEA常用快捷鍵
   **1.Alt+Enter 自動修正代碼
     2.Ctrl+Y    刪除光標所在行
