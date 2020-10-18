@@ -98,6 +98,8 @@
 47.在IDEA中使用git
     1.路徑配置:settings->version control->git->test
     2.在IDEA中創建工程並將工程添加至git
+    3.創建本地倉庫vcs->import into version control->create git repository
+    4.建立忽略文件.gitignore文件
 
 
 	
