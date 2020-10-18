@@ -1,6 +1,6 @@
 .project
 /.metadata/
-*.xml
+h5c3js.iml
 .idea/
 .vscode/
 target/
