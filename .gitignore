@@ -1,2 +1,8 @@
 .project
 /.metadata/
+*.xml
+.idea/
+.vscode/
+target/
+.classpath
+

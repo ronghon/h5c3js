@@ -22,9 +22,85 @@
 **檔案更名  mv是操作尚未添加到暫存區的檔案更名,git mv則是已添加到暫存區的檔案更名
   1.直接更名 mv 舊名 新名 -> 需git add 和 git commit
 	(1)尚未git add 至暫存區者,直接使用mv更名即可
-	(2)已提交暫存區狀態時,使用mv更名,需使用git  add/rm 將舊檔名被刪除紀錄提交,再使用git add 將新檔名
-	   加到暫存區,再git commit 提交到工作目錄
+	(2)已提交暫存區狀態時,使用mv更名,需使用git  add/rm 將舊檔名被刪除紀錄提交,再使用git add 將新檔名加到暫存區,再git commit 提交到工作目錄
   2.使用git mv 舊名 新名 (主要是針對檔案已提交暫存區的檔案更名) 
 	(1)檔案在暫存區時,使用git mv 是直接更名
 	(2)檔案已提交至工作目錄時,需使用git commit 將更名紀錄提交 
 05.git mv與mv操作
+
+
+黑馬程序員2020git教程入門到精通配合IDEA版
+13.git工作目錄下文件的兩種狀態
+    1.untracked 未追踪(未納入版本控制)
+    2.tracked   已追踪(已納入版本控制)
+      Unmodified未修改狀態
+      Modified  已修改狀態
+      Staged    已暫存狀態
+    這些文件的狀態會隨著執行git命令發生變化
+
+14.本地倉庫操作
+    1.git status 查看本地倉庫文件目前狀態
+    2.git status -s 輸出信息更加簡潔
+    3.git add 將未追踪的文件添加到暫存區,文件狀態改為綠色(staged),git add . 將全部修改文件加入暫存區。
+    4.git reset HEAD filename 撤銷已暫存再次回退到未追踪狀態。
+    5.git commit -m 'message' 將暫存區的文件修改提交到本地倉庫
+    6.git rm 刪除文件,會直接加入到暫存區,所以直接git commit -m即可
+    7.直接使用rm 刪除文件時,並未直接加入暫存區,需另以git add 加入到暫存區
+
+18.將文件添加至忽略列表:即將日誌或配置檔或某些特定文件不納入git納管的文件即可適用
+    使用方法-->在工作目錄中創建一個名為.gitignore檔案,將要忽略的檔案名稱或*.xml等,如有例外可使用!排除
+    touch .gitignore 創建.gitignore檔案
+
+19.git log 查看提交目誌紀錄
+   git log --pretty=oneline
+   git log --oneline(簡潔版,一行顯示)
+
+20.遠程倉庫操作
+    1.查看遠程倉庫:git remote -v
+    2.添加遠程倉庫:git remote add <origin> <url> 建立本地倉庫與遠程倉庫關聯,並以origin作為別名
+    3.從遠程倉庫完全克隆(clone):git clone <遠程倉庫url> 會包含提交歷史紀錄且會自動與本地倉庫之間建立關聯
+    4.移除無效的遠程倉庫:git remote rm origin(關聯別名) 注意:此命令只是從本地庫移除遠程倉庫的關聯紀錄,並不會真正影響遠程倉庫
+    5.從遠程倉庫中抓取與拉取
+      (1)git fetch 從遠程倉庫抓取最新版本到本地倉庫,但不會自動merge,需另外手動執行git merge origin/master命令
+      (2)git pull 從遠程倉庫拉取最新版本並merge到本地倉庫,注意:如果本地倉庫不是從遠程倉庫克隆,而是本地創建的倉庫,並且倉庫中存在其他文件,此時從遠程庫倉庫拉取文件時會報錯。
+        解決方法(強行拉取方式):使用git pull --allow-unrelated-histories
+    6.推送到遠程倉庫:git push origin master
+    **git commit -a -m 可以將修改的文件直接提交到本地倉庫,跳過暫存區
+
+28.git 分支->使用git init初始倉庫時會默認創建master分支,區分為本地倉庫分支和遠程倉庫分支
+    1.查看分支:
+        git branch  列出所有本地分支
+        git branch -r 列出所有遠程分支
+        git branch -a 列出所有本地和遠程分支
+    2.創建本地倉庫分支:git branch 新的分支名,需注意是以那一個分支為基礎,因為新的分支內容會將它複製乙份,進行修改後再merge合併回master主分支
+    3.切換分支:git checkout 分支名
+    4.推送至遠程倉庫分支:git push origin 分支名 ,注意:分支的內容會以master的內容複製一份
+    5.將b1分支內容合併至master主分支:在master分支下執行git merge b1
+	  注意:如果兩個不同分支中,對同一個文件進行部份修改時,git無法自動合併,會提示文件發生衝突(conflict),此時需進行手動修復衝突部份,然後再執行git add命令來標示衝突已解決
+	6.刪除本地分支:git branch -d 分支名	
+	  注意:
+	  (1)在當前分支下不可執行刪除,需切換至不同分支
+	  (2)當前分支下內容如已修改,與遠程倉庫內容不同時,也無法刪除,因為部份內容已修改尚未合併至遠倉庫,會提示刪除恐造成修改內容遺漏,但如欲強制刪除分支則使用:
+	     git branch -D 分支名
+	7.刪除遠程倉庫分支:git push origin -d 分支名
+
+36.git標籤:git可以在某個提交過程中貼上標籤(如版本號),通常用在重大修改或新增某項功能時,提醒開發者
+	標籤是紀錄某個時點當前的狀態,方便日後切換
+	1.列出已有標籤:git tag 
+	2.創建標籤:git tag 標籤名
+	3.查看標籤信息:git show [tag]
+	4.將標籤推送至遠程倉庫:git push origin tagname
+	5.檢出標籤:git checkout -b [branch] [tagname] 通常應用於切換到某一分支且同時創建分支,並賦予標籤
+	6.刪除本地標籤:git tag -d [tagname]
+	7.刪除遠程倉庫標籤:git push origin :refs/tags/[tagname]
+
+40.使用TortoiseGit(GUI圖形介面)管理文件
+47.在IDEA中使用git
+    1.路徑配置:settings->version control->git->test
+    2.在IDEA中創建工程並將工程添加至git
+
+
+	
+	
+	
+
