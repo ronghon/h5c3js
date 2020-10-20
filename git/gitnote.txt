@@ -354,7 +354,7 @@ ssh-keygen -t rsa -C "email"  /*創建email的私鑰
   eval $(ssh-agent -s)  /*start the ssh-agent in the background
   ssh-add ~/.ssh/id_rsa  /*將ssh key加入到ssh-agent
 code ~/.ssh/id_rsa.pub /*進入公鑰檔,copy到新增的ssh檔
-ssh git@github.com /*確認公鑰已成功加入
+ssh -T git@github.com /*確認公鑰已成功加入
 
 更換Git遠端伺服器倉庫網址,使用：git remote set-url
 git remote set-url origin 新的遠端伺服器網址https://git.github/

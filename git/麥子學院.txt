@@ -1,4 +1,4 @@
-02.
+02.git help和git config
 + git help -a  用來查看git 所有命令
   - git help add 用來查看git add 命令用法及參數
 + 安裝git -> git init 初始化倉庫
@@ -7,7 +7,7 @@
   git config --global user.email 'email'
     --system 系統 系統所有使用者和使用者倉儲的預設設定  -> /etc/gitconfig
     --global 全局 個人帳號專用的設定檔 -> 配置訊息存放於 ~/.gitconfig
-    --local  項目 針對個別本地端倉庫設定檔 -> .git/config
+    --local  項目 針對個別項目本地端倉庫設定檔 -> .git/config
   git config --list 目前配置情況列表
   git config --unset --global user.name -->刪除user.name或email 
 03.
@@ -22,11 +22,11 @@
 **檔案更名  mv是操作尚未添加到暫存區的檔案更名,git mv則是已添加到暫存區的檔案更名
   1.直接更名 mv 舊名 新名 -> 需git add 和 git commit
 	(1)尚未git add 至暫存區者,直接使用mv更名即可
-	(2)已提交暫存區狀態時,使用mv更名,需使用git  add/rm 將舊檔名被刪除紀錄提交,再使用git add 將新檔名加到暫存區,再git commit 提交到工作目錄
+	(2)已提交暫存區狀態時,使用mv更名,需使用git add/rm 將舊檔名被刪除紀錄提交,再使用git add 將新檔名加到暫存區,再git commit 提交到工作目錄
   2.使用git mv 舊名 新名 (主要是針對檔案已提交暫存區的檔案更名) 
-	(1)檔案在暫存區時,使用git mv 是直接更名
-	(2)檔案已提交至工作目錄時,需使用git commit 將更名紀錄提交 
-05.git mv與mv操作
+	(1)檔案在已提交暫存區時,使用git mv是直接更名
+	(2)檔案已提交至工作目錄時,需使用git commit將更名紀錄提交
+05.git rm與rm操作與git mv和mv類似
 
 
 黑馬程序員2020git教程入門到精通配合IDEA版
@@ -60,7 +60,11 @@
                   git config --global user.email "email@jjj"
     2.獲取Git倉庫兩種方式:
       (1)在本地初始化一個Git倉庫 git init
-      (2)從遠程倉庫克隆git clone
+      (2)從遠程倉庫克隆git clone <url>
+12.工作區、暫存區、本地庫
+	1.本地庫(版本庫):.git目錄夾,內含版本、日誌、及配置信息
+	2.工作區:包含.git目錄之文件夾,主要用來存放開發時的代碼
+	3.暫存區(stage):在.git文件夾內之index文件夾,臨時保存修改文件的地方
 
 13.git工作目錄(區)下文件的兩種狀態
     1.untracked 未追踪(未納入版本控制)
@@ -79,9 +83,20 @@
     6.git rm 刪除文件,會直接加入到暫存區,所以直接git commit -m即可
     7.直接使用rm 刪除文件時,並未直接加入暫存區,需另以git add 加入到暫存區
 
-18.將文件添加至忽略列表:即將日誌或配置檔或某些特定文件不納入git納管的文件即可適用
-    使用方法-->在工作目錄中創建一個名為.gitignore檔案,將要忽略的檔案名稱或*.xml等,如有例外可使用!排除
-    touch .gitignore 創建.gitignore檔案
+18.將文件添加至忽略列表:即將日誌檔或配置檔或某些特定文件不納入git納管的文件即可適用
+	使用方法-->在工作目錄中創建一個名為.gitignore檔案,將要忽略的檔案名稱或*.xml等,如有例外可使用!排除
+    需使用touch .gitignore 創建.gitignore檔案
+	1.直接加入某一檔案
+	2.使用*.xml  將所有副檔名為xml全部忽略
+	3.使用.idea/ 將.idea目錄夾下所有檔案都忽略
+	4.使用!表示排除某一檔案不加入忽略列表
+	5.doc/**/*.txt 將doc目錄下所有子目錄之副檔名為txt檔案均忽略
+	6.也可加入.gitignore檔案也忽略
+	7.如該檔案已提交版本庫(代表tracked),即使加入.gitignore選擇要忽略該檔案,但後續修改仍會追踪,解決方法:將該檔案從版本庫中刪除git rm --cache 檔案名,再將它加到.gitignore中才會忽略該檔案。
+	8.只會對當前目錄下的檔案起作用,如需包含子目錄則需使用第3、5方法設置在.gitignore內。
+	9.全局忽略:.gitignore_global,添加規則:
+	  git config --global core.excludesfile ~/.gitignore_global
+	  git config --global --list查看global配置狀況qq
 
 19.git log 查看提交目誌紀錄
    git log --pretty=oneline
@@ -128,7 +143,7 @@
 
 40.使用TortoiseGit(GUI圖形介面)管理文件
 47.在IDEA中使用git
-    1.路徑配置:settings->version control->git->test
+    1.路徑配置:settings->version control->git->C:\Program Files\Git\cmd\git.exe->test
     2.在IDEA中創建工程並將工程添加至git
     3.創建本地倉庫vcs->import into version control->create git repository
     4.建立忽略文件.gitignore文件
