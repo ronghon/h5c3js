@@ -10,7 +10,8 @@
     --local  項目 針對個別項目本地端倉庫設定檔 -> .git/config
   git config --list 目前配置情況列表
   git config --unset --global user.name -->刪除user.name或email 
-03.
+03.工作目錄和暂存區
++ 工作目錄  
 + git init 初始化倉庫
 + git status 查看目前git狀態
 + git add 檔名 或 git add . (全部)  將工作區的檔案添加到暫存區
@@ -19,13 +20,10 @@
 + git log 查看提交紀錄日誌
 + git log --pretty=oneline
   git log --oneline(簡潔版,一行顯示)
-**檔案更名  mv是操作尚未添加到暫存區的檔案更名,git mv則是已添加到暫存區的檔案更名
-  1.直接更名 mv 舊名 新名 -> 需git add 和 git commit
-	(1)尚未git add 至暫存區者,直接使用mv更名即可
-	(2)已提交暫存區狀態時,使用mv更名,需使用git add/rm 將舊檔名被刪除紀錄提交,再使用git add 將新檔名加到暫存區,再git commit 提交到工作目錄
-  2.使用git mv 舊名 新名 (主要是針對檔案已提交暫存區的檔案更名) 
-	(1)檔案在已提交暫存區時,使用git mv是直接更名
-	(2)檔案已提交至工作目錄時,需使用git commit將更名紀錄提交
+**檔案更名
+  1.尚未添加到暫存區的檔案更名mv。
+  2.已添加到暫存區的檔案更名git mv,如直接使用 mv 舊名 新名 -> 需git add 和 git commit
+    說明:已提交暫存區之檔案,如果直接使用mv更名,需使用git add/rm 將舊檔名被刪除紀錄提交,再使用git add 將新檔名加到暫存區,再git commit 提交到工作目錄
 05.git rm與rm操作與git mv和mv類似
 
 
