@@ -10,11 +10,32 @@
     6.環境配置-->查看配置現況使用git config --list
         git config --global user.name 'name'
         git config --global user.email 'email'
-        system:系統,對系統中所有用戶都適用的配置,寫入檔案/etc/gitconfig
-        global:全局,用戶目錄下只適用該用戶,寫入檔案~/.gitconfig
-        local:只適用當前項目的git目錄中,寫入檔案.git/config
+        system:系統級,對系統中所有用戶都適用的配置,寫入檔案/etc/gitconfig
+        global:用戶級,用戶目錄下只適用該用戶,寫入檔案~/.gitconfig
+        local:項目級,只適用當前項目的git目錄中,寫入檔案.git/config
 
 03.基本命令
     1.工作區:
     2.暫存區:
     3.版本庫:
+    4..git目錄夾說明
+      (1)hooks:包含客戶端或服務端的鈎子腳本
+     *(2)info:包含一個全局性排除文件
+      (3)logs:保存日誌信息
+    **(4)objects:存儲所有數據內容
+    **(5)refs:存儲指向數據(分支)的提交對象的指針
+    **(6)config檔:項目特有的配置信息
+      (7)description:用來顯示對倉庫的描述信息
+    **(8)HEAD檔:指示目前被檢出的分支
+    **(9)index:保存暫存區信息
+    5.linux命令
+       + echo "message" 控制台輸出信息
+       + echo "message" > test.txt 將message訊息寫入並創建test.txt檔案
+       + ll 查看當前目錄下有那些目錄及檔案,如需查看隱藏檔案則使ls -al
+       + find 目錄名:將對應目錄下的子孫檔案文件及目錄列表在控制台
+       + find 目錄名 -type f :只將對應目錄下的檔案文件列表在控制台
+       + rm 刪除文件
+       + mv 檔案更名
+       + cat 查看文件內容
+       + vim 文件編輯器 i 進入編輯模式, esc退出編輯模式 :wq 存儲退出vim set nu設置行號
+
