@@ -146,8 +146,11 @@
     3.創建本地倉庫vcs->import into version control->create git repository
     4.建立忽略文件.gitignore文件
 
+57.SSH協議:主要利用遠程服務器上之公鑰和本地倉庫之私鑰,建立驗證機制,
+    1.使用ssh-keygen -t rsa產生公鑰和私鑰,存放位置路徑c:/user/用戶名/.ssh目錄下id_rsa(私鑰)和id_rsa.pub(公鑰)
+    2.至github個人帳戶內settings->SSH and GPG key內新增公鑰檔案,並將公鑰碼複製貼上即可完成配置。
 
-	
+
 	
 	
 
