@@ -53,6 +53,7 @@ git book有中文版  https://git-scm.com/book/zh-tw/v2
 3.git status 查詢工作區、暫存區異動狀態
 4.git help 欲查詢之命令  或  git 欲查詢的命令 --help 
 5.使用git show來檢視最後一次提交的patch所修改的內容,如要檢視某一次修改的內容時,使用git show commit-id(前六碼即可)
+6.git diff 檔案名:尚未提交到版本庫前查看比較檔案修改狀況
 
 
 **取得一個 Git 倉儲
@@ -60,7 +61,7 @@ git book有中文版  https://git-scm.com/book/zh-tw/v2
   2.從github伺服器克隆（clone）一份現有的 Git 倉儲 -->git clone 遠端空間的網址 本機資料夾名稱 -->第一次下載GitHub雲端專案
 
 **提送流程  
-  工作區 -> git add  檔案名稱  -> 暫存區 -> git commit -m 'message' -> 本地端倉庫 -> git push   
+  工作區 -> git add 檔案名稱 ->暫存區 -> git commit -m 'message' ->本地端倉庫 -> git push <url>遠程庫  
   untracked:
    git checkout -- file name
 tracked:
@@ -69,10 +70,9 @@ tracked:
   + 直接提交本地庫: git commit -am 'commit message'
  
 tracked   <-- git reset HEAD  
-  工作區 ->         git commit -am 'message'                      -> 本地端倉庫(對untracked檔案無效) 修改部份直接提交本地端倉庫  
+  工作區 -> git commit -am 'message' -> 本地端倉庫(對untracked檔案無效) 修改部份直接提交本地端倉庫  
 
-  - 使用 git add . 或 git  add -A 或 git add --all 可一次將工作區的檔案狀態(Untracked files或 Changes not staged for commit)
-    "全部"添加到暫存區
+  - 使用 git add . 或 git  add -A 或 git add --all 可一次將工作區的檔案狀態(Untracked files或 Changes not staged for commit) "全部"添加到暫存區
   
 **刪除檔案
   1.使用git rm 刪除 (檔案已add至暫存區時)
@@ -82,12 +82,12 @@ tracked   <-- git reset HEAD
     (2)誤刪：若要恢復被刪除的文件,需進行下列兩個動作:
       1.git reset HEAD 檔名-->將待刪除的文件從暫存區恢復到工作區
       2.git checkout -- 檔名-->將工作區中的修改捨棄掉
-  2.直接使用rm 檔名：被刪除的文件並未納入暫存區中
+  2.直接使用 rm 檔名：被刪除的文件並未納入暫存區中
    -> 需使用git add 和 git commit 兩步驟將刪除紀錄提交
    -> 誤刪時需先git add 再 git reset 和 git checkout 
   3.使用git rm --cached 檔名 -> 並不是真的把檔案刪了,而僅是把檔案從 Git 中移掉而已變成untracked
 
-**更名檔案  mv是操作尚未添加到暫存區的檔案更名,git mv則是已添加到暫存區的檔案更名
+**更名檔案  mv 是操作尚未添加到暫存區的檔案更名, git mv 則是已添加到暫存區的檔案更名
   1.直接更名 mv 舊名 新名 -> 需git add 和 git commit
 	(1)尚未git add 至暫存區者,直接使用mv更名即可
 	(2)已提交暫存區狀態時,使用mv更名,需使用git  add/rm 將舊檔名被刪除紀錄提交,再使用git add 將新檔名
@@ -106,10 +106,10 @@ tracked   <-- git reset HEAD
 **git log 查看提交紀錄日誌
     git log --pretty=oneline
     git log --oneline(簡潔版)
-  git reflog 查看所有操作命令紀錄日誌
+  git reflog 查看所有操作命令紀錄日誌,用來紀錄你的每一次命令
   git reflog:HEAD@{數值}-->數值指移動HEAD從當前版本到目標要多少步
 
-**版本回退  版本快照-->commit  
+**版本回退  commit-->版本快照   
  撤銷:
   1.工作區階段:當你改亂了工作區某個文件的內容,想直接丟棄工作區的修改時,用命令git checkout -- file
   2.暫存區階段:當你不但改亂了工作區某個文件的內容,還添加到暫存區時,想丟棄修改,分兩步,第一步git reset HEAD <file>,第二步git checkout -- file
@@ -124,7 +124,18 @@ tracked   <-- git reset HEAD
   --soft:僅在本地庫移動HEAD指針,只有本地庫向倒退
   --mixed:在本地庫移動HEAD指針,且重置暫存區,只有本地庫及暫存區向後倒退
   --hard: 在本地庫移動HEAD指針,且重置暫存區及工作區,三者一起向後倒退
-    
+
+Git跟踪并管理的是修改,而非文件,每次修改均需git add到暫存區(stage)內,git commit提交時,只會將已add到暫存區內的增刪改提交到所屬分支的版本庫中。
+
+1.git checkout -- 檔案名 ->捨棄工作區的檔案修改
+2.git reset HEAD <file> ->修改工作區某個文件的内容,且已add添加到了暫存區,想捨棄文件的修改時
+3.已經提交了不合適的修改到版本庫時,想要撤销本次提交,則使用上面之版本回退功能
+
+刪除文件
+1.真刪:
+  rm 檔案名 刪除工作區檔案 -> git rm 檔案名 且 commit 提交本次刪除作業 刪除版本庫檔案
+2.誤刪
+  git checkout -- file 將誤刪的檔案從版本庫中再次回復回來到工作區    
 **比較文件diff  
 + 使用 git diff <file> 查看 "特定" 被修改檔案的內容
 + 使用 git diff 查看 "全部" 被修改檔案的內容
