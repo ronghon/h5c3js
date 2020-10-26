@@ -46,10 +46,19 @@
   2.在path路徑開頭新增%JAVA_HOME%\bin; 即可關閉重啟
   3.重啟命令列輸入java即可
 
-10.Java程序開發步驟:
-  1.編寫
-  2.編譯:javac.exe  -->會生成一個檔案 .class
-  3.運行:java 新生成的檔案(去除.class)  //Hello World!
+10.Java程序開發三個步驟:
+  1.編寫代碼,副檔名為.java
+  2.編譯:javac.exe(編譯程式) -> 會生成一個檔案 .class
+  3.運行:java.exe(解釋程式) -> java 新生成的檔案(去除.class)  //Hello World!
+
+11.使用Javac HelloWorld.java -> 編譯結果會自動生成一個副檔名為.class檔案
+   運行 java HelloWorld  -> 輸出運行結果
+
+12.常見問題:
+    1.注意大小寫需一致。
+    2.檔案名稱與class 後面的class名稱不一致。
+    3.分號需使用英文的;不可使用中文的;也不可省略
+    4.notepad++安裝
 
 14.java注釋
   1.單行注釋 //
@@ -143,8 +152,10 @@
     3.Ctrl+D    複製光標所在行的內容
   **4.Ctrl+Alt+L格式化碼
     5.Ctrl+/    單行注釋(取消注釋)
-    6.Ctrl+Shift+/多行注釋(取消注釋)
+    6.Ctrl+Shift+/  多行注釋(取消注釋),需選取注釋範圍
     7.Alt+Ins   自動生成代碼
     8.Alt+Shift+上下箭頭  移動當前代碼行
+
+61.
 
 
