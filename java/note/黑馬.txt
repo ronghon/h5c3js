@@ -135,11 +135,55 @@
          int  a = (int)100L  
     注意: 
       1.強制類型轉換不推薦使用,可能發生數據溢出(灑出來超出範圍,只能顯示該類型的最大數值)(整數而言):
-        int num1=(int)600000000L  //結果是 1705032704 非600000000
-        精度損失問題: double -> int 
+        int num1=(int)600000000L  //結果是 1705032704 非 600000000
+        精度損失(浮點數而言): double -> int  大 -> 小 強制類型轉換結果可能造成精度損失
         double num2=(int)3.14  // 3  非四捨五入,而是所有小數均捨去
-      2.byte/short/chr三種類型可作數學運算,如加法
-      3.byte/short/int三種類型在運算時,都會先被提昇為int類型,再參與運算
+      2.byte/short/char三種類型可作數學運算,如加法
+        char ziful = 'A'
+        System.out.println(ziful+1); // A:65  65+1=66
+        計算機底層會用一個數字(二進制)來代表字母A->65 一旦char類型進行數學運算,則此字母會依一定規則翻譯成一個數字
+      3.byte/short/char三種類型在運算時,都會先被提昇為int類型,然後再參與運算
+        byte num1=40;
+        byte num2=50;
+        //byte+byte --> int+int --> int
+        int result=num1+num2;
+        System.out.println(result);
+        short num3=60;
+        //byte+short --> int+int --> int
+        //int強制類型轉換為short-->注意必須保證邏輯上真實大小本來就没有超過short範圍,否則會發生數據溢出現象
+        short result2=(short)(num1+num3);
+        System.out.println(result2); // 100
+      4.boolean類型不能發生數據類型轉換
+
+25.ASCII編碼表 48->'0'  65->'A'  97->'a'
+    American Standard Code for Information Interchange 美國信息交換標準代碼
+    Unicode萬國碼,也是數字和符號的對照關係表,內含各國文字的對照二進制碼
+
+26.運算符:進行特定操作的符號,如+
+   表達式:用運算符連接起來的式子,如1+2 a*b 10/5等...
+   注意:一旦運算當中,不同類型的數據,那結果將會是數據類型範圍大的
+   x=10;
+   double result=x+2.5
+   int + double -> double+double -> double
+
+ 27.加號的多種用法:
+    1.對於數值來說,就是加法
+    2.對於字符char類型來說,在計算之前,char會被提升為int,然後再計算
+      char類型字符,和int類型數字之間的對照關係表:ASCII、Unicode
+    3.對於字符串String來說,加號代表字符串拼接操作,任何數據類型和字符串進行連接時,其結果都會變成字符串。
+      String str2="java";
+      System.out.println(str2+20);  //java20
+
+ 28.自增++和自減--
+    使用方式:
+      1.單獲使用:不和其他任何操作混合,自己獨立成為一個步驟。
+      2.混合使用:和其他操作混合操作,如與賦值混合、與輸出語句操作混合...等。
+    使用區別:
+      1.單獨使用時,前++和後++没有任何區別結果完全一樣。
+      2.混合使用時,重大區別:
+        (1)++前(先加後用)-->變量會立刻馬上+1,然後再將結果進行使用。
+        (2)後++(先用後加)-->先使用變量原來數值,然後再將變量+1
+    注意事項:只有變量才能使用自增自減運算,常量不可發生改變,所以不能用。
 
 55.IDE 集成開發環境,是一門專門用來提高Java開發效率的軟體
     Eclipse 免費
