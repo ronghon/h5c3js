@@ -4,6 +4,7 @@
 *  -
 * */
 console.log("我是02.module.js");
+//向外部暴露,使用exports
 exports.x="abc123";
 exports.y="bcd456";
 exports.fn=function(){}

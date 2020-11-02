@@ -3,9 +3,9 @@
  *   add(a,b)  求兩個數的和
  *   mul(a,b)  求兩個數的積
  */
-exports.add=function (a,b){
+exports.add = function (a,b){
     return a + b ;
 }
-exports.mul=function (a,b){
+exports.mul = function (a,b){
     return a * b ;
 }
