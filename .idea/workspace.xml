@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="27253503-c01c-4009-abb3-c4b286548844" name="Default Changelist" comment="node learn 11 unit in home" />
+    <list default="true" id="27253503-c01c-4009-abb3-c4b286548844" name="Default Changelist" comment="node learn 11 unit in home">
+      <change afterPath="$PROJECT_DIR$/nodejs/01/code/09-簡單的模塊化/a.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/blackhores/jsbasic/js基础第二天素材/code/15-判断闰年案例.html" beforeDir="false" afterPath="$PROJECT_DIR$/js/blackhores/jsbasic/js基础第二天素材/code/15-判断闰年案例.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/udemy-Javascript/01-javascript基础/code/07-基本运算符.html" beforeDir="false" afterPath="$PROJECT_DIR$/js/udemy-Javascript/01-javascript基础/code/07-基本运算符.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nodejs/01/code/08-node笢腔js-瞄陑耀輸(1).js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nodejs/01/code/09-潠等腔耀輸趙/a.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nodejs/01/code/09-潠等腔耀輸趙/b.js" beforeDir="false" afterPath="$PROJECT_DIR$/nodejs/01/code/09-簡單的模塊化/b.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nodejs/01/code/09-潠等腔耀輸趙/c.js" beforeDir="false" afterPath="$PROJECT_DIR$/nodejs/01/code/09-簡單的模塊化/c.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nodejs/01/code/09-潠等腔耀輸趙/樓婥迵絳堤/a.js" beforeDir="false" afterPath="$PROJECT_DIR$/nodejs/01/code/09-簡單的模塊化/加載與導出/a.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nodejs/01/code/09-潠等腔耀輸趙/樓婥迵絳堤/b.js" beforeDir="false" afterPath="$PROJECT_DIR$/nodejs/01/code/09-簡單的模塊化/加載與導出/b.js" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,10 +21,24 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/blackhores/jsbasic/js基础第二天素材/code/18-三元表达式.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/js/blackhores/jsbasic/JS基礎 .md" />
+        <option value="$PROJECT_DIR$/js/blackhores/jsbasic/js基础第二天素材/code/15-判断闰年案例.html" />
+      </list>
+    </option>
   </component>
   <component name="ProjectConfigurationFiles">
     <option name="files">
@@ -45,20 +70,44 @@
             <path>
               <item name="h5c3js" type="b2602c69:ProjectViewProjectNode" />
               <item name="h5c3js" type="462c0819:PsiDirectoryNode" />
-              <item name="nodejs" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="h5c3js" type="b2602c69:ProjectViewProjectNode" />
               <item name="h5c3js" type="462c0819:PsiDirectoryNode" />
-              <item name="nodejs" type="462c0819:PsiDirectoryNode" />
-              <item name="01" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="blackhores" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="h5c3js" type="b2602c69:ProjectViewProjectNode" />
               <item name="h5c3js" type="462c0819:PsiDirectoryNode" />
-              <item name="nodejs" type="462c0819:PsiDirectoryNode" />
-              <item name="01" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="blackhores" type="462c0819:PsiDirectoryNode" />
+              <item name="jsbasic" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="h5c3js" type="b2602c69:ProjectViewProjectNode" />
+              <item name="h5c3js" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="blackhores" type="462c0819:PsiDirectoryNode" />
+              <item name="jsbasic" type="462c0819:PsiDirectoryNode" />
+              <item name="js基础第二天素材" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="h5c3js" type="b2602c69:ProjectViewProjectNode" />
+              <item name="h5c3js" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="blackhores" type="462c0819:PsiDirectoryNode" />
+              <item name="jsbasic" type="462c0819:PsiDirectoryNode" />
+              <item name="js基础第二天素材" type="462c0819:PsiDirectoryNode" />
               <item name="code" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="h5c3js" type="b2602c69:ProjectViewProjectNode" />
+              <item name="h5c3js" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="blackhores" type="462c0819:PsiDirectoryNode" />
+              <item name="note" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -68,6 +117,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -75,7 +125,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -114,6 +164,9 @@
       <workItem from="1605102325576" duration="299000" />
       <workItem from="1605105502698" duration="855000" />
       <workItem from="1605106458426" duration="510000" />
+      <workItem from="1606014714739" duration="418000" />
+      <workItem from="1606024115851" duration="156000" />
+      <workItem from="1606029751453" duration="2474000" />
     </task>
     <task id="LOCAL-00001" summary="node learn 11 unit in home">
       <created>1605106944359</created>
@@ -126,20 +179,18 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2019000" />
+    <option name="totallyTimeSpent" value="5067000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21246459" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20042492" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="运行" weight="0.32998565" />
-      <window_info anchor="bottom" id="调试" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -150,8 +201,10 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32998565" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32998565" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="运行" order="12" weight="0.32998565" />
+      <window_info anchor="bottom" id="调试" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -173,13 +226,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/nodejs/01/code/02-黍恅璃.js" />
     <entry file="file://$PROJECT_DIR$/nodejs/01/code/01-没有bom和dom.js" />
-    <entry file="file://$PROJECT_DIR$/nodejs/01/code/04-迡恅璃.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/nodejs/01/code/04-迡恅璃.js" />
     <entry file="file://$PROJECT_DIR$/nodejs/01/code/03-瀏覽器不認識node代碼.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -212,6 +259,49 @@
           <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/blackhores/jsbasic/js基础第一天素材/code/24-计算年龄案例.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="508">
+          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/blackhores/jsbasic/JS基礎 .md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="-4384">
+            <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/blackhores/jsbasic/js基础第三天素材/code/01-循环的目的.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/blackhores/jsbasic/js基础第二天素材/code/14-if else双分支语句.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-570" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/blackhores/jsbasic/js基础第二天素材/code/15-判断闰年案例.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/blackhores/jsbasic/js基础第二天素材/code/17-判断成绩案例.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-74" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/blackhores/jsbasic/js基础第二天素材/code/16-if else if多分支语句.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/blackhores/jsbasic/js基础第二天素材/code/18-三元表达式.html">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">
